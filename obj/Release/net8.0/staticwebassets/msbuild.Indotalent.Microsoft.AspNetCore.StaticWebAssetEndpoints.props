@@ -28,13 +28,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Indotalent.ddy4hexgzc.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-AUCU2zjx/qU4yfKq3oySZaynz1dB\u002BVC0NX2IUJ7P9/E="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1128"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022AUCU2zjx/qU4yfKq3oySZaynz1dB\u002BVC0NX2IUJ7P9/E=\u0022"},{"Name":"Last-Modified","Value":"Mon, 18 Nov 2024 14:37:57 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1128"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022AUCU2zjx/qU4yfKq3oySZaynz1dB\u002BVC0NX2IUJ7P9/E=\u0022"},{"Name":"Last-Modified","Value":"Mon, 18 Nov 2024 13:58:54 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Indotalent/Indotalent.ddy4hexgzc.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Indotalent.ddy4hexgzc.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ddy4hexgzc"},{"Name":"integrity","Value":"sha256-AUCU2zjx/qU4yfKq3oySZaynz1dB\u002BVC0NX2IUJ7P9/E="},{"Name":"label","Value":"_content/Indotalent/Indotalent.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1128"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022AUCU2zjx/qU4yfKq3oySZaynz1dB\u002BVC0NX2IUJ7P9/E=\u0022"},{"Name":"Last-Modified","Value":"Mon, 18 Nov 2024 14:37:57 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1128"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022AUCU2zjx/qU4yfKq3oySZaynz1dB\u002BVC0NX2IUJ7P9/E=\u0022"},{"Name":"Last-Modified","Value":"Mon, 18 Nov 2024 13:58:54 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Indotalent/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>

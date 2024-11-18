@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>bin\Release\net8.0\publish\</_PublishTargetUrl>
-    <History>True|2024-03-19T05:11:23.4753070Z;</History>
+    <_PublishTargetUrl>C:\Users\Tarik\Source\Repos\Indotalent\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2024-11-18T14:19:50.2735529Z||;True|2024-03-19T06:11:23.4753070+01:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
