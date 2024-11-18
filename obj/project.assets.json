@@ -8,19 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\aerrahma\\.nuget\\packages\\": {}
+    "C:\\Users\\Tarik\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aerrahma\\source\\repos\\Indotalent\\Indotalent.csproj",
+      "projectUniqueName": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\Indotalent.csproj",
       "projectName": "Indotalent",
-      "projectPath": "C:\\Users\\aerrahma\\source\\repos\\Indotalent\\Indotalent.csproj",
-      "packagesPath": "C:\\Users\\aerrahma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aerrahma\\source\\repos\\Indotalent\\obj\\",
+      "projectPath": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\Indotalent.csproj",
+      "packagesPath": "C:\\Users\\Tarik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\aerrahma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tarik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -44,8 +49,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
-      }
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -69,7 +75,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
