@@ -118,7 +118,6 @@ C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\staticwebassets\msbuild.
 C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Indotalent.props
 C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Indotalent.props
 C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\Indotalent.dll
 C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\refint\Indotalent.dll
 C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\Indotalent.pdb
