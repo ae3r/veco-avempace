@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\Tarik\source\repos\Indotalent\bin\Release\net8.0\publish\pub</_PublishTargetUrl>
-    <History>True|2024-11-21T23:20:49.0044176Z||;True|2024-11-18T15:40:29.9491543+01:00||;True|2024-11-18T15:19:50.2735529+01:00||;True|2024-03-19T06:11:23.4753070+01:00||;</History>
+    <_PublishTargetUrl>C:\Users\Tarik\source\repos\Indotalent\bin\Release\net8.0\publish\pub\pub2</_PublishTargetUrl>
+    <History>True|2024-11-21T23:36:00.6760975Z||;True|2024-11-22T00:20:49.0044176+01:00||;True|2024-11-18T15:40:29.9491543+01:00||;True|2024-11-18T15:19:50.2735529+01:00||;True|2024-03-19T06:11:23.4753070+01:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
