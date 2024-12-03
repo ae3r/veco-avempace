@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\Indotalent.csproj": {}
+    "C:\\Users\\Tarik\\source\\repos\\Indotalent\\Indotalent.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\Indotalent.csproj": {
+    "C:\\Users\\Tarik\\source\\repos\\Indotalent\\Indotalent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\Indotalent.csproj",
+        "projectUniqueName": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\Indotalent.csproj",
         "projectName": "Indotalent",
-        "projectPath": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\Indotalent.csproj",
+        "projectPath": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\Indotalent.csproj",
         "packagesPath": "C:\\Users\\Tarik\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\",
         "projectStyle": "PackageReference",

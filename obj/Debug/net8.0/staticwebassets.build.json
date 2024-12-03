@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8VTQ630gXvOaWJJUM1/HMFU7+xSqZcUd01gzVDW4sJo=",
+  "Hash": "Z6QlefBdpXjDAZHx+IlGNGZoqK+1OvoX0mzBavoJ/5g=",
   "Source": "Indotalent",
   "BasePath": "_content/Indotalent",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Indotalent\\wwwroot",
       "Source": "Indotalent",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Indotalent.styles.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Indotalent.styles.css",
       "SourceId": "Indotalent",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "Indotalent#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -35,13 +35,13 @@
       "Integrity": "AUCU2zjx/qU4yfKq3oySZaynz1dB+VC0NX2IUJ7P9/E=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Indotalent.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Indotalent.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Indotalent.bundle.scp.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Indotalent.bundle.scp.css",
       "SourceId": "Indotalent",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "Indotalent#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -56,13 +56,13 @@
       "Integrity": "AUCU2zjx/qU4yfKq3oySZaynz1dB+VC0NX2IUJ7P9/E=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Indotalent.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Indotalent.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\css\\site.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "css/site#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\favicon.ico",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "favicon#[.{fingerprint}]?.ico",
       "AssetKind": "All",
@@ -101,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\js\\site.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "js/site#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -122,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landing-page.png",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landing-page.png",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landing-page#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\landing-page.png"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\css\\bootstrap.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/css/bootstrap.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -164,10 +164,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\css\\style.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\css\\style.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/css/style#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -185,10 +185,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\css\\style.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\about.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\about.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/about#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -206,10 +206,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\about.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-1.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-1.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/blog-1#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -227,10 +227,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\blog-1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-2.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-2.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/blog-2#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -248,10 +248,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\blog-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-3.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-3.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/blog-3#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -269,10 +269,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\blog-3.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-1.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-1.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/carousel-1#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -290,10 +290,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\carousel-1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-2.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-2.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/carousel-2#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -311,10 +311,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\carousel-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\feature.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\feature.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/feature#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -332,10 +332,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\feature.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\team-1.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\team-1.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/team-1#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -353,10 +353,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\team-1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\team-2.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\team-2.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/team-2#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\team-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\team-3.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\team-3.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/team-3#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -395,10 +395,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\team-3.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-1.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-1.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/testimonial-1#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\testimonial-1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-2.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-2.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/testimonial-2#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -437,10 +437,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\testimonial-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-3.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-3.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/testimonial-3#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -458,10 +458,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\testimonial-3.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-4.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-4.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/testimonial-4#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -479,10 +479,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\testimonial-4.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\user.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\user.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/user#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -500,10 +500,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\user.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-1.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-1.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/vendor-1#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -521,10 +521,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-2.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-2.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/vendor-2#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -542,10 +542,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-3.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-3.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/vendor-3#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -563,10 +563,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-3.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-4.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-4.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/vendor-4#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -584,10 +584,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-4.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-5.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-5.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/vendor-5#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -605,10 +605,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-5.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-6.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-6.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/vendor-6#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -626,10 +626,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-6.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-7.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-7.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/vendor-7#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -647,10 +647,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-7.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-8.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-8.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/vendor-8#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -668,10 +668,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-8.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-9.jpg",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-9.jpg",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/img/vendor-9#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -689,10 +689,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-9.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\js\\main.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\js\\main.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/js/main#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -710,10 +710,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\js\\main.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/animate/animate#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\animate\\animate.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/animate/animate.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -752,10 +752,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\animate\\animate.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\counterup\\counterup.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\counterup\\counterup.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/counterup/counterup.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -773,10 +773,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\counterup\\counterup.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/easing/easing#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -794,10 +794,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\easing\\easing.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/easing/easing.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\easing\\easing.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\ajax-loader.gif",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/owlcarousel/assets/ajax-loader#[.{fingerprint}]?.gif",
       "AssetKind": "All",
@@ -836,10 +836,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\owlcarousel\\assets\\ajax-loader.gif"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/owlcarousel/assets/owl.carousel#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -857,10 +857,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/owlcarousel/assets/owl.carousel.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -878,10 +878,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/owlcarousel/assets/owl.theme.default#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -899,10 +899,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/owlcarousel/assets/owl.theme.default.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -920,10 +920,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/owlcarousel/assets/owl.theme.green#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -941,10 +941,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/owlcarousel/assets/owl.theme.green.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -962,10 +962,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.video.play.png",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/owlcarousel/assets/owl.video.play#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -983,10 +983,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.video.play.png"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\LICENSE",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\LICENSE",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/owlcarousel/LICENSE#[.{fingerprint}]?",
       "AssetKind": "All",
@@ -1004,10 +1004,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\owlcarousel\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/owlcarousel/owl.carousel#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1025,10 +1025,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/owlcarousel/owl.carousel.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1046,10 +1046,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\links.php",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\links.php",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/waypoints/links#[.{fingerprint}]?.php",
       "AssetKind": "All",
@@ -1067,10 +1067,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\waypoints\\links.php"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\waypoints.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\waypoints.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/waypoints/waypoints.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\waypoints\\waypoints.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/wow/wow#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1109,10 +1109,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\wow\\wow.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "landingpage/lib/wow/wow.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1130,10 +1130,10 @@
       "OriginalItemSpec": "wwwroot\\landingpage\\lib\\wow\\wow.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1151,10 +1151,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1172,10 +1172,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1193,10 +1193,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1235,10 +1235,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1256,10 +1256,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1277,10 +1277,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1298,10 +1298,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1319,10 +1319,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1340,10 +1340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1361,10 +1361,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1382,10 +1382,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1403,10 +1403,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1424,10 +1424,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1466,10 +1466,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1487,10 +1487,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1508,10 +1508,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1529,10 +1529,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1550,10 +1550,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1571,10 +1571,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1592,10 +1592,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1613,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1634,10 +1634,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1655,10 +1655,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1676,10 +1676,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1697,10 +1697,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1718,10 +1718,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1739,10 +1739,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1760,10 +1760,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1781,10 +1781,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1823,10 +1823,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1844,10 +1844,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1865,10 +1865,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1886,10 +1886,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1907,10 +1907,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1928,10 +1928,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1949,10 +1949,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1970,10 +1970,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1991,10 +1991,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -2012,10 +2012,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -2033,10 +2033,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -2054,10 +2054,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/bootstrap/LICENSE#[.{fingerprint}]?",
       "AssetKind": "All",
@@ -2075,10 +2075,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery/dist/jquery#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -2096,10 +2096,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery/dist/jquery.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -2117,10 +2117,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery/dist/jquery.min#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -2138,10 +2138,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery/LICENSE#[.{fingerprint}]?.txt",
       "AssetKind": "All",
@@ -2159,10 +2159,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery-validation/dist/additional-methods#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -2180,10 +2180,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -2201,10 +2201,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -2222,10 +2222,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -2243,10 +2243,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery-validation/LICENSE#[.{fingerprint}]?.md",
       "AssetKind": "All",
@@ -2264,10 +2264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -2285,10 +2285,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -2306,10 +2306,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Indotalent",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
       "BasePath": "_content/Indotalent",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE#[.{fingerprint}]?.txt",
       "AssetKind": "All",
@@ -2330,7 +2330,7 @@
   "Endpoints": [
     {
       "Route": "css/site.c2tiyv64ts.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\css\\site.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2375,7 +2375,7 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\css\\site.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2412,7 +2412,7 @@
     },
     {
       "Route": "favicon.61n19gt1b8.ico",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2457,7 +2457,7 @@
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2494,7 +2494,7 @@
     },
     {
       "Route": "Indotalent.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Indotalent.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Indotalent.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2531,7 +2531,7 @@
     },
     {
       "Route": "Indotalent.ddy4hexgzc.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Indotalent.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Indotalent.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2576,7 +2576,7 @@
     },
     {
       "Route": "Indotalent.ddy4hexgzc.styles.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Indotalent.styles.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Indotalent.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2621,7 +2621,7 @@
     },
     {
       "Route": "Indotalent.styles.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Indotalent.styles.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Indotalent.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2658,7 +2658,7 @@
     },
     {
       "Route": "js/site.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\js\\site.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2695,7 +2695,7 @@
     },
     {
       "Route": "js/site.xtxxf3hu2r.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\js\\site.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2740,7 +2740,7 @@
     },
     {
       "Route": "landing-page.gspkz7w7cm.png",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landing-page.png",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landing-page.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2785,7 +2785,7 @@
     },
     {
       "Route": "landing-page.png",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landing-page.png",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landing-page.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2822,7 +2822,7 @@
     },
     {
       "Route": "landingpage/css/bootstrap.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\css\\bootstrap.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\css\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2859,7 +2859,7 @@
     },
     {
       "Route": "landingpage/css/bootstrap.min.orhpba4773.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\css\\bootstrap.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\css\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2904,7 +2904,7 @@
     },
     {
       "Route": "landingpage/css/style.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\css\\style.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\css\\style.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2941,7 +2941,7 @@
     },
     {
       "Route": "landingpage/css/style.yukt3nmltw.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\css\\style.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\css\\style.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2986,7 +2986,7 @@
     },
     {
       "Route": "landingpage/img/about.hlth9kfhbo.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\about.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\about.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3031,7 +3031,7 @@
     },
     {
       "Route": "landingpage/img/about.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\about.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\about.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3068,7 +3068,7 @@
     },
     {
       "Route": "landingpage/img/blog-1.dlvglgh456.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-1.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3113,7 +3113,7 @@
     },
     {
       "Route": "landingpage/img/blog-1.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-1.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3150,7 +3150,7 @@
     },
     {
       "Route": "landingpage/img/blog-2.getchepl9s.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-2.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3195,7 +3195,7 @@
     },
     {
       "Route": "landingpage/img/blog-2.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-2.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3232,7 +3232,7 @@
     },
     {
       "Route": "landingpage/img/blog-3.6ntgl56v0f.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-3.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-3.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3277,7 +3277,7 @@
     },
     {
       "Route": "landingpage/img/blog-3.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-3.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\blog-3.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3314,7 +3314,7 @@
     },
     {
       "Route": "landingpage/img/carousel-1.j30gialyze.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-1.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3359,7 +3359,7 @@
     },
     {
       "Route": "landingpage/img/carousel-1.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-1.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3396,7 +3396,7 @@
     },
     {
       "Route": "landingpage/img/carousel-2.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-2.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3433,7 +3433,7 @@
     },
     {
       "Route": "landingpage/img/carousel-2.v95fohyqx5.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-2.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\carousel-2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3478,7 +3478,7 @@
     },
     {
       "Route": "landingpage/img/feature.ao972xy0rl.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\feature.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\feature.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3523,7 +3523,7 @@
     },
     {
       "Route": "landingpage/img/feature.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\feature.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\feature.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3560,7 +3560,7 @@
     },
     {
       "Route": "landingpage/img/team-1.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\team-1.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\team-1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3597,7 +3597,7 @@
     },
     {
       "Route": "landingpage/img/team-1.pyc0azc8l9.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\team-1.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\team-1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3642,7 +3642,7 @@
     },
     {
       "Route": "landingpage/img/team-2.75y9gdotu0.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\team-2.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\team-2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3687,7 +3687,7 @@
     },
     {
       "Route": "landingpage/img/team-2.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\team-2.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\team-2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3724,7 +3724,7 @@
     },
     {
       "Route": "landingpage/img/team-3.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\team-3.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\team-3.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3761,7 +3761,7 @@
     },
     {
       "Route": "landingpage/img/team-3.s0rptofobe.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\team-3.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\team-3.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3806,7 +3806,7 @@
     },
     {
       "Route": "landingpage/img/testimonial-1.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-1.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3843,7 +3843,7 @@
     },
     {
       "Route": "landingpage/img/testimonial-1.urxekhjru9.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-1.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3888,7 +3888,7 @@
     },
     {
       "Route": "landingpage/img/testimonial-2.idthmlef6x.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-2.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3933,7 +3933,7 @@
     },
     {
       "Route": "landingpage/img/testimonial-2.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-2.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3970,7 +3970,7 @@
     },
     {
       "Route": "landingpage/img/testimonial-3.d2587veb1l.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-3.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-3.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4015,7 +4015,7 @@
     },
     {
       "Route": "landingpage/img/testimonial-3.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-3.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-3.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4052,7 +4052,7 @@
     },
     {
       "Route": "landingpage/img/testimonial-4.dqrnfx4tei.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-4.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-4.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4097,7 +4097,7 @@
     },
     {
       "Route": "landingpage/img/testimonial-4.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-4.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\testimonial-4.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4134,7 +4134,7 @@
     },
     {
       "Route": "landingpage/img/user.d2uqs3yzjj.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\user.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\user.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4179,7 +4179,7 @@
     },
     {
       "Route": "landingpage/img/user.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\user.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\user.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4216,7 +4216,7 @@
     },
     {
       "Route": "landingpage/img/vendor-1.d66rwe5fed.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-1.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4261,7 +4261,7 @@
     },
     {
       "Route": "landingpage/img/vendor-1.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-1.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-1.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4298,7 +4298,7 @@
     },
     {
       "Route": "landingpage/img/vendor-2.i9uom2ogc4.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-2.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4343,7 +4343,7 @@
     },
     {
       "Route": "landingpage/img/vendor-2.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-2.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4380,7 +4380,7 @@
     },
     {
       "Route": "landingpage/img/vendor-3.gqzwzql7pw.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-3.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-3.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4425,7 +4425,7 @@
     },
     {
       "Route": "landingpage/img/vendor-3.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-3.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-3.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4462,7 +4462,7 @@
     },
     {
       "Route": "landingpage/img/vendor-4.3i6b1za2wo.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-4.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-4.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4507,7 +4507,7 @@
     },
     {
       "Route": "landingpage/img/vendor-4.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-4.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-4.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4544,7 +4544,7 @@
     },
     {
       "Route": "landingpage/img/vendor-5.ais8w3u6g3.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-5.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-5.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4589,7 +4589,7 @@
     },
     {
       "Route": "landingpage/img/vendor-5.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-5.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-5.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4626,7 +4626,7 @@
     },
     {
       "Route": "landingpage/img/vendor-6.9s6slje451.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-6.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-6.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4671,7 +4671,7 @@
     },
     {
       "Route": "landingpage/img/vendor-6.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-6.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-6.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4708,7 +4708,7 @@
     },
     {
       "Route": "landingpage/img/vendor-7.22tgg9jjdx.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-7.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-7.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4753,7 +4753,7 @@
     },
     {
       "Route": "landingpage/img/vendor-7.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-7.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-7.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4790,7 +4790,7 @@
     },
     {
       "Route": "landingpage/img/vendor-8.et9ft0wrvi.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-8.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-8.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4835,7 +4835,7 @@
     },
     {
       "Route": "landingpage/img/vendor-8.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-8.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-8.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4872,7 +4872,7 @@
     },
     {
       "Route": "landingpage/img/vendor-9.8p0ff6ibcg.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-9.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-9.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4917,7 +4917,7 @@
     },
     {
       "Route": "landingpage/img/vendor-9.jpg",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-9.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-9.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4954,7 +4954,7 @@
     },
     {
       "Route": "landingpage/js/main.1xrckf7fdx.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\js\\main.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\js\\main.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4999,7 +4999,7 @@
     },
     {
       "Route": "landingpage/js/main.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\js\\main.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\js\\main.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5036,7 +5036,7 @@
     },
     {
       "Route": "landingpage/lib/animate/animate.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5073,7 +5073,7 @@
     },
     {
       "Route": "landingpage/lib/animate/animate.min.591ybqkhud.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5118,7 +5118,7 @@
     },
     {
       "Route": "landingpage/lib/animate/animate.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5155,7 +5155,7 @@
     },
     {
       "Route": "landingpage/lib/animate/animate.pfslj4f41e.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\animate\\animate.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5200,7 +5200,7 @@
     },
     {
       "Route": "landingpage/lib/counterup/counterup.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\counterup\\counterup.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\counterup\\counterup.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5237,7 +5237,7 @@
     },
     {
       "Route": "landingpage/lib/counterup/counterup.min.o68q7h1m8r.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\counterup\\counterup.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\counterup\\counterup.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5282,7 +5282,7 @@
     },
     {
       "Route": "landingpage/lib/easing/easing.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5319,7 +5319,7 @@
     },
     {
       "Route": "landingpage/lib/easing/easing.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5356,7 +5356,7 @@
     },
     {
       "Route": "landingpage/lib/easing/easing.min.s1z0o21rrk.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5401,7 +5401,7 @@
     },
     {
       "Route": "landingpage/lib/easing/easing.vb205osfee.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\easing\\easing.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5446,7 +5446,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/ajax-loader.gif",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\ajax-loader.gif",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5483,7 +5483,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/ajax-loader.uwe6z5aqkv.gif",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\ajax-loader.gif",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5528,7 +5528,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.carousel.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5565,7 +5565,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.carousel.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5602,7 +5602,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.carousel.min.uyqknvf41h.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5647,7 +5647,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.carousel.q46ry7au64.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.carousel.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5692,7 +5692,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.theme.default.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5729,7 +5729,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.theme.default.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5766,7 +5766,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.theme.default.min.mzg0i66ppt.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5811,7 +5811,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.theme.default.tzmoj7fmxh.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.default.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5856,7 +5856,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.theme.green.462rccmaov.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5901,7 +5901,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.theme.green.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5938,7 +5938,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.theme.green.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5975,7 +5975,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.theme.green.min.ve6wjaoj24.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6020,7 +6020,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.video.play.png",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.video.play.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6057,7 +6057,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/assets/owl.video.play.s8sku8kfko.png",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\assets\\owl.video.play.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6102,7 +6102,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/LICENSE",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\LICENSE",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6139,7 +6139,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/LICENSE.vaz5xhcjci",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\LICENSE",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6184,7 +6184,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/owl.carousel.b5bvho7hiv.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6229,7 +6229,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/owl.carousel.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6266,7 +6266,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/owl.carousel.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6303,7 +6303,7 @@
     },
     {
       "Route": "landingpage/lib/owlcarousel/owl.carousel.min.xhbu0o0ue3.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\owlcarousel\\owl.carousel.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6348,7 +6348,7 @@
     },
     {
       "Route": "landingpage/lib/waypoints/links.6nqirqydf5.php",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\links.php",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\links.php",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6393,7 +6393,7 @@
     },
     {
       "Route": "landingpage/lib/waypoints/links.php",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\links.php",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\links.php",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6430,7 +6430,7 @@
     },
     {
       "Route": "landingpage/lib/waypoints/waypoints.min.8otopfxis6.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\waypoints.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\waypoints.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6475,7 +6475,7 @@
     },
     {
       "Route": "landingpage/lib/waypoints/waypoints.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\waypoints.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\waypoints\\waypoints.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6512,7 +6512,7 @@
     },
     {
       "Route": "landingpage/lib/wow/wow.apjpr24drr.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6557,7 +6557,7 @@
     },
     {
       "Route": "landingpage/lib/wow/wow.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6594,7 +6594,7 @@
     },
     {
       "Route": "landingpage/lib/wow/wow.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6631,7 +6631,7 @@
     },
     {
       "Route": "landingpage/lib/wow/wow.min.v5kyrhpytd.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\lib\\wow\\wow.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6676,7 +6676,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6713,7 +6713,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.css.73kdqttayv.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6758,7 +6758,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6795,7 +6795,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.min.6gzpyzhau4.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6840,7 +6840,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6877,7 +6877,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.min.css.8inm30yfxf.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6922,7 +6922,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.min.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6959,7 +6959,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.ozu22stjof.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7004,7 +7004,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7041,7 +7041,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css.4gxs3k148c.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7086,7 +7086,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7123,7 +7123,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.gjcw7pocpk.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7168,7 +7168,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.6l4ir0ityv.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7213,7 +7213,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7250,7 +7250,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.fctod5rc9n.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7295,7 +7295,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7332,7 +7332,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7369,7 +7369,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7406,7 +7406,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.css.st1cbwfwo5.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7451,7 +7451,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.min.5p029spbuu.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7496,7 +7496,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7533,7 +7533,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.min.css.5vj65cig9w.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7578,7 +7578,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7615,7 +7615,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.nakmwdwsxp.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7660,7 +7660,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7697,7 +7697,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.2q4vfeazbq.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7742,7 +7742,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7779,7 +7779,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.e6q6xbwqzk.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7824,7 +7824,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7861,7 +7861,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7898,7 +7898,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.o371a8zbv2.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7943,7 +7943,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.dy6jgresuo.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7988,7 +7988,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8025,7 +8025,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.jeal3x0ldm.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8070,7 +8070,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8107,7 +8107,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8144,7 +8144,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8181,7 +8181,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.okkk44j0xs.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8226,7 +8226,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.z7kmom2977.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8271,7 +8271,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.mk8rdyw69w.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8316,7 +8316,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.97yrjpyf9r.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8361,7 +8361,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8398,7 +8398,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.cwzlr5n8x4.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8443,7 +8443,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8480,7 +8480,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8517,7 +8517,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8554,7 +8554,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.wmug9u23qg.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8599,7 +8599,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.y53cy5s2zj.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8644,7 +8644,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8681,7 +8681,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.css.j75batdsum.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8726,7 +8726,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8763,7 +8763,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.min.2yn17lgxub.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8808,7 +8808,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8845,7 +8845,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8882,7 +8882,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.vy0bq9ydhf.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8927,7 +8927,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8964,7 +8964,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.ab1c3rmv7g.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9009,7 +9009,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9046,7 +9046,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9083,7 +9083,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.56d2bn4wt9.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9128,7 +9128,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9165,7 +9165,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.ik6i2hrs65.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9210,7 +9210,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.ophe14yye5.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9255,7 +9255,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.z9shlbduue.css",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9300,7 +9300,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.1piudyfv7h.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9345,7 +9345,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.f6zq8v6eb3.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9390,7 +9390,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9427,7 +9427,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.js.kbynt5jhd9.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9472,7 +9472,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9509,7 +9509,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.min.89qbw8ngem.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9554,7 +9554,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9591,7 +9591,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.c2nslu3uf3.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9636,7 +9636,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9673,7 +9673,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9710,7 +9710,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.js.2lgwfvgpvi.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9755,7 +9755,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9792,7 +9792,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.min.jqwzsa9uv6.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9837,7 +9837,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9874,7 +9874,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9911,7 +9911,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.min.js.wsezl0heh6.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9956,7 +9956,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.n5w6o92d9r.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10001,7 +10001,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10038,7 +10038,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.js.6ukhryfubh.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10083,7 +10083,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.js.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10120,7 +10120,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.min.4908xmbfjr.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10165,7 +10165,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10202,7 +10202,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.min.js.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10239,7 +10239,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.min.js.u33ctipx7g.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10284,7 +10284,7 @@
     },
     {
       "Route": "lib/bootstrap/LICENSE",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10321,7 +10321,7 @@
     },
     {
       "Route": "lib/bootstrap/LICENSE.81b7ukuj9c",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\bootstrap\\LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10366,7 +10366,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.7s2n0ol71w.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10411,7 +10411,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10448,7 +10448,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.min.5pze98is44.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10493,7 +10493,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.min.ehgnz7f14e.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10538,7 +10538,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10575,7 +10575,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.min.map",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10612,7 +10612,7 @@
     },
     {
       "Route": "lib/jquery/LICENSE.mlv21k5csn.txt",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10657,7 +10657,7 @@
     },
     {
       "Route": "lib/jquery/LICENSE.txt",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10694,7 +10694,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/additional-methods.ay5nd8zt9x.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10739,7 +10739,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/additional-methods.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10776,7 +10776,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/additional-methods.min.9oaff4kq20.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10821,7 +10821,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/additional-methods.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10858,7 +10858,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/jquery.validate.6d0lkjaslc.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10903,7 +10903,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/jquery.validate.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10940,7 +10940,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/jquery.validate.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10977,7 +10977,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/jquery.validate.min.l1zq2mitth.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11022,7 +11022,7 @@
     },
     {
       "Route": "lib/jquery-validation/LICENSE.md",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11059,7 +11059,7 @@
     },
     {
       "Route": "lib/jquery-validation/LICENSE.x0q3zqp4vz.md",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11104,7 +11104,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.03hjc8e09r.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11149,7 +11149,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11186,7 +11186,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.48y08845bh.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11231,7 +11231,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11268,7 +11268,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/LICENSE.356vix0kms.txt",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11313,7 +11313,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/LICENSE.txt",
-      "AssetFile": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
