@@ -123,3 +123,4 @@ C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\refint\Indotalent.dll
 C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\Indotalent.pdb
 C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\Indotalent.genruntimeconfig.cache
 C:\Users\Tarik\Source\Repos\Indotalent\obj\Debug\net8.0\ref\Indotalent.dll
+C:\Users\Tarik\source\repos\Indotalent\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
