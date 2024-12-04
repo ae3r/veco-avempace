@@ -19,6 +19,11 @@ wwwroot\landingpage\img\testimonial-2.jpg
 wwwroot\landingpage\img\testimonial-3.jpg
 wwwroot\landingpage\img\testimonial-4.jpg
 wwwroot\landingpage\img\user.jpg
+wwwroot\landingpage\img\vendor-1.jpg
+wwwroot\landingpage\img\vendor-2.jpg
+wwwroot\landingpage\img\vendor-3.jpg
+wwwroot\landingpage\img\vendor-4.jpg
+wwwroot\landingpage\img\vendor-5.jpg
 wwwroot\landingpage\js\main.js
 wwwroot\landingpage\lib\animate\animate.css
 wwwroot\landingpage\lib\animate\animate.min.css

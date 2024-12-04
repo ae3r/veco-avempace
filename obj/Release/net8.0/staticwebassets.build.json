@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CzBXujDF8JZZE4120THfndhXM2ViKIXRWKb+d2/vQ2U=",
+  "Hash": "tM/s375q4T6otXrXGowaNjQE574HUOVUKqIQfgYcHpc=",
   "Source": "Indotalent",
   "BasePath": "_content/Indotalent",
   "Mode": "Default",
@@ -498,6 +498,111 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\landingpage\\img\\user.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-1.jpg",
+      "SourceId": "Indotalent",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
+      "BasePath": "_content/Indotalent",
+      "RelativePath": "landingpage/img/vendor-1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p1hvv4c5pt",
+      "Integrity": "DXc0E7eeWQAu28nO0hDI8znN0d7JbSJ+Anf+yAWCK4k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-2.jpg",
+      "SourceId": "Indotalent",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
+      "BasePath": "_content/Indotalent",
+      "RelativePath": "landingpage/img/vendor-2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xxamfjmiyt",
+      "Integrity": "G6Tz2ZVoFtTD6KPHe0/R40Ok1OKi/pkFj2zy1oNrD6A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-3.jpg",
+      "SourceId": "Indotalent",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
+      "BasePath": "_content/Indotalent",
+      "RelativePath": "landingpage/img/vendor-3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yftfk35lid",
+      "Integrity": "Mq1XUqAdYuPDZelRZfVXDOW633pmTE2u4ULWTJO/yCQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-4.jpg",
+      "SourceId": "Indotalent",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
+      "BasePath": "_content/Indotalent",
+      "RelativePath": "landingpage/img/vendor-4#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p3vbyvn0av",
+      "Integrity": "NSBKdUW0TJg0WwNf0m0MUf464qUJ4hLDfYfpnvgLeQ0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-5.jpg",
+      "SourceId": "Indotalent",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\",
+      "BasePath": "_content/Indotalent",
+      "RelativePath": "landingpage/img/vendor-5#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xpas334jqd",
+      "Integrity": "uwuGXwBg0GaVdSTd9tz/NfX39R/zrUKfFRS1vLFyY8E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\landingpage\\img\\vendor-5.jpg"
     },
     {
       "Identity": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\js\\main.js",
@@ -4022,6 +4127,416 @@
         {
           "Name": "integrity",
           "Value": "sha256-tYISa87WUgofoWpDyWKxta8U5VeoSwCAMgE5fX0j08o="
+        }
+      ]
+    },
+    {
+      "Route": "landingpage/img/vendor-1.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21877"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DXc0E7eeWQAu28nO0hDI8znN0d7JbSJ+Anf+yAWCK4k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 15:14:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DXc0E7eeWQAu28nO0hDI8znN0d7JbSJ+Anf+yAWCK4k="
+        }
+      ]
+    },
+    {
+      "Route": "landingpage/img/vendor-1.p1hvv4c5pt.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21877"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DXc0E7eeWQAu28nO0hDI8znN0d7JbSJ+Anf+yAWCK4k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 15:14:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p1hvv4c5pt"
+        },
+        {
+          "Name": "label",
+          "Value": "landingpage/img/vendor-1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DXc0E7eeWQAu28nO0hDI8znN0d7JbSJ+Anf+yAWCK4k="
+        }
+      ]
+    },
+    {
+      "Route": "landingpage/img/vendor-2.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1561"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G6Tz2ZVoFtTD6KPHe0/R40Ok1OKi/pkFj2zy1oNrD6A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 15:14:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G6Tz2ZVoFtTD6KPHe0/R40Ok1OKi/pkFj2zy1oNrD6A="
+        }
+      ]
+    },
+    {
+      "Route": "landingpage/img/vendor-2.xxamfjmiyt.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1561"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G6Tz2ZVoFtTD6KPHe0/R40Ok1OKi/pkFj2zy1oNrD6A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 15:14:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xxamfjmiyt"
+        },
+        {
+          "Name": "label",
+          "Value": "landingpage/img/vendor-2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-G6Tz2ZVoFtTD6KPHe0/R40Ok1OKi/pkFj2zy1oNrD6A="
+        }
+      ]
+    },
+    {
+      "Route": "landingpage/img/vendor-3.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1821"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Mq1XUqAdYuPDZelRZfVXDOW633pmTE2u4ULWTJO/yCQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 15:14:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Mq1XUqAdYuPDZelRZfVXDOW633pmTE2u4ULWTJO/yCQ="
+        }
+      ]
+    },
+    {
+      "Route": "landingpage/img/vendor-3.yftfk35lid.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1821"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Mq1XUqAdYuPDZelRZfVXDOW633pmTE2u4ULWTJO/yCQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 15:14:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yftfk35lid"
+        },
+        {
+          "Name": "label",
+          "Value": "landingpage/img/vendor-3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Mq1XUqAdYuPDZelRZfVXDOW633pmTE2u4ULWTJO/yCQ="
+        }
+      ]
+    },
+    {
+      "Route": "landingpage/img/vendor-4.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4731"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NSBKdUW0TJg0WwNf0m0MUf464qUJ4hLDfYfpnvgLeQ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 15:14:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NSBKdUW0TJg0WwNf0m0MUf464qUJ4hLDfYfpnvgLeQ0="
+        }
+      ]
+    },
+    {
+      "Route": "landingpage/img/vendor-4.p3vbyvn0av.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4731"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NSBKdUW0TJg0WwNf0m0MUf464qUJ4hLDfYfpnvgLeQ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 15:14:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p3vbyvn0av"
+        },
+        {
+          "Name": "label",
+          "Value": "landingpage/img/vendor-4.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NSBKdUW0TJg0WwNf0m0MUf464qUJ4hLDfYfpnvgLeQ0="
+        }
+      ]
+    },
+    {
+      "Route": "landingpage/img/vendor-5.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2121"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uwuGXwBg0GaVdSTd9tz/NfX39R/zrUKfFRS1vLFyY8E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 15:14:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uwuGXwBg0GaVdSTd9tz/NfX39R/zrUKfFRS1vLFyY8E="
+        }
+      ]
+    },
+    {
+      "Route": "landingpage/img/vendor-5.xpas334jqd.jpg",
+      "AssetFile": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\wwwroot\\landingpage\\img\\vendor-5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2121"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uwuGXwBg0GaVdSTd9tz/NfX39R/zrUKfFRS1vLFyY8E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 15:14:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xpas334jqd"
+        },
+        {
+          "Name": "label",
+          "Value": "landingpage/img/vendor-5.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uwuGXwBg0GaVdSTd9tz/NfX39R/zrUKfFRS1vLFyY8E="
         }
       ]
     },
