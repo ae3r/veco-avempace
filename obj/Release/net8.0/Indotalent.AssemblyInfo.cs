@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Indotalent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abfaa0f2246d9ba926b4d6fea7c13ef22390b192")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc2f26ad3a5cb65f77d6cfba6d75ddfdc4acf363")]
 [assembly: System.Reflection.AssemblyProductAttribute("Indotalent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Indotalent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
