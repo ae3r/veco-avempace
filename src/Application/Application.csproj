@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Domain\Domain.csproj" />
+	</ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Common\Behaviours\**" />
+    <Compile Remove="Common\Exceptions\**" />
+    <Compile Remove="Common\Extensions\**" />
+    <Compile Remove="Common\Interfaces\Caching\**" />
+    <Compile Remove="Common\Interfaces\Identity\**" />
+    <Compile Remove="Common\Interfaces\Serialization\**" />
+    <Compile Remove="Common\Mappings\**" />
+    <Compile Remove="Common\Models\**" />
+    <Compile Remove="Common\Security\**" />
+    <Compile Remove="Common\Specification\**" />
+    <EmbeddedResource Remove="Common\Behaviours\**" />
+    <EmbeddedResource Remove="Common\Exceptions\**" />
+    <EmbeddedResource Remove="Common\Extensions\**" />
+    <EmbeddedResource Remove="Common\Interfaces\Caching\**" />
+    <EmbeddedResource Remove="Common\Interfaces\Identity\**" />
+    <EmbeddedResource Remove="Common\Interfaces\Serialization\**" />
+    <EmbeddedResource Remove="Common\Mappings\**" />
+    <EmbeddedResource Remove="Common\Models\**" />
+    <EmbeddedResource Remove="Common\Security\**" />
+    <EmbeddedResource Remove="Common\Specification\**" />
+    <None Remove="Common\Behaviours\**" />
+    <None Remove="Common\Exceptions\**" />
+    <None Remove="Common\Extensions\**" />
+    <None Remove="Common\Interfaces\Caching\**" />
+    <None Remove="Common\Interfaces\Identity\**" />
+    <None Remove="Common\Interfaces\Serialization\**" />
+    <None Remove="Common\Mappings\**" />
+    <None Remove="Common\Models\**" />
+    <None Remove="Common\Security\**" />
+    <None Remove="Common\Specification\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Common\Interfaces\IExcelService.cs" />
+    <Compile Remove="Common\Interfaces\IMailService.cs" />
+    <Compile Remove="Common\Interfaces\IResult.cs" />
+    <Compile Remove="Common\Interfaces\IService.cs" />
+    <Compile Remove="Common\Interfaces\ISpecification.cs" />
+    <Compile Remove="Common\Interfaces\IUploadService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
+  </ItemGroup>
+
+</Project>
