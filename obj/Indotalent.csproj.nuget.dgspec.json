@@ -11,7 +11,7 @@
         "projectName": "Indotalent",
         "projectPath": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\Indotalent.csproj",
         "packagesPath": "C:\\Users\\Tarik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tarik\\Source\\Repos\\Indotalent\\obj\\",
+        "outputPath": "C:\\Users\\Tarik\\source\\repos\\Indotalent\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
