@@ -1,4 +1,7 @@
 
+using System.Net.Mail;
+using System.Net;
+
 namespace Application.Features.Clients.Commands.AddEdit;
 
 /// <summary>
@@ -46,12 +49,48 @@ public class AddEditClientCommandHandler : IRequestHandler<AddEditClientCommand,
                 var clients = _mapper.Map<Client>(request);
                 _context.Clients.Add(clients);
                 await _context.SaveChangesAsync(cancellationToken);
+
+                // Send email after saving the client
+                await SendEmailAsync(clients.Message, clients.Email, clients.Sujet);
+
+
+
                 return await Result<int>.SuccessAsync(clients.Id);
             }
         }
         catch (Exception ex)
         {
             return await Result<int>.FailureAsync(new string[] { ex.Message }).ConfigureAwait(false);
+        }
+    }
+
+    private async Task SendEmailAsync(string fromEmail, string bodyEmail, string subject)
+    {
+        try
+        {
+            var smtpClient = new SmtpClient("smtp.hostinger.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential("contact@veco-avempace.com", "Contact1!"),
+                EnableSsl = true,
+            };
+
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress(fromEmail),
+                Subject = subject,
+                Body = bodyEmail,
+                IsBodyHtml = true,
+            };
+
+            mailMessage.To.Add("contact@veco-avempace.com");
+
+            await smtpClient.SendMailAsync(mailMessage);
+        }
+        catch (Exception ex)
+        {
+            // Log or handle the error appropriately
+            Console.WriteLine($"Error sending email: {ex.Message}");
         }
     }
 }

@@ -1,118 +1,292 @@
-﻿<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+﻿<div class="container-fluid py-5">
     <div class="container py-5">
+        <!-- Section Title -->
         <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-            <h5 class="fw-bold text-primary text-uppercase">« Faites-nous confiance !</h5>
-            <h1 class="mb-0">
-                Rejoignez la révolution électrique avec VECO Avempace
-            </h1>
+            <h5 class="fw-bold text-primary text-uppercase">Faites-nous confiance !</h5>
+            <h1 class="mb-0">Rejoignez la révolution électrique avec VECO Avempace</h1>
         </div>
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon">
-                        <i class="bi bi-calculator" style="color: white";></i>
-                    </div>
-                    <h4 class="mb-3">Calcul de la rentabilité d’une voiture électrique</h4>
-                    <p class="m-0">
-                        La rentabilité d'une voiture électrique évalue les économies sur le carburant, les subventions et les frais réduits par rapport au coût d'achat et d'entretien.
-                    </p>
-                    <a class="btn btn-lg btn-primary rounded" href="">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
+
+        <!-- Maison Button -->
+        <div class="text-center mb-5">
+            <button id="maisonButton" class="btn btn-light text-center shadow-lg rounded maison-btn" onclick="showStep2()">
+                <div class="maison-icon">
+                    <i class="bi bi-house-door-fill"></i> <!-- House icon -->
+                </div>
+                <div class="maison-text">Maison</div>
+            </button>
+        </div>
+
+        <div class="text-center mb-5">
+            <button id="appartementButton" class="btn btn-light text-center shadow-lg rounded appartement-btn">
+                <div class="appartement-icon">
+                    <i class="bi bi-building"></i> <!-- Appartement icon -->
+                </div>
+                <div class="appartement-text">Appartement</div>
+            </button>
+        </div>
+
+        <div class="text-center mb-5">
+            <button id="entrepriseButton" class="btn btn-light text-center shadow-lg rounded entreprise-btn">
+                <div class="entreprise-icon">
+                    <i class="bi bi-building"></i> <!-- Entreprise icon -->
+                </div>
+                <div class="entreprise-text">Entreprise</div>
+            </button>
+        </div>
+
+        <!-- Step 2 Section -->
+        <div id="step2Content" style="display: none; margin-top: 20px;">
+            <h4 class="text-center">La distance entre le tableau électrique et le point de charge sera de (en mètres)...</h4>
+            <div class="slider-container text-center mt-4">
+                <!-- Slider -->
+                <input type="range"
+                       id="distanceSlider"
+                       min="0"
+                       max="3"
+                       value="0"
+                       step="1"
+                       class="slider"
+                       oninput="updateSliderLabel(this.value)"
+                       onchange="displayRecommendation(this.value)" />
+                <!-- Labels -->
+                <div class="slider-labels">
+                    <span></span> <!-- Placeholder -->
+                    <span>- 10m</span>
+                    <span>10m &lt; d &lt; 20m</span>
+                    <span>+ 20m</span>
+                </div>
+                <!-- Output -->
+                <div id="sliderOutput" class="slider-output mt-3"></div>
+            </div>
+
+            <!-- Recommendation Section -->
+            <div id="recommendation" style="display: none; margin-top: 20px; text-align: center;">
+                <h5 id="recommendationText">Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
+                <div class="choices mt-3">
+                    <button class="btn btn-primary choice-button" onclick="handleChoice('yes')">Oui, (recommandé)</button>
+                    <button class="btn btn-secondary choice-button" onclick="handleChoice('no')">Non</button>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon">
-                        <i class="fa fa-shield-alt text-white"></i>
-                    </div>
-                    <h4 class="mb-3">Passez en mode calculette</h4>
-                    <p class="m-0">
-                        calculer le temps de charge en fonction de la puissance de chaque borne
-                    </p>
-                    <a class="btn btn-lg btn-primary rounded" href="">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
+
+            <!-- Offer Text -->
+            <div id="offerText" style="display: none; margin-top: 20px; text-align: center; color: #007bff; font-weight: bold;">
+                + Forfaits sérénité dés 99,90 MAD/Mois
+            </div>
+
+            <!-- Final Step Box -->
+            <div id="finalStepBox" style="display: none; margin-top: 20px; text-align: center;">
+                <div class="final-box">
+                    <span id="finalStepText"></span>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon">
-                        <i class="fa fa-chart-pie text-white"></i>
-                    </div>
-                    <h4 class="mb-3">
-                        Pouvoir d’achat
-                    </h4>
-                    <p class="m-0">
-                        Grâce aux prix compétitifs des
-                        recharges électriques que nous proposerons par rapport au prix du carburant
-                        des véhicules thermiques, Essence ou Diesel qui n’arrêtent pas d’augmenter
-                        jour après jour.
-                    </p>
-                    <a class="btn btn-lg btn-primary rounded" href="">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
-                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon">
-                        <i class="fa fa-code text-white"></i>
-                    </div>
-                    <h4 class="mb-3">
-                        Préservez votre santé
-                    </h4>
-                    <p class="m-0">
-                        Avec l’aide des véhicules électriques,
-                        Dépolluez les villes denses et aussi l’ensemble du royaume en roulant vert  et
-                        ainsi allégez les coûts que supporte la CNSS qui prend en charge les
-                        personnes atteintes de problèmes respiratoires et pulmonaires.
-                    </p>
-                    <a class="btn btn-lg btn-primary rounded" href="">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon">
-                        <i class="fab fa-android text-white"></i>
-                    </div>
-                    <h4 class="mb-3">Expérience Client Incomparable</h4>
-                    <p class="m-0">
-                        Grâce à des technologies intelligentes et une
-                        interface conviviale, nous vous garantissons une expérience fluide qui s’intègre
-                        parfaitement à votre quotidien. Simplifiez la recharge et roulez l’esprit tranquille
-                        avec Veco Avempace.
-                    </p>
-                    <a class="btn btn-lg btn-primary rounded" href="">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon">
-                        <i class="fa fa-search text-white"></i>
-                    </div>
-                    <h4 class="mb-3">Offre</h4>
-                    <p class="m-0">
-                        Cette offre est pensée pour répondre aux besoins spécifiques des entreprises B2B, en mettant l&#39;accent sur la simplicité, la sécurité et la rentabilité des infrastructures de recharge pour véhicules électriques.
-                    </p>
-                    <a class="btn btn-lg btn-primary rounded" href="">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mx-auto wow zoomIn" data-wow-delay="0.9s" style="text-align: center;">
-                <div class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5" style="font-size: 0.9rem;">
-                    <h3 class="text-white mb-3" style="font-size: 1.2rem;">Appelez-nous pour un devis</h3>
-                    <p class="text-white mb-3" style="font-size: 0.8rem;">
-                        N'hésitez pas à nous contacter pour obtenir un devis détaillé. Notre équipe se tient à votre disposition pour répondre à toutes vos questions et vous fournir une estimation personnalisée en fonction de vos besoins spécifiques. Appelez-nous dès aujourd'hui pour discuter de votre projet et obtenir une offre adaptée à votre situation.
-                    </p>
-                    <h5 class="text-white mb-0" style="font-size: 1rem;">+212 6 43 17 75 83</h5>
-                </div>
+
+            <!-- Retour Button -->
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-primary retour-btn" onclick="goBack()">Retour</button>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Styles -->
+<style>
+    /* Maison Button */
+    .maison-btn {
+        width: 800px;
+        height: 140px;
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #333;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .maison-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+    .maison-icon {
+        font-size: 40px;
+        color: #00aaff;
+    }
+
+    .maison-text {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    /* Appartement Button */
+    .appartement-btn {
+        width: 800px;
+        height: 140px;
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #333;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .appartement-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+    .appartement-icon {
+        font-size: 40px;
+        color: #00aaff;
+    }
+
+    .appartement-text {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    /* Entreprise Button */
+    .entreprise-btn {
+        width: 800px;
+        height: 140px;
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #333;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .entreprise-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+    .entreprise-icon {
+        font-size: 40px;
+        color: #00aaff;
+    }
+
+    .entreprise-text {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    /* Slider */
+    .slider-container .slider {
+        width: 60%;
+    }
+
+    .slider-labels {
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        margin: 0 auto;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .slider-output {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333;
+    }
+
+    /* Recommendation Buttons */
+    .choice-button {
+        width: 250px;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+        .choice-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+    /* Final Step Box */
+    .final-box {
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 20px;
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    let selectedDistance = 0;
+
+    function showStep2() {
+        document.getElementById("step2Content").style.display = "block";
+
+        // Reset slider to placeholder
+        const slider = document.getElementById("distanceSlider");
+        slider.value = 0;
+        updateSliderLabel(0);
+    }
+
+    function updateSliderLabel(value) {
+        selectedDistance = value;
+        const output = document.getElementById("sliderOutput");
+
+        // Placeholder
+        if (value == 0) {
+            output.innerText = ""; // Empty for placeholder
+        } else if (value == 1) {
+            output.innerText = "- 10m";
+        } else if (value == 2) {
+            output.innerText = "10m < d < 20m";
+        } else if (value == 3) {
+            output.innerText = "+ 20m";
+        }
+    }
+
+    function displayRecommendation(value) {
+        // Only display recommendations if the user selects a valid distance
+        if (value > 0) {
+            document.getElementById("recommendation").style.display = "block";
+        } else {
+            document.getElementById("recommendation").style.display = "none";
+        }
+    }
+
+    function handleChoice(choice) {
+        const offerText = document.getElementById("offerText");
+        const finalStepBox = document.getElementById("finalStepBox");
+        const finalStepText = document.getElementById("finalStepText");
+
+        if (choice === "yes" && selectedDistance > 0) {
+            offerText.style.display = "block";
+        } else {
+            offerText.style.display = "none";
+        }
+
+        if (selectedDistance == 1) {
+            finalStepText.innerText = "Votre projet à partir de 7499 MAD";
+        } else if (selectedDistance == 2) {
+            finalStepText.innerText = "Votre projet à partir de 7999 MAD";
+        } else if (selectedDistance == 3) {
+            finalStepText.innerText = "Votre projet à partir de 8499 MAD";
+        }
+        finalStepBox.style.display = "block";
+    }
+
+    function goBack() {
+        document.getElementById("step2Content").style.display = "none";
+    }
+</script>
