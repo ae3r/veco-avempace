@@ -25,7 +25,6 @@
 
 	<ItemGroup>
 		<Compile Remove="Common\Interfaces\IExcelService.cs" />
-		<Compile Remove="Common\Interfaces\IMailService.cs" />
 		<Compile Remove="Common\Interfaces\IService.cs" />
 		<Compile Remove="Common\Interfaces\ISpecification.cs" />
 		<Compile Remove="Common\Interfaces\IUploadService.cs" />

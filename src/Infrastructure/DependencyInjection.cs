@@ -1,4 +1,5 @@
 using Application.Common.Interfaces;
+using Infrastructure.Configurations;
 using Infrastructure.Constants.Localization;
 using Infrastructure.Identity;
 using Infrastructure.Middlewares;
@@ -69,8 +70,8 @@ public static class DependencyInjection
         //services.AddTransient<IUploadService, UploadService>();
         //services.AddTransient<IIdentityService, IdentityService>();
         //services.Configure<AppConfigurationSettings>(configuration.GetSection("AppConfigurationSettings"));
-        //services.Configure<MailSettings>(configuration.GetSection("MailSettings"));
-        //services.AddTransient<IMailService, SMTPMailService>();
+        services.Configure<MailSettings>(configuration.GetSection("MailSettings"));
+        services.AddTransient<IMailService, MailService>();
 
         services.AddAuthentication();
         services.Configure<IdentityOptions>(options =>

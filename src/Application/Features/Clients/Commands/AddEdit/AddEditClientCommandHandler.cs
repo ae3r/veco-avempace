@@ -1,7 +1,4 @@
 
-using System.Net.Mail;
-using System.Net;
-
 namespace Application.Features.Clients.Commands.AddEdit;
 
 /// <summary>
@@ -11,6 +8,8 @@ public class AddEditClientCommandHandler : IRequestHandler<AddEditClientCommand,
 {
     private readonly IApplicationDbContext _context;
     private readonly IMapper _mapper;
+    private readonly IMailService _mailService;
+
 
     /// <summary>
     /// Constructor : Initializes a new instance of AddEditClientCommandHandler 
@@ -19,11 +18,12 @@ public class AddEditClientCommandHandler : IRequestHandler<AddEditClientCommand,
     /// <param name="mapper"></param>
     public AddEditClientCommandHandler(
          IApplicationDbContext context,
-         IMapper mapper
+         IMapper mapper, IMailService mailService
         )
     {
         _context = context;
         _mapper = mapper;
+        _mailService = mailService;
     }
 
     /// <summary>
@@ -51,9 +51,11 @@ public class AddEditClientCommandHandler : IRequestHandler<AddEditClientCommand,
                 await _context.SaveChangesAsync(cancellationToken);
 
                 // Send email after saving the client
-                await SendEmailAsync(clients.Message, clients.Email, clients.Sujet);
-
-
+                var mailRequest = new MailRequest();
+                mailRequest.Subject = clients.Sujet;
+                mailRequest.From = clients.Email;
+                mailRequest.Body = clients.Message;
+                await _mailService.SendAsync(mailRequest).ConfigureAwait(false);
 
                 return await Result<int>.SuccessAsync(clients.Id);
             }
@@ -61,36 +63,6 @@ public class AddEditClientCommandHandler : IRequestHandler<AddEditClientCommand,
         catch (Exception ex)
         {
             return await Result<int>.FailureAsync(new string[] { ex.Message }).ConfigureAwait(false);
-        }
-    }
-
-    private async Task SendEmailAsync(string fromEmail, string bodyEmail, string subject)
-    {
-        try
-        {
-            var smtpClient = new SmtpClient("smtp.hostinger.com")
-            {
-                Port = 587,
-                Credentials = new NetworkCredential("contact@veco-avempace.com", "Contact1!"),
-                EnableSsl = true,
-            };
-
-            var mailMessage = new MailMessage
-            {
-                From = new MailAddress(fromEmail),
-                Subject = subject,
-                Body = bodyEmail,
-                IsBodyHtml = true,
-            };
-
-            mailMessage.To.Add("contact@veco-avempace.com");
-
-            await smtpClient.SendMailAsync(mailMessage);
-        }
-        catch (Exception ex)
-        {
-            // Log or handle the error appropriately
-            Console.WriteLine($"Error sending email: {ex.Message}");
         }
     }
 }
