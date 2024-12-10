@@ -21,7 +21,73 @@
 @await Html.PartialAsync("__PricingPlan")
 <!-- Pricing Plan End -->
 <!-- Quote Start -->
-@await Html.PartialAsync("__Quote")
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title position-relative pb-3 mb-5">
+                    <h5 class="fw-bold text-primary text-uppercase">Nous contacter</h5>
+                    <h1 class="mb-0">Une question ? Échangez avec nous !</h1>
+                </div>
+                <div class="row gx-3">
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                        <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>On vous répond sous 24h</h5>
+                    </div>
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                        <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>Nos experts vous accompagnent</h5>
+                    </div>
+                </div>
+                <p class="mb-4">
+                    Chez VECO Avempace, votre satisfaction est notre priorité. Nous
+                    sommes à votre écoute pour comprendre vos besoins et vous accompagner
+                    tout au long de votre projet. Qu’il s’agisse d’un conseil personnalisé, d’un
+                    accompagnement technique ou d’une solution adaptée à votre budget et vos
+                    attentes, notre équipe se tient prête à répondre à vos questions. Ensemble,
+
+                    nous trouverons les technologies les plus adaptées pour concrétiser vos
+                    idées et faire avancer votre transition vers une mobilité électrique durable.
+                </p>
+                <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                        <i class="fa fa-phone-alt text-white"></i>
+                    </div>
+                    <div class="ps-4">
+                        <h5 class="mb-2">Pour toute question appelez :</h5>
+                        <h6 class="text-primary mb-0">+212 6 43 17 75 83</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
+                    <form id="clients_form">
+                        <div class="row g-3">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" asp-for="Input.Id" class="ignore" />
+                            <div class="col-xl-12">
+                                <input type="text" asp-for="Input.Nom" class="form-control bg-light border-0" placeholder="Nom & Prénom" style="height: 55px;">
+                            </div>
+                            <div class="col-6">
+                                <input type="email" asp-for="Input.Email" class="form-control bg-light border-0" placeholder="Adresse électronique" style="height: 55px;">
+                            </div>
+                            <div class="col-6">
+                                <input type="tel" asp-for="Input.Tel" class="form-control bg-light border-0" placeholder="Téléphone" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <input type="text" asp-for="Input.Sujet" class="form-control bg-light border-0" placeholder="Sujet" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <textarea asp-for="Input.Message" class="form-control bg-light border-0" rows="4" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-dark w-100 py-3" type="submit" id="submitButton">Envoyer</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Quote End -->
 <!-- Testimonial Start -->
 @* @await Html.PartialAsync("__Testimonial") *@
@@ -35,3 +101,23 @@
 <!-- Vendor Start -->
 @await Html.PartialAsync("__Vendor")
 <!-- Vendor End -->
+
+<link rel="stylesheet" media="screen, print" href="~/css/notifications/toastr/toastr.min.css" />
+<script type="text/javascript" src="~/lib/jquery/dist/jquery-3.4.1.min.js" asp-append-version="true"></script>
+<script type="text/javascript" src="~/lib/axios/dist/axios.min.js" asp-append-version="true"></script>
+<script type="text/javascript" src="~/js/notifications/toastr/toastr.min.js" asp-append-version="true"></script>
+
+<script type="text/javascript">
+    $('#clients_form #submitButton').click(function (e) {
+            const form = document.querySelector('#clients_form');
+
+                const request = $('#clients_form').serialize();
+                axios.post('@Url.Page("/")', request).then(res => {
+                    toastr["info"]('Message envoyé avec succès.');
+                });
+
+            event.preventDefault();
+            event.stopPropagation();
+        })
+</script>
+
