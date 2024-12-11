@@ -6,8 +6,8 @@
             <h1 class="mb-0">Rejoignez la révolution électrique avec VECO Avempace</h1>
         </div>
 
-        <!-- Maison Button -->
-        <div class="text-center mb-5">
+        <!-- Maison Button (Centered) -->
+        <div class="d-flex justify-content-center mb-5">
             <button id="maisonButton" class="btn btn-light text-center shadow-lg rounded maison-btn" onclick="showStep2()">
                 <div class="maison-icon">
                     <i class="bi bi-house-door-fill"></i> <!-- House icon -->
@@ -16,28 +16,10 @@
             </button>
         </div>
 
-        <div class="text-center mb-5">
-            <button id="appartementButton" class="btn btn-light text-center shadow-lg rounded appartement-btn">
-                <div class="appartement-icon">
-                    <i class="bi bi-building"></i> <!-- Appartement icon -->
-                </div>
-                <div class="appartement-text">Appartement</div>
-            </button>
-        </div>
-
-        <div class="text-center mb-5">
-            <button id="entrepriseButton" class="btn btn-light text-center shadow-lg rounded entreprise-btn">
-                <div class="entreprise-icon">
-                    <i class="bi bi-building"></i> <!-- Entreprise icon -->
-                </div>
-                <div class="entreprise-text">Entreprise</div>
-            </button>
-        </div>
-
-        <!-- Step 2 Section -->
-        <div id="step2Content" style="display: none; margin-top: 20px;">
-            <h4 class="text-center">La distance entre le tableau électrique et le point de charge sera de (en mètres)...</h4>
-            <div class="slider-container text-center mt-4">
+        <!-- Styled Box for Slider Section -->
+        <div id="step2Content" class="styled-box" style="display: none; margin-top: 80px;">
+            <h5 class="text-center mb-4">La distance entre le tableau électrique et le point de charge sera de (en mètres)...</h5>
+            <div class="slider-container text-center">
                 <!-- Slider -->
                 <input type="range"
                        id="distanceSlider"
@@ -49,41 +31,66 @@
                        oninput="updateSliderLabel(this.value)"
                        onchange="displayRecommendation(this.value)" />
                 <!-- Labels -->
-                <div class="slider-labels">
+                <div class="slider-labels mt-3">
                     <span></span> <!-- Placeholder -->
                     <span>- 10m</span>
                     <span>10m &lt; d &lt; 20m</span>
                     <span>+ 20m</span>
                 </div>
                 <!-- Output -->
-                <div id="sliderOutput" class="slider-output mt-3"></div>
+                <div id="sliderOutput" class="slider-output mt-4"></div>
             </div>
+        </div>
 
-            <!-- Recommendation Section -->
-            <div id="recommendation" style="display: none; margin-top: 20px; text-align: center;">
-                <h5 id="recommendationText">Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
-                <div class="choices mt-3">
-                    <button class="btn btn-primary choice-button" onclick="handleChoice('yes')">Oui, (recommandé)</button>
-                    <button class="btn btn-secondary choice-button" onclick="handleChoice('no')">Non</button>
+        <!-- Choices Section -->
+        <div id="choiceSection" class="styled-box" style="display: none; margin-top: 30px; text-align: center;">
+            <h5>Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
+            <div class="choices mt-3">
+                <button class="btn btn-primary choice-button" onclick="handleChoice('yes')">Oui, (recommandé)</button>
+                <button class="btn btn-primary choice-button" onclick="handleChoice('no')">Non</button>
+            </div>
+        </div>
+
+        <!-- Space between choices section and recommendation section -->
+        <div class="mt-5"></div>
+
+        <!-- Recommendation Section -->
+        <div id="recommendation" style="display: none; margin-top: 50px; text-align: center;">
+            <h5 id="recommendationText">Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
+            <div class="choices mt-3">
+                <button class="btn btn-primary choice-button" onclick="handleChoice('yes')">Oui, (recommandé)</button>
+                <button class="btn btn-primary choice-button" onclick="handleChoice('no')">Non</button>
+            </div>
+        </div>
+
+        <!-- Final Step Box -->
+        <div id="finalStepBox" style="display: none; margin-top: 20px; text-align: center;">
+            <div class="final-box">
+                <!-- Adjusted CSS for responsive width -->
+                <span id="finalStepText"></span>
+                <div id="finalAmount" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
+                <div id="finalOffer" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;">
+                    <!-- Offer Text Will Appear Here -->
                 </div>
             </div>
+        </div>
 
-            <!-- Offer Text -->
-            <div id="offerText" style="display: none; margin-top: 20px; text-align: center; color: #007bff; font-weight: bold;">
-                + Forfaits sérénité dés 99,90 MAD/Mois
+        <!-- New Text Box with Project Details -->
+        <div id="projectDetails" style="display: none; margin-top: 20px; text-align: center;">
+            <div class="project-details-box">
+                <h5>Choisissez VECO-Avempace pour votre projet de borne de recharge :</h5>
+                <ul class="text-left mt-3">
+                    <li><strong>Simplicité garantie :</strong> Profitez d’un accompagnement personnalisé à chaque étape, avec un conseiller dédié à votre écoute.</li>
+                    <li><strong>Rapidité exceptionnelle :</strong> Faites installer votre borne de recharge en moins d’un mois pour profiter de vos trajets sans attendre.</li>
+                    <li><strong>Fiabilité assurée :</strong> Faites confiance à notre réseau d’électriciens certifiés IRVE pour une pose sécurisée et conforme.</li>
+                </ul>
+                <p><strong>Transformez votre quotidien avec une solution clé en main, rapide et fiable, adaptée à vos besoins ! 💡⚡</strong></p>
             </div>
+        </div>
 
-            <!-- Final Step Box -->
-            <div id="finalStepBox" style="display: none; margin-top: 20px; text-align: center;">
-                <div class="final-box">
-                    <span id="finalStepText"></span>
-                </div>
-            </div>
-
-            <!-- Retour Button -->
-            <div class="text-center mt-4">
-                <button class="btn btn-outline-primary retour-btn" onclick="goBack()">Retour</button>
-            </div>
+        <!-- Retour Button -->
+        <div class="text-center mt-5">
+            <button class="btn btn-outline-primary retour-btn" onclick="goBack()">Retour</button>
         </div>
     </div>
 </div>
@@ -92,8 +99,8 @@
 <style>
     /* Maison Button */
     .maison-btn {
-        width: 800px;
-        height: 140px;
+        width: 500px;
+        height: 130px; /* Increased height */
         border: 1px solid #ddd;
         display: flex;
         flex-direction: column;
@@ -119,62 +126,13 @@
         margin-top: 10px;
     }
 
-    /* Appartement Button */
-    .appartement-btn {
-        width: 800px;
-        height: 140px;
+    /* Styled Box */
+    .styled-box {
+        background-color: #f8f9fa;
         border: 1px solid #ddd;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        color: #333;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-        .appartement-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-        }
-
-    .appartement-icon {
-        font-size: 40px;
-        color: #00aaff;
-    }
-
-    .appartement-text {
-        font-weight: bold;
-        margin-top: 10px;
-    }
-
-    /* Entreprise Button */
-    .entreprise-btn {
-        width: 800px;
-        height: 140px;
-        border: 1px solid #ddd;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        color: #333;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-        .entreprise-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-        }
-
-    .entreprise-icon {
-        font-size: 40px;
-        color: #00aaff;
-    }
-
-    .entreprise-text {
-        font-weight: bold;
-        margin-top: 10px;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     /* Slider */
@@ -197,7 +155,7 @@
         color: #333;
     }
 
-    /* Recommendation Buttons */
+    /* Choice Buttons */
     .choice-button {
         width: 250px;
         text-align: center;
@@ -222,12 +180,50 @@
         border-radius: 8px;
         font-size: 18px;
         font-weight: bold;
-        display: inline-block;
-        margin-top: 20px;
+        width: 90%; /* Responsive width */
+        max-width: 500px; /* Maximum width */
+        margin: 0 auto; /* Center align */
     }
-</style>
 
-<!-- JavaScript -->
+    /* New Project Details Box */
+    .project-details-box {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        width: 90%; /* Responsive width */
+        max-width: 500px; /* Maximum width */
+        margin: 0 auto; /* Center align */
+    }
+
+        .project-details-box h5 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .project-details-box ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
+        .project-details-box p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 15px;
+        }
+
+    /* Retour Button */
+    .retour-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 8px;
+    }
+
+    </style>
+
 <script>
     let selectedDistance = 0;
 
@@ -244,9 +240,8 @@
         selectedDistance = value;
         const output = document.getElementById("sliderOutput");
 
-        // Placeholder
         if (value == 0) {
-            output.innerText = ""; // Empty for placeholder
+            output.innerText = ""; // Placeholder
         } else if (value == 1) {
             output.innerText = "- 10m";
         } else if (value == 2) {
@@ -256,37 +251,60 @@
         }
     }
 
-    function displayRecommendation(value) {
-        // Only display recommendations if the user selects a valid distance
-        if (value > 0) {
-            document.getElementById("recommendation").style.display = "block";
-        } else {
-            document.getElementById("recommendation").style.display = "none";
-        }
-    }
-
-    function handleChoice(choice) {
-        const offerText = document.getElementById("offerText");
+        function handleChoice(choice) {
         const finalStepBox = document.getElementById("finalStepBox");
         const finalStepText = document.getElementById("finalStepText");
+        const finalAmount = document.getElementById("finalAmount");
+        const finalOffer = document.getElementById("finalOffer");
+        const projectDetails = document.getElementById("projectDetails");
 
-        if (choice === "yes" && selectedDistance > 0) {
-            offerText.style.display = "block";
-        } else {
-            offerText.style.display = "none";
-        }
-
+        // Set text content dynamically
         if (selectedDistance == 1) {
-            finalStepText.innerText = "Votre projet à partir de 7499 MAD";
+            finalStepText.innerText = "Votre projet à partir de :";
+            finalAmount.innerText = "7,499 MAD";
         } else if (selectedDistance == 2) {
-            finalStepText.innerText = "Votre projet à partir de 7999 MAD";
+            finalStepText.innerText = "Votre projet à partir de :";
+            finalAmount.innerText = "7,999 MAD";
         } else if (selectedDistance == 3) {
-            finalStepText.innerText = "Votre projet à partir de 8499 MAD";
+            finalStepText.innerText = "Votre projet à partir de :";
+            finalAmount.innerText = "8,499 MAD";
         }
+
+        if (choice === "yes") {
+            finalOffer.innerText = "+ Forfaits sérénité dès 99,90 MAD/Mois";
+        } else {
+            finalOffer.innerText = "";
+        }
+
+        // Display both sections
         finalStepBox.style.display = "block";
+        projectDetails.style.display = "block";
     }
+
+    // Ensure to reset the blue box when slider value changes
+    function displayRecommendation(value) {
+        const finalStepBox = document.getElementById("finalStepBox");
+        const finalStepText = document.getElementById("finalStepText");
+        const finalAmount = document.getElementById("finalAmount");
+        const finalOffer = document.getElementById("finalOffer");
+
+        // Reset and hide the blue box
+        finalStepText.innerText = "";
+        finalAmount.innerText = "";
+        finalOffer.innerText = "";
+        finalStepBox.style.display = "none";
+
+        if (value > 0) {
+            document.getElementById("choiceSection").style.display = "block";
+        } else {
+            document.getElementById("choiceSection").style.display = "none";
+        }
+    }
+
 
     function goBack() {
         document.getElementById("step2Content").style.display = "none";
+        document.getElementById("choiceSection").style.display = "none";
+        document.getElementById("finalStepBox").style.display = "none";
     }
 </script>

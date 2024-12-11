@@ -33,26 +33,28 @@ public class MailService : IMailService
         {
             var smtpClient = new SmtpClient(_mailSettings.Host)
             {
-                Port = 587,
+                Port = _mailSettings.Port,
                 Credentials = new NetworkCredential(_mailSettings.UserName, _mailSettings.Password),
                 EnableSsl = true,
             };
 
             var mailMessage = new MailMessage
             {
-                From = new MailAddress(request.From),
+                From = new MailAddress(_mailSettings.UserName, "Veco Avempace Contact"), // Use the authenticated user email here
                 Subject = request.Subject,
                 Body = request.Body,
                 IsBodyHtml = true,
             };
 
-            mailMessage.To.Add(_mailSettings.To);
+            mailMessage.To.Add(_mailSettings.To); // Send to the configured recipient
+            mailMessage.ReplyToList.Add(new MailAddress(request.From)); // Set the Reply-To address to the user's email
 
             await smtpClient.SendMailAsync(mailMessage);
         }
-        catch (System.Exception ex)
+        catch (Exception ex)
         {
-            _logger.LogError(ex.Message, ex);
+            // Handle exception
+            Console.WriteLine(ex.Message);
         }
     }
 }
