@@ -42,7 +42,12 @@ public class MailService : IMailService
             {
                 From = new MailAddress(_mailSettings.UserName, "Veco Avempace Contact"), // Use the authenticated user email here
                 Subject = request.Subject,
-                Body = request.Body,
+                Body = $@"
+        <p><strong>Nom & prénom :</strong> {request.Nom}</p>
+        <p><strong>Adresse électronique :</strong> {request.Email}</p>
+        <p><strong>Téléphone :</strong> {request.Phone}</p>
+        <p><strong>Sujet :</strong> {request.Subject}</p>
+        <p><strong>Adresse :</strong> {request.Adresse}</p>" + request.Body,
                 IsBodyHtml = true,
             };
 
