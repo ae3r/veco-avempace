@@ -59,6 +59,9 @@ public class AddEditClientCommandHandler : IRequestHandler<AddEditClientCommand,
                 mailRequest.Phone = clients.Tel;
                 mailRequest.Adresse = clients.Adresse;
                 mailRequest.Nom = clients.Nom;
+                mailRequest.TypeWF = request.TypeWF;
+                mailRequest.Distance = request.Distance;
+                mailRequest.IsConsumptionMonitoring = request.IsConsumptionMonitoring;
                 await _mailService.SendAsync(mailRequest).ConfigureAwait(false);
 
                 return await Result<int>.SuccessAsync(clients.Id);

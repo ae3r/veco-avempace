@@ -37,17 +37,36 @@ public class MailService : IMailService
                 Credentials = new NetworkCredential(_mailSettings.UserName, _mailSettings.Password),
                 EnableSsl = true,
             };
+            string body = "";
+            if (request.TypeWF == Domain.Enums.TypeWFEnum.Maison)
+            {
+                body = $@"
+        <p><strong>Nom & prénom :</strong> {request.Nom}</p>
+        <p><strong>Adresse électronique :</strong> {request.Email}</p>
+        <p><strong>Téléphone :</strong> {request.Phone}</p>
+        <p><strong>Sujet :</strong> {request.Subject}</p>
+        <p><strong>Adresse :</strong> {request.Adresse}</p> 
+        <p><strong>Demande pour :</strong> {request.TypeWF.ToString()}</p> 
+        <p><strong>La distance entre le tableau électrique et le point de charge :</strong> {request.Distance}</p> 
+        <p><strong>Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge :</strong> {request.IsConsumptionMonitoring}</p>" + request.Body;
+
+            }
+            else
+            {
+                body = $@"
+        <p><strong>Nom & prénom :</strong> {request.Nom}</p>
+        <p><strong>Adresse électronique :</strong> {request.Email}</p>
+        <p><strong>Téléphone :</strong> {request.Phone}</p>
+        <p><strong>Sujet :</strong> {request.Subject}</p>
+        <p><strong>Adresse :</strong> {request.Adresse}</p>" + request.Body;
+
+            }
 
             var mailMessage = new MailMessage
             {
                 From = new MailAddress(_mailSettings.UserName, "Veco Avempace Contact"), // Use the authenticated user email here
                 Subject = request.Subject,
-                Body = $@"
-        <p><strong>Nom & prénom :</strong> {request.Nom}</p>
-        <p><strong>Adresse électronique :</strong> {request.Email}</p>
-        <p><strong>Téléphone :</strong> {request.Phone}</p>
-        <p><strong>Sujet :</strong> {request.Subject}</p>
-        <p><strong>Adresse :</strong> {request.Adresse}</p>" + request.Body,
+                Body = body,
                 IsBodyHtml = true,
             };
 
