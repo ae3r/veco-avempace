@@ -8,8 +8,392 @@
 @await Html.PartialAsync("__FactCounter") *@
 <!-- Facts Start -->
 <!-- Service Start -->
-@await Html.PartialAsync("__Offres")
+@* @await Html.PartialAsync("__Offres") *@
+<!-- Styles -->
+<style>
+    /* Maison Button */
+    .maison-btn {
+        width: 500px;
+        height: 130px; /* Increased height */
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #333;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .maison-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+    .maison-icon {
+        font-size: 40px;
+        color: #00aaff;
+    }
+
+    .maison-text {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    /* Styled Box */
+    .styled-box {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Slider */
+    .slider-container .slider {
+        width: 60%;
+    }
+
+    .slider-labels {
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        margin: 0 auto;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .slider-output {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333;
+    }
+
+    /* Choice Buttons */
+    .choice-button {
+        width: 250px;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+        .choice-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+    /* Final Step Box */
+    .final-box {
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        width: 90%; /* Responsive width */
+        max-width: 500px; /* Maximum width */
+        margin: 0 auto; /* Center align */
+    }
+
+    /* New Project Details Box */
+    .project-details-box {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        width: 90%; /* Responsive width */
+        max-width: 500px; /* Maximum width */
+        margin: 0 auto; /* Center align */
+    }
+
+        .project-details-box h5 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .project-details-box ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
+        .project-details-box p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 15px;
+        }
+
+    /* Retour Button */
+    .retour-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 8px;
+    }
+
+</style>
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <!-- Section Title -->
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-primary text-uppercase">Faites-nous confiance !</h5>
+            <h1 class="mb-0">Rejoignez la révolution électrique avec VECO Avempace</h1>
+        </div>
+
+        <!-- Maison Button (Centered) -->
+        <div class="d-flex justify-content-center mb-5">
+            <button id="maisonButton" class="btn btn-light text-center shadow-lg rounded maison-btn" onclick="showStep2()">
+                <div class="maison-icon">
+                    <i class="bi bi-house-door-fill"></i> <!-- House icon -->
+                </div>
+                <div class="maison-text">Maison</div>
+            </button>
+        </div>
+
+        <!-- Styled Box for Slider Section -->
+        <div id="step2Content" class="styled-box" style="display: none; margin-top: 80px;">
+            <h5 class="text-center mb-4">La distance entre le tableau électrique et le point de charge sera de (en mètres)...</h5>
+            <div class="slider-container text-center">
+                <!-- Slider -->
+                <input type="range"
+                       id="distanceSlider"
+                       min="0"
+                       max="3"
+                       value="0"
+                       step="1"
+                       class="slider"
+                       oninput="updateSliderLabel(this.value)"
+                       onchange="displayRecommendation(this.value)" />
+                <!-- Labels -->
+                <div class="slider-labels mt-3">
+                    <span></span> <!-- Placeholder -->
+                    <span>- 10m</span>
+                    <span>10m &lt; d &lt; 20m</span>
+                    <span>+ 20m</span>
+                </div>
+                <!-- Output -->
+                <div id="sliderOutput" class="slider-output mt-4"></div>
+            </div>
+        </div>
+
+        <!-- Choices Section -->
+        <div id="choiceSection" class="styled-box" style="display: none; margin-top: 30px; text-align: center;">
+            <h5>Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
+            <div class="choices mt-3">
+                <button class="btn btn-primary choice-button" onclick="handleChoice('yes')">Oui, (recommandé)</button>
+                <button class="btn btn-primary choice-button" onclick="handleChoice('no')">Non</button>
+            </div>
+        </div>
+
+        <!-- Space between choices section and recommendation section -->
+        <div class="mt-5"></div>
+
+        <!-- Recommendation Section -->
+        <div id="recommendation" style="display: none; margin-top: 50px; text-align: center;">
+            <h5 id="recommendationText">Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
+            <div class="choices mt-3">
+                <button class="btn btn-primary choice-button" onclick="handleChoice('yes')">Oui, (recommandé)</button>
+                <button class="btn btn-primary choice-button" onclick="handleChoice('no')">Non</button>
+            </div>
+        </div>
+
+        <!-- Final Step Box -->
+        <div id="finalStepBox" style="display: none; margin-top: 20px; text-align: center;">
+            <div class="final-box">
+                <!-- Adjusted CSS for responsive width -->
+                <span id="finalStepText"></span>
+                <div id="finalAmount" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
+                <div id="finalOffer" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;">
+                    <!-- Offer Text Will Appear Here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- New Text Box with Project Details -->
+        <div id="projectDetails" style="display: none; margin-top: 20px; text-align: center;">
+            <div class="project-details-box">
+                <h5>Choisissez VECO-Avempace pour votre projet de borne de recharge :</h5>
+                <ul class="text-left mt-3">
+                    <li><strong>Simplicité garantie :</strong> Profitez d’un accompagnement personnalisé à chaque étape, avec un conseiller dédié à votre écoute.</li>
+                    <li><strong>Rapidité exceptionnelle :</strong> Faites installer votre borne de recharge en moins d’un mois pour profiter de vos trajets sans attendre.</li>
+                    <li><strong>Fiabilité assurée :</strong> Faites confiance à notre réseau d’électriciens certifiés IRVE pour une pose sécurisée et conforme.</li>
+                </ul>
+                <p><strong>Transformez votre quotidien avec une solution clé en main, rapide et fiable, adaptée à vos besoins ! 💡⚡</strong></p>
+            </div>
+        </div>
+        <!-- Contact -->
+        <div id="contactblockid" style="display: none; margin-top: 20px; text-align: center;">
+            <div class="col-lg-6 offset-lg-3 wow slideInUp" data-wow-delay="0.3s">
+                <form id="clients_form">
+                    <div class="row g-3">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" asp-for="Input.Id" class="ignore" />
+                        <input type="hidden" asp-for="Input.TypeWF" class="ignore" />
+                        <input type="hidden" asp-for="Input.Distance" class="ignore" />
+                        <input type="hidden" asp-for="Input.IsConsumptionMonitoring" class="ignore" />
+                        <div class="col-md-6">
+                            <input type="text" asp-for="Input.Nom" class="form-control border-0 bg-light px-4" placeholder="Nom & Prénom" style="height: 55px;">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" asp-for="Input.Email" class="form-control border-0 bg-light px-4" placeholder="Adresse électronique" style="height: 55px;">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" asp-for="Input.Tel" class="form-control border-0 bg-light px-4" placeholder="Téléphone" style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" asp-for="Input.Sujet" class="form-control border-0 bg-light px-4" placeholder="Sujet" style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" asp-for="Input.Adresse" class="form-control border-0 bg-light px-4" placeholder="Adresse" style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                            <textarea asp-for="Input.Message" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit" id="submitButton">Envoyer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Retour Button -->
+        <div class="text-center mt-5">
+            <button class="btn btn-outline-primary retour-btn" onclick="goBack()">Retour</button>
+        </div>
+    </div>
+</div>
+
 <!-- Service End -->
 <!-- Vendor Start -->
 @await Html.PartialAsync("__Vendor")
 <!-- Vendor End -->
+
+<script>
+    let selectedDistance = 0;
+
+    function showStep2() {
+        document.getElementById("step2Content").style.display = "block";
+          $('#Input_TypeWF').val("1");
+         // document.getElementById('#clients_form #TypeWF').value = "1";
+        // Reset slider to placeholder
+        const slider = document.getElementById("distanceSlider");
+        slider.value = 0;
+        updateSliderLabel(0);
+    }
+
+    function updateSliderLabel(value) {
+        selectedDistance = value;
+        const output = document.getElementById("sliderOutput");
+
+        if (value == 0) {
+            output.innerText = ""; // Placeholder
+        } else if (value == 1) {
+            output.innerText = "- 10m";
+            $('#Input_Distance').val("- 10m");
+        } else if (value == 2) {
+            output.innerText = "10m < d < 20m";
+             $('#Input_Distance').val("10m < d < 20m");
+        } else if (value == 3) {
+            output.innerText = "+ 20m";
+            $('#Input_Distance').val("+ 20m");
+        }
+    }
+
+        function handleChoice(choice) {
+        const finalStepBox = document.getElementById("finalStepBox");
+        const finalStepText = document.getElementById("finalStepText");
+        const finalAmount = document.getElementById("finalAmount");
+        const finalOffer = document.getElementById("finalOffer");
+        const projectDetails = document.getElementById("projectDetails");
+        const contactblockid = document.getElementById("contactblockid");
+
+        // Set text content dynamically
+        if (selectedDistance == 1) {
+            finalStepText.innerText = "Votre projet à partir de :";
+            finalAmount.innerText = "7 499 MAD";
+        } else if (selectedDistance == 2) {
+            finalStepText.innerText = "Votre projet à partir de :";
+            finalAmount.innerText = "7 999 MAD";
+        } else if (selectedDistance == 3) {
+            finalStepText.innerText = "Votre projet à partir de :";
+            finalAmount.innerText = "8 499 MAD";
+        }
+
+        if (choice === "yes") {
+            finalOffer.innerText = "+ Forfaits sérénité dès 99,90 MAD/Mois";
+             $('#Input_IsConsumptionMonitoring').val("Oui");
+        } else {
+            finalOffer.innerText = "";
+            $('#Input_IsConsumptionMonitoring').val("Non");
+        }
+
+        // Display both sections
+        finalStepBox.style.display = "block";
+        projectDetails.style.display = "block";
+        contactblockid.style.display = "block";
+    }
+
+    // Ensure to reset the blue box when slider value changes
+    function displayRecommendation(value) {
+        const finalStepBox = document.getElementById("finalStepBox");
+        const finalStepText = document.getElementById("finalStepText");
+        const finalAmount = document.getElementById("finalAmount");
+        const finalOffer = document.getElementById("finalOffer");
+
+        // Reset and hide the blue box
+        finalStepText.innerText = "";
+        finalAmount.innerText = "";
+        finalOffer.innerText = "";
+        finalStepBox.style.display = "none";
+
+        if (value > 0) {
+            document.getElementById("choiceSection").style.display = "block";
+        } else {
+            document.getElementById("choiceSection").style.display = "none";
+        }
+    }
+
+
+    function goBack() {
+        // Hide all elements that need to be hidden
+        document.getElementById("step2Content").style.display = "none";
+        document.getElementById("choiceSection").style.display = "none";
+        document.getElementById("finalStepBox").style.display = "none";
+        document.getElementById("projectDetails").style.display = "none";
+        document.getElementById("contactblockid").style.display = "none";
+
+        // Show only the "maison" button
+        var maisonButton = document.getElementById("maisonButton");
+        if (maisonButton){
+            maisonButton.style.display = "block";} // Ensure the button is visible
+    }
+</script>
+
+<link rel="stylesheet" media="screen, print" href="~/css/notifications/toastr/toastr.min.css" />
+<script type="text/javascript" src="~/lib/jquery/dist/jquery-3.4.1.min.js" asp-append-version="true"></script>
+<script type="text/javascript" src="~/lib/axios/dist/axios.min.js" asp-append-version="true"></script>
+<script type="text/javascript" src="~/js/notifications/toastr/toastr.min.js" asp-append-version="true"></script>
+
+<script type="text/javascript">
+    $('#clients_form #submitButton').click(function (e) {
+            const form = document.querySelector('#clients_form');
+
+                const request = $('#clients_form').serialize();
+               // const type = "1";
+                const type = $('#Input_TypeWF').val();
+                const distance = $('#Input_Distance').val();
+                const isConsumptionMonitoring = $('#Input_IsConsumptionMonitoring').val();
+                axios.post('@Url.Page("/Offres")?type=' + type + '&distance=' + distance + '&isConsumptionMonitoring=' + isConsumptionMonitoring, request).then(res => {
+                    toastr["info"]('Message envoyé avec succès.');
+                });
+
+            event.preventDefault();
+            event.stopPropagation();
+        })
+</script>
