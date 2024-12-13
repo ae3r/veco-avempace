@@ -136,6 +136,150 @@
         border-radius: 8px;
     }
 
+    /* Appartment Button */
+    .appartment-btn {
+        width: 500px;
+        height: 130px; /* Same as maison-btn */
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #333;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .appartment-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+    .appartment-icon {
+        font-size: 40px; /* Same size as maison-icon */
+        color: #00aaff;
+    }
+
+    .appartment-text {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    /* Appartment Button */
+    .entreprise-btn {
+        width: 500px;
+        height: 130px; /* Same as maison-btn */
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #333;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .entreprise-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+    .entreprise-icon {
+        font-size: 40px; /* Same size as maison-icon */
+        color: #00aaff;
+    }
+
+    .entreprise-text {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .solution-container, .distance-container {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .solution-box {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px 0;
+        background-color: #f1f1f1;
+        text-align: left;
+        cursor: pointer;
+    }
+
+        .solution-box:hover {
+            background-color: #e0e0e0;
+        }
+
+        .solution-box.selected {
+            background-color: #007bff;
+            color: white;
+        }
+
+    .solution-title {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .solution-description {
+        margin-top: 5px;
+        font-size: 14px;
+    }
+
+    .solution-buttons {
+        margin-top: 20px;
+    }
+
+        .solution-buttons .btn {
+            margin: 5px;
+            width: 120px;
+        }
+
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+    #appartmentSolution {
+        margin-bottom: 20px;
+    }
+
+    .final-box {
+        background-color: #007BFF;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #finalAmount {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    #finalOffer {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
 </style>
 
 <div class="container-fluid py-5">
@@ -154,6 +298,104 @@
                 </div>
                 <div class="maison-text">Maison</div>
             </button>
+        </div>
+
+        <!-- Appartment Button (Centered) -->
+        @* <div class="d-flex justify-content-center mb-5">
+            <button id="appartmentButton" class="btn btn-light text-center shadow-lg rounded appartment-btn" onclick="showStep2()">
+                <div class="appartment-icon">
+                    <i class="bi bi-building"></i> <!-- Appartment icon -->
+                </div>
+                <div class="appartment-text">Appartement</div>
+            </button>
+        </div> *@
+
+        <!-- Initial Appartment Button -->
+        <!-- Appartment Button (Centered, Styled Same as Maison Button) -->
+        <div class="d-flex justify-content-center mb-5">
+            <button id="appartmentButton" class="btn btn-light text-center shadow-lg rounded appartment-btn" onclick="showAppartmentSolution()">
+                <div class="appartment-icon">
+                    <i class="bi bi-building"></i> <!-- Building icon -->
+                </div>
+                <div class="appartment-text">Appartement</div>
+            </button>
+        </div>
+
+        <div class="d-flex justify-content-center mb-5">
+            <button id="entrepriseButton" class="btn btn-light text-center shadow-lg rounded entreprise-btn" onclick="showForm()">
+                <div class="entreprise-icon">
+                    <i class="bi bi-building"></i> <!-- Building icon -->
+                </div>
+                <div class="entreprise-text">Entreprise</div>
+            </button>
+        </div>
+
+        <!-- Appartment Solution Section (Initially Hidden) -->
+        <div id="appartmentSolution" class="solution-container section-margin" style="display: none;">
+            <h5 class="text-center">Vous recherchez une solution de recharge</h5>
+
+            <div class="solution-box collective" onclick="selectSolution('Collective')">
+                <div class="solution-title">Collective</div>
+                <div class="solution-description">
+                    Solution à moindre coût grâce à la mutualisation des installations avec d'autres copropriétaires
+                </div>
+            </div>
+
+            <div class="solution-box individuelle" onclick="selectSolution('Individuelle')">
+                <div class="solution-title">Individuelle</div>
+                <div class="solution-description">
+                    Infrastructure individuelle
+                </div>
+            </div>
+
+            <div class="solution-buttons text-center">
+                <button class="btn btn-outline-primary" onclick="goBack()">Retour</button>
+                <button id="nextButton" class="btn btn-primary" onclick="goToNext()">Suivant</button>
+            </div>
+        </div>
+
+        <!-- Distance Estimation Section (Initially Hidden) -->
+        <div id="distanceEstimation" class="distance-container section-margin" style="display: none;">
+            <h5 class="text-center">Estimation de la distance à mon tableau électrique</h5>
+
+            <div class="form-group">
+                <label for="appartmentFloor">Etage de mon appartement</label>
+                <select id="appartmentFloor" class="form-control">
+                    <option>--Veuillez sélectionner votre choix--</option>
+                    <!-- Generate Options Dynamically with JavaScript -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="parkingFloor">Etage de mon parking</label>
+                <select id="parkingFloor" class="form-control">
+                    <option>--Veuillez sélectionner votre choix--</option>
+                    <!-- Generate Options Dynamically with JavaScript -->
+                </select>
+            </div>
+        </div>
+
+        <div id="dynamicRecommendation" style="display: none; margin-top: 50px; text-align: center;">
+            <h5 id="dynamicRecommendationText">Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
+            <div class="choices mt-3">
+                <button class="btn btn-primary choice-button" onclick="handleChoice2('yes')">Oui, (recommandé)</button>
+                <button class="btn btn-primary choice-button" onclick="handleChoice2('no')">Non</button>
+            </div>
+
+            <!-- Blue Box to Display Final Amount -->
+            <div id="blueBox" style="display: none; margin-top: 20px; text-align: center;">
+                <div class="final-box">
+                    <!-- Adjusted CSS for responsive width -->
+                    <span id="blueBoxText">Votre projet à partir de :</span>
+                    <div id="finalAmountText" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
+                    <div id="finalOfferText" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;">
+                        <!-- Offer Text Will Appear Here -->
+                    </div>
+                    <div id="additionalText" style="margin-top: 10px; font-size: 16px; color: #ffffff;">
+                        <!-- Additional text for "Oui" option will appear here -->
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Styled Box for Slider Section -->
@@ -339,6 +581,12 @@
         contactblockid.style.display = "block";
     }
 
+    function showForm() {
+        const contactblockid = document.getElementById("contactblockid");
+
+        contactblockid.style.display = "block";
+    }
+
     // Ensure to reset the blue box when slider value changes
     function displayRecommendation(value) {
         const finalStepBox = document.getElementById("finalStepBox");
@@ -372,6 +620,111 @@
         var maisonButton = document.getElementById("maisonButton");
         if (maisonButton){
             maisonButton.style.display = "block";} // Ensure the button is visible
+    }
+
+    // Show Appartment Solution Section
+    function showAppartmentSolution() {
+        document.getElementById("appartmentSolution").style.display = "block";
+        document.getElementById("distanceEstimation").style.display = "none";
+    }
+
+    // Go Back to Appartment Button
+    function goBack() {
+        document.getElementById("appartmentSolution").style.display = "none";
+    }
+
+    // Select a Solution
+    let selectedSolution = null;
+    function selectSolution(solution) {
+        selectedSolution = solution;
+
+        // Highlight Selected Box
+        document.querySelectorAll('.solution-box').forEach((box) => {
+            box.classList.remove('selected');
+        });
+        document.querySelector(`.solution-box.${solution.toLowerCase()}`).classList.add('selected');
+    }
+
+    // Go to Distance Estimation Section
+    function goToNext() {
+
+        // Hide Current Section and Show Next
+        document.getElementById("appartmentSolution").style.display = "block";
+        document.getElementById("distanceEstimation").style.display = "block";
+
+        // Populate Select Options Dynamically
+        populateSelectOptions("appartmentFloor", 0, 10);
+        populateSelectOptions("parkingFloor", -3, 0);
+    }
+
+                        let appartmentFloor = null;
+    let parkingFloor = null;
+
+    document.getElementById("appartmentFloor").addEventListener("change", function() {
+        appartmentFloor = parseInt(this.value);
+        checkAndShowRecommendation();
+    });
+
+    document.getElementById("parkingFloor").addEventListener("change", function() {
+        parkingFloor = parseInt(this.value);
+        checkAndShowRecommendation();
+    });
+
+    function checkAndShowRecommendation() {
+        // Ensure both values are selected before displaying the recommendation section
+        if (appartmentFloor !== null && parkingFloor !== null) {
+            const dynamicRecommendation = document.getElementById("dynamicRecommendation");
+            dynamicRecommendation.style.display = "block";
+        }
+    }
+
+    function handleChoice2(choice) {
+        console.log(`User choice: ${choice}`);
+        const contactblockid = document.getElementById("contactblockid");
+        // Show the blue box
+        const blueBox = document.getElementById("blueBox");
+        blueBox.style.display = "block";
+
+        // Calculate the final amount based on the formula
+        const apartmentAmount = 300 * appartmentFloor;
+        const parkingAmount = 300 * Math.abs(parkingFloor); // Use absolute value for parking floor to avoid negative
+        const finalAmount = 7000 + apartmentAmount + parkingAmount; // Use 7000 only once
+
+        // Display the calculated final amount in the blue box
+        const finalAmountText = document.getElementById("finalAmountText");
+        finalAmountText.textContent = `${finalAmount} €`; // Add the currency symbol here
+
+        // Remove the "finalOfferText" text
+        const finalOfferText = document.getElementById("finalOfferText");
+        finalOfferText.textContent = ""; // Remove the "Découvrez nos offres spéciales!" text
+
+        // Handle additional text based on the user's choice
+        const additionalText = document.getElementById("additionalText");
+        if (choice === "yes") {
+            additionalText.textContent = "+ Forfaits sérénité dès 99,90 MAD/Mois"; // Show when "Oui, recommandé" is clicked
+        } else {
+            additionalText.textContent = ""; // Hide when "Non" is clicked
+        }
+        contactblockid.style.display = "block";
+    }
+
+
+    // Populate Select Options
+        function populateSelectOptions(selectId, start, end) {
+        const select = document.getElementById(selectId);
+        select.innerHTML = '<option>--Veuillez sélectionner votre choix--</option>';
+        for (let i = start; i <= end; i++) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.textContent = i;
+            select.appendChild(option);
+        }
+    }
+
+    // Go Back to Solution Selection
+    function goBackToSolution() {
+        document.getElementById("distanceEstimation").style.display = "none";
+        document.getElementById("appartmentSolution").style.display = "block";
     }
 </script>
 
