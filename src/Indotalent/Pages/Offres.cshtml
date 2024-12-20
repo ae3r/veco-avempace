@@ -94,22 +94,23 @@
         border-radius: 8px;
         font-size: 18px;
         font-weight: bold;
-        width: 90%; /* Responsive width */
-        max-width: 500px; /* Maximum width */
-        margin: 0 auto; /* Center align */
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     /* New Project Details Box */
     .project-details-box {
-        background-color: #f4f4f4;
+        /* background-color: #f4f4f4; */
+        background-color: #007bff;
         border: 1px solid #ddd;
         border-radius: 8px;
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         text-align: left;
-        width: 90%; /* Responsive width */
-        max-width: 500px; /* Maximum width */
-        margin: 0 auto; /* Center align */
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
         .project-details-box h5 {
@@ -120,12 +121,14 @@
         .project-details-box ul {
             margin-left: 20px;
             list-style-type: disc;
+            color: white;
         }
 
         .project-details-box p {
             font-size: 18px;
             font-weight: bold;
-            color: #007bff;
+            /* color: #007bff; */
+            color: white;
             margin-top: 15px;
         }
 
@@ -139,7 +142,7 @@
     /* Appartment Button */
     .appartment-btn {
         width: 500px;
-        height: 130px; /* Same as maison-btn */
+        height: 130px;
         border: 1px solid #ddd;
         display: flex;
         flex-direction: column;
@@ -156,7 +159,7 @@
         }
 
     .appartment-icon {
-        font-size: 40px; /* Same size as maison-icon */
+        font-size: 40px;
         color: #00aaff;
     }
 
@@ -165,10 +168,10 @@
         margin-top: 10px;
     }
 
-    /* Appartment Button */
+    /* Entreprise Button */
     .entreprise-btn {
         width: 500px;
-        height: 130px; /* Same as maison-btn */
+        height: 130px;
         border: 1px solid #ddd;
         display: flex;
         flex-direction: column;
@@ -185,7 +188,7 @@
         }
 
     .entreprise-icon {
-        font-size: 40px; /* Same size as maison-icon */
+        font-size: 40px;
         color: #00aaff;
     }
 
@@ -294,28 +297,17 @@
         <div class="d-flex justify-content-center mb-5">
             <button id="maisonButton" class="btn btn-light text-center shadow-lg rounded maison-btn" onclick="showStep2()">
                 <div class="maison-icon">
-                    <i class="bi bi-house-door-fill"></i> <!-- House icon -->
+                    <i class="bi bi-house-door-fill"></i>
                 </div>
                 <div class="maison-text">Maison</div>
             </button>
         </div>
 
-        <!-- Appartment Button (Centered) -->
-        @* <div class="d-flex justify-content-center mb-5">
-            <button id="appartmentButton" class="btn btn-light text-center shadow-lg rounded appartment-btn" onclick="showStep2()">
-                <div class="appartment-icon">
-                    <i class="bi bi-building"></i> <!-- Appartment icon -->
-                </div>
-                <div class="appartment-text">Appartement</div>
-            </button>
-        </div> *@
-
-        <!-- Initial Appartment Button -->
-        <!-- Appartment Button (Centered, Styled Same as Maison Button) -->
+        <!-- Appartement Button (Centered) -->
         <div class="d-flex justify-content-center mb-5">
             <button id="appartmentButton" class="btn btn-light text-center shadow-lg rounded appartment-btn" onclick="showAppartmentSolution()">
                 <div class="appartment-icon">
-                    <i class="bi bi-building"></i> <!-- Building icon -->
+                    <i class="bi bi-building"></i>
                 </div>
                 <div class="appartment-text">Appartement</div>
             </button>
@@ -324,16 +316,15 @@
         <div class="d-flex justify-content-center mb-5">
             <button id="entrepriseButton" class="btn btn-light text-center shadow-lg rounded entreprise-btn" onclick="showForm()">
                 <div class="entreprise-icon">
-                    <i class="bi bi-building"></i> <!-- Building icon -->
+                    <i class="bi bi-building"></i>
                 </div>
                 <div class="entreprise-text">Entreprise</div>
             </button>
         </div>
 
-        <!-- Appartment Solution Section (Initially Hidden) -->
+        <!-- Appartment Solution Section -->
         <div id="appartmentSolution" class="solution-container section-margin" style="display: none;">
             <h5 class="text-center">Vous recherchez une solution de recharge</h5>
-
             <div class="solution-box collective" onclick="selectSolution('Collective')">
                 <div class="solution-title">Collective</div>
                 <div class="solution-description">
@@ -356,25 +347,16 @@
 
         <!-- Distance Estimation Section (Initially Hidden) -->
         <div id="distanceEstimation" class="distance-container section-margin" style="display: none;">
-            <h5 class="text-center">Estimation de la distance à mon tableau électrique</h5>
-
+            <h5 class="text-center">Etage de mon appartement</h5>
             <div class="form-group">
                 <label for="appartmentFloor">Etage de mon appartement</label>
                 <select id="appartmentFloor" class="form-control">
                     <option>--Veuillez sélectionner votre choix--</option>
-                    <!-- Generate Options Dynamically with JavaScript -->
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="parkingFloor">Etage de mon parking</label>
-                <select id="parkingFloor" class="form-control">
-                    <option>--Veuillez sélectionner votre choix--</option>
-                    <!-- Generate Options Dynamically with JavaScript -->
                 </select>
             </div>
         </div>
 
+        <!-- Dynamic Recommendation Section -->
         <div id="dynamicRecommendation" style="display: none; margin-top: 50px; text-align: center;">
             <h5 id="dynamicRecommendationText">Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
             <div class="choices mt-3">
@@ -382,18 +364,12 @@
                 <button class="btn btn-primary choice-button" onclick="handleChoice2('no')">Non</button>
             </div>
 
-            <!-- Blue Box to Display Final Amount -->
             <div id="blueBox" style="display: none; margin-top: 20px; text-align: center;">
                 <div class="final-box">
-                    <!-- Adjusted CSS for responsive width -->
                     <span id="blueBoxText">Votre projet à partir de :</span>
                     <div id="finalAmountText" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
-                    <div id="finalOfferText" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;">
-                        <!-- Offer Text Will Appear Here -->
-                    </div>
-                    <div id="additionalText" style="margin-top: 10px; font-size: 16px; color: #ffffff;">
-                        <!-- Additional text for "Oui" option will appear here -->
-                    </div>
+                    <div id="finalOfferText" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;"></div>
+                    <div id="additionalText" style="margin-top: 10px; font-size: 16px; color: #ffffff;"></div>
                 </div>
             </div>
         </div>
@@ -402,7 +378,6 @@
         <div id="step2Content" class="styled-box" style="display: none; margin-top: 80px;">
             <h5 class="text-center mb-4">La distance entre le tableau électrique et le point de charge sera de (en mètres)...</h5>
             <div class="slider-container text-center">
-                <!-- Slider -->
                 <input type="range"
                        id="distanceSlider"
                        min="0"
@@ -412,14 +387,12 @@
                        class="slider"
                        oninput="updateSliderLabel(this.value)"
                        onchange="displayRecommendation(this.value)" />
-                <!-- Labels -->
                 <div class="slider-labels mt-3">
-                    <span></span> <!-- Placeholder -->
+                    <span></span>
                     <span>- 10m</span>
                     <span>10m &lt; d &lt; 20m</span>
                     <span>+ 20m</span>
                 </div>
-                <!-- Output -->
                 <div id="sliderOutput" class="slider-output mt-4"></div>
             </div>
         </div>
@@ -433,9 +406,6 @@
             </div>
         </div>
 
-        <!-- Space between choices section and recommendation section -->
-        <div class="mt-5"></div>
-
         <!-- Recommendation Section -->
         <div id="recommendation" style="display: none; margin-top: 50px; text-align: center;">
             <h5 id="recommendationText">Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
@@ -445,30 +415,72 @@
             </div>
         </div>
 
-        <!-- Final Step Box -->
-        <div id="finalStepBox" style="display: none; margin-top: 20px; text-align: center;">
-            <div class="final-box">
-                <!-- Adjusted CSS for responsive width -->
-                <span id="finalStepText"></span>
-                <div id="finalAmount" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
-                <div id="finalOffer" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;">
-                    <!-- Offer Text Will Appear Here -->
+        <!-- Maison Sections -->
+        <div class="d-flex justify-content-between align-items-start mt-4">
+            <!-- Left Box (Maison) -->
+            <div class="mx-2">
+                <div id="finalStepBoxLeft" class="final-box" style="display: none;">
+                    <span id="finalStepTextLeft">Votre projet à partir de :</span>
+                    <div id="finalAmountLeft" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
+                    <div id="finalOfferLeft" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;"></div>
                 </div>
+                <div id="projectDetailsLeft" class="project-details-box mt-3" style="display: none;"></div>
+            </div>
+
+            <!-- Middle Box (Maison) -->
+            <div class="mx-2">
+                <div id="finalStepBox" class="final-box" style="display: none;">
+                    <span id="finalStepText">Votre projet à partir de :</span>
+                    <div id="finalAmount" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
+                    <div id="finalOffer" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;"></div>
+                </div>
+                <div id="projectDetails" class="project-details-box mt-3" style="display: none;"></div>
+            </div>
+
+            <!-- Right Box (Maison) -->
+            <div class="mx-2">
+                <div id="finalStepBoxRight" class="final-box" style="display: none;">
+                    <span id="finalStepTextRight">Votre projet à partir de :</span>
+                    <div id="finalAmountRight" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
+                    <div id="finalOfferRight" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;"></div>
+                </div>
+                <div id="projectDetailsRight" class="project-details-box mt-3" style="display: none;color: #ffffff;"></div>
             </div>
         </div>
 
-        <!-- New Text Box with Project Details -->
-        <div id="projectDetails" style="display: none; margin-top: 20px; text-align: center;">
-            <div class="project-details-box">
-                <h5>Choisissez VECO-Avempace pour votre projet de borne de recharge :</h5>
-                <ul class="text-left mt-3">
-                    <li><strong>Simplicité garantie :</strong> Profitez d’un accompagnement personnalisé à chaque étape, avec un conseiller dédié à votre écoute.</li>
-                    <li><strong>Rapidité exceptionnelle :</strong> Faites installer votre borne de recharge en moins d’un mois pour profiter de vos trajets sans attendre.</li>
-                    <li><strong>Fiabilité assurée :</strong> Faites confiance à notre réseau d’électriciens certifiés IRVE pour une pose sécurisée et conforme.</li>
-                </ul>
-                <p><strong>Transformez votre quotidien avec une solution clé en main, rapide et fiable, adaptée à vos besoins ! 💡⚡</strong></p>
+        <!-- Appartement Sections -->
+        <div class="d-flex justify-content-between align-items-start mt-4">
+            <!-- Left Box (Appartement) -->
+            <div class="mx-2">
+                <div id="finalStepBoxLeftAppartement" class="final-box" style="display: none;">
+                    <span id="finalStepTextLeftAppartement">Votre projet à partir de :</span>
+                    <div id="finalAmountLeftAppartement" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
+                    <div id="finalOfferLeftAppartement" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;"></div>
+                </div>
+                <div id="projectDetailsLeftAppartement" class="project-details-box mt-3" style="display: none;"></div>
+            </div>
+
+            <!-- Middle Box (Appartement) -->
+            <div class="mx-2">
+                <div id="finalStepBoxAppartement" class="final-box" style="display: none;">
+                    <span id="finalStepTextAppartement">Votre projet à partir de :</span>
+                    <div id="finalAmountAppartement" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
+                    <div id="finalOfferAppartement" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;"></div>
+                </div>
+                <div id="projectDetailsAppartement" class="project-details-box mt-3" style="display: none;"></div>
+            </div>
+
+            <!-- Right Box (Appartement) -->
+            <div class="mx-2">
+                <div id="finalStepBoxRightAppartement" class="final-box" style="display: none;">
+                    <span id="finalStepTextRightAppartement">Votre projet à partir de :</span>
+                    <div id="finalAmountRightAppartement" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
+                    <div id="finalOfferRightAppartement" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;"></div>
+                </div>
+                <div id="projectDetailsRightAppartement" class="project-details-box mt-3" style="display: none;"></div>
             </div>
         </div>
+
         <!-- Contact -->
         <div id="contactblockid" style="display: none; margin-top: 20px; text-align: center;">
             <div class="col-lg-6 offset-lg-3 wow slideInUp" data-wow-delay="0.3s">
@@ -504,10 +516,10 @@
                 </form>
             </div>
         </div>
-        <!-- Retour Button -->
-        <div class="text-center mt-5">
-            <button class="btn btn-outline-primary retour-btn" onclick="goBack()">Retour</button>
-        </div>
+    </div>
+    <!-- Retour Button -->
+    <div class="text-center mt-5">
+        <button class="btn btn-outline-primary retour-btn" onclick="goBack()">Retour</button>
     </div>
 </div>
 
@@ -517,215 +529,327 @@
 <!-- Vendor End -->
 
 <script>
-    let selectedDistance = 0;
+        let selectedDistance = 0;
+        let appartmentFloor = null;
 
-    function showStep2() {
-        document.getElementById("step2Content").style.display = "block";
-          $('#Input_TypeWF').val("1");
-         // document.getElementById('#clients_form #TypeWF').value = "1";
-        // Reset slider to placeholder
-        const slider = document.getElementById("distanceSlider");
-        slider.value = 0;
-        updateSliderLabel(0);
-    }
+        const formattedProjectDetails = `
+    <p>Une solution pratique et économique, idéale pour les particuliers ou petites entreprises recherchant une borne de recharge simple, fiable et performante.</p>
+    <br><br><br>
+    <p>Principales fonctionnalités :</p>
+    <ul style="list-style-type: disc; margin-left:20px;">
+      <li>Puissance maximale 7,4kW monophasé</li>
+      <li>Gestion via application mobile</li>
+      <li>Connectivité Bluetooth/WiFi</li>
+      <li>Compatibilité avec les panneaux photovoltaïques</li>
+      <li>Classe de protection IP55</li>
+    </ul>
+    `;
 
-    function updateSliderLabel(value) {
-        selectedDistance = value;
-        const output = document.getElementById("sliderOutput");
+        function showStep2() {
+            document.getElementById("step2Content").style.display = "block";
+            document.getElementById("appartmentButton").style.display = "none";
+            document.getElementById("entrepriseButton").style.display = "none";
 
-        if (value == 0) {
-            output.innerText = ""; // Placeholder
-        } else if (value == 1) {
-            output.innerText = "- 10m";
-            $('#Input_Distance').val("- 10m");
-        } else if (value == 2) {
-            output.innerText = "10m < d < 20m";
-             $('#Input_Distance').val("10m < d < 20m");
-        } else if (value == 3) {
-            output.innerText = "+ 20m";
-            $('#Input_Distance').val("+ 20m");
+            $('#Input_TypeWF').val("1");
+            const slider = document.getElementById("distanceSlider");
+            slider.value = 0;
+            updateSliderLabel(0);
         }
-    }
+
+        function updateSliderLabel(value) {
+            selectedDistance = value;
+            const output = document.getElementById("sliderOutput");
+
+            if (value == 0) {
+                output.innerText = "";
+            } else if (value == 1) {
+                output.innerText = "- 10m";
+                $('#Input_Distance').val("- 10m");
+            } else if (value == 2) {
+                output.innerText = "10m < d < 20m";
+                $('#Input_Distance').val("10m < d < 20m");
+            } else if (value == 3) {
+                output.innerText = "+ 20m";
+                $('#Input_Distance').val("+ 20m");
+            }
+        }
+
+        function displayRecommendation(value) {
+            const finalStepBox = document.getElementById("finalStepBox");
+            const finalStepBoxRight = document.getElementById("finalStepBoxRight");
+            const finalStepBoxLeft = document.getElementById("finalStepBoxLeft");
+            const projectDetailsRight = document.getElementById("projectDetailsRight");
+            const projectDetailsLeft = document.getElementById("projectDetailsLeft");
+            const projectDetails = document.getElementById("projectDetails");
+
+            // Hide these sections to reset the view
+            finalStepBox.style.display = "none";
+            finalStepBoxRight.style.display = "none";
+            finalStepBoxLeft.style.display = "none";
+            projectDetailsRight.style.display = "none";
+            projectDetailsLeft.style.display = "none";
+            projectDetails.style.display = "none";
+
+            // Show the choiceSection if value > 0
+            if (value > 0) {
+                document.getElementById("choiceSection").style.display = "block";
+            } else {
+                document.getElementById("choiceSection").style.display = "none";
+            }
+        }
 
         function handleChoice(choice) {
-        const finalStepBox = document.getElementById("finalStepBox");
-        const finalStepText = document.getElementById("finalStepText");
-        const finalAmount = document.getElementById("finalAmount");
-        const finalOffer = document.getElementById("finalOffer");
-        const projectDetails = document.getElementById("projectDetails");
-        const contactblockid = document.getElementById("contactblockid");
+            const finalStepBoxes = [
+                document.getElementById("finalStepBox"),
+                document.getElementById("finalStepBoxLeft"),
+                document.getElementById("finalStepBoxRight")
+            ];
 
-        // Set text content dynamically
-        if (selectedDistance == 1) {
-            finalStepText.innerText = "Votre projet à partir de :";
-            finalAmount.innerText = "7 499 MAD";
-        } else if (selectedDistance == 2) {
-            finalStepText.innerText = "Votre projet à partir de :";
-            finalAmount.innerText = "7 999 MAD";
-        } else if (selectedDistance == 3) {
-            finalStepText.innerText = "Votre projet à partir de :";
-            finalAmount.innerText = "8 499 MAD";
+            const finalStepTexts = [
+                document.getElementById("finalStepText"),
+                document.getElementById("finalStepTextLeft"),
+                document.getElementById("finalStepTextRight")
+            ];
+
+            const finalOffers = [
+                document.getElementById("finalOffer"),
+                document.getElementById("finalOfferLeft"),
+                document.getElementById("finalOfferRight")
+            ];
+
+            const finalAmounts = [
+                document.getElementById("finalAmount"),
+                document.getElementById("finalAmountLeft"),
+                document.getElementById("finalAmountRight")
+            ];
+
+            const projectDetailsSections = [
+                document.getElementById("projectDetails"),
+                document.getElementById("projectDetailsLeft"),
+                document.getElementById("projectDetailsRight")
+            ];
+
+            let smartAmount, essentielAmount, premiumAmount;
+
+            // Example distances logic (as before)
+            if (selectedDistance == 1) {
+                smartAmount = "12 490MAD";
+                essentielAmount = "9 990MAD";
+                premiumAmount = "13 490MAD";
+            } else if (selectedDistance == 2) {
+                smartAmount = "12 790MAD";
+                essentielAmount = "10 290MAD";
+                premiumAmount = "13 790MAD";
+            } else if (selectedDistance == 3) {
+                smartAmount = "13 090MAD";
+                essentielAmount = "10 490MAD";
+                premiumAmount = "14 090MAD";
+            }
+
+            const forfaitText = (choice === "yes") ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois" : "";
+
+            // Center the text by wrapping in a <div style="text-align:center;">
+            finalStepTexts[0].innerHTML = `<div style="text-align:center;">Offre Smart<br>À partir de ${smartAmount}${forfaitText}</div>`;
+            finalStepTexts[1].innerHTML = `<div style="text-align:center;">Offre Essentiel<br>À partir de ${essentielAmount}${forfaitText}</div>`;
+            finalStepTexts[2].innerHTML = `<div style="text-align:center;">Offre Premium<br>À partir de ${premiumAmount}${forfaitText}</div>`;
+
+            // Clear old amounts/offers since we included everything in innerHTML
+            finalAmounts[0].innerText = "";
+            finalAmounts[1].innerText = "";
+            finalAmounts[2].innerText = "";
+
+            finalOffers[0].innerText = "";
+            finalOffers[1].innerText = "";
+            finalOffers[2].innerText = "";
+
+            // Show all boxes and project details
+            for (let i = 0; i < 3; i++) {
+                finalStepBoxes[i].style.display = "block";
+                projectDetailsSections[i].style.display = "block";
+                projectDetailsSections[i].innerHTML = formattedProjectDetails;
+            }
+
+            document.getElementById("contactblockid").style.display = "block";
+            $('#Input_IsConsumptionMonitoring').val(choice === "yes" ? "Oui" : "Non");
         }
 
-        if (choice === "yes") {
-            finalOffer.innerText = "+ Forfaits sérénité dès 99,90 MAD/Mois";
-             $('#Input_IsConsumptionMonitoring').val("Oui");
-        } else {
-            finalOffer.innerText = "";
-            $('#Input_IsConsumptionMonitoring').val("Non");
+        function showForm() {
+            const contactblockid = document.getElementById("contactblockid");
+            document.getElementById("maisonButton").style.display = "none";
+            document.getElementById("appartmentButton").style.display = "none";
+
+            $('#Input_TypeWF').val("3");
+            contactblockid.style.display = "block";
         }
 
-        // Display both sections
-        finalStepBox.style.display = "block";
-        projectDetails.style.display = "block";
-        contactblockid.style.display = "block";
-    }
+        function goBack() {
+            document.getElementById("maisonButton").style.display = "block";
+            document.getElementById("appartmentButton").style.display = "block";
+            document.getElementById("entrepriseButton").style.display = "block";
 
-    function showForm() {
-        const contactblockid = document.getElementById("contactblockid");
+            let sections = [
+                "appartmentSolution",
+                "distanceEstimation",
+                "dynamicRecommendation",
+                "step2Content",
+                "choiceSection",
+                "recommendation",
+                "finalStepBox",
+                "projectDetails",
+                "contactblockid",
+                "blueBox",
+                "finalStepBoxRight",
+                "finalStepBoxLeft",
+                "projectDetailsRight",
+                "projectDetailsLeft",
+                "finalStepBoxAppartement",
+                "finalStepBoxLeftAppartement",
+                "finalStepBoxRightAppartement",
+                "projectDetailsAppartement",
+                "projectDetailsLeftAppartement",
+                "projectDetailsRightAppartement"
+            ];
 
-        contactblockid.style.display = "block";
-    }
-
-    // Ensure to reset the blue box when slider value changes
-    function displayRecommendation(value) {
-        const finalStepBox = document.getElementById("finalStepBox");
-        const finalStepText = document.getElementById("finalStepText");
-        const finalAmount = document.getElementById("finalAmount");
-        const finalOffer = document.getElementById("finalOffer");
-
-        // Reset and hide the blue box
-        finalStepText.innerText = "";
-        finalAmount.innerText = "";
-        finalOffer.innerText = "";
-        finalStepBox.style.display = "none";
-
-        if (value > 0) {
-            document.getElementById("choiceSection").style.display = "block";
-        } else {
-            document.getElementById("choiceSection").style.display = "none";
+            sections.forEach(function (id) {
+                let section = document.getElementById(id);
+                if (section) {
+                    section.style.display = "none";
+                }
+            });
         }
-    }
 
+        function showAppartmentSolution() {
+            document.getElementById("appartmentSolution").style.display = "block";
+            document.getElementById("maisonButton").style.display = "none";
+            document.getElementById("entrepriseButton").style.display = "none";
 
-    function goBack() {
-        // Hide all elements that need to be hidden
-        document.getElementById("step2Content").style.display = "none";
-        document.getElementById("choiceSection").style.display = "none";
-        document.getElementById("finalStepBox").style.display = "none";
-        document.getElementById("projectDetails").style.display = "none";
-        document.getElementById("contactblockid").style.display = "none";
+            $('#Input_TypeWF').val("2");
+        }
 
-        // Show only the "maison" button
-        var maisonButton = document.getElementById("maisonButton");
-        if (maisonButton){
-            maisonButton.style.display = "block";} // Ensure the button is visible
-    }
+        let selectedSolution = null;
+        function selectSolution(solution) {
+            selectedSolution = solution;
+            document.querySelectorAll('.solution-box').forEach((box) => {
+                box.classList.remove('selected');
+            });
+            document.querySelector(`.solution-box.${solution.toLowerCase()}`).classList.add('selected');
+        }
 
-    // Show Appartment Solution Section
-    function showAppartmentSolution() {
-        document.getElementById("appartmentSolution").style.display = "block";
-        document.getElementById("distanceEstimation").style.display = "none";
-    }
+        function goToNext() {
+            document.getElementById("appartmentSolution").style.display = "block";
+            document.getElementById("distanceEstimation").style.display = "block";
+            populateSelectOptions("appartmentFloor", 0, 10);
+        }
 
-    // Go Back to Appartment Button
-    function goBack() {
-        document.getElementById("appartmentSolution").style.display = "none";
-    }
-
-    // Select a Solution
-    let selectedSolution = null;
-    function selectSolution(solution) {
-        selectedSolution = solution;
-
-        // Highlight Selected Box
-        document.querySelectorAll('.solution-box').forEach((box) => {
-            box.classList.remove('selected');
+        document.getElementById("appartmentFloor").addEventListener("change", function() {
+            appartmentFloor = parseInt(this.value);
+            checkAndShowRecommendation();
         });
-        document.querySelector(`.solution-box.${solution.toLowerCase()}`).classList.add('selected');
-    }
 
-    // Go to Distance Estimation Section
-    function goToNext() {
-
-        // Hide Current Section and Show Next
-        document.getElementById("appartmentSolution").style.display = "block";
-        document.getElementById("distanceEstimation").style.display = "block";
-
-        // Populate Select Options Dynamically
-        populateSelectOptions("appartmentFloor", 0, 10);
-        populateSelectOptions("parkingFloor", -3, 0);
-    }
-
-                        let appartmentFloor = null;
-    let parkingFloor = null;
-
-    document.getElementById("appartmentFloor").addEventListener("change", function() {
-        appartmentFloor = parseInt(this.value);
-        checkAndShowRecommendation();
-    });
-
-    document.getElementById("parkingFloor").addEventListener("change", function() {
-        parkingFloor = parseInt(this.value);
-        checkAndShowRecommendation();
-    });
-
-    function checkAndShowRecommendation() {
-        // Ensure both values are selected before displaying the recommendation section
-        if (appartmentFloor !== null && parkingFloor !== null) {
-            const dynamicRecommendation = document.getElementById("dynamicRecommendation");
-            dynamicRecommendation.style.display = "block";
+        function checkAndShowRecommendation() {
+            if (appartmentFloor !== null) {
+                const dynamicRecommendation = document.getElementById("dynamicRecommendation");
+                dynamicRecommendation.style.display = "block";
+            }
         }
-    }
 
-    function handleChoice2(choice) {
-        console.log(`User choice: ${choice}`);
-        const contactblockid = document.getElementById("contactblockid");
-        // Show the blue box
-        const blueBox = document.getElementById("blueBox");
-        blueBox.style.display = "block";
+        function handleChoice2(choice) {
+            const finalStepBoxes = [
+                document.getElementById("finalStepBoxAppartement"),
+                document.getElementById("finalStepBoxLeftAppartement"),
+                document.getElementById("finalStepBoxRightAppartement")
+            ];
 
-        // Calculate the final amount based on the formula
-        const apartmentAmount = 300 * appartmentFloor;
-        const parkingAmount = 300 * Math.abs(parkingFloor); // Use absolute value for parking floor to avoid negative
-        const finalAmount = 7000 + apartmentAmount + parkingAmount; // Use 7000 only once
+            const finalStepTexts = [
+                document.getElementById("finalStepTextAppartement"),
+                document.getElementById("finalStepTextLeftAppartement"),
+                document.getElementById("finalStepTextRightAppartement")
+            ];
 
-        // Display the calculated final amount in the blue box
-        const finalAmountText = document.getElementById("finalAmountText");
-        finalAmountText.textContent = `${finalAmount} MAD`; // Add the currency symbol here
+            const finalAmounts = [
+                document.getElementById("finalAmountAppartement"),
+                document.getElementById("finalAmountLeftAppartement"),
+                document.getElementById("finalAmountRightAppartement")
+            ];
 
-        // Remove the "finalOfferText" text
-        const finalOfferText = document.getElementById("finalOfferText");
-        finalOfferText.textContent = ""; // Remove the "Découvrez nos offres spéciales!" text
+            const finalOffers = [
+                document.getElementById("finalOfferAppartement"),
+                document.getElementById("finalOfferLeftAppartement"),
+                document.getElementById("finalOfferRightAppartement")
+            ];
 
-        // Handle additional text based on the user's choice
-        const additionalText = document.getElementById("additionalText");
-        if (choice === "yes") {
-            additionalText.textContent = "+ Forfaits sérénité dès 99,90 MAD/Mois"; // Show when "Oui, recommandé" is clicked
-        } else {
-            additionalText.textContent = ""; // Hide when "Non" is clicked
+            const projectDetailsSections = [
+                document.getElementById("projectDetailsAppartement"),
+                document.getElementById("projectDetailsLeftAppartement"),
+                document.getElementById("projectDetailsRightAppartement")
+            ];
+
+            const essentielAmount = (9490 + (300 * appartmentFloor)) + "MAD";
+            const smartAmount = (12090 + (300 * appartmentFloor)) + "MAD";
+            const premiumAmount = (13090 + (300 * appartmentFloor)) + "MAD";
+
+            const forfaitText = (choice === "yes") ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois" : "";
+
+            finalStepTexts[0].innerHTML = `<div style="text-align:center;">Offre Smart<br>À partir de ${smartAmount}${forfaitText}</div>`;
+            finalStepTexts[1].innerHTML = `<div style="text-align:center;">Offre Essentiel<br>À partir de ${essentielAmount}${forfaitText}</div>`;
+            finalStepTexts[2].innerHTML = `<div style="text-align:center;">Offre Premium<br>À partir de ${premiumAmount}${forfaitText}</div>`;
+
+            // Clear old amounts/offers
+            finalAmounts[0].innerText = "";
+            finalAmounts[1].innerText = "";
+            finalAmounts[2].innerText = "";
+
+            finalOffers[0].innerText = "";
+            finalOffers[1].innerText = "";
+            finalOffers[2].innerText = "";
+
+            for (let i = 0; i < 3; i++) {
+                finalStepBoxes[i].style.display = "block";
+                projectDetailsSections[i].style.display = "block";
+                projectDetailsSections[i].innerHTML = formattedProjectDetails;
+            }
+
+            document.getElementById("contactblockid").style.display = "block";
+            $('#Input_IsConsumptionMonitoring').val(choice === "yes" ? "Oui" : "Non");
         }
-        contactblockid.style.display = "block";
-    }
 
-
-    // Populate Select Options
         function populateSelectOptions(selectId, start, end) {
-        const select = document.getElementById(selectId);
-        select.innerHTML = '<option>--Veuillez sélectionner votre choix--</option>';
-        for (let i = start; i <= end; i++) {
-            const option = document.createElement("option");
-            option.value = i;
-            option.textContent = i;
-            select.appendChild(option);
+            const select = document.getElementById(selectId);
+            select.innerHTML = '<option>--Veuillez sélectionner votre choix--</option>';
+            for (let i = start; i <= end; i++) {
+                const option = document.createElement("option");
+                option.value = i;
+                option.textContent = i;
+                select.appendChild(option);
+            }
         }
-    }
 
-    // Go Back to Solution Selection
-    function goBackToSolution() {
-        document.getElementById("distanceEstimation").style.display = "none";
-        document.getElementById("appartmentSolution").style.display = "block";
-    }
+        document.getElementById("appartmentFloor").addEventListener("change", hideSectionsOnSelectChange);
+
+        function hideSectionsOnSelectChange() {
+            const sectionsToHide = [
+                "projectDetails",
+                "blueBox",
+                "finalStepBox",
+                "finalStepBoxRight",
+                "finalStepBoxLeft",
+                "projectDetailsRight",
+                "projectDetailsLeft",
+                "finalStepBoxAppartement",
+                "finalStepBoxRightAppartement",
+                "finalStepBoxLeftAppartement",
+                "projectDetailsRightAppartement",
+                "projectDetailsLeftAppartement",
+                "projectDetailsAppartement"
+            ];
+
+            sectionsToHide.forEach(function (id) {
+                let element = document.getElementById(id);
+                if (element) {
+                    element.style.display = "none";
+                }
+            });
+        }
 </script>
 
 <link rel="stylesheet" media="screen, print" href="~/css/notifications/toastr/toastr.min.css" />
@@ -735,18 +859,15 @@
 
 <script type="text/javascript">
     $('#clients_form #submitButton').click(function (e) {
-            const form = document.querySelector('#clients_form');
+        const request = $('#clients_form').serialize();
+        const type = $('#Input_TypeWF').val();
+        const distance = $('#Input_Distance').val();
+        const isConsumptionMonitoring = $('#Input_IsConsumptionMonitoring').val();
+        axios.post('@Url.Page("/Offres")?type=' + type + '&distance=' + distance + '&isConsumptionMonitoring=' + isConsumptionMonitoring, request).then(res => {
+            toastr["info"]('Message envoyé avec succès.');
+        });
 
-                const request = $('#clients_form').serialize();
-               // const type = "1";
-                const type = $('#Input_TypeWF').val();
-                const distance = $('#Input_Distance').val();
-                const isConsumptionMonitoring = $('#Input_IsConsumptionMonitoring').val();
-                axios.post('@Url.Page("/Offres")?type=' + type + '&distance=' + distance + '&isConsumptionMonitoring=' + isConsumptionMonitoring, request).then(res => {
-                    toastr["info"]('Message envoyé avec succès.');
-                });
-
-            event.preventDefault();
-            event.stopPropagation();
-        })
+        event.preventDefault();
+        event.stopPropagation();
+    })
 </script>

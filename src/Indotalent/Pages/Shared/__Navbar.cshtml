@@ -3,11 +3,11 @@
 }
 
 <div class="container-fluid position-relative p-0">
-    <nav class="navbar navbar-expand-lg navbar-light px-5 py-3 py-lg-0">
-        <a asp-area="" asp-page="/Index" class="navbar-brand p-0">
-                        <h1 class="m-0">
-                <img src="~/landingpage/img/veco.png" alt="VECO-AVEMPACE Logo" style="width: 150px; height: auto;" />
-                        </h1>
+    <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a asp-area="" asp-page="/Index" class="navbar-brand p-0" style="display: flex; align-items: center; height: 60px;">
+            <h1 class="m-0" style="height: 100%; display: flex; align-items: center;">
+                <img src="~/landingpage/img/veco.png" alt="VECO-AVEMPACE Logo" style="height: auto%; width: 230px;" />
+            </h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="fa fa-bars"></span>
@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a asp-area="" asp-page="/Index" class="nav-item nav-link @(currentCshtmlName.Equals("") ? "active" : "")">Home</a>
-                <a asp-area="" asp-page="/About" class="nav-item nav-link @(currentCshtmlName.Equals("About") ? "active" : "")">About</a>
+                <a asp-area="" asp-page="/VECO" class="nav-item nav-link @(currentCshtmlName.Equals("VECO") ? "active" : "")">VECO</a>
                 <a asp-area="" asp-page="/Offres" class="nav-item nav-link @(currentCshtmlName.Equals("Offres") ? "active" : "")">Offres</a>
                 @* <a asp-area="" asp-page="/Blog" class="nav-item nav-link @(currentCshtmlName.Equals("Blog") ? "active" : "")">Blog</a> *@
                 <a asp-area="" asp-page="/Contact" class="nav-item nav-link @(currentCshtmlName.Equals("Contact") ? "active" : "")">Contact</a>

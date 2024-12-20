@@ -1,10 +1,31 @@
-﻿<div id="pricing" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+﻿<style>
+    /* Ensure buttons align at the bottom */
+    .equal-height .col-lg-4 > div {
+        display: flex;
+        flex-direction: column;
+        height: 100%; /* Ensure full height */
+    }
+
+    .equal-height .col-lg-4 .p-5 {
+        flex-grow: 1; /* Allows content to stretch and pushes the button down */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Pushes button to the bottom */
+    }
+
+    .equal-height .col-lg-4 .btn {
+        margin-top: auto; /* Push button to the bottom */
+    }
+</style>
+
+<div id="pricing" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5">
         <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
             <h5 class="fw-bold text-primary text-uppercase">Nos services</h5>
             <h1 class="mb-0">Des offres sur mesures à des prix compétitifs</h1>
         </div>
-        <div class="row g-0">
+        <div class="row g-0 equal-height">
+            <!-- Particuliers -->
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                 <div class="bg-light rounded">
                     <div class="border-bottom py-4 px-5 mb-4">
@@ -14,18 +35,13 @@
                     <div class="p-5 pt-0">
                         <h1 class="display-5 mb-3">
                             <small class="align-top" style="font-size: 20px; line-height: 45px;">à partir de</small>
-                            <span style="font-size: 30px; line-height: 45px;">7.500Dhs</span>
-
+                            <span style="font-size: 30px; line-height: 45px;">9 990 MAD</span>
                         </h1>
                         <div class="d-flex justify-content-between mb-3">
-                            <span>
-                                Résidents Maisons/Villas/Appartements
-                            </span><i class="fa fa-home text-primary pt-1"></i>
+                            <span>Résidents Maisons/Villas/Appartements</span><i class="fa fa-home text-primary pt-1"></i>
                         </div>
                         <div class="d-flex justify-content-between mb-3">
-                            <span>
-                                Résidents appartements
-                            </span><i class="fa fa-building text-primary pt-1"></i>
+                            <span>Résidents appartements</span><i class="fa fa-building text-primary pt-1"></i>
                         </div>
                         <div class="d-flex justify-content-between mb-3"><span>Syndic de copropriétés</span><i class="fa fa-users text-primary pt-1"></i></div>
                         <div class="d-flex justify-content-between mb-2"><span>Projet d'achat d'un véhicule éléctrique</span><i class="fa fa-car text-primary pt-1"></i></div>
@@ -33,24 +49,20 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Entreprises -->
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                 <div class="bg-white rounded shadow position-relative" style="z-index: 1;">
                     <div class="border-bottom py-4 px-5 mb-4">
                         <h4 class="text-primary mb-1">Entreprises</h4>
-                        <small class="text-uppercase">Une recharge sur le lieu de travail ou ERP</small>
+                        <small class="text-uppercase">Recharge sur le lieu de travail/ERP</small>
                     </div>
                     <div class="p-5 pt-0">
                         <h1 class="display-5 mb-3">
-                            <small class="align-top" style="font-size: 20px; line-height: 22px;">Offre sur mesure</small>
-                            <small class="align-bottom" style="font-size: 15px; line-height: 18px;"></small>
-
+                            <small class="align-top" style="font-size: 20px;">Offre sur mesure</small>
                         </h1>
                         <div class="d-flex justify-content-between mb-3">
-                            <span>
-                                Entreprises disposant d'une flotte de véhicules électriques
-                            </span><i class="fa fa-car-side text-primary pt-1"></i>
-                            <i class="fa fa-car-side text-primary pt-1"></i>
-                            <i class="fa fa-car-side text-primary pt-1"></i>
+                            <span>Entreprises VE & hybrides</span><i class="fa fa-car-side text-primary pt-1"></i>
                         </div>
                         <div class="d-flex justify-content-between mb-3"><span>Grande distribution</span><i class="fa fa-shopping-cart text-primary pt-1"></i></div>
                         <div class="d-flex justify-content-between mb-3"><span>Hôtels et restaurants</span><i class="fa fa-hotel text-primary pt-1"></i></div>
@@ -60,7 +72,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                 <div class="bg-light rounded">
                     <div class="border-bottom py-4 px-5 mb-4">
                         <h4 class="text-primary mb-1">Institutions publics</h4>
@@ -68,11 +81,13 @@
                     </div>
                     <div class="p-5 pt-0">
                         <h1 class="display-5 mb-3">
-                            <small class="align-top" style="font-size: 22px; line-height: 45px;"></small><small class="align-bottom" style="font-size: 16px; line-height: 40px;"></small>
+                            <small class="align-top" style="font-size: 20px;">Offre sur mesure</small>
                         </h1>
-                        <div class="d-flex justify-content-between mb-3"><span>Collectivités locales</span><i class="fa fa-city text-primary pt-1"></i></div>
-                        <div class="d-flex justify-content-between mb-3"><span>Institutions publiques</span><i class="fa fa-university text-primary pt-1"></i></div>
-                        <div class="d-flex justify-content-between mb-3"><span>Services de transport public</span><i class="fa fa-bus text-primary pt-1"></i></div>
+                        <div class="p-5 pt-0">
+                            <div class="d-flex justify-content-between mb-3"><span>Collectivités locales</span><i class="fa fa-city text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>Institutions publiques</span><i class="fa fa-university text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>Services de transport public</span><i class="fa fa-bus text-primary pt-1"></i></div>
+                        </div>
                         <a href="/Offres" class="btn btn-primary py-2 px-4 mt-4">En savoir plus</a>
                     </div>
                 </div>
