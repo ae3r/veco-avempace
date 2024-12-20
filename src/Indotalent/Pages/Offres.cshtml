@@ -9,12 +9,12 @@
 <!-- Facts Start -->
 <!-- Service Start -->
 @* @await Html.PartialAsync("__Offres") *@
-<!-- Styles -->
+
 <style>
-    /* Maison Button */
+    /* Keep your existing styles unchanged */
     .maison-btn {
         width: 500px;
-        height: 130px; /* Increased height */
+        height: 130px;
         border: 1px solid #ddd;
         display: flex;
         flex-direction: column;
@@ -40,7 +40,6 @@
         margin-top: 10px;
     }
 
-    /* Styled Box */
     .styled-box {
         background-color: #f8f9fa;
         border: 1px solid #ddd;
@@ -49,7 +48,6 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    /* Slider */
     .slider-container .slider {
         width: 60%;
     }
@@ -69,7 +67,6 @@
         color: #333;
     }
 
-    /* Choice Buttons */
     .choice-button {
         width: 250px;
         text-align: center;
@@ -86,7 +83,6 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
 
-    /* Final Step Box */
     .final-box {
         background-color: #007bff;
         color: white;
@@ -97,12 +93,11 @@
         width: 90%;
         max-width: 500px;
         margin: 0 auto;
+        text-align: center;
     }
 
-    /* New Project Details Box */
     .project-details-box {
-        /* background-color: #f4f4f4; */
-        background-color: #007bff;
+        background-color: #f4f4f4;
         border: 1px solid #ddd;
         border-radius: 8px;
         padding: 20px;
@@ -121,25 +116,22 @@
         .project-details-box ul {
             margin-left: 20px;
             list-style-type: disc;
-            color: white;
+            color: #007bff;
         }
 
         .project-details-box p {
             font-size: 18px;
             font-weight: bold;
-            /* color: #007bff; */
-            color: white;
+            color: #007bff;
             margin-top: 15px;
         }
 
-    /* Retour Button */
     .retour-btn {
         font-size: 16px;
         padding: 10px 20px;
         border-radius: 8px;
     }
 
-    /* Appartment Button */
     .appartment-btn {
         width: 500px;
         height: 130px;
@@ -168,7 +160,6 @@
         margin-top: 10px;
     }
 
-    /* Entreprise Button */
     .entreprise-btn {
         width: 500px;
         height: 130px;
@@ -246,28 +237,8 @@
             width: 120px;
         }
 
-    .form-group {
-        margin-bottom: 20px;
-        text-align: left;
-    }
-
-        .form-group label {
-            font-weight: bold;
-        }
-
     #appartmentSolution {
         margin-bottom: 20px;
-    }
-
-    .final-box {
-        background-color: #007BFF;
-        color: white;
-        padding: 20px;
-        border-radius: 8px;
-        width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     #finalAmount {
@@ -282,18 +253,15 @@
         color: #ffffff;
         font-weight: bold;
     }
-
 </style>
 
 <div class="container-fluid py-5">
     <div class="container py-5">
-        <!-- Section Title -->
         <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
             <h5 class="fw-bold text-primary text-uppercase">Faites-nous confiance !</h5>
             <h1 class="mb-0">Rejoignez la révolution électrique avec VECO Avempace</h1>
         </div>
 
-        <!-- Maison Button (Centered) -->
         <div class="d-flex justify-content-center mb-5">
             <button id="maisonButton" class="btn btn-light text-center shadow-lg rounded maison-btn" onclick="showStep2()">
                 <div class="maison-icon">
@@ -303,7 +271,6 @@
             </button>
         </div>
 
-        <!-- Appartement Button (Centered) -->
         <div class="d-flex justify-content-center mb-5">
             <button id="appartmentButton" class="btn btn-light text-center shadow-lg rounded appartment-btn" onclick="showAppartmentSolution()">
                 <div class="appartment-icon">
@@ -322,7 +289,6 @@
             </button>
         </div>
 
-        <!-- Appartment Solution Section -->
         <div id="appartmentSolution" class="solution-container section-margin" style="display: none;">
             <h5 class="text-center">Vous recherchez une solution de recharge</h5>
             <div class="solution-box collective" onclick="selectSolution('Collective')">
@@ -345,7 +311,6 @@
             </div>
         </div>
 
-        <!-- Distance Estimation Section (Initially Hidden) -->
         <div id="distanceEstimation" class="distance-container section-margin" style="display: none;">
             <h5 class="text-center">Etage de mon appartement</h5>
             <div class="form-group">
@@ -356,7 +321,6 @@
             </div>
         </div>
 
-        <!-- Dynamic Recommendation Section -->
         <div id="dynamicRecommendation" style="display: none; margin-top: 50px; text-align: center;">
             <h5 id="dynamicRecommendationText">Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
             <div class="choices mt-3">
@@ -374,7 +338,6 @@
             </div>
         </div>
 
-        <!-- Styled Box for Slider Section -->
         <div id="step2Content" class="styled-box" style="display: none; margin-top: 80px;">
             <h5 class="text-center mb-4">La distance entre le tableau électrique et le point de charge sera de (en mètres)...</h5>
             <div class="slider-container text-center">
@@ -397,7 +360,6 @@
             </div>
         </div>
 
-        <!-- Choices Section -->
         <div id="choiceSection" class="styled-box" style="display: none; margin-top: 30px; text-align: center;">
             <h5>Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
             <div class="choices mt-3">
@@ -406,7 +368,6 @@
             </div>
         </div>
 
-        <!-- Recommendation Section -->
         <div id="recommendation" style="display: none; margin-top: 50px; text-align: center;">
             <h5 id="recommendationText">Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
             <div class="choices mt-3">
@@ -417,7 +378,6 @@
 
         <!-- Maison Sections -->
         <div class="d-flex justify-content-between align-items-start mt-4">
-            <!-- Left Box (Maison) -->
             <div class="mx-2">
                 <div id="finalStepBoxLeft" class="final-box" style="display: none;">
                     <span id="finalStepTextLeft">Votre projet à partir de :</span>
@@ -427,7 +387,6 @@
                 <div id="projectDetailsLeft" class="project-details-box mt-3" style="display: none;"></div>
             </div>
 
-            <!-- Middle Box (Maison) -->
             <div class="mx-2">
                 <div id="finalStepBox" class="final-box" style="display: none;">
                     <span id="finalStepText">Votre projet à partir de :</span>
@@ -437,20 +396,18 @@
                 <div id="projectDetails" class="project-details-box mt-3" style="display: none;"></div>
             </div>
 
-            <!-- Right Box (Maison) -->
             <div class="mx-2">
                 <div id="finalStepBoxRight" class="final-box" style="display: none;">
                     <span id="finalStepTextRight">Votre projet à partir de :</span>
                     <div id="finalAmountRight" style="font-size: 24px; font-weight: bold; margin-top: 10px;"></div>
                     <div id="finalOfferRight" style="margin-top: 10px; font-size: 18px; color: #ffffff; font-weight: bold;"></div>
                 </div>
-                <div id="projectDetailsRight" class="project-details-box mt-3" style="display: none;color: #ffffff;"></div>
+                <div id="projectDetailsRight" class="project-details-box mt-3" style="display: none;"></div>
             </div>
         </div>
 
         <!-- Appartement Sections -->
         <div class="d-flex justify-content-between align-items-start mt-4">
-            <!-- Left Box (Appartement) -->
             <div class="mx-2">
                 <div id="finalStepBoxLeftAppartement" class="final-box" style="display: none;">
                     <span id="finalStepTextLeftAppartement">Votre projet à partir de :</span>
@@ -460,7 +417,6 @@
                 <div id="projectDetailsLeftAppartement" class="project-details-box mt-3" style="display: none;"></div>
             </div>
 
-            <!-- Middle Box (Appartement) -->
             <div class="mx-2">
                 <div id="finalStepBoxAppartement" class="final-box" style="display: none;">
                     <span id="finalStepTextAppartement">Votre projet à partir de :</span>
@@ -470,7 +426,6 @@
                 <div id="projectDetailsAppartement" class="project-details-box mt-3" style="display: none;"></div>
             </div>
 
-            <!-- Right Box (Appartement) -->
             <div class="mx-2">
                 <div id="finalStepBoxRightAppartement" class="final-box" style="display: none;">
                     <span id="finalStepTextRightAppartement">Votre projet à partir de :</span>
@@ -481,7 +436,6 @@
             </div>
         </div>
 
-        <!-- Contact -->
         <div id="contactblockid" style="display: none; margin-top: 20px; text-align: center;">
             <div class="col-lg-6 offset-lg-3 wow slideInUp" data-wow-delay="0.3s">
                 <form id="clients_form">
@@ -517,7 +471,6 @@
             </div>
         </div>
     </div>
-    <!-- Retour Button -->
     <div class="text-center mt-5">
         <button class="btn btn-outline-primary retour-btn" onclick="goBack()">Retour</button>
     </div>
@@ -529,13 +482,14 @@
 <!-- Vendor End -->
 
 <script>
-        let selectedDistance = 0;
-        let appartmentFloor = null;
+    let selectedDistance = 0;
+    let appartmentFloor = null;
 
-        const formattedProjectDetails = `
-    <p>Une solution pratique et économique, idéale pour les particuliers ou petites entreprises recherchant une borne de recharge simple, fiable et performante.</p>
-    <br><br><br>
-    <p>Principales fonctionnalités :</p>
+    // Essentiel text remains unchanged
+    const essentielProjectDetails = `
+    <p style="color:#007bff;font-weight:bold;">Une solution pratique et économique, idéale pour les particuliers ou petites entreprises recherchant une borne de recharge simple, fiable et performante.</p>
+    <br>
+    <p style="color:#007bff;font-weight:bold;">Principales fonctionnalités :</p>
     <ul style="list-style-type: disc; margin-left:20px;">
       <li>Puissance maximale 7,4kW monophasé</li>
       <li>Gestion via application mobile</li>
@@ -545,311 +499,347 @@
     </ul>
     `;
 
-        function showStep2() {
-            document.getElementById("step2Content").style.display = "block";
-            document.getElementById("appartmentButton").style.display = "none";
-            document.getElementById("entrepriseButton").style.display = "none";
+    // Smart updated text
+    const smartProjectDetails = `
+    <p style="color:#007bff;font-weight:bold;">L’équilibre parfait entre performance et innovation, destinée aux clients souhaitant une gestion optimisée de leur recharge.</p>
+    <br>
+    <p style="color:#007bff;font-weight:bold;">Principales fonctionnalités :</p>
+    <ul style="list-style-type: disc; margin-left:20px;">
+      <li>Puissance maximale 7,4kW monophasé</li>
+      <li>Gestion via application mobile</li>
+      <li>Bluetooth/WiFi + port Ethernet</li>
+      <li>Equilibrage de puissance jusqu’à 8 bornes</li>
+      <li>«100% photovoltaïque» (mode autoconsommation)</li>
+      <li>Programmation de la recharge</li>
+      <li>Lecteur RFID</li>
+    </ul>
+    `;
 
-            $('#Input_TypeWF').val("1");
-            const slider = document.getElementById("distanceSlider");
-            slider.value = 0;
-            updateSliderLabel(0);
+    // Premium updated text
+    const premiumProjectDetails = `
+    <p style="color:#007bff;font-weight:bold;">L’offre haut de gamme intégrant des technologies durables et connectées, parfaite pour les projets résidentiels ou professionnels exigeants.</p>
+    <br>
+    <p style="color:#007bff;font-weight:bold;">Principales fonctionnalités :</p>
+    <ul style="list-style-type: disc; margin-left:20px;">
+      <li>Puissance maximale 22kW triphasé</li>
+      <li>Gestion via application mobile</li>
+      <li>Bluetooth/WiFi + port Ethernet</li>
+      <li>Equilibrage de puissance jusqu’à 8 bornes</li>
+      <li>«100% photovoltaïque» (mode autoconsommation)</li>
+      <li>Programmation de la recharge</li>
+      <li>Lecteur RFID</li>
+      <li>Interopérabilité OCPP 1.6 Json</li>
+      <li>Dynamic Power Manager jusqu’à 30kW</li>
+    </ul>
+    `;
+
+    function showStep2() {
+        document.getElementById("step2Content").style.display = "block";
+        document.getElementById("appartmentButton").style.display = "none";
+        document.getElementById("entrepriseButton").style.display = "none";
+
+        $('#Input_TypeWF').val("1");
+        const slider = document.getElementById("distanceSlider");
+        slider.value = 0;
+        updateSliderLabel(0);
+    }
+
+    function updateSliderLabel(value) {
+        selectedDistance = value;
+        const output = document.getElementById("sliderOutput");
+
+        if (value == 0) {
+            output.innerText = "";
+        } else if (value == 1) {
+            output.innerText = "- 10m";
+            $('#Input_Distance').val("- 10m");
+        } else if (value == 2) {
+            output.innerText = "10m < d < 20m";
+            $('#Input_Distance').val("10m < d < 20m");
+        } else if (value == 3) {
+            output.innerText = "+ 20m";
+            $('#Input_Distance').val("+ 20m");
+        }
+    }
+
+    function displayRecommendation(value) {
+        const finalStepBox = document.getElementById("finalStepBox");
+        const finalStepBoxRight = document.getElementById("finalStepBoxRight");
+        const finalStepBoxLeft = document.getElementById("finalStepBoxLeft");
+        const projectDetailsRight = document.getElementById("projectDetailsRight");
+        const projectDetailsLeft = document.getElementById("projectDetailsLeft");
+        const projectDetails = document.getElementById("projectDetails");
+
+        // Hide these sections to reset the view
+        finalStepBox.style.display = "none";
+        finalStepBoxRight.style.display = "none";
+        finalStepBoxLeft.style.display = "none";
+        projectDetailsRight.style.display = "none";
+        projectDetailsLeft.style.display = "none";
+        projectDetails.style.display = "none";
+
+        // Show the choiceSection if value > 0
+        if (value > 0) {
+            document.getElementById("choiceSection").style.display = "block";
+        } else {
+            document.getElementById("choiceSection").style.display = "none";
+        }
+    }
+
+    function handleChoice(choice) {
+        const finalStepBoxes = [
+            document.getElementById("finalStepBox"),         // Smart
+            document.getElementById("finalStepBoxLeft"),     // Essentiel
+            document.getElementById("finalStepBoxRight")     // Premium
+        ];
+
+        const finalStepTexts = [
+            document.getElementById("finalStepText"),         // Smart text
+            document.getElementById("finalStepTextLeft"),     // Essentiel text
+            document.getElementById("finalStepTextRight")     // Premium text
+        ];
+
+        const finalOffers = [
+            document.getElementById("finalOffer"),
+            document.getElementById("finalOfferLeft"),
+            document.getElementById("finalOfferRight")
+        ];
+
+        const finalAmounts = [
+            document.getElementById("finalAmount"),
+            document.getElementById("finalAmountLeft"),
+            document.getElementById("finalAmountRight")
+        ];
+
+        const projectDetailsSections = [
+            document.getElementById("projectDetails"),        // Smart details
+            document.getElementById("projectDetailsLeft"),    // Essentiel details
+            document.getElementById("projectDetailsRight")    // Premium details
+        ];
+
+        let smartAmount, essentielAmount, premiumAmount;
+
+        if (selectedDistance == 1) {
+            smartAmount = "12 490MAD";
+            essentielAmount = "9 990MAD";
+            premiumAmount = "13 490MAD";
+        } else if (selectedDistance == 2) {
+            smartAmount = "12 790MAD";
+            essentielAmount = "10 290MAD";
+            premiumAmount = "13 790MAD";
+        } else if (selectedDistance == 3) {
+            smartAmount = "13 090MAD";
+            essentielAmount = "10 490MAD";
+            premiumAmount = "14 090MAD";
         }
 
-        function updateSliderLabel(value) {
-            selectedDistance = value;
-            const output = document.getElementById("sliderOutput");
+        const forfaitText = (choice === "yes") ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois" : "";
 
-            if (value == 0) {
-                output.innerText = "";
-            } else if (value == 1) {
-                output.innerText = "- 10m";
-                $('#Input_Distance').val("- 10m");
-            } else if (value == 2) {
-                output.innerText = "10m < d < 20m";
-                $('#Input_Distance').val("10m < d < 20m");
-            } else if (value == 3) {
-                output.innerText = "+ 20m";
-                $('#Input_Distance').val("+ 20m");
+        finalStepTexts[0].innerHTML = `<div style="text-align:center;">Offre Smart<br>À partir de ${smartAmount}${forfaitText}</div>`;
+        finalStepTexts[1].innerHTML = `<div style="text-align:center;">Offre Essentiel<br>À partir de ${essentielAmount}${forfaitText}</div>`;
+        finalStepTexts[2].innerHTML = `<div style="text-align:center;">Offre Premium<br>À partir de ${premiumAmount}${forfaitText}</div>`;
+
+        finalAmounts[0].innerText = "";
+        finalAmounts[1].innerText = "";
+        finalAmounts[2].innerText = "";
+
+        finalOffers[0].innerText = "";
+        finalOffers[1].innerText = "";
+        finalOffers[2].innerText = "";
+
+        // Assign the respective project details
+        // Index 0 = Smart, Index 1 = Essentiel, Index 2 = Premium
+        const detailsArray = [smartProjectDetails, essentielProjectDetails, premiumProjectDetails];
+
+        for (let i = 0; i < 3; i++) {
+            finalStepBoxes[i].style.display = "block";
+            projectDetailsSections[i].style.display = "block";
+            projectDetailsSections[i].innerHTML = detailsArray[i];
+        }
+
+        document.getElementById("contactblockid").style.display = "block";
+        $('#Input_IsConsumptionMonitoring').val(choice === "yes" ? "Oui" : "Non");
+    }
+
+    function showForm() {
+        const contactblockid = document.getElementById("contactblockid");
+        document.getElementById("maisonButton").style.display = "none";
+        document.getElementById("appartmentButton").style.display = "none";
+
+        $('#Input_TypeWF').val("3");
+        contactblockid.style.display = "block";
+    }
+
+    function goBack() {
+        document.getElementById("maisonButton").style.display = "block";
+        document.getElementById("appartmentButton").style.display = "block";
+        document.getElementById("entrepriseButton").style.display = "block";
+
+        let sections = [
+            "appartmentSolution",
+            "distanceEstimation",
+            "dynamicRecommendation",
+            "step2Content",
+            "choiceSection",
+            "recommendation",
+            "finalStepBox",
+            "projectDetails",
+            "contactblockid",
+            "blueBox",
+            "finalStepBoxRight",
+            "finalStepBoxLeft",
+            "projectDetailsRight",
+            "projectDetailsLeft",
+            "finalStepBoxAppartement",
+            "finalStepBoxLeftAppartement",
+            "finalStepBoxRightAppartement",
+            "projectDetailsAppartement",
+            "projectDetailsLeftAppartement",
+            "projectDetailsRightAppartement"
+        ];
+
+        sections.forEach(function (id) {
+            let section = document.getElementById(id);
+            if (section) {
+                section.style.display = "none";
             }
-        }
-
-        function displayRecommendation(value) {
-            const finalStepBox = document.getElementById("finalStepBox");
-            const finalStepBoxRight = document.getElementById("finalStepBoxRight");
-            const finalStepBoxLeft = document.getElementById("finalStepBoxLeft");
-            const projectDetailsRight = document.getElementById("projectDetailsRight");
-            const projectDetailsLeft = document.getElementById("projectDetailsLeft");
-            const projectDetails = document.getElementById("projectDetails");
-
-            // Hide these sections to reset the view
-            finalStepBox.style.display = "none";
-            finalStepBoxRight.style.display = "none";
-            finalStepBoxLeft.style.display = "none";
-            projectDetailsRight.style.display = "none";
-            projectDetailsLeft.style.display = "none";
-            projectDetails.style.display = "none";
-
-            // Show the choiceSection if value > 0
-            if (value > 0) {
-                document.getElementById("choiceSection").style.display = "block";
-            } else {
-                document.getElementById("choiceSection").style.display = "none";
-            }
-        }
-
-        function handleChoice(choice) {
-            const finalStepBoxes = [
-                document.getElementById("finalStepBox"),
-                document.getElementById("finalStepBoxLeft"),
-                document.getElementById("finalStepBoxRight")
-            ];
-
-            const finalStepTexts = [
-                document.getElementById("finalStepText"),
-                document.getElementById("finalStepTextLeft"),
-                document.getElementById("finalStepTextRight")
-            ];
-
-            const finalOffers = [
-                document.getElementById("finalOffer"),
-                document.getElementById("finalOfferLeft"),
-                document.getElementById("finalOfferRight")
-            ];
-
-            const finalAmounts = [
-                document.getElementById("finalAmount"),
-                document.getElementById("finalAmountLeft"),
-                document.getElementById("finalAmountRight")
-            ];
-
-            const projectDetailsSections = [
-                document.getElementById("projectDetails"),
-                document.getElementById("projectDetailsLeft"),
-                document.getElementById("projectDetailsRight")
-            ];
-
-            let smartAmount, essentielAmount, premiumAmount;
-
-            // Example distances logic (as before)
-            if (selectedDistance == 1) {
-                smartAmount = "12 490MAD";
-                essentielAmount = "9 990MAD";
-                premiumAmount = "13 490MAD";
-            } else if (selectedDistance == 2) {
-                smartAmount = "12 790MAD";
-                essentielAmount = "10 290MAD";
-                premiumAmount = "13 790MAD";
-            } else if (selectedDistance == 3) {
-                smartAmount = "13 090MAD";
-                essentielAmount = "10 490MAD";
-                premiumAmount = "14 090MAD";
-            }
-
-            const forfaitText = (choice === "yes") ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois" : "";
-
-            // Center the text by wrapping in a <div style="text-align:center;">
-            finalStepTexts[0].innerHTML = `<div style="text-align:center;">Offre Smart<br>À partir de ${smartAmount}${forfaitText}</div>`;
-            finalStepTexts[1].innerHTML = `<div style="text-align:center;">Offre Essentiel<br>À partir de ${essentielAmount}${forfaitText}</div>`;
-            finalStepTexts[2].innerHTML = `<div style="text-align:center;">Offre Premium<br>À partir de ${premiumAmount}${forfaitText}</div>`;
-
-            // Clear old amounts/offers since we included everything in innerHTML
-            finalAmounts[0].innerText = "";
-            finalAmounts[1].innerText = "";
-            finalAmounts[2].innerText = "";
-
-            finalOffers[0].innerText = "";
-            finalOffers[1].innerText = "";
-            finalOffers[2].innerText = "";
-
-            // Show all boxes and project details
-            for (let i = 0; i < 3; i++) {
-                finalStepBoxes[i].style.display = "block";
-                projectDetailsSections[i].style.display = "block";
-                projectDetailsSections[i].innerHTML = formattedProjectDetails;
-            }
-
-            document.getElementById("contactblockid").style.display = "block";
-            $('#Input_IsConsumptionMonitoring').val(choice === "yes" ? "Oui" : "Non");
-        }
-
-        function showForm() {
-            const contactblockid = document.getElementById("contactblockid");
-            document.getElementById("maisonButton").style.display = "none";
-            document.getElementById("appartmentButton").style.display = "none";
-
-            $('#Input_TypeWF').val("3");
-            contactblockid.style.display = "block";
-        }
-
-        function goBack() {
-            document.getElementById("maisonButton").style.display = "block";
-            document.getElementById("appartmentButton").style.display = "block";
-            document.getElementById("entrepriseButton").style.display = "block";
-
-            let sections = [
-                "appartmentSolution",
-                "distanceEstimation",
-                "dynamicRecommendation",
-                "step2Content",
-                "choiceSection",
-                "recommendation",
-                "finalStepBox",
-                "projectDetails",
-                "contactblockid",
-                "blueBox",
-                "finalStepBoxRight",
-                "finalStepBoxLeft",
-                "projectDetailsRight",
-                "projectDetailsLeft",
-                "finalStepBoxAppartement",
-                "finalStepBoxLeftAppartement",
-                "finalStepBoxRightAppartement",
-                "projectDetailsAppartement",
-                "projectDetailsLeftAppartement",
-                "projectDetailsRightAppartement"
-            ];
-
-            sections.forEach(function (id) {
-                let section = document.getElementById(id);
-                if (section) {
-                    section.style.display = "none";
-                }
-            });
-        }
-
-        function showAppartmentSolution() {
-            document.getElementById("appartmentSolution").style.display = "block";
-            document.getElementById("maisonButton").style.display = "none";
-            document.getElementById("entrepriseButton").style.display = "none";
-
-            $('#Input_TypeWF').val("2");
-        }
-
-        let selectedSolution = null;
-        function selectSolution(solution) {
-            selectedSolution = solution;
-            document.querySelectorAll('.solution-box').forEach((box) => {
-                box.classList.remove('selected');
-            });
-            document.querySelector(`.solution-box.${solution.toLowerCase()}`).classList.add('selected');
-        }
-
-        function goToNext() {
-            document.getElementById("appartmentSolution").style.display = "block";
-            document.getElementById("distanceEstimation").style.display = "block";
-            populateSelectOptions("appartmentFloor", 0, 10);
-        }
-
-        document.getElementById("appartmentFloor").addEventListener("change", function() {
-            appartmentFloor = parseInt(this.value);
-            checkAndShowRecommendation();
         });
+    }
 
-        function checkAndShowRecommendation() {
-            if (appartmentFloor !== null) {
-                const dynamicRecommendation = document.getElementById("dynamicRecommendation");
-                dynamicRecommendation.style.display = "block";
+    function showAppartmentSolution() {
+        document.getElementById("appartmentSolution").style.display = "block";
+        document.getElementById("maisonButton").style.display = "none";
+        document.getElementById("entrepriseButton").style.display = "none";
+
+        $('#Input_TypeWF').val("2");
+    }
+
+    let selectedSolution = null;
+    function selectSolution(solution) {
+        selectedSolution = solution;
+        document.querySelectorAll('.solution-box').forEach((box) => {
+            box.classList.remove('selected');
+        });
+        document.querySelector(`.solution-box.${solution.toLowerCase()}`).classList.add('selected');
+    }
+
+    function goToNext() {
+        document.getElementById("appartmentSolution").style.display = "block";
+        document.getElementById("distanceEstimation").style.display = "block";
+        populateSelectOptions("appartmentFloor", 0, 10);
+    }
+
+    document.getElementById("appartmentFloor").addEventListener("change", function() {
+        appartmentFloor = parseInt(this.value);
+        checkAndShowRecommendation();
+    });
+
+    function checkAndShowRecommendation() {
+        if (appartmentFloor !== null) {
+            const dynamicRecommendation = document.getElementById("dynamicRecommendation");
+            dynamicRecommendation.style.display = "block";
+        }
+    }
+
+    function handleChoice2(choice) {
+        const finalStepBoxes = [
+            document.getElementById("finalStepBoxAppartement"),       // Smart
+            document.getElementById("finalStepBoxLeftAppartement"),   // Essentiel
+            document.getElementById("finalStepBoxRightAppartement")   // Premium
+        ];
+
+        const finalStepTexts = [
+            document.getElementById("finalStepTextAppartement"),        // Smart text
+            document.getElementById("finalStepTextLeftAppartement"),    // Essentiel text
+            document.getElementById("finalStepTextRightAppartement")    // Premium text
+        ];
+
+        const finalAmounts = [
+            document.getElementById("finalAmountAppartement"),
+            document.getElementById("finalAmountLeftAppartement"),
+            document.getElementById("finalAmountRightAppartement")
+        ];
+
+        const finalOffers = [
+            document.getElementById("finalOfferAppartement"),
+            document.getElementById("finalOfferLeftAppartement"),
+            document.getElementById("finalOfferRightAppartement")
+        ];
+
+        const projectDetailsSections = [
+            document.getElementById("projectDetailsAppartement"),        // Smart
+            document.getElementById("projectDetailsLeftAppartement"),    // Essentiel
+            document.getElementById("projectDetailsRightAppartement")    // Premium
+        ];
+
+        const essentielAmount = (9490 + (300 * appartmentFloor)) + "MAD";
+        const smartAmount = (12090 + (300 * appartmentFloor)) + "MAD";
+        const premiumAmount = (13090 + (300 * appartmentFloor)) + "MAD";
+
+        const forfaitText = (choice === "yes") ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois" : "";
+
+        finalStepTexts[0].innerHTML = `<div style="text-align:center;">Offre Smart<br>À partir de ${smartAmount}${forfaitText}</div>`;
+        finalStepTexts[1].innerHTML = `<div style="text-align:center;">Offre Essentiel<br>À partir de ${essentielAmount}${forfaitText}</div>`;
+        finalStepTexts[2].innerHTML = `<div style="text-align:center;">Offre Premium<br>À partir de ${premiumAmount}${forfaitText}</div>`;
+
+        finalAmounts[0].innerText = "";
+        finalAmounts[1].innerText = "";
+        finalAmounts[2].innerText = "";
+
+        finalOffers[0].innerText = "";
+        finalOffers[1].innerText = "";
+        finalOffers[2].innerText = "";
+
+        // Use the same updated details arrays
+        const detailsArrayAppartement = [smartProjectDetails, essentielProjectDetails, premiumProjectDetails];
+
+        for (let i = 0; i < 3; i++) {
+            finalStepBoxes[i].style.display = "block";
+            projectDetailsSections[i].style.display = "block";
+            projectDetailsSections[i].innerHTML = detailsArrayAppartement[i];
+        }
+
+        document.getElementById("contactblockid").style.display = "block";
+        $('#Input_IsConsumptionMonitoring').val(choice === "yes" ? "Oui" : "Non");
+    }
+
+    function populateSelectOptions(selectId, start, end) {
+        const select = document.getElementById(selectId);
+        select.innerHTML = '<option>--Veuillez sélectionner votre choix--</option>';
+        for (let i = start; i <= end; i++) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.textContent = i;
+            select.appendChild(option);
+        }
+    }
+
+    document.getElementById("appartmentFloor").addEventListener("change", hideSectionsOnSelectChange);
+
+    function hideSectionsOnSelectChange() {
+        const sectionsToHide = [
+            "projectDetails",
+            "blueBox",
+            "finalStepBox",
+            "finalStepBoxRight",
+            "finalStepBoxLeft",
+            "projectDetailsRight",
+            "projectDetailsLeft",
+            "finalStepBoxAppartement",
+            "finalStepBoxRightAppartement",
+            "finalStepBoxLeftAppartement",
+            "projectDetailsRightAppartement",
+            "projectDetailsLeftAppartement",
+            "projectDetailsAppartement"
+        ];
+
+        sectionsToHide.forEach(function (id) {
+            let element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none";
             }
-        }
-
-        function handleChoice2(choice) {
-            const finalStepBoxes = [
-                document.getElementById("finalStepBoxAppartement"),
-                document.getElementById("finalStepBoxLeftAppartement"),
-                document.getElementById("finalStepBoxRightAppartement")
-            ];
-
-            const finalStepTexts = [
-                document.getElementById("finalStepTextAppartement"),
-                document.getElementById("finalStepTextLeftAppartement"),
-                document.getElementById("finalStepTextRightAppartement")
-            ];
-
-            const finalAmounts = [
-                document.getElementById("finalAmountAppartement"),
-                document.getElementById("finalAmountLeftAppartement"),
-                document.getElementById("finalAmountRightAppartement")
-            ];
-
-            const finalOffers = [
-                document.getElementById("finalOfferAppartement"),
-                document.getElementById("finalOfferLeftAppartement"),
-                document.getElementById("finalOfferRightAppartement")
-            ];
-
-            const projectDetailsSections = [
-                document.getElementById("projectDetailsAppartement"),
-                document.getElementById("projectDetailsLeftAppartement"),
-                document.getElementById("projectDetailsRightAppartement")
-            ];
-
-            const essentielAmount = (9490 + (300 * appartmentFloor)) + "MAD";
-            const smartAmount = (12090 + (300 * appartmentFloor)) + "MAD";
-            const premiumAmount = (13090 + (300 * appartmentFloor)) + "MAD";
-
-            const forfaitText = (choice === "yes") ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois" : "";
-
-            finalStepTexts[0].innerHTML = `<div style="text-align:center;">Offre Smart<br>À partir de ${smartAmount}${forfaitText}</div>`;
-            finalStepTexts[1].innerHTML = `<div style="text-align:center;">Offre Essentiel<br>À partir de ${essentielAmount}${forfaitText}</div>`;
-            finalStepTexts[2].innerHTML = `<div style="text-align:center;">Offre Premium<br>À partir de ${premiumAmount}${forfaitText}</div>`;
-
-            // Clear old amounts/offers
-            finalAmounts[0].innerText = "";
-            finalAmounts[1].innerText = "";
-            finalAmounts[2].innerText = "";
-
-            finalOffers[0].innerText = "";
-            finalOffers[1].innerText = "";
-            finalOffers[2].innerText = "";
-
-            for (let i = 0; i < 3; i++) {
-                finalStepBoxes[i].style.display = "block";
-                projectDetailsSections[i].style.display = "block";
-                projectDetailsSections[i].innerHTML = formattedProjectDetails;
-            }
-
-            document.getElementById("contactblockid").style.display = "block";
-            $('#Input_IsConsumptionMonitoring').val(choice === "yes" ? "Oui" : "Non");
-        }
-
-        function populateSelectOptions(selectId, start, end) {
-            const select = document.getElementById(selectId);
-            select.innerHTML = '<option>--Veuillez sélectionner votre choix--</option>';
-            for (let i = start; i <= end; i++) {
-                const option = document.createElement("option");
-                option.value = i;
-                option.textContent = i;
-                select.appendChild(option);
-            }
-        }
-
-        document.getElementById("appartmentFloor").addEventListener("change", hideSectionsOnSelectChange);
-
-        function hideSectionsOnSelectChange() {
-            const sectionsToHide = [
-                "projectDetails",
-                "blueBox",
-                "finalStepBox",
-                "finalStepBoxRight",
-                "finalStepBoxLeft",
-                "projectDetailsRight",
-                "projectDetailsLeft",
-                "finalStepBoxAppartement",
-                "finalStepBoxRightAppartement",
-                "finalStepBoxLeftAppartement",
-                "projectDetailsRightAppartement",
-                "projectDetailsLeftAppartement",
-                "projectDetailsAppartement"
-            ];
-
-            sectionsToHide.forEach(function (id) {
-                let element = document.getElementById(id);
-                if (element) {
-                    element.style.display = "none";
-                }
-            });
-        }
+        });
+    }
 </script>
 
 <link rel="stylesheet" media="screen, print" href="~/css/notifications/toastr/toastr.min.css" />
