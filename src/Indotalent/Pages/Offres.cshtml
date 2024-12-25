@@ -753,6 +753,11 @@
         }
     }
 
+        function formatAmountWithSpace(amount) {
+        // Convert to string, then insert a space before each group of 3 digits from the right
+        return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+
     function handleChoice2(choice) {
         const finalStepBoxes = [
             document.getElementById("finalStepBoxAppartement"),       // Smart
@@ -784,15 +789,36 @@
             document.getElementById("projectDetailsRightAppartement")    // Premium
         ];
 
-        const essentielAmount = (9490 + (300 * appartmentFloor)) + "MAD";
-        const smartAmount = (12090 + (300 * appartmentFloor)) + "MAD";
-        const premiumAmount = (13090 + (300 * appartmentFloor)) + "MAD";
+            // 1. Calculate numeric values (without "MAD" yet)
+    const eValue = 9490 + (300 * appartmentFloor);
+    const sValue = 12090 + (300 * appartmentFloor);
+    const pValue = 13090 + (300 * appartmentFloor);
 
-        const forfaitText = (choice === "yes") ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois" : "";
+    // 2. Format each value and append the currency text
+    const essentielAmount = formatAmountWithSpace(eValue) + " MAD";
+    const smartAmount     = formatAmountWithSpace(sValue) + " MAD";
+    const premiumAmount   = formatAmountWithSpace(pValue) + " MAD";
 
-        finalStepTexts[0].innerHTML = `<div style="text-align:center;">Offre Smart<br>À partir de ${smartAmount}${forfaitText}</div>`;
-        finalStepTexts[1].innerHTML = `<div style="text-align:center;">Offre Essentiel<br>À partir de ${essentielAmount}${forfaitText}</div>`;
-        finalStepTexts[2].innerHTML = `<div style="text-align:center;">Offre Premium<br>À partir de ${premiumAmount}${forfaitText}</div>`;
+    // 3. Determine if we add the extra text (forfaitText)
+    const forfaitText = (choice === "yes")
+        ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois"
+        : "";
+
+    // 4. Inject final text into your DOM elements
+    finalStepTexts[0].innerHTML = `
+        <div style="text-align:center;">
+            Offre Smart<br>À partir de ${smartAmount}${forfaitText}
+        </div>`;
+
+    finalStepTexts[1].innerHTML = `
+        <div style="text-align:center;">
+            Offre Essentiel<br>À partir de ${essentielAmount}${forfaitText}
+        </div>`;
+
+    finalStepTexts[2].innerHTML = `
+        <div style="text-align:center;">
+            Offre Premium<br>À partir de ${premiumAmount}${forfaitText}
+        </div>`;
 
         finalAmounts[0].innerText = "";
         finalAmounts[1].innerText = "";

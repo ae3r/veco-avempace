@@ -248,6 +248,18 @@ h6,
     height: 3rem;
 }
 
+#header-carousel .carousel-item img {
+    width: 100%;
+    height: 90vh; /* 50% of the current viewport height */
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 576px) {
+    #header-carousel .carousel-item img {
+        height: 90vh; /* 50% of the current viewport height */
+    }
+}
 
 /*** Section Title ***/
 .section-title::before {
