@@ -1,0 +1,230 @@
+﻿@page
+@model Indotalent.Pages.ProduitsModel
+@{
+}
+
+<!-- Slick -->
+<link type="text/css" rel="stylesheet" href="css/slick.css" />
+<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+
+<!-- Custom stlylesheet -->
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+@* <!-- Font Awesome Icon -->
+<link rel="stylesheet" href="css/all.min.css"> *@
+
+<style>
+
+</style>
+
+<!-- MAIN HEADER -->
+<div id="header">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- SEARCH BAR -->
+            <div class="col-lg-6 offset-lg-3">
+                <div class="header-search">
+                    <form>
+                        <select class="input-select" id="categorieid">
+                            <option value="0">Catégories</option>
+                            <option value="1">AC</option>
+                            <option value="1">DC</option>
+                        </select>
+                        <input class="input" placeholder="Search here">
+                        <button class="search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /SEARCH BAR -->
+            <!-- ACCOUNT -->
+            <div class="col-md-3 clearfix">
+                <div class="header-ctn">
+                    <!-- Cart -->
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>Your Cart</span>
+                            <div class="qty">3</div>
+                        </a>
+                        <div class="cart-dropdown">
+                            <div class="cart-list">
+                                <div class="product-widget">
+                                    <div class="product-img">
+                                        <img src="./img/homet.png" alt="">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3 class="product-name"><a href="#">Home T</a></h3>
+                                        <h4 class="product-price"><span class="qty">1x</span>Dazebox Home</h4>
+                                    </div>
+                                    <button class="delete"><i class="fa fa-close"></i></button>
+                                </div>
+
+                                <div class="product-widget">
+                                    <div class="product-img">
+                                        <img src="./img/dazeboxc.png" alt="">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3 class="product-name"><a href="#">Dazebox C</a></h3>
+                                        <h4 class="product-price"><span class="qty">2x</span>Dazebox C</h4>
+                                    </div>
+                                    <button class="delete"><i class="fa fa-close"></i></button>
+                                </div>
+                            </div>
+                            <div class="cart-summary">
+                                <small>3 Item(s) selected</small>
+                                @* <h5>SUBTOTAL: 2</h5> *@
+                            </div>
+                            <div class="cart-btns">
+                                <a href="#">View Cart</a>
+                                <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /ACCOUNT -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</div>
+<!-- /MAIN HEADER -->
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-1">
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="./img/homet.png" alt="">
+                                        <div class="product-label">
+                                            @*   <span class="new">NEW</span> *@
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Catégorie : AC</p>
+                                        <h2 class="product-name"><a href="#"><strong>Home T</strong></a></h2>
+                                        <h4 class="product-price">Dazebox Home <ins class="product-old-price">With cable/Avec calbe</ins></h4>
+                                        <div class="product-btns">
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="./img/homeS.png" alt="">
+                                        <div class="product-label">
+                                            <span class="new">NEW</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Catégorie : DC</p>
+                                        <h2 class="product-name"><a href="#"><strong>Home S</strong></a></h2>
+                                        <h4 class="product-price">Dazebox Home <ins class="product-old-price">With socket/Avec prise</ins></h4>
+                                        <div class="product-btns">
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="./img/homeTK.png" alt="">
+                                        <div class="product-label">
+                                            @*   <span class="new">NEW</span> *@
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Catégorie : AC</p>
+                                        <h2 class="product-name"><a href="#"><strong>Home TK</strong></a></h2>
+                                        <h4 class="product-price">Dazebox Home <ins class="product-old-price">With cable/Avec calbe</ins></h4>
+                                        <div class="product-btns">
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="./img/homeS.png" alt="">
+                                        <div class="product-label">
+                                            @*   <span class="new">NEW</span> *@
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Catégorie : DC</p>
+                                        <h2 class="product-name"><a href="#"><strong>Home SK</strong></a></h2>
+                                        <h4 class="product-price">Dazebox Home <ins class="product-old-price">With socket/Avec prise</ins></h4>
+                                        <div class="product-btns">
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="./img/dazeboxc.png" alt="">
+                                        <div class="product-label">
+                                            <span class="new">NEW</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Catégorie : AC</p>
+                                        <h2 class="product-name"><a href="#"><strong>Dazebox C</strong></a></h2>
+                                        <h4 class="product-price">Dazebox C <ins class="product-old-price">With cable/Avec calbe</ins></h4>
+                                        <div class="product-btns">
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+                            </div>
+                            <div id="slick-nav-1" class="products-slick-nav"></div>
+                        </div>
+                        <!-- /tab -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /SECTION -->
+<!-- Vendor Start -->
+@await Html.PartialAsync("__Vendor")
+<!-- Vendor End -->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
