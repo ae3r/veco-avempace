@@ -3,15 +3,49 @@
 @{
 }
 
-
-@* <!-- Facts Start -->
-@await Html.PartialAsync("__FactCounter") *@
-<!-- Facts Start -->
-<!-- Service Start -->
-@* @await Html.PartialAsync("__Offres") *@
-
 <style>
-    /* Keep your existing styles unchanged */
+    .offers-title {
+        display: none; /* Hide by default; we’ll toggle this in JS */
+        opacity: 0; /* Start transparent */
+        margin-top: 2rem;
+        transition: opacity 0.8s ease-in-out; /* Fallback transition */
+    }
+
+        .offers-title h2 {
+            font-size: 2rem; /* Adjust as you like */
+            color: #007bff; /* Make it pop with brand color */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+    @@keyframes fadeInUp {
+        from {
+            transform: translate3d(0, 50px, 0);
+            opacity: 0;
+        }
+
+        to {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+
+    .offers-title.fade-in-up {
+        display: block !important; /* Make sure we see it */
+        animation: fadeInUp 1.2s ease-in-out forwards;
+    }
+
+    #projectDetailsLeft,
+    #projectDetails,
+    #projectDetailsRight,
+    #projectDetailsLeftAppartement,
+    #projectDetailsAppartement,
+    #projectDetailsRightAppartement {
+        height: 670px;
+        overflow-y: auto;
+    }
+
     .maison-btn {
         width: 500px;
         height: 130px;
@@ -188,7 +222,8 @@
         margin-top: 10px;
     }
 
-    .solution-container, .distance-container {
+    .solution-container,
+    .distance-container {
         background-color: #f8f9fa;
         border: 1px solid #ddd;
         border-radius: 8px;
@@ -260,11 +295,10 @@
             align-items: center;
         }
 
-        .d-flex.justify-content-between.align-items-start.mt-4 > div.mx-2 {
-            margin-bottom: 20px;
-        }
+            .d-flex.justify-content-between.align-items-start.mt-4 > div.mx-2 {
+                margin-bottom: 20px;
+            }
     }
-
 </style>
 
 <div class="container-fluid py-5">
@@ -274,7 +308,8 @@
             <h1 class="mb-0">Rejoignez la révolution électrique avec VECO Avempace</h1>
         </div>
 
-        <div class="d-flex justify-content-center mb-5">
+        <!-- Button Maison -->
+        <div class="d-flex justify-content-center mb-1">
             <button id="maisonButton" class="btn btn-light text-center shadow-lg rounded maison-btn" onclick="showStep2()">
                 <div class="maison-icon">
                     <i class="bi bi-house-door-fill"></i>
@@ -283,7 +318,8 @@
             </button>
         </div>
 
-        <div class="d-flex justify-content-center mb-5">
+        <!-- Button Appartement -->
+        <div class="d-flex justify-content-center mb-1">
             <button id="appartmentButton" class="btn btn-light text-center shadow-lg rounded appartment-btn" onclick="showAppartmentSolution()">
                 <div class="appartment-icon">
                     <i class="bi bi-building"></i>
@@ -292,6 +328,7 @@
             </button>
         </div>
 
+        <!-- Button Entreprise -->
         <div class="d-flex justify-content-center mb-5">
             <button id="entrepriseButton" class="btn btn-light text-center shadow-lg rounded entreprise-btn" onclick="showForm()">
                 <div class="entreprise-icon">
@@ -301,6 +338,7 @@
             </button>
         </div>
 
+        <!-- Step for "Appartement" choice -->
         <div id="appartmentSolution" class="solution-container section-margin" style="display: none;">
             <h5 class="text-center">Vous recherchez une solution de recharge</h5>
             <div class="solution-box collective" onclick="selectSolution('Collective')">
@@ -309,21 +347,20 @@
                     Solution à moindre coût grâce à la mutualisation des installations avec d'autres copropriétaires
                 </div>
             </div>
-
             <div class="solution-box individuelle" onclick="selectSolution('Individuelle')">
                 <div class="solution-title">Individuelle</div>
                 <div class="solution-description">
                     Infrastructure individuelle
                 </div>
             </div>
-
             <div class="solution-buttons text-center">
                 <button class="btn btn-outline-primary" onclick="goBack()">Retour</button>
                 <button id="nextButton" class="btn btn-primary" onclick="goToNext()">Suivant</button>
             </div>
         </div>
 
-        <div id="distanceEstimation" class="distance-container section-margin" style="display: none;">
+        <!-- Distance Estimation -->
+        <div id="distanceEstimation" class="distance-container section-margin" style="display: none; margin-top: 70px;">
             <h5 class="text-center">Etage de mon appartement</h5>
             <div class="form-group">
                 <label for="appartmentFloor">Etage de mon appartement</label>
@@ -333,7 +370,8 @@
             </div>
         </div>
 
-        <div id="dynamicRecommendation" style="display: none; margin-top: 50px; text-align: center;">
+        <!-- Dynamic Recommendation -->
+        <div id="dynamicRecommendation" style="display: none; margin-top: 80px; margin-bottom: 70px;text-align: center;">
             <h5 id="dynamicRecommendationText">Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
             <div class="choices mt-3">
                 <button class="btn btn-primary choice-button" onclick="handleChoice2('yes')">Oui, (recommandé)</button>
@@ -350,7 +388,8 @@
             </div>
         </div>
 
-        <div id="step2Content" class="styled-box" style="display: none; margin-top: 80px;">
+        <!-- Maison Step -->
+        <div id="step2Content" class="styled-box" style="display: none;">
             <h5 class="text-center mb-4">La distance entre le tableau électrique et le point de charge sera de (en mètres)...</h5>
             <div class="slider-container text-center">
                 <input type="range"
@@ -372,7 +411,8 @@
             </div>
         </div>
 
-        <div id="choiceSection" class="styled-box" style="display: none; margin-top: 30px; text-align: center;">
+        <!-- Choice Section (Maison) -->
+        <div id="choiceSection" class="styled-box" style="display: none; margin-top: 70px;margin-bottom: 70px; text-align: center;">
             <h5>Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
             <div class="choices mt-3">
                 <button class="btn btn-primary choice-button" onclick="handleChoice('yes')">Oui, (recommandé)</button>
@@ -380,6 +420,7 @@
             </div>
         </div>
 
+        <!-- Recommendation (Maison) -->
         <div id="recommendation" style="display: none; margin-top: 50px; text-align: center;">
             <h5 id="recommendationText">Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge (borne connectée)</h5>
             <div class="choices mt-3">
@@ -388,7 +429,16 @@
             </div>
         </div>
 
-        <!-- Maison Sections -->
+        <!--
+            ---------------------------------------
+            MAISON SECTIONS
+            ---------------------------------------
+        -->
+        <!-- Title above Maison offers -->
+        <div id="offersTitleMaison" class="text-center mt-5" style="display: none;">
+            <h2>Trois offres sur-mesure, pour toutes vos exigences</h2>
+        </div>
+
         <div class="d-flex justify-content-between align-items-start mt-4">
             <div class="mx-2">
                 <div id="finalStepBoxLeft" class="final-box" style="display: none;">
@@ -418,7 +468,16 @@
             </div>
         </div>
 
-        <!-- Appartement Sections -->
+        <!--
+            ---------------------------------------
+            APPARTEMENT SECTIONS
+            ---------------------------------------
+        -->
+        <!-- Title above Appartement offers -->
+        <div id="offersTitleAppartement" class="text-center mt-5" style="display: none;">
+            <h2>Trois offres sur-mesure, pour toutes vos exigences</h2>
+        </div>
+
         <div class="d-flex justify-content-between align-items-start mt-4">
             <div class="mx-2">
                 <div id="finalStepBoxLeftAppartement" class="final-box" style="display: none;">
@@ -448,32 +507,67 @@
             </div>
         </div>
 
+        <!-- Contact Form -->
         <div id="contactblockid" style="display: none; margin-top: 20px; text-align: center;">
+
+            <h5 style="margin-bottom: 1rem; font-weight:600;">
+                Prendre contact avec un chargé d'affaires qui vous rappellera sous 24h
+            </h5>
+
             <div class="col-lg-6 offset-lg-3 wow slideInUp" data-wow-delay="0.3s">
                 <form id="clients_form">
                     <div class="row g-3">
                         @Html.AntiForgeryToken()
                         <input type="hidden" asp-for="Input.Id" class="ignore" />
-                        <input type="hidden" asp-for="Input.TypeWF" class="ignore" />
-                        <input type="hidden" asp-for="Input.Distance" class="ignore" />
-                        <input type="hidden" asp-for="Input.IsConsumptionMonitoring" class="ignore" />
+                        <input type="hidden" asp-for="Input.TypeWF" class="ignore" id="Input_TypeWF" />
+                        <input type="hidden" asp-for="Input.Distance" class="ignore" id="Input_Distance" />
+                        <input type="hidden" asp-for="Input.IsConsumptionMonitoring" class="ignore" id="Input_IsConsumptionMonitoring" />
+
+                        <!-- "Firm" field -->
+                        <div class="col-md-6" id="firmField">
+                            <input type="text" asp-for="Input.Firm" class="form-control border-0 bg-light px-4"
+                                   placeholder="Société" style="height: 55px;">
+                        </div>
+
+                        <!-- "Stations" field -->
+                        <div class="col-md-6" id="stationsField">
+                            <input type="number" asp-for="Input.NumberOfStationsToInstall"
+                                   class="form-control border-0 bg-light px-4"
+                                   placeholder="Nombre de bornes à installer"
+                                   style="height: 55px;">
+                        </div>
+
                         <div class="col-md-6">
-                            <input type="text" asp-for="Input.Nom" class="form-control border-0 bg-light px-4" placeholder="Nom & Prénom" style="height: 55px;">
+                            <input type="text" asp-for="Input.Nom" class="form-control border-0 bg-light px-4"
+                                   placeholder="Nom" style="height: 55px;">
                         </div>
                         <div class="col-md-6">
-                            <input type="email" asp-for="Input.Email" class="form-control border-0 bg-light px-4" placeholder="Adresse électronique" style="height: 55px;">
+                            <input type="text" asp-for="Input.Prenom" class="form-control border-0 bg-light px-4"
+                                   placeholder="Prénom" style="height: 55px;">
                         </div>
                         <div class="col-md-6">
-                            <input type="tel" asp-for="Input.Tel" class="form-control border-0 bg-light px-4" placeholder="Téléphone" style="height: 55px;">
+                            <input type="email" asp-for="Input.Email" class="form-control border-0 bg-light px-4"
+                                   placeholder="Adresse électronique" style="height: 55px;">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" asp-for="Input.Tel" class="form-control border-0 bg-light px-4"
+                                   placeholder="Téléphone" style="height: 55px;">
                         </div>
                         <div class="col-12">
-                            <input type="text" asp-for="Input.Sujet" class="form-control border-0 bg-light px-4" placeholder="Sujet" style="height: 55px;">
+                            <input type="text" asp-for="Input.Sujet" class="form-control border-0 bg-light px-4"
+                                   placeholder="Sujet" style="height: 55px;">
                         </div>
                         <div class="col-12">
-                            <input type="text" asp-for="Input.Adresse" class="form-control border-0 bg-light px-4" placeholder="Adresse" style="height: 55px;">
+                            <input type="text" asp-for="Input.Adresse" class="form-control border-0 bg-light px-4"
+                                   placeholder="Adresse" style="height: 55px;">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" asp-for="Input.City" class="form-control border-0 bg-light px-4"
+                                   placeholder="Ville" style="height: 55px;">
                         </div>
                         <div class="col-12">
-                            <textarea asp-for="Input.Message" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
+                            <textarea asp-for="Input.Message" class="form-control border-0 bg-light px-4 py-3"
+                                      rows="4" placeholder="Message"></textarea>
                         </div>
                         <div class="col-12">
                             <button class="btn btn-primary w-100 py-3" type="submit" id="submitButton">Envoyer</button>
@@ -483,6 +577,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Retour Button (Global) -->
     <div class="text-center mt-5">
         <button class="btn btn-outline-primary retour-btn" onclick="goBack()">Retour</button>
     </div>
@@ -497,60 +593,99 @@
     let selectedDistance = 0;
     let appartmentFloor = null;
 
-    // Essentiel text remains unchanged
+    // Text blocks for project details
     const essentielProjectDetails = `
-    <p style="color:#007bff;font-weight:bold;">Une solution pratique et économique, idéale pour les particuliers ou petites entreprises recherchant une borne de recharge simple, fiable et performante.</p>
-    <br>
-    <p style="color:#007bff;font-weight:bold;">Principales fonctionnalités :</p>
-    <ul style="list-style-type: disc; margin-left:20px;">
-      <li>Puissance maximale 7,4kW monophasé</li>
-      <li>Gestion via application mobile</li>
-      <li>Connectivité Bluetooth/WiFi</li>
-      <li>Compatibilité avec les panneaux photovoltaïques</li>
-      <li>Classe de protection IP55</li>
-    </ul>
+      <p style="color:#007bff;font-weight:bold;">Une solution pratique et économique, idéale pour les particuliers ou petites entreprises recherchant une borne de recharge simple, fiable et performante.</p>
+      <br>
+      <p style="color:#007bff;font-weight:bold;">Principales fonctionnalités :</p>
+      <ul style="list-style-type: disc; margin-left:20px;">
+          <li>Puissance maximale 7,4kW monophasé</li>
+          <li>Gestion via application mobile</li>
+          <li>Connectivité Bluetooth/WiFi</li>
+          <li>Compatibilité avec les panneaux photovoltaïques</li>
+          <li>Classe de protection IP55</li>
+      </ul>
     `;
 
-    // Smart updated text
     const smartProjectDetails = `
-    <p style="color:#007bff;font-weight:bold;">L’équilibre parfait entre performance et innovation, destinée aux clients souhaitant une gestion optimisée de leur recharge.</p>
-    <br>
-    <p style="color:#007bff;font-weight:bold;">Principales fonctionnalités :</p>
-    <ul style="list-style-type: disc; margin-left:20px;">
-      <li>Puissance maximale 7,4kW monophasé</li>
-      <li>Gestion via application mobile</li>
-      <li>Bluetooth/WiFi + port Ethernet</li>
-      <li>Equilibrage de puissance jusqu’à 8 bornes</li>
-      <li>«100% photovoltaïque» (mode autoconsommation)</li>
-      <li>Programmation de la recharge</li>
-      <li>Lecteur RFID</li>
-    </ul>
+      <p style="color:#007bff;font-weight:bold;">L’équilibre parfait entre performance et innovation, destinée aux clients souhaitant une gestion optimisée de leur recharge.</p>
+      <br>
+      <br>
+      <p style="color:#007bff;font-weight:bold;">Principales fonctionnalités :</p>
+      <ul style="list-style-type: disc; margin-left:20px;">
+          <li>Puissance maximale 7,4kW monophasé</li>
+          <li>Gestion via application mobile</li>
+          <li>Bluetooth/WiFi + port Ethernet</li>
+          <li>Equilibrage de puissance jusqu’à 8 bornes</li>
+          <li>«100% photovoltaïque» (mode autoconsommation)</li>
+          <li>Programmation de la recharge</li>
+          <li>Lecteur RFID</li>
+      </ul>
     `;
 
-    // Premium updated text
     const premiumProjectDetails = `
-    <p style="color:#007bff;font-weight:bold;">L’offre haut de gamme intégrant des technologies durables et connectées, parfaite pour les projets résidentiels ou professionnels exigeants.</p>
-    <br>
-    <p style="color:#007bff;font-weight:bold;">Principales fonctionnalités :</p>
-    <ul style="list-style-type: disc; margin-left:20px;">
-      <li>Puissance maximale 22kW triphasé</li>
-      <li>Gestion via application mobile</li>
-      <li>Bluetooth/WiFi + port Ethernet</li>
-      <li>Equilibrage de puissance jusqu’à 8 bornes</li>
-      <li>«100% photovoltaïque» (mode autoconsommation)</li>
-      <li>Programmation de la recharge</li>
-      <li>Lecteur RFID</li>
-      <li>Interopérabilité OCPP 1.6 Json</li>
-      <li>Dynamic Power Manager jusqu’à 30kW</li>
-    </ul>
+      <p style="color:#007bff;font-weight:bold;">L’offre haut de gamme intégrant des technologies durables et connectées, parfaite pour les projets résidentiels ou professionnels exigeants.</p>
+      <br>
+      <p style="color:#007bff;font-weight:bold;">Principales fonctionnalités :</p>
+      <ul style="list-style-type: disc; margin-left:20px;">
+          <li>Puissance maximale 22kW triphasé</li>
+          <li>Gestion via application mobile</li>
+          <li>Bluetooth/WiFi + port Ethernet</li>
+          <li>Equilibrage de puissance jusqu’à 8 bornes</li>
+          <li>«100% photovoltaïque» (mode autoconsommation)</li>
+          <li>Programmation de la recharge</li>
+          <li>Lecteur RFID</li>
+          <li>Interopérabilité OCPP 1.6 Json</li>
+          <li>Dynamic Power Manager jusqu’à 30kW</li>
+      </ul>
     `;
 
+    /*
+      This helper decides whether to show/hide:
+        - "firmField"  => For Entreprise only (type=3)
+        - "stationsField" => For Appartement only (type=2)
+    */
+    function updateFirmFieldVisibility() {
+        const formType = document.getElementById("Input_TypeWF").value;
+
+        const firmField = document.getElementById("firmField");
+        const stationsField = document.getElementById("stationsField");
+
+        // If user selected Entreprise (3) => show firm, hide stations
+        if (formType === "3") {
+            firmField.style.display = "block";
+            stationsField.style.display = "none";
+            return;
+        }
+
+        // If user selected Appartement (2) => show stations, hide firm
+        if (formType === "2") {
+            stationsField.style.display = "block";
+            firmField.style.display = "none";
+            return;
+        }
+
+        // Otherwise => Maison (1) => hide both
+        firmField.style.display = "none";
+        stationsField.style.display = "none";
+    }
+
+    /* ----------------------
+       1) MAISON LOGIC
+    ----------------------- */
     function showStep2() {
         document.getElementById("step2Content").style.display = "block";
         document.getElementById("appartmentButton").style.display = "none";
         document.getElementById("entrepriseButton").style.display = "none";
 
+        // Hide both titles
+        document.getElementById("offersTitleMaison").style.display = "none";
+        document.getElementById("offersTitleAppartement").style.display = "none";
+
+        // TypeWF=1 => Maison
         $('#Input_TypeWF').val("1");
+
+        // Reset slider
         const slider = document.getElementById("distanceSlider");
         slider.value = 0;
         updateSliderLabel(0);
@@ -574,23 +709,20 @@
         }
     }
 
+    // Hide form if user reselects slider
     function displayRecommendation(value) {
-        const finalStepBox = document.getElementById("finalStepBox");
-        const finalStepBoxRight = document.getElementById("finalStepBoxRight");
-        const finalStepBoxLeft = document.getElementById("finalStepBoxLeft");
-        const projectDetailsRight = document.getElementById("projectDetailsRight");
-        const projectDetailsLeft = document.getElementById("projectDetailsLeft");
-        const projectDetails = document.getElementById("projectDetails");
+        // Hide Maison final steps
+        document.getElementById("offersTitleMaison").style.display = "none";
+        document.getElementById("finalStepBox").style.display = "none";
+        document.getElementById("finalStepBoxRight").style.display = "none";
+        document.getElementById("finalStepBoxLeft").style.display = "none";
+        document.getElementById("projectDetailsRight").style.display = "none";
+        document.getElementById("projectDetailsLeft").style.display = "none";
+        document.getElementById("projectDetails").style.display = "none";
 
-        // Hide these sections to reset the view
-        finalStepBox.style.display = "none";
-        finalStepBoxRight.style.display = "none";
-        finalStepBoxLeft.style.display = "none";
-        projectDetailsRight.style.display = "none";
-        projectDetailsLeft.style.display = "none";
-        projectDetails.style.display = "none";
+        // Also hide the form
+        document.getElementById("contactblockid").style.display = "none";
 
-        // Show the choiceSection if value > 0
         if (value > 0) {
             document.getElementById("choiceSection").style.display = "block";
         } else {
@@ -599,16 +731,20 @@
     }
 
     function handleChoice(choice) {
+        const maisonTitle = document.getElementById("offersTitleMaison");
+        maisonTitle.style.display = "block";
+        maisonTitle.classList.add("fade-in-up");
+
         const finalStepBoxes = [
-            document.getElementById("finalStepBox"),         // Smart
-            document.getElementById("finalStepBoxLeft"),     // Essentiel
-            document.getElementById("finalStepBoxRight")     // Premium
+            document.getElementById("finalStepBox"),
+            document.getElementById("finalStepBoxLeft"),
+            document.getElementById("finalStepBoxRight")
         ];
 
         const finalStepTexts = [
-            document.getElementById("finalStepText"),         // Smart text
-            document.getElementById("finalStepTextLeft"),     // Essentiel text
-            document.getElementById("finalStepTextRight")     // Premium text
+            document.getElementById("finalStepText"),
+            document.getElementById("finalStepTextLeft"),
+            document.getElementById("finalStepTextRight")
         ];
 
         const finalOffers = [
@@ -624,9 +760,9 @@
         ];
 
         const projectDetailsSections = [
-            document.getElementById("projectDetails"),        // Smart details
-            document.getElementById("projectDetailsLeft"),    // Essentiel details
-            document.getElementById("projectDetailsRight")    // Premium details
+            document.getElementById("projectDetails"),
+            document.getElementById("projectDetailsLeft"),
+            document.getElementById("projectDetailsRight")
         ];
 
         let smartAmount, essentielAmount, premiumAmount;
@@ -645,84 +781,68 @@
             premiumAmount = "14 090MAD";
         }
 
-        const forfaitText = (choice === "yes") ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois" : "";
+        const forfaitText = (choice === "yes")
+            ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois"
+            : "";
 
         finalStepTexts[0].innerHTML = `<div style="text-align:center;">Offre Smart<br>À partir de ${smartAmount}${forfaitText}</div>`;
         finalStepTexts[1].innerHTML = `<div style="text-align:center;">Offre Essentiel<br>À partir de ${essentielAmount}${forfaitText}</div>`;
         finalStepTexts[2].innerHTML = `<div style="text-align:center;">Offre Premium<br>À partir de ${premiumAmount}${forfaitText}</div>`;
 
+        // Clear old amounts
         finalAmounts[0].innerText = "";
         finalAmounts[1].innerText = "";
         finalAmounts[2].innerText = "";
-
         finalOffers[0].innerText = "";
         finalOffers[1].innerText = "";
         finalOffers[2].innerText = "";
 
-        // Assign the respective project details
-        // Index 0 = Smart, Index 1 = Essentiel, Index 2 = Premium
+        // Assign details
         const detailsArray = [smartProjectDetails, essentielProjectDetails, premiumProjectDetails];
-
         for (let i = 0; i < 3; i++) {
             finalStepBoxes[i].style.display = "block";
             projectDetailsSections[i].style.display = "block";
             projectDetailsSections[i].innerHTML = detailsArray[i];
         }
 
+        // Show the form, set "IsConsumptionMonitoring"
         document.getElementById("contactblockid").style.display = "block";
         $('#Input_IsConsumptionMonitoring').val(choice === "yes" ? "Oui" : "Non");
+
+        // Now hide or show "Firm" / "Stations"
+        updateFirmFieldVisibility();
     }
 
+    /* ----------------------
+       2) ENTREPRISE LOGIC
+    ----------------------- */
     function showForm() {
-        const contactblockid = document.getElementById("contactblockid");
         document.getElementById("maisonButton").style.display = "none";
         document.getElementById("appartmentButton").style.display = "none";
 
+        // TypeWF=3 => Entreprise
         $('#Input_TypeWF').val("3");
-        contactblockid.style.display = "block";
+
+        // Show the form
+        document.getElementById("contactblockid").style.display = "block";
+
+        // Hide or show "Firm" / "Stations"
+        updateFirmFieldVisibility();
     }
 
-    function goBack() {
-        document.getElementById("maisonButton").style.display = "block";
-        document.getElementById("appartmentButton").style.display = "block";
-        document.getElementById("entrepriseButton").style.display = "block";
-
-        let sections = [
-            "appartmentSolution",
-            "distanceEstimation",
-            "dynamicRecommendation",
-            "step2Content",
-            "choiceSection",
-            "recommendation",
-            "finalStepBox",
-            "projectDetails",
-            "contactblockid",
-            "blueBox",
-            "finalStepBoxRight",
-            "finalStepBoxLeft",
-            "projectDetailsRight",
-            "projectDetailsLeft",
-            "finalStepBoxAppartement",
-            "finalStepBoxLeftAppartement",
-            "finalStepBoxRightAppartement",
-            "projectDetailsAppartement",
-            "projectDetailsLeftAppartement",
-            "projectDetailsRightAppartement"
-        ];
-
-        sections.forEach(function (id) {
-            let section = document.getElementById(id);
-            if (section) {
-                section.style.display = "none";
-            }
-        });
-    }
-
+    /* ----------------------
+       3) APPARTEMENT LOGIC
+    ----------------------- */
     function showAppartmentSolution() {
         document.getElementById("appartmentSolution").style.display = "block";
         document.getElementById("maisonButton").style.display = "none";
         document.getElementById("entrepriseButton").style.display = "none";
 
+        // Hide both titles
+        document.getElementById("offersTitleMaison").style.display = "none";
+        document.getElementById("offersTitleAppartement").style.display = "none";
+
+        // TypeWF=2 => Appartement
         $('#Input_TypeWF').val("2");
     }
 
@@ -748,27 +868,31 @@
 
     function checkAndShowRecommendation() {
         if (appartmentFloor !== null) {
+            // Show next step
             const dynamicRecommendation = document.getElementById("dynamicRecommendation");
             dynamicRecommendation.style.display = "block";
         }
     }
 
-        function formatAmountWithSpace(amount) {
-        // Convert to string, then insert a space before each group of 3 digits from the right
+    // Format amount with a space before each group of 3 digits
+    function formatAmountWithSpace(amount) {
         return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
 
+    // When the user picks "Oui"/"Non" for Appartement
     function handleChoice2(choice) {
+        document.getElementById("offersTitleAppartement").style.display = "block";
+
         const finalStepBoxes = [
-            document.getElementById("finalStepBoxAppartement"),       // Smart
-            document.getElementById("finalStepBoxLeftAppartement"),   // Essentiel
-            document.getElementById("finalStepBoxRightAppartement")   // Premium
+            document.getElementById("finalStepBoxAppartement"),
+            document.getElementById("finalStepBoxLeftAppartement"),
+            document.getElementById("finalStepBoxRightAppartement")
         ];
 
         const finalStepTexts = [
-            document.getElementById("finalStepTextAppartement"),        // Smart text
-            document.getElementById("finalStepTextLeftAppartement"),    // Essentiel text
-            document.getElementById("finalStepTextRightAppartement")    // Premium text
+            document.getElementById("finalStepTextAppartement"),
+            document.getElementById("finalStepTextLeftAppartement"),
+            document.getElementById("finalStepTextRightAppartement")
         ];
 
         const finalAmounts = [
@@ -784,63 +908,62 @@
         ];
 
         const projectDetailsSections = [
-            document.getElementById("projectDetailsAppartement"),        // Smart
-            document.getElementById("projectDetailsLeftAppartement"),    // Essentiel
-            document.getElementById("projectDetailsRightAppartement")    // Premium
+            document.getElementById("projectDetailsAppartement"),
+            document.getElementById("projectDetailsLeftAppartement"),
+            document.getElementById("projectDetailsRightAppartement")
         ];
 
-            // 1. Calculate numeric values (without "MAD" yet)
-    const eValue = 9490 + (300 * appartmentFloor);
-    const sValue = 12090 + (300 * appartmentFloor);
-    const pValue = 13090 + (300 * appartmentFloor);
+        // Calculate numeric values
+        const eValue = 9490 + (300 * appartmentFloor);
+        const sValue = 12090 + (300 * appartmentFloor);
+        const pValue = 13090 + (300 * appartmentFloor);
 
-    // 2. Format each value and append the currency text
-    const essentielAmount = formatAmountWithSpace(eValue) + " MAD";
-    const smartAmount     = formatAmountWithSpace(sValue) + " MAD";
-    const premiumAmount   = formatAmountWithSpace(pValue) + " MAD";
+        const essentielAmount = formatAmountWithSpace(eValue) + " MAD";
+        const smartAmount     = formatAmountWithSpace(sValue) + " MAD";
+        const premiumAmount   = formatAmountWithSpace(pValue) + " MAD";
 
-    // 3. Determine if we add the extra text (forfaitText)
-    const forfaitText = (choice === "yes")
-        ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois"
-        : "";
+        const forfaitText = (choice === "yes")
+            ? "<br>+ Forfaits sérénité dès 59,90 MAD/Mois"
+            : "";
 
-    // 4. Inject final text into your DOM elements
-    finalStepTexts[0].innerHTML = `
-        <div style="text-align:center;">
-            Offre Smart<br>À partir de ${smartAmount}${forfaitText}
-        </div>`;
+        finalStepTexts[0].innerHTML = `
+          <div style="text-align:center;">
+              Offre Smart<br>À partir de ${smartAmount}${forfaitText}
+          </div>`;
+        finalStepTexts[1].innerHTML = `
+          <div style="text-align:center;">
+              Offre Essentiel<br>À partir de ${essentielAmount}${forfaitText}
+          </div>`;
+        finalStepTexts[2].innerHTML = `
+          <div style="text-align:center;">
+              Offre Premium<br>À partir de ${premiumAmount}${forfaitText}
+          </div>`;
 
-    finalStepTexts[1].innerHTML = `
-        <div style="text-align:center;">
-            Offre Essentiel<br>À partir de ${essentielAmount}${forfaitText}
-        </div>`;
-
-    finalStepTexts[2].innerHTML = `
-        <div style="text-align:center;">
-            Offre Premium<br>À partir de ${premiumAmount}${forfaitText}
-        </div>`;
-
+        // Clear old amounts
         finalAmounts[0].innerText = "";
         finalAmounts[1].innerText = "";
         finalAmounts[2].innerText = "";
-
         finalOffers[0].innerText = "";
         finalOffers[1].innerText = "";
         finalOffers[2].innerText = "";
 
-        // Use the same updated details arrays
+        // Show details
         const detailsArrayAppartement = [smartProjectDetails, essentielProjectDetails, premiumProjectDetails];
-
         for (let i = 0; i < 3; i++) {
             finalStepBoxes[i].style.display = "block";
             projectDetailsSections[i].style.display = "block";
             projectDetailsSections[i].innerHTML = detailsArrayAppartement[i];
         }
 
+        // Show the form
         document.getElementById("contactblockid").style.display = "block";
         $('#Input_IsConsumptionMonitoring').val(choice === "yes" ? "Oui" : "Non");
+
+        // Hide or show "Firm" / "Stations"
+        updateFirmFieldVisibility();
     }
 
+    // Helper to populate floors
     function populateSelectOptions(selectId, start, end) {
         const select = document.getElementById(selectId);
         select.innerHTML = '<option>--Veuillez sélectionner votre choix--</option>';
@@ -852,29 +975,79 @@
         }
     }
 
+    // Hide all relevant sections if user reselects floor
     document.getElementById("appartmentFloor").addEventListener("change", hideSectionsOnSelectChange);
-
     function hideSectionsOnSelectChange() {
         const sectionsToHide = [
-            "projectDetails",
-            "blueBox",
+            "step2Content",
+            "choiceSection",
+            "recommendation",
+            "offersTitleMaison",
             "finalStepBox",
             "finalStepBoxRight",
             "finalStepBoxLeft",
             "projectDetailsRight",
             "projectDetailsLeft",
+            "projectDetails",
+            "blueBox",
             "finalStepBoxAppartement",
             "finalStepBoxRightAppartement",
             "finalStepBoxLeftAppartement",
             "projectDetailsRightAppartement",
             "projectDetailsLeftAppartement",
-            "projectDetailsAppartement"
+            "projectDetailsAppartement",
+            "offersTitleAppartement"
         ];
 
         sectionsToHide.forEach(function (id) {
             let element = document.getElementById(id);
             if (element) {
                 element.style.display = "none";
+            }
+        });
+        document.getElementById("contactblockid").style.display = "none";
+    }
+
+    /* ----------------------
+       UNIVERSAL "Retour" LOGIC
+    ----------------------- */
+    function goBack() {
+        document.getElementById("maisonButton").style.display = "block";
+        document.getElementById("appartmentButton").style.display = "block";
+        document.getElementById("entrepriseButton").style.display = "block";
+
+        document.getElementById("offersTitleMaison").style.display = "none";
+        document.getElementById("offersTitleAppartement").style.display = "none";
+
+        const sections = [
+            "appartmentSolution",
+            "distanceEstimation",
+            "dynamicRecommendation",
+            "step2Content",
+            "choiceSection",
+            "recommendation",
+            "finalStepBox",
+            "projectDetails",
+            "contactblockid",
+            "blueBox",
+            "finalStepBoxRight",
+            "finalStepBoxLeft",
+            "projectDetailsRight",
+            "projectDetailsLeft",
+            "finalStepBoxAppartement",
+            "finalStepBoxLeftAppartement",
+            "finalStepBoxRightAppartement",
+            "projectDetailsAppartement",
+            "projectDetailsLeftAppartement",
+            "projectDetailsRightAppartement",
+            "offersTitleMaison",
+            "offersTitleAppartement"
+        ];
+
+        sections.forEach(function (id) {
+            let section = document.getElementById(id);
+            if (section) {
+                section.style.display = "none";
             }
         });
     }
@@ -891,11 +1064,13 @@
         const type = $('#Input_TypeWF').val();
         const distance = $('#Input_Distance').val();
         const isConsumptionMonitoring = $('#Input_IsConsumptionMonitoring').val();
-        axios.post('@Url.Page("/Offres")?type=' + type + '&distance=' + distance + '&isConsumptionMonitoring=' + isConsumptionMonitoring, request).then(res => {
-            toastr["info"]('Message envoyé avec succès.');
-        });
+
+        axios.post('@Url.Page("/Offres")?type=' + type + '&distance=' + distance + '&isConsumptionMonitoring=' + isConsumptionMonitoring, request)
+             .then(res => {
+                 toastr["info"]('Message envoyé avec succès.');
+             });
 
         event.preventDefault();
         event.stopPropagation();
-    })
+    });
 </script>

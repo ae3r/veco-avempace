@@ -41,24 +41,32 @@ public class MailService : IMailService
             if (request.TypeWF == Domain.Enums.TypeWFEnum.Maison)
             {
                 body = $@"
-        <p><strong>Nom & prénom :</strong> {request.Nom}</p>
-        <p><strong>Adresse électronique :</strong> {request.Email}</p>
-        <p><strong>Téléphone :</strong> {request.Phone}</p>
-        <p><strong>Sujet :</strong> {request.Subject}</p>
-        <p><strong>Adresse :</strong> {request.Adresse}</p> 
-        <p><strong>Demande pour :</strong> {request.TypeWF.ToString()}</p> 
-        <p><strong>La distance entre le tableau électrique et le point de charge :</strong> {request.Distance}</p> 
+        <p><strong>Nom :</strong> {request?.Nom}</p>
+        <p><strong>Prénom :</strong> {request?.Prenom}</p>
+        <p><strong>Société :</strong> {request?.Firm}</p>
+        <p><strong>Adresse électronique :</strong> {request?.Email}</p>
+        <p><strong>Ville :</strong> {request?.City}</p>
+        <p><strong>Téléphone :</strong> {request?.Phone}</p>
+        <p><strong>Sujet :</strong> {request?.Subject}</p>
+        <p><strong>Adresse :</strong> {request?.Adresse}</p>
+        <p><strong>Nombre de bornes à installer :</strong> {request?.NumberOfStationsToInstall}</p>
+        <p><strong>Demande pour :</strong> {request?.TypeWF.ToString()}</p> 
+        <p><strong>La distance entre le tableau électrique et le point de charge :</strong> {request?.Distance}</p> 
         <p><strong>Je veux pouvoir piloter et suivre précisément la consommation d'électricité liée à ma recharge :</strong> {request.IsConsumptionMonitoring}</p>" + request.Body;
 
             }
             else
             {
                 body = $@"
-        <p><strong>Nom & prénom :</strong> {request.Nom}</p>
-        <p><strong>Adresse électronique :</strong> {request.Email}</p>
-        <p><strong>Téléphone :</strong> {request.Phone}</p>
-        <p><strong>Sujet :</strong> {request.Subject}</p>
-        <p><strong>Adresse :</strong> {request.Adresse}</p>" + request.Body;
+        <p><strong>Nom :</strong> {request?.Nom}</p>
+        <p><strong>Prénom :</strong> {request?.Prenom}</p>
+        <p><strong>Société :</strong> {request?.Firm}</p>
+        <p><strong>Adresse électronique :</strong> {request?.Email}</p>
+        <p><strong>Téléphone :</strong> {request?.Phone}</p>
+        <p><strong>Sujet :</strong> {request?.Subject}</p>
+        <p><strong>Ville :</strong> {request?.City}</p>
+        <p><strong>Nombre de bornes à installer :</strong> {request?.NumberOfStationsToInstall}</p>
+        <p><strong>Adresse :</strong> {request?.Adresse}</p>" + request?.Body;
 
             }
 

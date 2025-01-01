@@ -15,6 +15,14 @@ public class MailRequest
     public string Phone { get; set; }
     public string Adresse { get; set; }
     public string Nom { get; set; }
+
+    public string Prenom { get; set; }
+
+    public string Firm { get; set; }
+
+    public string City { get; set; }
+
+    public int? NumberOfStationsToInstall { get; set; }
     public TypeWFEnum TypeWF { get; set; }
     public string Distance { get; set; }
     public string IsConsumptionMonitoring { get; set; }

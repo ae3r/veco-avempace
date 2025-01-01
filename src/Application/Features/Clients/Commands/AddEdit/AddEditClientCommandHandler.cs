@@ -52,13 +52,17 @@ public class AddEditClientCommandHandler : IRequestHandler<AddEditClientCommand,
 
                 // Send email after saving the client
                 var mailRequest = new MailRequest();
-                mailRequest.Subject = clients.Sujet;
-                mailRequest.From = clients.Email;
-                mailRequest.Body = clients.Message;
-                mailRequest.Email = clients.Email;
-                mailRequest.Phone = clients.Tel;
-                mailRequest.Adresse = clients.Adresse;
-                mailRequest.Nom = clients.Nom;
+                mailRequest.Subject = clients?.Sujet;
+                mailRequest.From = clients?.Email;
+                mailRequest.Body = clients?.Message;
+                mailRequest.Email = clients?.Email;
+                mailRequest.Phone = clients?.Tel;
+                mailRequest.Adresse = clients?.Adresse;
+                mailRequest.Nom = clients?.Nom;
+                mailRequest.Prenom = clients?.Prenom;
+                mailRequest.Firm = clients?.Firm;
+                mailRequest.City = clients?.City;
+                mailRequest.NumberOfStationsToInstall = clients?.NumberOfStationsToInstall;
                 mailRequest.TypeWF = request.TypeWF;
                 mailRequest.Distance = request.Distance;
                 mailRequest.IsConsumptionMonitoring = request.IsConsumptionMonitoring;
