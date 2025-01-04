@@ -13,9 +13,6 @@
 <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-@* <!-- Font Awesome Icon -->
-<link rel="stylesheet" href="css/all.min.css"> *@
-
 <style>
 
 </style>
@@ -49,35 +46,16 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <i class="fa fa-shopping-cart"></i>
                             <span>Your Cart</span>
-                            <div class="qty">3</div>
+                            <div class="qty">
+                                <label class="form-label" id="idcounter">0 <span class="text-danger"></span></label>
+                            </div>
                         </a>
                         <div class="cart-dropdown">
-                            <div class="cart-list">
-                                <div class="product-widget">
-                                    <div class="product-img">
-                                        <img src="./img/homet.png" alt="">
-                                    </div>
-                                    <div class="product-body">
-                                        <h3 class="product-name"><a href="#">Home T</a></h3>
-                                        <h4 class="product-price"><span class="qty">1x</span>Dazebox Home</h4>
-                                    </div>
-                                    <button class="delete"><i class="fa fa-close"></i></button>
-                                </div>
-
-                                <div class="product-widget">
-                                    <div class="product-img">
-                                        <img src="./img/dazeboxc.png" alt="">
-                                    </div>
-                                    <div class="product-body">
-                                        <h3 class="product-name"><a href="#">Dazebox C</a></h3>
-                                        <h4 class="product-price"><span class="qty">2x</span>Dazebox C</h4>
-                                    </div>
-                                    <button class="delete"><i class="fa fa-close"></i></button>
-                                </div>
+                            <div class="cart-list" id="cardlistid">
                             </div>
                             <div class="cart-summary">
-                                <small>3 Item(s) selected</small>
-                                @* <h5>SUBTOTAL: 2</h5> *@
+                                <small id="idcountersmall"></small>
+                               
                             </div>
                             <div class="cart-btns">
                                 <a href="#">View Cart</a>
@@ -94,7 +72,8 @@
     <!-- container -->
 </div>
 <!-- /MAIN HEADER -->
-<!-- SECTION -->
+
+<!-- SECTION ALL PRODUCTS-->
 <div class="section">
     <!-- container -->
     <div class="container">
@@ -107,7 +86,7 @@
                         <div id="tab1" class="tab-pane active">
                             <div class="products-slick" data-nav="#slick-nav-1">
                                 <!-- product -->
-                                <div class="product">
+                                <div class="product" id="homet1">
                                     <div class="product-img">
                                         <img src="./img/homet.png" alt="">
                                         <div class="product-label">
@@ -123,12 +102,12 @@
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
-                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        <button class="add-to-cart-btn" onclick="addtocart('homet1', './img/homet.png', 'Home T', 'Dazebox Home' )"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                     </div>
                                 </div>
                                 <!-- /product -->
                                 <!-- product -->
-                                <div class="product">
+                                <div class="product" id="homes1">
                                     <div class="product-img">
                                         <img src="./img/homeS.png" alt="">
                                         <div class="product-label">
@@ -144,12 +123,12 @@
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
-                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        <button class="add-to-cart-btn" onclick="addtocart('homes1', './img/homeS.png', 'Home S', 'Dazebox Home' )"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                     </div>
                                 </div>
                                 <!-- /product -->
                                 <!-- product -->
-                                <div class="product">
+                                <div class="product" id="hometk1">
                                     <div class="product-img">
                                         <img src="./img/homeTK.png" alt="">
                                         <div class="product-label">
@@ -165,12 +144,12 @@
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
-                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        <button class="add-to-cart-btn" onclick="addtocart('hometk1', './img/homeTK.png', 'Home TK', 'Dazebox Home' )"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                     </div>
                                 </div>
                                 <!-- /product -->
                                 <!-- product -->
-                                <div class="product">
+                                <div class="product" id="homesk1">
                                     <div class="product-img">
                                         <img src="./img/homeS.png" alt="">
                                         <div class="product-label">
@@ -186,12 +165,12 @@
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
-                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        <button class="add-to-cart-btn" onclick="addtocart('homesk1', './img/homeS.png', 'Home SK', 'Dazebox Home' )"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                     </div>
                                 </div>
                                 <!-- /product -->
                                 <!-- product -->
-                                <div class="product">
+                                <div class="product" id="dazeboxc1">
                                     <div class="product-img">
                                         <img src="./img/dazeboxc.png" alt="">
                                         <div class="product-label">
@@ -207,7 +186,7 @@
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
-                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        <button class="add-to-cart-btn" onclick="addtocart('dazeboxc1', './img/dazeboxc.png', 'Dazebox C', 'Dazebox C' )"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                     </div>
                                 </div>
                                 <!-- /product -->
@@ -221,10 +200,124 @@
         </div>
     </div>
 </div>
-<!-- /SECTION -->
+<!-- /SECTION ALL PRODUCTS -->
+
 <!-- Vendor Start -->
 @await Html.PartialAsync("__Vendor")
 <!-- Vendor End -->
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+            var arraylist = new Array();
+            var count = 0;
+
+
+         function deleteproduct(id){
+                 var index = arraylist.findIndex(function (newProduct) {
+                    return newProduct.id === id;
+                });
+
+                var arraycount = +arraylist[index].count;
+                count =  count - Number(arraycount)
+                $('#idcounter').text(count);
+
+                if (index !== -1) {
+                arraylist.splice(index, 1);
+                    };
+
+                $('#idcountersmall').text(arraylist.length + ' Item(s) selected');
+
+                    var productWidget = document.getElementById(id + 'widget');
+                    if (productWidget) {
+                            productWidget.remove();
+                        }
+         }
+
+        function addtocart(id, srcimage, name, type) {
+                count = +count + +1;
+                $('#idcounter').text(count);
+
+                var index = arraylist.findIndex(function (newProduct) {
+                    return newProduct.id === id;
+                });
+
+                    if(index === -1)
+                    {
+
+                    ////////////////////////////////////////////
+                        // Create product-widget div
+                        const productWidget = document.createElement('div');
+                        productWidget.id= id + 'widget';
+                        productWidget.classList.add('product-widget');
+
+                        // Create product-img div and img
+                        const productImg = document.createElement('div');
+                        productImg.classList.add('product-img');
+                        const img = document.createElement('img');
+                        img.src = srcimage; //'./img/homet.png';
+                        img.alt = '';
+                        productImg.appendChild(img);
+
+                        // Create product-body div
+                        const productBody = document.createElement('div');
+                        productBody.classList.add('product-body');
+
+                        // Create product name (h3)
+                        const productName = document.createElement('h3');
+                        productName.classList.add('product-name');
+                        const link = document.createElement('a');
+                        link.href = '#';
+                        link.textContent = name;
+                        productName.appendChild(link);
+
+                        // Create product price (h4)
+                        const productPrice = document.createElement('h4');
+                        productPrice.classList.add('product-price');
+                        const qtySpan = document.createElement('span');
+                        qtySpan.id = id + 'qty' ;
+                        qtySpan.classList.add('qty');
+                        qtySpan.textContent = '1x';
+                        productPrice.appendChild(qtySpan);
+                        productPrice.appendChild(document.createTextNode(type));
+
+                        // Append product name and price to product-body
+                        productBody.appendChild(productName);
+                        productBody.appendChild(productPrice);
+
+                        // Create delete button
+                        const deleteButton = document.createElement('button');
+                        deleteButton.classList.add('delete');
+                        const deleteIcon = document.createElement('i');
+                        deleteIcon.classList.add('fa', 'fa-close');
+                        deleteButton.appendChild(deleteIcon);
+                        deleteButton.onclick = function () { deleteproduct(id); };
+
+                        // Append product-img and product-body to product-widget
+                        productWidget.appendChild(productImg);
+                        productWidget.appendChild(productBody);
+                        productWidget.appendChild(deleteButton);
+
+                        // Append product-widget to the cart-list
+                         var p = document.getElementById('cardlistid');
+                             p.appendChild(productWidget);
+
+                    ////////////////////////////////////////////
+                              arraylist.push({ id: id, count: '1' });
+                        }
+                        else{
+
+                            var arraycount = +arraylist[index].count + 1;
+                            arraylist[index].count = arraycount;
+
+                            var qty = document.getElementById(id + 'qty');
+                            qty.textContent = arraycount + 'x';
+                        }
+
+                        $('#idcountersmall').text(arraylist.length + ' Item(s) selected');
+        };
+
+
+
+</script>
