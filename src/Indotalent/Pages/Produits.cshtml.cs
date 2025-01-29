@@ -1,4 +1,5 @@
 using Application.Features.Clients.Commands.AddEdit;
+using Application.Features.Produits.Queries.PaginationQuery;
 using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -19,6 +20,11 @@ namespace Indotalent.Pages
         public void OnGet()
         {
             this.SetupViewDataTitleFromUrl();
+        }
+        public async Task<IActionResult> OnGetDataAsync([FromQuery] ProduitsWithPaginationQuery command)
+        {
+            var result = await _mediator.Send(command);
+            return new JsonResult(result);
         }
         public async Task<IActionResult> OnPostAsync([FromQuery] int type, [FromQuery] string distance, [FromQuery] string isConsumptionMonitoring)
         {

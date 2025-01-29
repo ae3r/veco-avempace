@@ -48,6 +48,7 @@ namespace Infrastructure
             _dateTime = dateTime;
         }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Produit> Produits { get; set; }
 
         /// <summary>
         /// SaveChangesAsync
@@ -124,7 +125,7 @@ namespace Infrastructure
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=172.17.0.2,1433;Database=VecoAvempace_PROD;User Id=sa;Password=Avempace0000!;Trusted_Connection=True;MultipleActiveResultSets=true;");
+                 optionsBuilder.UseSqlServer("Server=172.17.0.2,1433;Database=VecoAvempace_PROD;User Id=sa;Password=Avempace0000!;Trusted_Connection=True;MultipleActiveResultSets=true;");
             }
         }
     }
