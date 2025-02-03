@@ -14,11 +14,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a asp-area="" asp-page="/Index" class="nav-item nav-link @(currentCshtmlName.Equals("") ? "active" : "")">Home</a>
-                <a asp-area="" asp-page="/VECO" class="nav-item nav-link @(currentCshtmlName.Equals("VECO") ? "active" : "")">VECO</a>
-                <a asp-area="" asp-page="/Offres" class="nav-item nav-link @(currentCshtmlName.Equals("Offres") ? "active" : "")">Offres</a>
-                @* <a asp-area="" asp-page="/Blog" class="nav-item nav-link @(currentCshtmlName.Equals("Blog") ? "active" : "")">Blog</a> *@
-                <a asp-area="" asp-page="/Contact" class="nav-item nav-link @(currentCshtmlName.Equals("Contact") ? "active" : "")">Contact</a>
+                
                 <a asp-area="" asp-page="/Produits" class="nav-item nav-link @(currentCshtmlName.Equals("Produits") ? "active" : "")">Nos Produits</a>
             </div>
             <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
