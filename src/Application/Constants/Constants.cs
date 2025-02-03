@@ -14,6 +14,7 @@ public static class Constants
     public const string Desc = "desc";
     public const string DateFormat = "yyyy-MM-dd HH:mm:ss";
     public const string AllCacheKeyClients = "all-clients";
+    public const string AllCacheKeyProduits = "all-produits";
     public const string Separator = "-";
     public const string Space = " ";
 }

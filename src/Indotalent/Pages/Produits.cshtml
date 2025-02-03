@@ -14,7 +14,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
-
+    .products-slick {
+        display: block; /* Force un retour à la ligne */
+        margin-bottom: 30px; /* Ajoute de l'espace entre les groupes */
+    }
 </style>
 
 <!-- MAIN HEADER -->
@@ -55,7 +58,7 @@
                             </div>
                             <div class="cart-summary">
                                 <small id="idcountersmall"></small>
-                               
+
                             </div>
                             <div class="cart-btns">
                                 <a href="#">View Cart</a>
@@ -72,7 +75,6 @@
     <!-- container -->
 </div>
 <!-- /MAIN HEADER -->
-
 <!-- SECTION ALL PRODUCTS-->
 <div class="section">
     <!-- container -->
@@ -84,114 +86,6 @@
                     <div class="products-tabs">
                         <!-- tab -->
                         <div id="tab1" class="tab-pane active">
-                            <div class="products-slick" data-nav="#slick-nav-1">
-                                <!-- product -->
-                                <div class="product" id="homet1">
-                                    <div class="product-img">
-                                        <img src="./img/homet.png" alt="">
-                                        <div class="product-label">
-                                            @*   <span class="new">NEW</span> *@
-                                        </div>
-                                    </div>
-                                    <div class="product-body">
-                                        <p class="product-category">Catégorie : AC</p>
-                                        <h2 class="product-name"><a href="#"><strong>Home T</strong></a></h2>
-                                        <h4 class="product-price">Dazebox Home <ins class="product-old-price">With cable/Avec calbe</ins></h4>
-                                        <div class="product-btns">
-                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                        </div>
-                                    </div>
-                                    <div class="add-to-cart">
-                                        <button class="add-to-cart-btn" onclick="addtocart('homet1', './img/homet.png', 'Home T', 'Dazebox Home' )"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                    </div>
-                                </div>
-                                <!-- /product -->
-                                <!-- product -->
-                                <div class="product" id="homes1">
-                                    <div class="product-img">
-                                        <img src="./img/homeS.png" alt="">
-                                        <div class="product-label">
-                                            <span class="new">NEW</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-body">
-                                        <p class="product-category">Catégorie : DC</p>
-                                        <h2 class="product-name"><a href="#"><strong>Home S</strong></a></h2>
-                                        <h4 class="product-price">Dazebox Home <ins class="product-old-price">With socket/Avec prise</ins></h4>
-                                        <div class="product-btns">
-                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                        </div>
-                                    </div>
-                                    <div class="add-to-cart">
-                                        <button class="add-to-cart-btn" onclick="addtocart('homes1', './img/homeS.png', 'Home S', 'Dazebox Home' )"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                    </div>
-                                </div>
-                                <!-- /product -->
-                                <!-- product -->
-                                <div class="product" id="hometk1">
-                                    <div class="product-img">
-                                        <img src="./img/homeTK.png" alt="">
-                                        <div class="product-label">
-                                            @*   <span class="new">NEW</span> *@
-                                        </div>
-                                    </div>
-                                    <div class="product-body">
-                                        <p class="product-category">Catégorie : AC</p>
-                                        <h2 class="product-name"><a href="#"><strong>Home TK</strong></a></h2>
-                                        <h4 class="product-price">Dazebox Home <ins class="product-old-price">With cable/Avec calbe</ins></h4>
-                                        <div class="product-btns">
-                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                        </div>
-                                    </div>
-                                    <div class="add-to-cart">
-                                        <button class="add-to-cart-btn" onclick="addtocart('hometk1', './img/homeTK.png', 'Home TK', 'Dazebox Home' )"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                    </div>
-                                </div>
-                                <!-- /product -->
-                                <!-- product -->
-                                <div class="product" id="homesk1">
-                                    <div class="product-img">
-                                        <img src="./img/homeS.png" alt="">
-                                        <div class="product-label">
-                                            @*   <span class="new">NEW</span> *@
-                                        </div>
-                                    </div>
-                                    <div class="product-body">
-                                        <p class="product-category">Catégorie : DC</p>
-                                        <h2 class="product-name"><a href="#"><strong>Home SK</strong></a></h2>
-                                        <h4 class="product-price">Dazebox Home <ins class="product-old-price">With socket/Avec prise</ins></h4>
-                                        <div class="product-btns">
-                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                        </div>
-                                    </div>
-                                    <div class="add-to-cart">
-                                        <button class="add-to-cart-btn" onclick="addtocart('homesk1', './img/homeS.png', 'Home SK', 'Dazebox Home' )"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                    </div>
-                                </div>
-                                <!-- /product -->
-                                <!-- product -->
-                                <div class="product" id="dazeboxc1">
-                                    <div class="product-img">
-                                        <img src="./img/dazeboxc.png" alt="">
-                                        <div class="product-label">
-                                            <span class="new">NEW</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-body">
-                                        <p class="product-category">Catégorie : AC</p>
-                                        <h2 class="product-name"><a href="#"><strong>Dazebox C</strong></a></h2>
-                                        <h4 class="product-price">Dazebox C <ins class="product-old-price">With cable/Avec calbe</ins></h4>
-                                        <div class="product-btns">
-                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                        </div>
-                                    </div>
-                                    <div class="add-to-cart">
-                                        <button class="add-to-cart-btn" onclick="addtocart('dazeboxc1', './img/dazeboxc.png', 'Dazebox C', 'Dazebox C' )"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                    </div>
-                                </div>
-                                <!-- /product -->
-                            </div>
-                            <div id="slick-nav-1" class="products-slick-nav"></div>
                         </div>
                         <!-- /tab -->
                     </div>
@@ -201,123 +95,336 @@
     </div>
 </div>
 <!-- /SECTION ALL PRODUCTS -->
-
 <!-- Vendor Start -->
 @await Html.PartialAsync("__Vendor")
 <!-- Vendor End -->
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="landingpage/js/slick.min.js"></script>
 
 <script type="text/javascript">
-            var arraylist = new Array();
-            var count = 0;
 
+         document.addEventListener("DOMContentLoaded", fetchProducts);
+                async function fetchProducts() {
+        try {
+            const response = await fetch('/Produits?handler=Data');
+            const data = await response.json();
 
-         function deleteproduct(id){
-                 var index = arraylist.findIndex(function (newProduct) {
-                    return newProduct.id === id;
-                });
+            if (data.rows && Array.isArray(data.rows)) {
+                const products = data.rows;
+                const containerParent = document.getElementById("tab1");
 
-                var arraycount = +arraylist[index].count;
-                count =  count - Number(arraycount)
-                $('#idcounter').text(count);
+                // Diviser les produits en groupes de 5
+                for (let i = 0; i < products.length; i += 5) {
+                    const group = products.slice(i, i + 5);
+                    const slickIndex = Math.floor(i / 5) + 1;
 
-                if (index !== -1) {
-                arraylist.splice(index, 1);
-                    };
+                    // Créer un conteneur pour le groupe
+                    const container = document.createElement("div");
+                    container.className = "products-slick";
+                    container.setAttribute("data-nav", `#slick-nav-${slickIndex}`);
 
-                $('#idcountersmall').text(arraylist.length + ' Item(s) selected');
+                    // Ajouter les produits au conteneur
+                    group.forEach(product => {
+                        container.appendChild(createProduct(
+                            product.id,
+                            product.srcImage,
+                            product.category,
+                            product.type,
+                            product.name,
+                            product.info,
+                            product.isNew
+                        ));
+                    });
 
-                    var productWidget = document.getElementById(id + 'widget');
-                    if (productWidget) {
-                            productWidget.remove();
-                        }
-         }
+                    // Ajouter le conteneur au parent
+                    containerParent.appendChild(container);
 
-        function addtocart(id, srcimage, name, type) {
-                count = +count + +1;
-                $('#idcounter').text(count);
+                    // Créer et ajouter la navigation correspondante
+                    const slickNav = document.createElement("div");
+                    slickNav.id = `slick-nav-${slickIndex}`;
+                    slickNav.className = "products-slick-nav";
 
-                var index = arraylist.findIndex(function (newProduct) {
-                    return newProduct.id === id;
-                });
+                    containerParent.appendChild(slickNav);
+                }
 
-                    if(index === -1)
-                    {
+                // Initialiser Slick après l'ajout des éléments
+                initializeSlick();
 
-                    ////////////////////////////////////////////
-                        // Create product-widget div
-                        const productWidget = document.createElement('div');
-                        productWidget.id= id + 'widget';
-                        productWidget.classList.add('product-widget');
+            } else {
+                console.error("La réponse n'est pas un tableau :", products);
+            }
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    }
+        // Initialiser Slick APRÈS l’ajout des produits
+    function initializeSlick() {
+        console.log("Initializing Slick...");
 
-                        // Create product-img div and img
-                        const productImg = document.createElement('div');
-                        productImg.classList.add('product-img');
-                        const img = document.createElement('img');
-                        img.src = srcimage; //'./img/homet.png';
-                        img.alt = '';
-                        productImg.appendChild(img);
+         // Products Slick
+    $('.products-slick').each(function () {
+        var $this = $(this),
+            $nav = $this.attr('data-nav');
 
-                        // Create product-body div
-                        const productBody = document.createElement('div');
-                        productBody.classList.add('product-body');
+        $this.slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            infinite: true,
+            speed: 300,
+            dots: false,
+            arrows: true,
+            appendArrows: $nav ? $nav : false,
+            responsive: [{
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+            ]
+        });
+    });
 
-                        // Create product name (h3)
-                        const productName = document.createElement('h3');
-                        productName.classList.add('product-name');
-                        const link = document.createElement('a');
-                        link.href = '#';
-                        link.textContent = name;
-                        productName.appendChild(link);
+    // Products Widget Slick
+    $('.products-widget-slick').each(function () {
+        var $this = $(this),
+            $nav = $this.attr('data-nav');
 
-                        // Create product price (h4)
-                        const productPrice = document.createElement('h4');
-                        productPrice.classList.add('product-price');
-                        const qtySpan = document.createElement('span');
-                        qtySpan.id = id + 'qty' ;
-                        qtySpan.classList.add('qty');
-                        qtySpan.textContent = '1x';
-                        productPrice.appendChild(qtySpan);
-                        productPrice.appendChild(document.createTextNode(type));
+        $this.slick({
+            infinite: true,
+            autoplay: true,
+            speed: 300,
+            dots: false,
+            arrows: true,
+            appendArrows: $nav ? $nav : false,
+        });
+    });
 
-                        // Append product name and price to product-body
-                        productBody.appendChild(productName);
-                        productBody.appendChild(productPrice);
+    /////////////////////////////////////////
 
-                        // Create delete button
-                        const deleteButton = document.createElement('button');
-                        deleteButton.classList.add('delete');
-                        const deleteIcon = document.createElement('i');
-                        deleteIcon.classList.add('fa', 'fa-close');
-                        deleteButton.appendChild(deleteIcon);
-                        deleteButton.onclick = function () { deleteproduct(id); };
+    // Product Main img Slick
+    $('#product-main-img').slick({
+        infinite: true,
+        speed: 300,
+        dots: false,
+        arrows: true,
+        fade: true,
+        asNavFor: '#product-imgs',
+    });
 
-                        // Append product-img and product-body to product-widget
-                        productWidget.appendChild(productImg);
-                        productWidget.appendChild(productBody);
-                        productWidget.appendChild(deleteButton);
+    // Product imgs Slick
+    $('#product-imgs').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        centerMode: true,
+        focusOnSelect: true,
+        centerPadding: 0,
+        vertical: true,
+        asNavFor: '#product-main-img',
+        responsive: [{
+            breakpoint: 991,
+            settings: {
+                vertical: false,
+                arrows: false,
+                dots: true,
+            }
+        },
+        ]
+    });
 
-                        // Append product-widget to the cart-list
-                         var p = document.getElementById('cardlistid');
-                             p.appendChild(productWidget);
+    // Product img zoom
+    var zoomMainProduct = document.getElementById('product-main-img');
+    if (zoomMainProduct) {
+        $('#product-main-img .product-preview').zoom();
+    }
 
-                    ////////////////////////////////////////////
-                              arraylist.push({ id: id, count: '1' });
-                        }
-                        else{
+        console.log("Slick initialized!");
+    }
+        function createProduct(id, srcimage, categoryid, type, name, info, isnew) {
+        const product = document.createElement("div");
+        product.className = "product";
+        product.id = id;
 
-                            var arraycount = +arraylist[index].count + 1;
-                            arraylist[index].count = arraycount;
+        const productImg = document.createElement("div");
+        productImg.className = "product-img";
+        const img = document.createElement("img");
+        img.src = srcimage;
+        img.alt = "";
+        productImg.appendChild(img);
 
-                            var qty = document.getElementById(id + 'qty');
-                            qty.textContent = arraycount + 'x';
-                        }
+        if (isnew) {
+              const productLabel = document.createElement("div");
+              productLabel.className = "product-label";
+              const newLabel = document.createElement("span");
+              newLabel.className = "new";
+              newLabel.textContent = "NEW";
+              productLabel.appendChild(newLabel);
+              productImg.appendChild(productLabel);
+          }
 
-                        $('#idcountersmall').text(arraylist.length + ' Item(s) selected');
+        product.appendChild(productImg);
+
+        const productBody = document.createElement("div");
+        productBody.className = "product-body";
+        const category = document.createElement("p");
+        category.className = "product-category";
+        category.textContent = "Catégorie : " + categoryid;
+        productBody.appendChild(category);
+
+        const productName = document.createElement("h2");
+        productName.className = "product-name";
+        const nameLink = document.createElement("a");
+        nameLink.href = "#";
+        nameLink.innerHTML = "<strong>" + name + "</strong>";
+        productName.appendChild(nameLink);
+        productBody.appendChild(productName);
+
+        const productPrice = document.createElement("h4");
+        productPrice.className = "product-price";
+        productPrice.innerHTML = type + " <ins class='product-old-price'>" + info + "</ins>";
+        productBody.appendChild(productPrice);
+
+        const productBtns = document.createElement("div");
+        productBtns.className = "product-btns";
+        const quickViewBtn = document.createElement("button");
+        quickViewBtn.className = "quick-view";
+        quickViewBtn.innerHTML = "<i class='fa fa-eye'></i><span class='tooltipp'>quick view</span>";
+        productBtns.appendChild(quickViewBtn);
+        productBody.appendChild(productBtns);
+        product.appendChild(productBody);
+
+        const addToCartDiv = document.createElement("div");
+        addToCartDiv.className = "add-to-cart";
+        const addToCartBtn = document.createElement("button");
+        addToCartBtn.className = "add-to-cart-btn";
+        addToCartBtn.innerHTML = "<i class='fa fa-shopping-cart'></i> add to cart";
+        addToCartBtn.onclick = function() {
+            addtocart(id, srcimage, name, type);
         };
+        addToCartDiv.appendChild(addToCartBtn);
+        product.appendChild(addToCartDiv);
+
+        return product;
+    }
+
+</script>
+<script type="text/javascript">
+        var arraylist = new Array();
+        var count = 0;
 
 
+     function deleteproduct(id){
+             var index = arraylist.findIndex(function (newProduct) {
+                return newProduct.id === id;
+            });
 
+            var arraycount = +arraylist[index].count;
+            count =  count - Number(arraycount)
+            $('#idcounter').text(count);
+
+            if (index !== -1) {
+            arraylist.splice(index, 1);
+                };
+
+            $('#idcountersmall').text(arraylist.length + ' Item(s) selected');
+
+                var productWidget = document.getElementById(id + 'widget');
+                if (productWidget) {
+                        productWidget.remove();
+                    }
+     }
+
+    function addtocart(id, srcimage, name, type) {
+            count = +count + +1;
+            $('#idcounter').text(count);
+
+            var index = arraylist.findIndex(function (newProduct) {
+                return newProduct.id === id;
+            });
+
+                if(index === -1)
+                {
+
+                ////////////////////////////////////////////
+                    // Create product-widget div
+                    const productWidget = document.createElement('div');
+                    productWidget.id= id + 'widget';
+                    productWidget.classList.add('product-widget');
+
+                    // Create product-img div and img
+                    const productImg = document.createElement('div');
+                    productImg.classList.add('product-img');
+                    const img = document.createElement('img');
+                    img.src = srcimage; //'./img/homet.png';
+                    img.alt = '';
+                    productImg.appendChild(img);
+
+                    // Create product-body div
+                    const productBody = document.createElement('div');
+                    productBody.classList.add('product-body');
+
+                    // Create product name (h3)
+                    const productName = document.createElement('h3');
+                    productName.classList.add('product-name');
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.textContent = name;
+                    productName.appendChild(link);
+
+                    // Create product price (h4)
+                    const productPrice = document.createElement('h4');
+                    productPrice.classList.add('product-price');
+                    const qtySpan = document.createElement('span');
+                    qtySpan.id = id + 'qty' ;
+                    qtySpan.classList.add('qty');
+                    qtySpan.textContent = '1x';
+                    productPrice.appendChild(qtySpan);
+                    productPrice.appendChild(document.createTextNode(type));
+
+                    // Append product name and price to product-body
+                    productBody.appendChild(productName);
+                    productBody.appendChild(productPrice);
+
+                    // Create delete button
+                    const deleteButton = document.createElement('button');
+                    deleteButton.classList.add('delete');
+                    const deleteIcon = document.createElement('i');
+                    deleteIcon.classList.add('fa', 'fa-close');
+                    deleteButton.appendChild(deleteIcon);
+                    deleteButton.onclick = function () { deleteproduct(id); };
+
+                    // Append product-img and product-body to product-widget
+                    productWidget.appendChild(productImg);
+                    productWidget.appendChild(productBody);
+                    productWidget.appendChild(deleteButton);
+
+                    // Append product-widget to the cart-list
+                     var p = document.getElementById('cardlistid');
+                         p.appendChild(productWidget);
+
+                ////////////////////////////////////////////
+                          arraylist.push({ id: id, count: '1' });
+                    }
+                    else{
+
+                        var arraycount = +arraylist[index].count + 1;
+                        arraylist[index].count = arraycount;
+
+                        var qty = document.getElementById(id + 'qty');
+                        qty.textContent = arraycount + 'x';
+                    }
+
+                    $('#idcountersmall').text(arraylist.length + ' Item(s) selected');
+    };
 </script>

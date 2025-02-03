@@ -9,24 +9,17 @@
 		<ProjectReference Include="..\Domain\Domain.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-		<Compile Remove="Common\Extensions\**" />
 		<Compile Remove="Common\Interfaces\Identity\**" />
 		<Compile Remove="Common\Security\**" />
-		<Compile Remove="Common\Specification\**" />
-		<EmbeddedResource Remove="Common\Extensions\**" />
 		<EmbeddedResource Remove="Common\Interfaces\Identity\**" />
 		<EmbeddedResource Remove="Common\Security\**" />
-		<EmbeddedResource Remove="Common\Specification\**" />
-		<None Remove="Common\Extensions\**" />
 		<None Remove="Common\Interfaces\Identity\**" />
 		<None Remove="Common\Security\**" />
-		<None Remove="Common\Specification\**" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Remove="Common\Interfaces\IExcelService.cs" />
 		<Compile Remove="Common\Interfaces\IService.cs" />
-		<Compile Remove="Common\Interfaces\ISpecification.cs" />
 		<Compile Remove="Common\Interfaces\IUploadService.cs" />
 	</ItemGroup>
 
@@ -40,6 +33,7 @@
 		<PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
 		<PackageReference Include="LazyCache" Version="2.4.0" />
 		<PackageReference Include="LazyCache.AspNetCore" Version="2.4.0" />
+		<PackageReference Include="System.Linq.Dynamic.Core" Version="1.4.9" />
 	</ItemGroup>
 
 </Project>
