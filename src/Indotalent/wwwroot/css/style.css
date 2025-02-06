@@ -352,7 +352,9 @@ textarea.input {
     top: 0px;
     right: 0px;
 }
-
+.section h4 {
+    color: #06a3da;
+}
 /*----------------------------*\
 	Breadcrumb
 \*----------------------------*/
@@ -1510,7 +1512,6 @@ textarea.input {
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 700;
-    margin-left: 30px;
     color: #06a3da;
 }
 
@@ -1799,6 +1800,22 @@ textarea.input {
             display: block;
         }
 
+.specifications {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+    .specifications th, .specifications td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .specifications th {
+        background-color: aliceblue;
+        color: #8D99AE;
+    }
 /*-- Review Form --*/
 
 .review-form .input {

@@ -4,11 +4,11 @@
 }
 
 <!-- Slick -->
-<link type="text/css" rel="stylesheet" href="css/slick.css" />
-<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+<link type="text/css" rel="stylesheet" href="~/css/slick.css" />
+<link type="text/css" rel="stylesheet" href="~/css/slick-theme.css" />
 
 <!-- Custom stlylesheet -->
-<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="~/css/style.css" />
 
 <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -285,7 +285,7 @@
         const productName = document.createElement("h2");
         productName.className = "product-name";
         const nameLink = document.createElement("a");
-        nameLink.href = "#";
+        nameLink.href = "/Details/" + id;
         nameLink.innerHTML = "<strong>" + name + "</strong>";
         productName.appendChild(nameLink);
         productBody.appendChild(productName);
@@ -295,14 +295,17 @@
         productPrice.innerHTML = type + " <ins class='product-old-price'>" + info + "</ins>";
         productBody.appendChild(productPrice);
 
-        const productBtns = document.createElement("div");
-        productBtns.className = "product-btns";
-        const quickViewBtn = document.createElement("button");
-        quickViewBtn.className = "quick-view";
-        quickViewBtn.innerHTML = "<i class='fa fa-eye'></i><span class='tooltipp'>quick view</span>";
-        productBtns.appendChild(quickViewBtn);
-        productBody.appendChild(productBtns);
-        product.appendChild(productBody);
+    const productBtns = document.createElement("div");
+    productBtns.className = "product-btns";
+    // Crée une balise <a> pour le lien
+    const quickViewLink = document.createElement("a");
+    quickViewLink.href = "/Details/" + id; 
+    quickViewLink.className = "quick-view-link"; // Ajoute une classe si tu veux personnaliser son style
+    // Ajoute l'icône dans le lien
+    quickViewLink.innerHTML = "<i class='fa fa-eye'></i>";
+    productBtns.appendChild(quickViewLink);
+    productBody.appendChild(productBtns);
+    product.appendChild(productBody);
 
         const addToCartDiv = document.createElement("div");
         addToCartDiv.className = "add-to-cart";
