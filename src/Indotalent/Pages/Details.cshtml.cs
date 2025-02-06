@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Indotalent.Pages
 {
-    public class ProduitsModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly ISender _mediator;
 
-        public ProduitsModel(ISender mediator)
+        public DetailsModel(ISender mediator)
         {
             _mediator = mediator;
         }
@@ -24,5 +24,6 @@ namespace Indotalent.Pages
             var result = await _mediator.Send(command);
             return new JsonResult(result);
         }
+       
     }
 }

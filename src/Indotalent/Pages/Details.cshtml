@@ -1,0 +1,570 @@
+﻿@page "/Details/{primaryKey?}"
+@using Domain.Entities
+@using Infrastructure
+@model Indotalent.Pages.DetailsModel
+@inject ApplicationDbContext _context
+@{
+    var _primaryKey = Request.RouteValues["primaryKey"]?.ToString();
+    Produit? _produit = int.TryParse(_primaryKey, out int id) ? getProduitById(id) : null;
+}
+
+<!-- Slick -->
+<link type="text/css" rel="stylesheet" href="~/css/slick.css" />
+<link type="text/css" rel="stylesheet" href="~/css/slick-theme.css" />
+
+<!-- Custom stlylesheet -->
+<link type="text/css" rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- nouislider -->
+<link type="text/css" rel="stylesheet" href="~/css/nouislider.min.css" />
+
+<style>
+    .products-slick {
+        display: block; /* Force un retour à la ligne */
+        margin-bottom: 30px; /* Ajoute de l'espace entre les groupes */
+    }
+</style>
+
+<!-- MAIN HEADER -->
+<div id="header">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- SEARCH BAR -->
+            <div class="col-lg-6 offset-lg-3">
+                <div class="header-search">
+                    <form>
+                        <select class="input-select" id="categorieid">
+                            <option value="0">Catégories</option>
+                            <option value="1">AC</option>
+                            <option value="1">DC</option>
+                        </select>
+                        <input class="input" placeholder="Search here">
+                        <button class="search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /SEARCH BAR -->
+            <!-- ACCOUNT -->
+            <div class="col-md-3 clearfix">
+                <div class="header-ctn">
+                    <!-- Cart -->
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>Your Cart</span>
+                            <div class="qty">
+                                <label class="form-label" id="idcounter">0 <span class="text-danger"></span></label>
+                            </div>
+                        </a>
+                        <div class="cart-dropdown">
+                            <div class="cart-list" id="cardlistid">
+                            </div>
+                            <div class="cart-summary">
+                                <small id="idcountersmall"></small>
+
+                            </div>
+                            <div class="cart-btns">
+                                <a href="#">View Cart</a>
+                                <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /ACCOUNT -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</div>
+<!-- /MAIN HEADER -->
+<!-- SECTION DETAILS-->
+<div class="section">
+    <!-- container -->
+    <div class="container" id="containerid">
+        <!-- row -->
+        <div class="row">
+            <!-- Product thumb imgs -->
+            <div class="col-md-2  col-md-pull-5">
+                <div id="product-imgs">
+                    <div class="product-preview">
+                        <img src="@_produit?.SrcImage[1..]" alt="">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="@_produit?.SrcImage[1..]" alt="">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="@_produit?.SrcImage[1..]" alt="">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="@_produit?.SrcImage[1..]" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- /Product thumb imgs -->
+            <!-- Product main img -->
+            <div class="col-md-5 col-md-push-2">
+                <div id="product-main-img">
+                    <div class="product-preview">
+                        <img src="@_produit?.SrcImage[1..]" alt="">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="@_produit?.SrcImage[1..]" alt="">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="@_produit?.SrcImage[1..]" alt="">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="@_produit?.SrcImage[1..]" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- /Product main img -->
+            <!-- Product details -->
+            <div class="col-md-5">
+                <div class="product-details">
+                    <h2 class="product-name">@_produit?.Type</h2>
+                    <div>
+                        <h3 class="product-price">@_produit?.Name <ins class="product-old-price">@_produit?.Info</ins></h3>
+
+                    </div>
+                    <span class="product-available">In Stock</span>
+                    <div class="section">
+                        @if (_produit?.Type == "Dazebox C")
+                        {
+                            <p>La Dazebox C est une wallbox d'entrée de gamme idéale pour ceux qui recherchent une solution de recharge de haute qualité à un prix abordable. Conçue pour un usage domestique, elle offre une connectivité avancée, une intégration avec les installations photovoltaïques et une gestion via une application dédiée pour une expérience de recharge efficace.</p>
+                        }
+                        else
+                        {
+                            <p>Dazebox Home est la solution avancée pour recharger à domicile. Elle offre une connectivité avancëe, un lecteur RFID, le partage de puissance pour un maximum de 8 bornes et des fonctions avancées d'économie d'énergie. C'est la borne domestique la plus complete du marché.</p>
+                        }
+                    </div>
+                    <div class="add-to-cart">
+                        <div class="qty-label">
+                            Qty
+                            <div class="input-number">
+                                <input type="number">
+                                <span class="qty-up">+</span>
+                                <span class="qty-down">-</span>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                    </div>
+
+                    <ul class="product-links">
+                        <li>Category:</li>
+                        <li><a href="#">@_produit?.Category</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- /Product details -->
+            <!-- Product tab -->
+            <div class="col-md-12">
+                <div id="product-tab">
+                    <!-- product tab nav -->
+                    <ul class="tab-nav">
+                        <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
+                        <li><a data-toggle="tab" href="#tab2">Fonctionnalités</a></li>
+                        <li><a data-toggle="tab" href="#tab3">Avantages</a></li>
+                        <li><a data-toggle="tab" href="#tab4">Spécifications techniques</a></li>
+                    </ul>
+                    <!-- /product tab nav -->
+                    <!-- product tab content -->
+                    <div class="tab-content">
+                        <!-- tab1  -->
+                        <div id="tab1" class="tab-pane active">
+                            <div class="row">
+                                <div class="section">
+                                    <div class="col-md-12">
+                                        @if (_produit?.Type == "Dazebox C")
+                                        {
+                                            <p>La Dazebox C est une wallbox d'entrée de gamme idéale pour ceux qui recherchent une solution de recharge de haute qualité à un prix abordable. Conçue pour un usage domestique, elle offre une connectivité avancée, une intégration avec les installations photovoltaïques et une gestion via une application dédiée pour une expérience de recharge efficace.</p>
+                                        }
+                                        else
+                                        {
+                                            <p>Dazebox Home est la solution avancée pour recharger à domicile. Elle offre une connectivité avancëe, un lecteur RFID, le partage de puissance pour un maximum de 8 bornes et des fonctions avancées d'économie d'énergie. C'est la borne domestique la plus complete du marché.</p>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /tab1  -->
+                        <!-- tab2  -->
+                        <div id="tab2" class="tab-pane">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="section">
+                                        @if (_produit?.Type == "Dazebox C")
+                                        {
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">Compatible avec l'application et le portail Daze</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">Connectivité WiFi et Bluetooth</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">Répartition dynamique de la charge avec les charges domestiques</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">Compatibilité avec les installations photovoltaïques</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">Pas besoin de bobine de déclenchement</p>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">Connectivité Bluetooth et WiFi</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">1 x port Ethernet</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">Equilibrage de puissance jusqu‘à 8 bornes de recharge</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">Equilibrage de puissance avec les charges domestiques</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">«100% photovoltaïque» (mode autoconsommation)</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">Programmation de la recharge</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">Lecteur RFID</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i class="fa fa-star" style="color: #06a3da;"></i>
+                                                <p style="margin: 0;">Interopérabilité OCPP 1.6 Json</p>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /tab2  -->
+                        <!-- tab3  -->
+                        <div id="tab3" class="tab-pane">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @if (_produit?.Type == "Dazebox C")
+                                    {
+                                        <div class="section">
+                                            <h4>Simplement connectée</h4>
+                                            <p>La Dazebox C est configurable et gérable à distance via l'application grâce à une connectivité WiFi, ou, en l'absence d'internet, via Bluetooth. Lorsqu'elle est connectée à Internet, la Dazebox C offre un historique détaillé des recharges, organisé par utilisateur et consultable également via le portail web Daze.</p>
+                                        </div>
+                                        <div class="section">
+                                            <h4>Load Balancing</h4>
+                                            <p>Lorsqu'elle est installée avec le module Power Manager, la Dazebox C offre la fonctionnalité de répartition dynamique de la charge (Load Balancing) qui ajuste la puissance de recharge en fonction des consommations instantanées domestiques. Cette fonctionnalité est compatible avec tous les systèmes photovoltaïques disponibles sur le marché.</p>
+                                        </div>
+                                        <div class="section">
+                                            <h4>
+                                                Installation sans bobine de déclenchement
+                                            </h4>
+                                            <p>Grâce à un câble spécial avec obturateurs, la Dazebox C n'a pas besoin de bobine de déclenchement (norme IEC 6J85J-J), rendant ainsi l'installation plus rapide et économique par rapport aux chargeurs classiques.</p>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="section">
+                                            <h4>Visible d'un coup d'œil</h4>
+                                            <p>La puissance et l'énergie délivrées sont facilement lisibles sur le grand écran, permettant de comprendre rapidement l'évolution de la recharge.</p>
+                                        </div>
+                                        <div class="section">
+                                            <h4>Plus de fonctionnalités pour les économies d'énergie</h4>
+                                            <p>Dazebox Home offre des possibilités avancées d'économie d'énergie, telles que le mode autoconsommation (photovoltaïque uniquement) et la programmation de plages horaires d'économie d'énergie. De plus, elle est compatible avec tous les systèmes photovoltaïques.</p>
+                                        </div>
+                                        <div class="section">
+                                            <h4>Installation rapide et économique</h4>
+                                            <p>Dazebox Home intègre la bobine de déclenchement et, dans certaines versions, également la protection différentielle magnéto-thermique conforme à la norme IEC 61851-1. Cela permet une installation plus rapide et économique.</p>
+                                        </div>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /tab3  -->
+                        <!-- tab4  -->
+                        <div id="tab4" class="tab-pane">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-md-6 text-center">
+                                        @if (_produit?.Type == "Dazebox C")
+                                        {
+                                            <table class="specifications">
+                                                <tr>
+                                                    <th>Caractéristique</th>
+                                                    <th>Valeur</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mode de recharge</td>
+                                                    <td>Mode 3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Courant nominal maximal</td>
+                                                    <td>Réglable de 6,5 A à 32 A</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Puissance maximale</td>
+                                                    <td>7,4 kW monophasée / 22,2 kW triphasée</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Connecteurs</td>
+                                                    <td>Câble Type 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Longueur du câble connecteur</td>
+                                                    <td>5m / 7m</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Equilibrage de puissance</td>
+                                                    <td>Un seul chargeur</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Classe de protection IP</td>
+                                                    <td>IP55</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Classe de protection IK</td>
+                                                    <td>IK08</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Température de fonctionnement</td>
+                                                    <td>-25º C à +45° C</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dimensions sans câble</td>
+                                                    <td>277 x 335 x 102 mm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Installation</td>
+                                                    <td>Murale ou par support SD01</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mise à jour du logiciel</td>
+                                                    <td>Via Internet ou Bluetooth</td>
+                                                </tr>
+                                            </table>
+                                        }
+                                        else
+                                        {
+                                            <table class="specifications">
+                                                <tr>
+                                                    <th>Caractéristique</th>
+                                                    <th>Valeur</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mode de recharge</td>
+                                                    <td>Mode 3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Courant maximal nominal</td>
+                                                    <td>Réglable de 6,5 A à 32 A</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Puissance maximale</td>
+                                                    <td>7,4 kW monophasée / 22,2 kW triphasée</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Connexion</td>
+                                                    <td>Câble Type 2/Prise Type 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Longueur du câble connecteur</td>
+                                                    <td>5m / 7m</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Equilibrage de puissance</td>
+                                                    <td>Jusqu‘à 8 bornes (WiFi ou Ethernet nécessaires)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Classe de protection IP</td>
+                                                    <td>IP56</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Classe de protection IK</td>
+                                                    <td>IK10</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Température de fonctionnement</td>
+                                                    <td>-30º C à +55° C</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dimensions sans câble (Home T)</td>
+                                                    <td>200 x 356 x110 mm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dimensions (Home S)</td>
+                                                    <td>250 x 387 x132 mm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dimensions (Home TK - Home SK)</td>
+                                                    <td>250 x 387 x152 mm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Installation</td>
+                                                    <td>Murale ou par support SD01</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mise à jour du logiciel</td>
+                                                    <td>Via Internet ou Bluetooth</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Protection par disjoncteur différentiel (Home TK - Home SK)</td>
+                                                    <td>Type A(30 mA), courbe C</td>
+                                                </tr>
+                                            </table>
+                                        }
+                                </div>
+                            </div>
+                            <!-- /tab4  -->
+                        </div>
+                        <!-- /product tab content  -->
+                    </div>
+                </div>
+            </div>
+            <!-- /product tab -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION DETAILS -->
+<!-- Vendor Start -->
+@await Html.PartialAsync("__Vendor")
+<!-- Vendor End -->
+
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/landingpage/js/slick.min.js"></script>
+<script src="~/js/nouislider.min.js"></script>
+<script src="~/js/jquery.zoom.min.js"></script>
+<script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", initializeSlick);
+
+    // Initialiser Slick APRÈS l’ajout des produits
+        function initializeSlick() {
+            console.log("Initializing Slick...");
+
+             // Products Slick
+        $('.products-slick').each(function () {
+            var $this = $(this),
+                $nav = $this.attr('data-nav');
+
+            $this.slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                infinite: true,
+                speed: 300,
+                dots: false,
+                arrows: true,
+                appendArrows: $nav ? $nav : false,
+                responsive: [{
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
+                ]
+            });
+        });
+
+        // Products Widget Slick
+        $('.products-widget-slick').each(function () {
+            var $this = $(this),
+                $nav = $this.attr('data-nav');
+
+            $this.slick({
+                infinite: true,
+                autoplay: true,
+                speed: 300,
+                dots: false,
+                arrows: true,
+                appendArrows: $nav ? $nav : false,
+            });
+        });
+
+        /////////////////////////////////////////
+
+        // Product Main img Slick
+        $('#product-main-img').slick({
+            infinite: true,
+            speed: 300,
+            dots: false,
+            arrows: true,
+            fade: true,
+            asNavFor: '#product-imgs',
+        });
+
+        // Product imgs Slick
+        $('#product-imgs').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            centerMode: true,
+            focusOnSelect: true,
+            centerPadding: 0,
+            vertical: true,
+            asNavFor: '#product-main-img',
+            responsive: [{
+                breakpoint: 991,
+                settings: {
+                    vertical: false,
+                    arrows: false,
+                    dots: true,
+                }
+            },
+            ]
+        });
+
+    //     // Product img zoom
+    // var zoomMainProduct = document.getElementById('product-main-img');
+    // if (zoomMainProduct) {
+    //     $('#product-main-img .product-preview').zoom();
+    // }
+
+            console.log("Slick initialized!");
+        }
+</script>
+
+@functions {
+    Produit? getProduitById(int? id)
+    {
+        return id != null ? _context.Produits.FirstOrDefault(o => o.Id == id) : null;
+    }
+}

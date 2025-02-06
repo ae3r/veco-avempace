@@ -82,7 +82,7 @@
                 string[] urlParts = url.Split('/');
                 string lastPartUrl = urlParts[urlParts.Length - 1];
 
-                if (Guid.TryParse(lastPartUrl, out _))
+                if (int.TryParse(lastPartUrl, out _))
                 {
                     url = url.Substring(0, url.LastIndexOf("/"));
                 }
