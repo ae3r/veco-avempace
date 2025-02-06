@@ -8,7 +8,11 @@ builder.Services.AddInfrastructure(builder.Configuration)
                 .AddApplication();
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
+{
+    // This maps the root URL "/" to the Produits page.
+    options.Conventions.AddPageRoute("/Produits", "");
+});
 
 var app = builder.Build();
 
