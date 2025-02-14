@@ -21,58 +21,8 @@
 </style>
 
 <!-- MAIN HEADER -->
-<div id="header">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <!-- SEARCH BAR -->
-            <div class="col-lg-6 offset-lg-3">
-                <div class="header-search">
-                    <form>
-                        <select class="input-select" id="categorieid">
-                            <option value="0">Catégories</option>
-                            <option value="1">AC</option>
-                            <option value="1">DC</option>
-                        </select>
-                        <input class="input" placeholder="Search here">
-                        <button class="search-btn">Search</button>
-                    </form>
-                </div>
-            </div>
-            <!-- /SEARCH BAR -->
-            <!-- ACCOUNT -->
-            <div class="col-md-3 clearfix">
-                <div class="header-ctn">
-                    <!-- Cart -->
-                    <div class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>Your Cart</span>
-                            <div class="qty">
-                                <label class="form-label" id="idcounter">0 <span class="text-danger"></span></label>
-                            </div>
-                        </a>
-                        <div class="cart-dropdown">
-                            <div class="cart-list" id="cardlistid">
-                            </div>
-                            <div class="cart-summary">
-                                <small id="idcountersmall"></small>
-
-                            </div>
-                            <div class="cart-btns">
-                                <a href="#">View Cart</a>
-                                <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /ACCOUNT -->
-        </div>
-        <!-- row -->
-    </div>
-    <!-- container -->
+<div id="header-container">
+    @await Html.PartialAsync("_HeaderPartial", Model.Cart)
 </div>
 <!-- /MAIN HEADER -->
 <!-- SECTION ALL PRODUCTS-->
@@ -102,6 +52,7 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="landingpage/js/slick.min.js"></script>
+<script src="js/cart.js"></script>
 
 <script type="text/javascript">
 
@@ -299,7 +250,7 @@
     productBtns.className = "product-btns";
     // Crée une balise <a> pour le lien
     const quickViewLink = document.createElement("a");
-    quickViewLink.href = "/Details/" + id; 
+    quickViewLink.href = "/Details/" + id;
     quickViewLink.className = "quick-view-link"; // Ajoute une classe si tu veux personnaliser son style
     // Ajoute l'icône dans le lien
     quickViewLink.innerHTML = "<i class='fa fa-eye'></i>";
@@ -312,122 +263,11 @@
         const addToCartBtn = document.createElement("button");
         addToCartBtn.className = "add-to-cart-btn";
         addToCartBtn.innerHTML = "<i class='fa fa-shopping-cart'></i> add to cart";
-        addToCartBtn.onclick = function() {
-            addtocart(id, srcimage, name, type);
-        };
+        addToCartBtn.onclick = function () { addToCart(id, name, type, srcimage); };
         addToCartDiv.appendChild(addToCartBtn);
         product.appendChild(addToCartDiv);
 
         return product;
     }
 
-</script>
-<script type="text/javascript">
-        var arraylist = new Array();
-        var count = 0;
-
-
-     function deleteproduct(id){
-             var index = arraylist.findIndex(function (newProduct) {
-                return newProduct.id === id;
-            });
-
-            var arraycount = +arraylist[index].count;
-            count =  count - Number(arraycount)
-            $('#idcounter').text(count);
-
-            if (index !== -1) {
-            arraylist.splice(index, 1);
-                };
-
-            $('#idcountersmall').text(arraylist.length + ' Item(s) selected');
-
-                var productWidget = document.getElementById(id + 'widget');
-                if (productWidget) {
-                        productWidget.remove();
-                    }
-     }
-
-    function addtocart(id, srcimage, name, type) {
-            count = +count + +1;
-            $('#idcounter').text(count);
-
-            var index = arraylist.findIndex(function (newProduct) {
-                return newProduct.id === id;
-            });
-
-                if(index === -1)
-                {
-
-                ////////////////////////////////////////////
-                    // Create product-widget div
-                    const productWidget = document.createElement('div');
-                    productWidget.id= id + 'widget';
-                    productWidget.classList.add('product-widget');
-
-                    // Create product-img div and img
-                    const productImg = document.createElement('div');
-                    productImg.classList.add('product-img');
-                    const img = document.createElement('img');
-                    img.src = srcimage; //'./img/homet.png';
-                    img.alt = '';
-                    productImg.appendChild(img);
-
-                    // Create product-body div
-                    const productBody = document.createElement('div');
-                    productBody.classList.add('product-body');
-
-                    // Create product name (h3)
-                    const productName = document.createElement('h3');
-                    productName.classList.add('product-name');
-                    const link = document.createElement('a');
-                    link.href = '#';
-                    link.textContent = name;
-                    productName.appendChild(link);
-
-                    // Create product price (h4)
-                    const productPrice = document.createElement('h4');
-                    productPrice.classList.add('product-price');
-                    const qtySpan = document.createElement('span');
-                    qtySpan.id = id + 'qty' ;
-                    qtySpan.classList.add('qty');
-                    qtySpan.textContent = '1x';
-                    productPrice.appendChild(qtySpan);
-                    productPrice.appendChild(document.createTextNode(type));
-
-                    // Append product name and price to product-body
-                    productBody.appendChild(productName);
-                    productBody.appendChild(productPrice);
-
-                    // Create delete button
-                    const deleteButton = document.createElement('button');
-                    deleteButton.classList.add('delete');
-                    const deleteIcon = document.createElement('i');
-                    deleteIcon.classList.add('fa', 'fa-close');
-                    deleteButton.appendChild(deleteIcon);
-                    deleteButton.onclick = function () { deleteproduct(id); };
-
-                    // Append product-img and product-body to product-widget
-                    productWidget.appendChild(productImg);
-                    productWidget.appendChild(productBody);
-                    productWidget.appendChild(deleteButton);
-
-                    // Append product-widget to the cart-list
-                     var p = document.getElementById('cardlistid');
-                         p.appendChild(productWidget);
-
-                ////////////////////////////////////////////
-                          arraylist.push({ id: id, count: '1' });
-                    }
-                    else{
-
-                        var arraycount = +arraylist[index].count + 1;
-                        arraylist[index].count = arraycount;
-
-                        var qty = document.getElementById(id + 'qty');
-                        qty.textContent = arraycount + 'x';
-                    }
-
-                    $('#idcountersmall').text(arraylist.length + ' Item(s) selected');
-    };
 </script>

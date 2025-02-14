@@ -1,0 +1,68 @@
+﻿@using Application.Common.Models
+@model List<CartItem>
+
+<div id="header">
+    <div class="container">
+        <div class="row">
+            <!-- SEARCH BAR -->
+            <div class="col-lg-6 offset-lg-3">
+                <div class="header-search">
+                    <form>
+                        <select class="input-select" id="categorieid">
+                            <option value="0">Catégories</option>
+                            <option value="1">AC</option>
+                            <option value="1">DC</option>
+                        </select>
+                        <input class="input" placeholder="Search here">
+                        <button class="search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /SEARCH BAR -->
+            <!-- ACCOUNT -->
+            <div class="col-md-3 clearfix">
+                <div class="header-ctn">
+                    @Html.AntiForgeryToken()
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>Your Cart</span>
+                            <div class="qty">@Model?.Sum(p => p.Quantity)</div>
+                        </a>
+                        <div class="cart-dropdown">
+                            @if (Model != null && Model.Any())
+                            {
+                                <div class="cart-list">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="product-widget">
+                                            <div class="product-img">
+                                                <img src="@item.SrcImage[1..]" alt="">
+                                            </div>
+                                            <div class="product-body">
+                                                <h3 class="product-name"><a href="#">@item.Name</a></h3>
+                                                <h4 class="product-price"><span class="qty">@item.Quantity</span> @item.Type</h4>
+                                            </div>
+                                            <button class="delete" data-product-id="@item.ProductId">
+                                                <i class="fa fa-close"></i>
+                                            </button>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="cart-summary">
+                                    <small>@Model.Count() Produits(s) selected</small>
+                                </div>
+                            }
+                            <div class="cart-btns">
+                                <a href="#">View Cart</a>
+                                <a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /ACCOUNT -->
+        </div>
+    </div>
+</div>
+<script src="~/js/cart.js"></script>
