@@ -11,7 +11,7 @@
         .catch(error => console.error('Erreur lors de la mise à jour du panier:', error));
 }
 
-function addToCart(id, name, type, srcimage) {
+function addToCart(id, name, type, srcimage, qtyInput) {
     const tokenElement = document.querySelector('input[name="__RequestVerificationToken"]');
     const token = tokenElement ? tokenElement.value : '';
     fetch('/Header?handler=AddToCart', {
@@ -24,7 +24,8 @@ function addToCart(id, name, type, srcimage) {
             ProductId: id,
             Name: name,
             Type: type,
-            SrcImage: srcimage
+            SrcImage: srcimage,
+            Quantity: qtyInput
         })
     })
         .then(response => response.json())

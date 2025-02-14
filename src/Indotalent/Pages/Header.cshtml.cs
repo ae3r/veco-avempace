@@ -43,11 +43,11 @@ namespace Indotalent.Pages
             var existingItem = Cart.Find(p => p.ProductId == item.ProductId);
             if (existingItem != null)
             {
-                existingItem.Quantity++;
+                existingItem.Quantity = existingItem.Quantity + item.Quantity;
             }
             else
             {
-                Cart.Add(new CartItem { ProductId = item.ProductId, Name = item.Name, Type = item.Type, SrcImage = item.SrcImage, Quantity = 1 });
+                Cart.Add(new CartItem { ProductId = item.ProductId, Name = item.Name, Type = item.Type, SrcImage = item.SrcImage, Quantity = item.Quantity });
             }
 
             // Sauvegarder dans la session

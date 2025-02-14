@@ -262,8 +262,8 @@
         addToCartDiv.className = "add-to-cart";
         const addToCartBtn = document.createElement("button");
         addToCartBtn.className = "add-to-cart-btn";
-        addToCartBtn.innerHTML = "<i class='fa fa-shopping-cart'></i> add to cart";
-        addToCartBtn.onclick = function () { addToCart(id, name, type, srcimage); };
+        addToCartBtn.innerHTML = "<i class='fa fa-shopping-cart'></i> Ajouter au panier";
+        addToCartBtn.onclick = function () { addToCart(id, name, type, srcimage, 1); };
         addToCartDiv.appendChild(addToCartBtn);
         product.appendChild(addToCartDiv);
 

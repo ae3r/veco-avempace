@@ -104,12 +104,12 @@
                         <div class="qty-label">
                             Qty
                             <div class="input-number">
-                                <input type="number">
+                                <input type="number" id="qtyInput" value="1" min="1">
                                 <span class="qty-up">+</span>
                                 <span class="qty-down">-</span>
                             </div>
                         </div>
-                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                        <button class="add-to-cart-btn" onclick="addqtyToCart()"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
                     </div>
 
                     <ul class="product-links">
@@ -264,132 +264,132 @@
                         <div id="tab4" class="tab-pane">
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-md-6 text-center">
-                                        @if (_produit?.Type == "Dazebox C")
-                                        {
-                                            <table class="specifications">
-                                                <tr>
-                                                    <th>Caractéristique</th>
-                                                    <th>Valeur</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mode de recharge</td>
-                                                    <td>Mode 3</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Courant nominal maximal</td>
-                                                    <td>Réglable de 6,5 A à 32 A</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Puissance maximale</td>
-                                                    <td>7,4 kW monophasée / 22,2 kW triphasée</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Connecteurs</td>
-                                                    <td>Câble Type 2</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Longueur du câble connecteur</td>
-                                                    <td>5m / 7m</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Equilibrage de puissance</td>
-                                                    <td>Un seul chargeur</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Classe de protection IP</td>
-                                                    <td>IP55</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Classe de protection IK</td>
-                                                    <td>IK08</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Température de fonctionnement</td>
-                                                    <td>-25º C à +45° C</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dimensions sans câble</td>
-                                                    <td>277 x 335 x 102 mm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Installation</td>
-                                                    <td>Murale ou par support SD01</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mise à jour du logiciel</td>
-                                                    <td>Via Internet ou Bluetooth</td>
-                                                </tr>
-                                            </table>
-                                        }
-                                        else
-                                        {
-                                            <table class="specifications">
-                                                <tr>
-                                                    <th>Caractéristique</th>
-                                                    <th>Valeur</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mode de recharge</td>
-                                                    <td>Mode 3</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Courant maximal nominal</td>
-                                                    <td>Réglable de 6,5 A à 32 A</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Puissance maximale</td>
-                                                    <td>7,4 kW monophasée / 22,2 kW triphasée</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Connexion</td>
-                                                    <td>Câble Type 2/Prise Type 2</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Longueur du câble connecteur</td>
-                                                    <td>5m / 7m</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Equilibrage de puissance</td>
-                                                    <td>Jusqu‘à 8 bornes (WiFi ou Ethernet nécessaires)</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Classe de protection IP</td>
-                                                    <td>IP56</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Classe de protection IK</td>
-                                                    <td>IK10</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Température de fonctionnement</td>
-                                                    <td>-30º C à +55° C</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dimensions sans câble (Home T)</td>
-                                                    <td>200 x 356 x110 mm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dimensions (Home S)</td>
-                                                    <td>250 x 387 x132 mm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dimensions (Home TK - Home SK)</td>
-                                                    <td>250 x 387 x152 mm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Installation</td>
-                                                    <td>Murale ou par support SD01</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mise à jour du logiciel</td>
-                                                    <td>Via Internet ou Bluetooth</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Protection par disjoncteur différentiel (Home TK - Home SK)</td>
-                                                    <td>Type A(30 mA), courbe C</td>
-                                                </tr>
-                                            </table>
-                                        }
+                                    @if (_produit?.Type == "Dazebox C")
+                                    {
+                                        <table class="specifications">
+                                            <tr>
+                                                <th>Caractéristique</th>
+                                                <th>Valeur</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Mode de recharge</td>
+                                                <td>Mode 3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Courant nominal maximal</td>
+                                                <td>Réglable de 6,5 A à 32 A</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Puissance maximale</td>
+                                                <td>7,4 kW monophasée / 22,2 kW triphasée</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Connecteurs</td>
+                                                <td>Câble Type 2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Longueur du câble connecteur</td>
+                                                <td>5m / 7m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Equilibrage de puissance</td>
+                                                <td>Un seul chargeur</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Classe de protection IP</td>
+                                                <td>IP55</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Classe de protection IK</td>
+                                                <td>IK08</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Température de fonctionnement</td>
+                                                <td>-25º C à +45° C</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dimensions sans câble</td>
+                                                <td>277 x 335 x 102 mm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Installation</td>
+                                                <td>Murale ou par support SD01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mise à jour du logiciel</td>
+                                                <td>Via Internet ou Bluetooth</td>
+                                            </tr>
+                                        </table>
+                                    }
+                                    else
+                                    {
+                                        <table class="specifications">
+                                            <tr>
+                                                <th>Caractéristique</th>
+                                                <th>Valeur</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Mode de recharge</td>
+                                                <td>Mode 3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Courant maximal nominal</td>
+                                                <td>Réglable de 6,5 A à 32 A</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Puissance maximale</td>
+                                                <td>7,4 kW monophasée / 22,2 kW triphasée</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Connexion</td>
+                                                <td>Câble Type 2/Prise Type 2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Longueur du câble connecteur</td>
+                                                <td>5m / 7m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Equilibrage de puissance</td>
+                                                <td>Jusqu‘à 8 bornes (WiFi ou Ethernet nécessaires)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Classe de protection IP</td>
+                                                <td>IP56</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Classe de protection IK</td>
+                                                <td>IK10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Température de fonctionnement</td>
+                                                <td>-30º C à +55° C</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dimensions sans câble (Home T)</td>
+                                                <td>200 x 356 x110 mm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dimensions (Home S)</td>
+                                                <td>250 x 387 x132 mm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dimensions (Home TK - Home SK)</td>
+                                                <td>250 x 387 x152 mm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Installation</td>
+                                                <td>Murale ou par support SD01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mise à jour du logiciel</td>
+                                                <td>Via Internet ou Bluetooth</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Protection par disjoncteur différentiel (Home TK - Home SK)</td>
+                                                <td>Type A(30 mA), courbe C</td>
+                                            </tr>
+                                        </table>
+                                    }
                                 </div>
                             </div>
                             <!-- /tab4  -->
@@ -414,6 +414,8 @@
 <script src="~/landingpage/js/slick.min.js"></script>
 <script src="~/js/nouislider.min.js"></script>
 <script src="~/js/jquery.zoom.min.js"></script>
+script src="js/cart.js"></script>
+
 <script type="text/javascript">
 
         document.addEventListener("DOMContentLoaded", initializeSlick);
@@ -509,7 +511,44 @@
     // }
 
             console.log("Slick initialized!");
+        };
+</script>
+
+<script type="text/javascript">
+
+       function addqtyToCart() {
+            const qty = Number(document.getElementById('qtyInput').value);
+            addToCart(@_produit?.Id, '@_produit?.Name', '@_produit?.Type', '@_produit?.SrcImage', qty);
+            };
+
+            document.getElementById('qtyInput').addEventListener('input', function() {
+        const qtyInput = document.getElementById('qtyInput');
+        if (qtyInput.value < 1) {
+            qtyInput.value = 1;
         }
+         });
+
+            document.querySelector('.qty-up').addEventListener('click', function() {
+        updateQuantity(1);
+    });
+
+    document.querySelector('.qty-down').addEventListener('click', function() {
+        updateQuantity(-1); 
+    });
+
+    function updateQuantity(value) {
+        const qtyInput = document.getElementById('qtyInput');
+        let currentValue = parseInt(qtyInput.value);
+
+        const newValue = currentValue + value;
+
+        if (newValue >= 1) {
+            qtyInput.value = newValue;
+        } else {
+            qtyInput.value = 1;
+        }
+    }
+
 </script>
 
 @functions {
