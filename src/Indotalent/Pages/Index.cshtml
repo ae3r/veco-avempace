@@ -4,7 +4,6 @@
     ViewData["Title"] = "Home page";
 }
 
-
 <!-- Facts Start -->
 @* @await Html.PartialAsync("__FactCounter") *@
 <!-- Facts Start -->
@@ -43,13 +42,13 @@
                     tout au long de votre projet. Qu’il s’agisse d’un conseil personnalisé, d’un
                     accompagnement technique ou d’une solution adaptée à votre budget et vos
                     attentes, notre équipe se tient prête à répondre à vos questions. Ensemble,
-
                     nous trouverons les technologies les plus adaptées pour concrétiser vos
                     idées et faire avancer votre transition vers une mobilité électrique durable.
                 </p>
                 <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
                     <!-- Link to WhatsApp -->
-                    <a href="https://wa.me/212643177583" target="_blank" class="bg-primary d-flex align-items-center justify-content-center rounded"
+                    <a href="https://wa.me/212643177583" target="_blank"
+                       class="bg-primary d-flex align-items-center justify-content-center rounded"
                        style="width: 60px; height: 60px; text-decoration: none;">
                         <i class="fab fa-whatsapp text-white"></i>
                     </a>
@@ -66,12 +65,14 @@
                         <div class="mb-4 d-flex align-items-center">
                             <!-- Particulier radio (checked by default) -->
                             <div class="form-check me-4">
-                                <input class="form-check-input" type="radio" name="clientType" id="radioParticulier" value="particulier" checked />
+                                <input class="form-check-input" type="radio" name="clientType"
+                                       id="radioParticulier" value="particulier" checked />
                                 <label class="form-check-label" for="radioParticulier">Particulier</label>
                             </div>
                             <!-- Entreprise radio -->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="clientType" id="radioEntreprise" value="entreprise" />
+                                <input class="form-check-input" type="radio" name="clientType"
+                                       id="radioEntreprise" value="entreprise" />
                                 <label class="form-check-label" for="radioEntreprise">Entreprise</label>
                             </div>
                         </div>
@@ -79,33 +80,63 @@
                         @Html.AntiForgeryToken()
                         <input type="hidden" asp-for="Input.Id" class="ignore" />
 
-                        <!-- PART: Particulier fields (displayed by default) -->
+                        <!-- PART: Particulier fields (enabled + shown by default) -->
                         <div id="particulierFields" style="display: block;">
                             <div class="row g-3">
-                                <!-- Example fields for Particulier (no Firm) -->
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control border-0 bg-light px-4" placeholder="Nom *" style="height: 55px;" />
+                                    <input asp-for="Input.Nom"
+                                           type="text"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Nom *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control border-0 bg-light px-4" placeholder="Prénom *" style="height: 55px;" />
+                                    <input asp-for="Input.Prenom"
+                                           type="text"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Prénom *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" class="form-control border-0 bg-light px-4" placeholder="Adresse électronique *" style="height: 55px;" />
+                                    <input asp-for="Input.Email"
+                                           type="email"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Adresse électronique *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="tel" class="form-control border-0 bg-light px-4" placeholder="Téléphone *" style="height: 55px;" />
+                                    <input asp-for="Input.Tel"
+                                           type="tel"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Téléphone *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" class="form-control border-0 bg-light px-4" placeholder="Sujet" style="height: 55px;" />
+                                    <input asp-for="Input.Sujet"
+                                           type="text"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Sujet"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" class="form-control border-0 bg-light px-4" placeholder="Adresse *" style="height: 55px;" />
+                                    <input asp-for="Input.Adresse"
+                                           type="text"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Adresse *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control border-0 bg-light px-4" placeholder="Ville *" style="height: 55px;" />
+                                    <input asp-for="Input.City"
+                                           type="text"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Ville *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
+                                    <textarea asp-for="Input.Message"
+                                              class="form-control border-0 bg-light px-4 py-3"
+                                              rows="4"
+                                              placeholder="Message"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -114,38 +145,75 @@
                         <div id="entrepriseFields" style="display: none;">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <input type="text" asp-for="Input.Firm" class="form-control border-0 bg-light px-4" placeholder="Société *" style="height: 55px;">
+                                    <input asp-for="Input.Firm"
+                                           type="text"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Société *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" asp-for="Input.Nom" class="form-control border-0 bg-light px-4" placeholder="Nom *" style="height: 55px;">
+                                    <input asp-for="Input.Nom"
+                                           type="text"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Nom *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" asp-for="Input.Prenom" class="form-control border-0 bg-light px-4" placeholder="Prénom *" style="height: 55px;">
+                                    <input asp-for="Input.Prenom"
+                                           type="text"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Prénom *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" asp-for="Input.Email" class="form-control border-0 bg-light px-4" placeholder="Adresse électronique *" style="height: 55px;">
+                                    <input asp-for="Input.Email"
+                                           type="email"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Adresse électronique *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="tel" asp-for="Input.Tel" class="form-control border-0 bg-light px-4" placeholder="Téléphone *" style="height: 55px;">
+                                    <input asp-for="Input.Tel"
+                                           type="tel"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Téléphone *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" asp-for="Input.Sujet" class="form-control border-0 bg-light px-4" placeholder="Sujet" style="height: 55px;">
+                                    <input asp-for="Input.Sujet"
+                                           type="text"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Sujet"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" asp-for="Input.Adresse" class="form-control border-0 bg-light px-4" placeholder="Adresse *" style="height: 55px;">
+                                    <input asp-for="Input.Adresse"
+                                           type="text"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Adresse *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" asp-for="Input.City" class="form-control border-0 bg-light px-4" placeholder="Ville *" style="height: 55px;">
+                                    <input asp-for="Input.City"
+                                           type="text"
+                                           class="form-control border-0 bg-light px-4"
+                                           placeholder="Ville *"
+                                           style="height: 55px;" />
                                 </div>
                                 <div class="col-12">
-                                    <textarea asp-for="Input.Message" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
+                                    <textarea asp-for="Input.Message"
+                                              class="form-control border-0 bg-light px-4 py-3"
+                                              rows="4"
+                                              placeholder="Message"></textarea>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Single submit button for both sections -->
                         <div class="col-12 mt-4">
-                            <button class="btn btn-primary w-100 py-3" type="submit" id="submitButton">Envoyer</button>
+                            <button class="btn btn-primary w-100 py-3" type="submit" id="submitButton">
+                                Envoyer
+                            </button>
                         </div>
                     </form>
                     <!-- END: Form -->
@@ -175,28 +243,32 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        // By default, Particulier is shown, so disable the Entreprise inputs initially
+        $('#entrepriseFields :input').prop('disabled', true);
+
         // Toggle form sections based on radio selection
         $('#radioParticulier').on('change', function () {
-            $('#particulierFields').show();
-            $('#entrepriseFields').hide();
+            // Show Particulier, enable fields
+            $('#particulierFields').show().find(':input').prop('disabled', false);
+            // Hide Entreprise, disable fields
+            $('#entrepriseFields').hide().find(':input').prop('disabled', true);
         });
 
         $('#radioEntreprise').on('change', function () {
-            $('#particulierFields').hide();
-            $('#entrepriseFields').show();
+            // Hide Particulier, disable fields
+            $('#particulierFields').hide().find(':input').prop('disabled', true);
+            // Show Entreprise, enable fields
+            $('#entrepriseFields').show().find(':input').prop('disabled', false);
         });
     });
 
     $('#clients_form #submitButton').click(function (e) {
-            const form = document.querySelector('#clients_form');
+        e.preventDefault();
+        e.stopPropagation();
 
-                const request = $('#clients_form').serialize();
-                axios.post('@Url.Page("/")', request).then(res => {
-                    toastr["info"]('Message envoyé avec succès.');
-                });
-
-            event.preventDefault();
-            event.stopPropagation();
-        })
+        const request = $('#clients_form').serialize();
+        axios.post('@Url.Page("/")', request).then(res => {
+            toastr["info"]('Message envoyé avec succès.');
+        });
+    });
 </script>
-

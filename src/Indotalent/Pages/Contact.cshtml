@@ -15,18 +15,20 @@
         <div class="row g-5 mb-5">
             <div class="col-lg-4">
                 <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.1s">
-                    <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                    <div class="bg-primary d-flex align-items-center justify-content-center rounded"
+                         style="width: 60px; height: 60px;">
                         <i class="fa fa-phone-alt text-white"></i>
                     </div>
                     <div class="ps-4">
-                        <h5 class="mb-2">Pour toute question appelez :</h5>
+                        <h5 class="mb-2">Pour toute question appelez :</h5>
                         <h6 class="text-primary mb-0">+212 6 43 17 75 83</h6>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.4s">
-                    <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                    <div class="bg-primary d-flex align-items-center justify-content-center rounded"
+                         style="width: 60px; height: 60px;">
                         <i class="fa fa-envelope-open text-white"></i>
                     </div>
                     <div class="ps-4">
@@ -37,7 +39,8 @@
             </div>
             <div class="col-lg-4">
                 <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.8s">
-                    <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                    <div class="bg-primary d-flex align-items-center justify-content-center rounded"
+                         style="width: 60px; height: 60px;">
                         <i class="fa fa-map-marker-alt text-white"></i>
                     </div>
                     <div class="ps-4">
@@ -47,94 +50,150 @@
                 </div>
             </div>
         </div>
+
         <div class="row g-5">
             <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
 
                 <!-- BEGIN: Radio buttons for Particulier/Entreprise + spacing -->
                 <form id="clients_form">
+                    @Html.AntiForgeryToken()
+
+                    <input type="hidden" asp-for="Input.Id" class="ignore" />
+
                     <div class="mb-4 d-flex align-items-center">
                         <!-- Particulier radio (checked by default) -->
                         <div class="form-check me-4">
-                            <input class="form-check-input" type="radio" name="clientType" id="radioParticulier" value="particulier" checked />
+                            <input class="form-check-input" type="radio" name="clientType"
+                                   id="radioParticulier" value="particulier" checked />
                             <label class="form-check-label" for="radioParticulier">Particulier</label>
                         </div>
+
                         <!-- Entreprise radio -->
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="clientType" id="radioEntreprise" value="entreprise" />
+                            <input class="form-check-input" type="radio" name="clientType"
+                                   id="radioEntreprise" value="entreprise" />
                             <label class="form-check-label" for="radioEntreprise">Entreprise</label>
                         </div>
                     </div>
 
-                    @Html.AntiForgeryToken()
-                    <input type="hidden" asp-for="Input.Id" class="ignore" />
-
-                    <!-- PART: Particulier fields (displayed by default) -->
+                    <!-- PART: Particulier fields (enabled by default, hidden if user picks Entreprise) -->
                     <div id="particulierFields" style="display: block;">
                         <div class="row g-3">
-                            <!-- Example fields for Particulier (no Firm) -->
                             <div class="col-md-6">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Nom *" style="height: 55px;" />
+                                <input asp-for="Input.Nom"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Nom *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Prénom *" style="height: 55px;" />
+                                <input asp-for="Input.Prenom"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Prénom *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Adresse électronique *" style="height: 55px;" />
+                                <input asp-for="Input.Email" type="email"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Adresse électronique *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" class="form-control border-0 bg-light px-4" placeholder="Téléphone *" style="height: 55px;" />
+                                <input asp-for="Input.Tel" type="tel"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Téléphone *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-12">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Sujet" style="height: 55px;" />
+                                <input asp-for="Input.Sujet"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Sujet"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-12">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Adresse *" style="height: 55px;" />
+                                <input asp-for="Input.Adresse"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Adresse *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Ville *" style="height: 55px;" />
+                                <input asp-for="Input.City"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Ville *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
+                                <textarea asp-for="Input.Message"
+                                          class="form-control border-0 bg-light px-4 py-3"
+                                          rows="4"
+                                          placeholder="Message"></textarea>
                             </div>
                         </div>
                     </div>
 
-                    <!-- PART: Entreprise fields (hidden by default) -->
+                    <!-- PART: Entreprise fields (disabled + hidden by default; enabled when user picks Entreprise) -->
                     <div id="entrepriseFields" style="display: none;">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" asp-for="Input.Firm" class="form-control border-0 bg-light px-4" placeholder="Société *" style="height: 55px;">
+                                <input asp-for="Input.Firm"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Société *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-md-6">
-                                <input type="text" asp-for="Input.Nom" class="form-control border-0 bg-light px-4" placeholder="Nom *" style="height: 55px;">
+                                <input asp-for="Input.Nom"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Nom *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-md-6">
-                                <input type="text" asp-for="Input.Prenom" class="form-control border-0 bg-light px-4" placeholder="Prénom *" style="height: 55px;">
+                                <input asp-for="Input.Prenom"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Prénom *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-md-6">
-                                <input type="email" asp-for="Input.Email" class="form-control border-0 bg-light px-4" placeholder="Adresse électronique *" style="height: 55px;">
+                                <input asp-for="Input.Email" type="email"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Adresse électronique *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" asp-for="Input.Tel" class="form-control border-0 bg-light px-4" placeholder="Téléphone *" style="height: 55px;">
+                                <input asp-for="Input.Tel" type="tel"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Téléphone *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-12">
-                                <input type="text" asp-for="Input.Sujet" class="form-control border-0 bg-light px-4" placeholder="Sujet" style="height: 55px;">
+                                <input asp-for="Input.Sujet"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Sujet"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-12">
-                                <input type="text" asp-for="Input.Adresse" class="form-control border-0 bg-light px-4" placeholder="Adresse *" style="height: 55px;">
+                                <input asp-for="Input.Adresse"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Adresse *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-md-6">
-                                <input type="text" asp-for="Input.City" class="form-control border-0 bg-light px-4" placeholder="Ville *" style="height: 55px;">
+                                <input asp-for="Input.City"
+                                       class="form-control border-0 bg-light px-4"
+                                       placeholder="Ville *"
+                                       style="height: 55px;" />
                             </div>
                             <div class="col-12">
-                                <textarea asp-for="Input.Message" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
+                                <textarea asp-for="Input.Message"
+                                          class="form-control border-0 bg-light px-4 py-3"
+                                          rows="4"
+                                          placeholder="Message"></textarea>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Single submit button for both sections -->
                     <div class="col-12 mt-4">
-                        <button class="btn btn-primary w-100 py-3" type="submit" id="submitButton">Envoyer</button>
+                        <button class="btn btn-primary w-100 py-3" type="submit" id="submitButton">
+                            Envoyer
+                        </button>
                     </div>
                 </form>
                 <!-- END: Form -->
@@ -147,7 +206,8 @@
                         style="border:0;"
                         allowfullscreen=""
                         loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </div>
@@ -164,22 +224,36 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        // Toggle form sections based on radio selection
+        // By default, Particulier is checked, so disable the Entreprise fields
+        $('#entrepriseFields :input').prop('disabled', true);
+
+        // PART: When user chooses Particulier
         $('#radioParticulier').on('change', function () {
+            // Show Particulier
             $('#particulierFields').show();
-            $('#entrepriseFields').hide();
+            // Hide & disable Entreprise
+            $('#entrepriseFields').hide().find(':input').prop('disabled', true);
+
+            // Enable Particulier
+            $('#particulierFields :input').prop('disabled', false);
         });
 
+        // PART: When user chooses Entreprise
         $('#radioEntreprise').on('change', function () {
-            $('#particulierFields').hide();
+            // Show Entreprise
             $('#entrepriseFields').show();
+            // Hide & disable Particulier
+            $('#particulierFields').hide().find(':input').prop('disabled', true);
+
+            // Enable Entreprise
+            $('#entrepriseFields :input').prop('disabled', false);
         });
     });
 
     $('#clients_form #submitButton').click(function (event) {
         event.preventDefault();
         event.stopPropagation();
-        const form = document.querySelector('#clients_form');
+
         const request = $('#clients_form').serialize();
         axios.post('@Url.Page("/Contact")', request).then(res => {
             toastr["info"]('Message envoyé avec succès.');
