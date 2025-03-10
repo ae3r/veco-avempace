@@ -1,0 +1,74 @@
+﻿@* No @page directive: this is a partial *@
+
+<style>
+    .private-purchase-step1 h3,
+    .private-purchase-step1 h4 {
+        text-align: center;
+    }
+
+    .private-purchase-step1 h4 {
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="private-purchase-step1">
+    <h3>Step 1 of 2</h3>
+    <h4>Create new account</h4>
+
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-6">
+            <!-- Step 1 form -->
+            <form method="post">
+                <!-- First Name -->
+                <div class="form-group mb-3">
+                    <label for="firstName">First name</label>
+                    <input type="text" class="form-control" id="firstName" />
+                </div>
+
+                <!-- Last Name -->
+                <div class="form-group mb-3">
+                    <label for="lastName">Last name</label>
+                    <input type="text" class="form-control" id="lastName" />
+                </div>
+
+                <!-- Country (only Morocco for now) -->
+                <div class="form-group mb-3">
+                    <label for="country">Country</label>
+                    <select class="form-control" id="country">
+                        <option value="">Select one</option>
+                        <option value="Morocco">Morocco</option>
+                    </select>
+                </div>
+
+                <!-- Continue button -->
+                <button type="button" class="btn btn-primary btn-block mt-3"
+                        onclick="loadPrivatePurchaseStep2()">
+                    Continue
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Optional close button -->
+    <div class="mt-3 text-center">
+        <button class="btn btn-secondary" onclick="$('#signUpChoiceContainer').slideUp()">
+            Close
+        </button>
+    </div>
+</div>
+
+<script>
+    function loadPrivatePurchaseStep2() {
+        // AJAX call to load Step 2 partial
+        $.get("@Url.Page("./Login", "PrivatePurchaseSignupStep2Partial")", function (html) {
+            // Replace the contents of #signUpChoiceContainer with Step 2
+            $("#signUpChoiceContainer").html(html).slideDown("fast", function () {
+                // Scroll to the container
+                $('html, body').animate({
+                    scrollTop: $("#signUpChoiceContainer").offset().top
+                }, 600);
+            });
+        });
+    }
+</script>

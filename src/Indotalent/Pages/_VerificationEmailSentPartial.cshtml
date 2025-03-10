@@ -1,0 +1,40 @@
+﻿@* _VerificationEmailSentPartial.cshtml *@
+
+<style>
+    .verification-email-sent {
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+        .verification-email-sent img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .verification-email-sent h3 {
+            margin-bottom: 10px;
+        }
+
+        .verification-email-sent p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .verification-email-sent button {
+            margin-top: 20px;
+        }
+</style>
+
+<div class="verification-email-sent">
+    <!-- Example envelope icon (SVG, Font Awesome, or your own image).
+         If you have Font Awesome, you can do:
+         <i class="fa fa-envelope fa-4x mb-3" aria-hidden="true"></i> -->
+    <i class="fa fa-envelope fa-4x mb-3"></i>
+
+    <h3>Verification email sent</h3>
+    <p>Verify your email address using the link we've sent you</p>
+
+    <button class="btn btn-dark" onclick="window.location.href='@Url.Page("./Login")'">
+        Back to login
+    </button>
+</div>

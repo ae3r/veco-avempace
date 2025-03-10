@@ -9,6 +9,17 @@
         </div>
         <div class="col-lg-4 text-center text-lg-end">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
+                <!-- Login Icon -->
+                <div class="dropdown">
+                    <a class="dropdown-toggle text-light" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user"></i>
+                        <span>Account</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a asp-page="/Login" class="dropdown-item">Login</a>
+                        <a asp-page="/Register" class="dropdown-item">Register</a>
+                    </div>
+                </div>
                 @* <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a> *@
                 <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
                 <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>

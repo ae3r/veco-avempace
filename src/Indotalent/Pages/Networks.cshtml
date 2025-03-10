@@ -1,0 +1,110 @@
+﻿@page
+@model Indotalent.Pages.NetworksModel
+
+<!-- Slick -->
+<link rel="stylesheet" href="~/css/slick.css" />
+<link rel="stylesheet" href="~/css/slick-theme.css" />
+
+<!-- Custom stylesheet (style.css) -->
+<link rel="stylesheet" href="~/css/style.css" />
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Optional inline page-specific CSS -->
+<style>
+    .network-container {
+        max-width: 700px;
+        margin: 40px auto;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 30px;
+    }
+</style>
+
+<!-- 1) MAIN HEADER (same as login page) -->
+@* <div id="header">
+    <div class="container">
+        <div class="row">
+            <!-- SEARCH BAR -->
+            <div class="col-lg-6 offset-lg-3">
+                <div class="header-search">
+                    <form>
+                        <select class="input-select" id="categorieid">
+                            <option value="0">Catégories</option>
+                            <option value="1">AC</option>
+                            <option value="1">DC</option>
+                        </select>
+                        <input class="input" placeholder="Search here">
+                        <button class="search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /SEARCH BAR -->
+
+            <!-- ACCOUNT / CART -->
+            <div class="col-md-3 clearfix">
+                <div class="header-ctn">
+                    <!-- Cart -->
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>Your Cart</span>
+                            <div class="qty">
+                                <label class="form-label" id="idcounter">0 <span class="text-danger"></span></label>
+                            </div>
+                        </a>
+                        <div class="cart-dropdown">
+                            <div class="cart-list" id="cardlistid">
+                                <!-- If you have cart logic -->
+                            </div>
+                            <div class="cart-summary">
+                                <small id="idcountersmall"></small>
+                            </div>
+                            <div class="cart-btns">
+                                <a href="#">View Cart</a>
+                                <a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Cart -->
+                </div>
+            </div>
+            <!-- /ACCOUNT / CART -->
+        </div>
+    </div>
+</div> *@
+<!-- /MAIN HEADER -->
+
+<!-- 2) OUR PAGE CONTENT -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="network-container">
+                    <h2>Network List <i class="fa fa-info-circle" title="More info"></i></h2>
+                    <p>Manage your networks and add new ones.</p>
+
+                    <!-- Add Network button: navigate to CreateNetwork page -->
+                    <button class="btn btn-primary"
+                            onclick="window.location.href='@Url.Page("CreateNetwork")'">
+                        <i class="fa fa-plus-circle"></i> Add Network
+                    </button>
+
+                    <!-- Placeholder for existing networks if needed -->
+                    <div class="mt-4">
+                        <p>No networks yet. Click “Add Network” to create one.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optionally, if you have a vendor partial or other partial -->
+@await Html.PartialAsync("__Vendor")
+
+<!-- JS references: jQuery, Bootstrap, Slick, etc. -->
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>

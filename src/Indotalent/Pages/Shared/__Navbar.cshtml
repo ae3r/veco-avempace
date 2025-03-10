@@ -3,8 +3,8 @@
 }
 
 <div class="container-fluid position-relative p-0">
-    <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-        <a asp-area="" asp-page="/Index" class="navbar-brand p-0" style="display: flex; align-items: center; height: 60px;">
+    <nav class="navbar navbar-expand-lg navbar-white px-5 py-3 py-lg-0">
+        <a asp-area="" asp-page="/Index" class="navbar-brand p-0" style="display: flex; align-items: center; height: 100px;">
             <h1 class="m-0" style="height: 100%; display: flex; align-items: center;">
                 <img src="~/landingpage/img/veco.png" alt="VECO-AVEMPACE Logo" style="height: auto%; width: 230px;" />
             </h1>
@@ -25,7 +25,7 @@
     @if (currentCshtmlName == string.Empty)
     {
         <!-- Hero Start -->
-        @await Html.PartialAsync("__Hero")
+        //@await Html.PartialAsync("__Hero")
         <!-- Hero Start -->
     } else
     {

@@ -1,0 +1,137 @@
+﻿@page
+@model Indotalent.Pages.SystemParametersModel
+
+<!-- Slick -->
+<link rel="stylesheet" href="~/css/slick.css" />
+<link rel="stylesheet" href="~/css/slick-theme.css" />
+
+<!-- style.css -->
+<link rel="stylesheet" href="~/css/style.css" />
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    .system-params-container {
+        max-width: 700px;
+        margin: 40px auto;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 30px;
+    }
+
+    .btn-next {
+        background-color: #0052cc;
+        color: #fff;
+        border-radius: 30px;
+        width: 100%;
+        height: 50px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        border: none;
+        margin-top: 20px;
+    }
+
+        .btn-next:hover {
+            background-color: #0041a3;
+        }
+</style>
+
+<!-- Same HEADER as your existing pages -->
+@* <div id="header">
+    <div class="container">
+        <div class="row">
+            <!-- SEARCH BAR -->
+            <div class="col-lg-6 offset-lg-3">
+                <div class="header-search">
+                    <form>
+                        <select class="input-select">
+                            <option value="0">Catégories</option>
+                            <option value="1">AC</option>
+                            <option value="1">DC</option>
+                        </select>
+                        <input class="input" placeholder="Search here">
+                        <button class="search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /SEARCH BAR -->
+            <!-- ACCOUNT / CART -->
+            <div class="col-md-3 clearfix">
+                <div class="header-ctn">
+                    <!-- Cart -->
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>Your Cart</span>
+                            <div class="qty">
+                                <label class="form-label" id="idcounter">0 <span class="text-danger"></span></label>
+                            </div>
+                        </a>
+                        <div class="cart-dropdown">
+                            <div class="cart-list" id="cardlistid"></div>
+                            <div class="cart-summary">
+                                <small id="idcountersmall"></small>
+                            </div>
+                            <div class="cart-btns">
+                                <a href="#">View Cart</a>
+                                <a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Cart -->
+                </div>
+            </div>
+            <!-- /ACCOUNT / CART -->
+        </div>
+    </div>
+</div> *@
+<!-- /HEADER -->
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="system-params-container">
+                    <h3>System parameters</h3>
+
+                    <!-- Step 2 form -->
+                    <form method="post">
+
+                        <!-- Type of meter (radio buttons) -->
+                        <div class="form-group mb-4">
+                            <label>Type of meter</label><br />
+                            <div class="form-check">
+                                <input asp-for="TypeOfMeter" class="form-check-input" type="radio"
+                                       value="SinglePhase" id="radioSingle" />
+                                <label class="form-check-label" for="radioSingle">Single phase</label>
+                            </div>
+                            <div class="form-check">
+                                <input asp-for="TypeOfMeter" class="form-check-input" type="radio"
+                                       value="ThreePhase" id="radioThree" />
+                                <label class="form-check-label" for="radioThree">Three phase</label>
+                            </div>
+                        </div>
+
+                        <!-- Meter power (kW) -->
+                        <div class="form-group mb-4">
+                            <label asp-for="MeterPower">Meter power</label>
+                            <input asp-for="MeterPower" class="form-control" placeholder="Meter power [kW]" />
+                        </div>
+
+                        <!-- Next button -->
+                        <button type="submit" class="btn-next">Next</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@await Html.PartialAsync("__Vendor")
+
+<!-- Scripts -->
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/landingpage/js/slick.min.js"></script>
