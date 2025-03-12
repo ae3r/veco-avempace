@@ -60,7 +60,7 @@ app.UseWebSockets();
 app.UseAuthorization();
 
 // Map the OCPP WebSocket endpoint
-app.Map("/ocpp", async context =>
+app.Map("/ocpp/DAZETEST", async context =>
 {
     var ocppService = context.RequestServices.GetRequiredService<IOcppService>();
     await ocppService.ProcessWebSocketAsync(context);
