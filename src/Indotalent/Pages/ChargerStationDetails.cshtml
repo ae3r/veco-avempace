@@ -1,0 +1,240 @@
+﻿@page "{name?}"
+@model Indotalent.Pages.ChargerStationDetailsModel
+
+@{
+    ViewData["Title"] = "Charging Station Details";
+}
+
+<!-- Slick / style / FontAwesome references if needed -->
+<link rel="stylesheet" href="~/css/slick.css" />
+<link rel="stylesheet" href="~/css/slick-theme.css" />
+<link rel="stylesheet" href="~/css/style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    .details-section {
+        margin-top: 80px; /* Matches your other pages' spacing */
+    }
+
+    .details-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .station-info {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+        .station-info h2 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+    .station-subtitle {
+        color: #888;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    /* Left card: big image, status, and button */
+    .charger-image-card {
+        flex: 1 1 400px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+    }
+
+        .charger-image-card h4 {
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #0052cc; /* e.g. if "In charging" is in this color */
+        }
+
+    .charger-icon {
+        max-width: 200px;
+        margin: 0 auto 15px;
+        display: block;
+    }
+
+    .action-button {
+        margin-top: 15px;
+        background-color: #0052cc;
+        color: #fff;
+        border-radius: 30px;
+        width: 100%;
+        height: 45px;
+        font-size: 1rem;
+        font-weight: 500;
+        border: none;
+    }
+
+        .action-button:hover {
+            background-color: #003d99;
+        }
+
+    /* Right side: 2x2 or 2x4 grid of tiles for power, energy, etc. */
+    .status-tiles {
+        flex: 1 1 400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 columns side by side */
+        gap: 15px;
+    }
+
+    .status-tile {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        border: 1px solid #eee;
+    }
+
+        .status-tile .tile-icon {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: #0052cc;
+        }
+
+    .tile-label {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .tile-value {
+        font-weight: bold;
+        margin-top: 3px;
+        font-size: 1rem;
+    }
+
+    .btn-return {
+        background-color: #aaa;
+        color: #fff;
+        border-radius: 30px;
+        padding: 0.5rem 1rem;
+        border: none;
+        font-weight: 500;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+        .btn-return:hover {
+            background-color: #888;
+        }
+</style>
+
+<div class="details-section">
+    <div class="container">
+        <div class="details-container">
+
+            <!-- Return / Back button at top -->
+            <button class="btn-return"
+                    onclick="window.location.href='@Url.Page("ChargingStationList")'">
+                Return
+            </button>
+
+            <!-- Station name & short subtitle row -->
+            <div class="station-info">
+                <h2>@Model.Station?.ChargerName</h2>
+                <div class="station-subtitle">
+                    Model: Dazebox Home T
+                </div>
+            </div>
+
+            <!-- Left card with charger image & main status -->
+            <div class="charger-image-card">
+                <h4 id="statusText">@Model.Station?.Status</h4>
+                <img src="~/img/homeS.png" alt="Home S Image" class="charger-icon" />
+                <!-- Pause/Charge toggle button -->
+                <button class="action-button" id="pauseButton" onclick="togglePause()">Pause</button>
+            </div>
+
+            <!-- Right side: 2-column grid of tiles -->
+            <div class="status-tiles">
+                <!-- Power tile: show station.PowerKW -->
+                <div class="status-tile">
+                    <i class="fa fa-bolt tile-icon"></i>
+                    <div class="tile-label">Power</div>
+                    <div class="tile-value">@Model.Station?.PowerKW</div>
+                </div>
+
+                <!-- Energy tile (hard-coded) -->
+                <div class="status-tile">
+                    <i class="fa fa-chart-line tile-icon"></i>
+                    <div class="tile-label">Energy</div>
+                    <div class="tile-value">25.8 kWh</div>
+                </div>
+
+                <!-- Vehicle tile -->
+                <div class="status-tile">
+                    <i class="fa fa-car tile-icon"></i>
+                    <div class="tile-label">Vehicle</div>
+                    <div class="tile-value">Connected</div>
+                </div>
+
+                <!-- Access tile -->
+                <div class="status-tile">
+                    <i class="fa fa-lock tile-icon"></i>
+                    <div class="tile-label">Access</div>
+                    <div class="tile-value">Blocked</div>
+                </div>
+
+                <!-- Self-consumption tile -->
+                <div class="status-tile">
+                    <i class="fa fa-leaf tile-icon"></i>
+                    <div class="tile-label">Self-consumption</div>
+                    <div class="tile-value">Disabled</div>
+                </div>
+
+                <!-- Internet tile -->
+                <div class="status-tile">
+                    <i class="fa fa-cloud tile-icon"></i>
+                    <div class="tile-label">Internet</div>
+                    <div class="tile-value">Connected</div>
+                </div>
+
+                <!-- Scheduling tile -->
+                <div class="status-tile">
+                    <i class="fa fa-clock tile-icon"></i>
+                    <div class="tile-label">Scheduling</div>
+                    <div class="tile-value">Disabled</div>
+                </div>
+
+                <!-- Counter Power tile (hard-coded 22 kW here, but you can also read from Station if needed) -->
+                <div class="status-tile">
+                    <i class="fa fa-home tile-icon"></i>
+                    <div class="tile-label">Counter Power</div>
+                    <div class="tile-value">22 kW</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function togglePause() {
+        let statusEl = document.getElementById("statusText");
+        let btnEl = document.getElementById("pauseButton");
+        if (!statusEl || !btnEl) return;
+
+        let currentStatus = statusEl.textContent.trim().toLowerCase();
+        if (currentStatus === "in charging") {
+            statusEl.textContent = "Paused";
+            btnEl.textContent = "Put it in charge";
+        }
+        else {
+            statusEl.textContent = "In charging";
+            btnEl.textContent = "Pause";
+        }
+    }
+</script>
+
+@await Html.PartialAsync("__Vendor")
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/landingpage/js/slick.min.js"></script>

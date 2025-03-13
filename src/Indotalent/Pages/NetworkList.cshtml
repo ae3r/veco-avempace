@@ -144,19 +144,27 @@
 
 <div class="section">
     <div class="container">
+        <!-- RETURN BUTTON HERE -->
+        <button class="btn-return"
+                onclick="window.location.href='@Url.Page("Networks")'">
+            Return
+        </button>
         <h2>Network list <i class="fa fa-info-circle"></i></h2>
         <p>Manage your networks and add new ones</p>
 
         <!-- "Add network" top-right button -->
         <div style="text-align:right; margin-bottom:10px;">
-            <button class="btn btn-light" onclick="alert('Go to Add Network flow!');">
+            <!-- Removed the alert, replaced with real navigation -->
+            <button class="btn btn-light"
+                    onclick="window.location.href='@Url.Page("CreateNetwork")'">
                 Add network
             </button>
         </div>
 
         <div class="network-list-container">
             <!-- One card for the newly created network -->
-            <div class="network-card" onclick="window.location.href='@Url.Page("NetworkDetails", new { networkName = Model.NetworkName })'">
+            <div class="network-card"
+                 onclick="window.location.href='@Url.Page("NetworkDetails", new { networkName = Model.NetworkName })'">
                 <div class="network-label">Network</div>
                 <div class="network-name">@Model.NetworkName</div>
 
@@ -193,7 +201,9 @@
             <div class="add-network-card">
                 <h5>Add network</h5>
                 <p>Click the button + to add a new network</p>
-                <button class="plus-btn" onclick="alert('Go to Add Network flow!');">
+                <!-- Removed the alert, replaced with real navigation -->
+                <button class="plus-btn"
+                        onclick="window.location.href='@Url.Page("CreateNetwork")'">
                     <i class="fa fa-plus"></i>
                 </button>
             </div>

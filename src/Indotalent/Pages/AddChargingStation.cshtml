@@ -5,14 +5,13 @@
 <link rel="stylesheet" href="~/css/slick.css" />
 <link rel="stylesheet" href="~/css/slick-theme.css" />
 
-<!-- Your custom style.css -->
+<!-- style.css -->
 <link rel="stylesheet" href="~/css/style.css" />
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
-    /* Container styling */
     .charger-identification-container {
         max-width: 700px;
         margin: 40px auto;
@@ -22,7 +21,6 @@
         padding: 30px;
     }
 
-    /* Large blue "Next" button */
     .btn-next {
         background-color: #0052cc;
         color: #fff;
@@ -38,76 +36,47 @@
         .btn-next:hover {
             background-color: #0041a3;
         }
+
+    .btn-back {
+        background-color: #aaa;
+        color: #fff;
+        border-radius: 30px;
+        width: 100px;
+        height: 40px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border: none;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+        .btn-back:hover {
+            background-color: #888;
+        }
 </style>
 
-<!-- (Optional) Include the same site header as your other pages -->
-@* <div id="header">
-    <div class="container">
-        <div class="row">
-            <!-- SEARCH BAR -->
-            <div class="col-lg-6 offset-lg-3">
-                <div class="header-search">
-                    <form>
-                        <select class="input-select">
-                            <option value="0">Catégories</option>
-                            <option value="1">AC</option>
-                            <option value="1">DC</option>
-                        </select>
-                        <input class="input" placeholder="Search here">
-                        <button class="search-btn">Search</button>
-                    </form>
-                </div>
-            </div>
-            <!-- /SEARCH BAR -->
-            <!-- ACCOUNT / CART -->
-            <div class="col-md-3 clearfix">
-                <div class="header-ctn">
-                    <!-- Cart -->
-                    <div class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>Your Cart</span>
-                            <div class="qty">
-                                <label class="form-label" id="idcounter">0 <span class="text-danger"></span></label>
-                            </div>
-                        </a>
-                        <div class="cart-dropdown">
-                            <div class="cart-list" id="cardlistid"></div>
-                            <div class="cart-summary">
-                                <small id="idcountersmall"></small>
-                            </div>
-                            <div class="cart-btns">
-                                <a href="#">View Cart</a>
-                                <a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Cart -->
-                </div>
-            </div>
-            <!-- /ACCOUNT / CART -->
-        </div>
-    </div>
-</div> *@
-<!-- /HEADER -->
-<!-- Main section -->
 <div class="section">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="charger-identification-container">
-                    <h3>Charger identification</h3>
+                    <!-- "Back" button to go to station list -->
+                    <button class="btn-back"
+                            onclick="window.location.href='@Url.Page("ChargingStationList")'">
+                        Back
+                    </button>
 
-                    <!-- Form with 3 fields: ChargerName, SerialNumber, Puk -->
+                    <h3>Create Charging Station</h3>
+
                     <form method="post">
-                        <!-- Charging station name -->
+                        <!-- Charger Name -->
                         <div class="form-group mb-3">
                             <label asp-for="ChargerName">Charging station name</label>
                             <input asp-for="ChargerName" class="form-control"
-                                   placeholder="Charging station name" required />
+                                   placeholder="Enter charging station name" required />
                         </div>
 
-                        <!-- Serial number -->
+                        <!-- Serial -->
                         <div class="form-group mb-3">
                             <label asp-for="SerialNumber">Serial number</label>
                             <input asp-for="SerialNumber" class="form-control"
@@ -116,12 +85,22 @@
 
                         <!-- Puk -->
                         <div class="form-group mb-3">
-                            <label asp-for="Puk">Puk</label>
+                            <label asp-for="Puk">PUK</label>
                             <input asp-for="Puk" class="form-control"
-                                   placeholder="Puk" required />
+                                   placeholder="PUK" required />
                         </div>
 
-                        <!-- Next button -->
+                        <!-- Power (kW) -->
+                        <div class="form-group mb-3">
+                            <label asp-for="PowerValue">Power (kW)</label>
+                            <input asp-for="PowerValue" class="form-control"
+                                   placeholder="e.g. 22" />
+                            <small class="text-muted">
+                                Enter only the number (e.g. "22"). We'll append " kW".
+                                If left blank, we'll store "0 kW".
+                            </small>
+                        </div>
+
                         <button type="submit" class="btn-next">Next</button>
                     </form>
                 </div>
@@ -130,7 +109,6 @@
     </div>
 </div>
 
-<!-- Optional vendor partial -->
 @await Html.PartialAsync("__Vendor")
 
 <!-- Scripts -->

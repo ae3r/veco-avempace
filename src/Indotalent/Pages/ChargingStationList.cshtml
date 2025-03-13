@@ -1,0 +1,146 @@
+﻿@page
+@model Indotalent.Pages.ChargingStationListModel
+
+<!-- Slick -->
+<link rel="stylesheet" href="~/css/slick.css" />
+<link rel="stylesheet" href="~/css/slick-theme.css" />
+
+<!-- style.css -->
+<link rel="stylesheet" href="~/css/style.css" />
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    .section {
+        margin-top: 80px; /* Adjust if needed */
+    }
+
+    .station-list-container {
+        max-width: 700px;
+        margin: 40px auto;
+    }
+
+    .station-card {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        .station-card:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+    .station-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .station-status {
+        color: #666;
+        font-size: 0.95rem;
+    }
+
+    .station-power {
+        color: #666;
+        font-size: 0.95rem;
+    }
+
+    .add-network-card {
+        background-color: #f2f2f2;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+    }
+
+        .add-network-card .plus-btn {
+            border: none;
+            background: none;
+            font-size: 3rem;
+            cursor: pointer;
+        }
+
+    /* Optional styling for the "Return" button */
+    .btn-return {
+        background-color: #aaa;
+        color: #fff;
+        border-radius: 30px;
+        padding: 0.5rem 1rem;
+        border: none;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+        .btn-return:hover {
+            background-color: #888;
+        }
+</style>
+
+<!-- If you want your nav header, uncomment:
+@* <div id="header"> ... </div> *@ -->
+
+<div class="section">
+    <div class="container">
+        <!-- RETURN BUTTON HERE -->
+        <button class="btn-return"
+                onclick="window.location.href='@Url.Page("NetworkList")'">
+            Return
+        </button>
+
+        <h2>Charging Station List</h2>
+        <p>Manage your charging stations and add new ones</p>
+
+        <!-- Button at top-right to add station -->
+        <div style="text-align:right; margin-bottom:10px;">
+            <button class="btn btn-light"
+                    onclick="window.location.href='@Url.Page("AddChargingStation")'">
+                Add station
+            </button>
+        </div>
+
+        <div class="station-list-container">
+            @if (Model.Stations != null && Model.Stations.Count > 0)
+            {
+                @foreach (var station in Model.Stations)
+                {
+                    <div class="station-card"
+                         onclick="window.location.href='@Url.Page("ChargerStationDetails", new { name = station.ChargerName })'">
+                        <span class="station-name">@station.ChargerName</span>
+                        <span class="station-status">@station.Status</span>
+                        <span class="station-power">@station.PowerKW</span>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No charging stations yet. Click “Add station” to create one.</p>
+            }
+
+            <!-- Another card with big plus icon at the bottom -->
+            <div class="add-network-card">
+                <h5>Add charging station</h5>
+                <p>Click the button + to add a new station</p>
+                <button class="plus-btn"
+                        onclick="window.location.href='@Url.Page("AddChargingStation")'">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@await Html.PartialAsync("__Vendor")
+
+<!-- JS references -->
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/landingpage/js/slick.min.js"></script>
