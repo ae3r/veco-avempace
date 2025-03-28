@@ -28,12 +28,25 @@ namespace Infrastructure.Services.Ocpp
             }
             else
             {
-                // Update the existing station.
                 existing.Model = station.Model;
                 existing.BootTime = station.BootTime;
                 existing.LastHeartbeat = station.LastHeartbeat;
                 existing.ChargerStatus = station.ChargerStatus;
-                // Optionally update other fields as needed.
+                existing.ConnectionStatus = station.ConnectionStatus ?? "Disconnected";
+                existing.ChargerName = station.ChargerName ?? existing.ChargerName;
+                existing.SerialNumber = station.SerialNumber ?? existing.SerialNumber;
+                existing.Puk = station.Puk ?? existing.Puk;
+                existing.PowerValue = station.PowerValue;
+                existing.PhotoUrl = station.PhotoUrl ?? existing.PhotoUrl;
+
+                // new custom fields
+                existing.Vehicle = station.Vehicle ?? existing.Vehicle;
+                existing.Access = station.Access ?? existing.Access;
+                existing.SelfConsumption = station.SelfConsumption ?? existing.SelfConsumption;
+                existing.Internet = station.Internet ?? existing.Internet;
+                existing.Scheduling = station.Scheduling ?? existing.Scheduling;
+                existing.MeterNominalPower = station.MeterNominalPower ?? existing.MeterNominalPower;
+
             }
             await _context.SaveChangesAsync();
         }

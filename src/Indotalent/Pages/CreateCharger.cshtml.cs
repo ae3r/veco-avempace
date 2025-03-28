@@ -80,7 +80,8 @@ namespace Indotalent.Pages
                 ChargerStatus = ChargerStatus,
                 ConnectionStatus = ConnectionStatus,
                 Model = Model,
-                NetworkId = NetworkId
+                NetworkId = NetworkId,
+                OcppStationId = "Manual-" + Guid.NewGuid().ToString(),
             };
 
             _dbContext.ChargingStations.Add(newCharger);

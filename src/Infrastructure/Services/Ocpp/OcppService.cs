@@ -158,24 +158,43 @@ namespace Infrastructure.Ocpp
 
         private async Task HandleBootNotification(WebSocket ws, string uniqueId, JsonObject payload)
         {
-            // uniqueId here is the OCPP station identifier (e.g., "AE0007H1GN5C00832V")
             string vendor = payload["chargePointVendor"]?.GetValue<string>() ?? "UnknownVendor";
             string model = payload["chargePointModel"]?.GetValue<string>() ?? "UnknownModel";
-            _logger.LogInformation("BootNotification from {Vendor}/{Model}", vendor, model);
+            // NEW custom fields
+            string? vehicle = payload["vehicle"]?.GetValue<string>();
+            string? access = payload["access"]?.GetValue<string>();
+            string? selfConsumption = payload["selfConsumption"]?.GetValue<string>();
+            string? internet = payload["internet"]?.GetValue<string>();
+            string? scheduling = payload["scheduling"]?.GetValue<string>();
+            string? meterNominalPower = payload["meterNominalPower"]?.GetValue<string>();
 
-            // Retrieve station by its OCPP station identifier.
+            _logger.LogInformation("BootNotification from {Vendor}/{Model},{vehicle},{access},{selfConsumption},{internet},{scheduling},{meterNominalPower}", vendor, model,vehicle,access,selfConsumption,internet,scheduling,meterNominalPower);
+
+            // Retrieve existing station by its OCPP identifier.
             var station = await _chargingStationService.GetStationByOcppIdAsync(uniqueId);
             if (station == null)
             {
-                // Create new station with the OCPP station identifier.
                 station = new ChargingStation
                 {
                     OcppStationId = uniqueId,
+                    ChargerName = "Charger-" + uniqueId,
                     Model = model,
                     BootTime = DateTime.UtcNow,
                     LastHeartbeat = DateTime.UtcNow,
-                    ChargerStatus = "Booted"
-                    // Optionally: Set a default NetworkId if necessary.
+                    ChargerStatus = "Booted",
+                    ConnectionStatus = "Disconnected",
+                    SerialNumber = "N/A",
+                    Puk = "N/A",
+                    PowerValue = 0,
+                    NetworkId = 1,  // default network, if needed
+
+                    // Assign custom fields
+                    Vehicle = vehicle,
+                    Access = access,
+                    SelfConsumption = selfConsumption,
+                    Internet = internet,
+                    Scheduling = scheduling,
+                    MeterNominalPower = meterNominalPower
                 };
             }
             else
@@ -184,7 +203,29 @@ namespace Infrastructure.Ocpp
                 station.BootTime = DateTime.UtcNow;
                 station.LastHeartbeat = DateTime.UtcNow;
                 station.ChargerStatus = "Booted";
+                if (string.IsNullOrEmpty(station.ConnectionStatus))
+                    station.ConnectionStatus = "Disconnected";
+                if (string.IsNullOrEmpty(station.ChargerName))
+                    station.ChargerName = "Charger-" + uniqueId;
+                if (string.IsNullOrEmpty(station.SerialNumber))
+                    station.SerialNumber = "N/A";
+                if (string.IsNullOrEmpty(station.Puk))
+                    station.Puk = "N/A";
+                if (station.PowerValue == 0)
+                    station.PowerValue = 0;
+                if (string.IsNullOrEmpty(station.PhotoUrl))
+                    station.PhotoUrl = "https://example.com/default-charger.png";
+                if (station.NetworkId == 0)
+                    station.NetworkId = 1;
+                // Update custom fields if not null
+                if (!string.IsNullOrEmpty(vehicle)) station.Vehicle = vehicle;
+                if (!string.IsNullOrEmpty(access)) station.Access = access;
+                if (!string.IsNullOrEmpty(selfConsumption)) station.SelfConsumption = selfConsumption;
+                if (!string.IsNullOrEmpty(internet)) station.Internet = internet;
+                if (!string.IsNullOrEmpty(scheduling)) station.Scheduling = scheduling;
+                if (!string.IsNullOrEmpty(meterNominalPower)) station.MeterNominalPower = meterNominalPower;
             }
+
             await _chargingStationService.UpdateStationStatusAsync(station);
 
             var responsePayload = new JsonObject
@@ -197,6 +238,11 @@ namespace Infrastructure.Ocpp
             var callResult = new JsonArray { 3, uniqueId, responsePayload };
             await SendResponse(ws, callResult);
         }
+
+
+
+
+
 
         private async Task HandleHeartbeat(WebSocket ws, string uniqueId, JsonObject payload)
         {

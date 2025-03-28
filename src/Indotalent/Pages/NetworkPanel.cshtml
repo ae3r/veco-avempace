@@ -141,6 +141,45 @@
         background-color: #0b7fab;
         color: #fff;
     }
+
+    /* Charger carousel styles */
+    .charger-carousel .charger-card {
+        background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 2px;  /* reduced corner radius */
+    padding: 4px;        /* reduced padding */
+    margin: 2px;         /* reduced margin */
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    }
+
+    .charger-carousel .charger-card:hover {
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .charger-image {
+    width: 100px;  /* Adjust to desired width */
+    height: auto;  /* Keeps aspect ratio */
+}
+
+    .charger-info {
+        font-size: 0.95rem;
+        color: #333;
+    }
+
+    .charger-serial {
+        font-weight: 600;
+    }
+
+    .charger-status {
+        color: #f00; /* or brand color if "Disconnected" etc. */
+    }
+
+    .charger-power {
+        color: #666;
+    }
+
 </style>
 
 <body>
@@ -203,9 +242,33 @@
                         <p>0</p>
                     </div>
                     <!-- Dazebox in the network -->
-                    <div class="panel-section">
+                    <div class="panel-section dazebox-section">
                         <h4><i class="fas fa-box-open section-icon"></i>Dazebox in the network</h4>
-                        <p>No data yet.</p>
+
+                        @if (Model.Chargers != null && Model.Chargers.Any())
+                        {
+                                <!-- Slick carousel container -->
+                                    <div class="charger-carousel" id="chargerCarousel">
+                                @foreach (var charger in Model.Chargers)
+                                {
+                <div class="charger-card"
+                     onclick="location.href='@Url.Page("ChargerDetails", new { chargerId = charger.Id })'">
+                    <!-- Use the PhotoUrl property; if null or empty, fallback to a default image -->
+                            <img src="@(string.IsNullOrEmpty(charger.PhotoUrl) ? Url.Content("~/img/autel.jpg") : charger.PhotoUrl)" alt="Charger Image" class="charger-image" />
+
+                    <div class="charger-info">
+                        <p class="charger-serial">@(charger.SerialNumber ?? "N/A")</p>
+                        <p class="charger-status">@(charger.ConnectionStatus ?? "N/A")</p>
+                        <p class="charger-power">@charger.PowerValue kW</p>
+                    </div>
+                </div>
+                                }
+    </div>
+                        }
+                        else
+                        {
+                                <p>No data yet.</p>
+                        }
                     </div>
                     <!-- Charging sessions -->
                     <div class="panel-section">
@@ -251,25 +314,21 @@
                         <p style="margin-bottom: 15px;">Click on the button to add a new charger</p>
                         <a asp-page="/CreateCharger" asp-route-NetworkId="@Model.CurrentNetwork.Id" style="text-decoration:none;">
                             <button type="button" style="
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            background-color: #0b7fab;
-            color: #fff;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-        ">
+                                border-radius: 50%;
+                                width: 60px;
+                                height: 60px;
+                                background-color: #0b7fab;
+                                color: #fff;
+                                font-size: 1.5rem;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border: none;
+                                box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+                            ">
                                 <i class="fa fa-plus"></i>
                             </button>
                         </a>
-
-
-
-
                     </div>
 
                     <!-- Chargers grid table -->
@@ -288,20 +347,20 @@
                             {
                                 foreach (var charger in Model.Chargers)
                                 {
-                                    <tr>
-                                        <td>@charger.ChargerName</td>
-                                        <td>@charger.Network?.NetworkName</td>
-                                        <td>@charger.ChargerStatus</td>
-                                        <td>@charger.ConnectionStatus</td>
-                                        <td>@charger.Model</td>
-                                    </tr>
+                                            <tr>
+                                                <td>@charger.ChargerName</td>
+                                                <td>@charger.Network?.NetworkName</td>
+                                                <td>@charger.ChargerStatus</td>
+                                                <td>@charger.ConnectionStatus</td>
+                                                <td>@charger.Model</td>
+                                            </tr>
                                 }
                             }
                             else
                             {
-                                <tr>
-                                    <td colspan="5">No charging stations found.</td>
-                                </tr>
+                                    <tr>
+                                        <td colspan="5">No charging stations found.</td>
+                                    </tr>
                             }
                         </tbody>
                     </table>
@@ -320,5 +379,23 @@
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/bootstrap.bundle.min.js"></script>
     <script src="~/landingpage/js/slick.min.js"></script>
+
+    <!-- Initialize Slick carousel for the "Dazebox in the network" section -->
+    <script>
+        $(document).ready(function() {
+            // Only init slick if we have .charger-carousel in the DOM
+            if ($('#chargerCarousel').length) {
+                $('#chargerCarousel').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: false,
+                    dots: true,
+                    arrows: true
+                    // You can add more slick options here
+                    // e.g. responsive breakpoints, autoplay, etc.
+                });
+            }
+        });
+    </script>
 </body>
 </html>
