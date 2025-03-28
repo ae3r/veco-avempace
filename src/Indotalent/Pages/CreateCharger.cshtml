@@ -1,0 +1,116 @@
+﻿@page
+@model Indotalent.Pages.CreateChargerModel
+@{
+    ViewData["Title"] = "Create Charging Station";
+}
+
+<!-- CSS references -->
+<link rel="stylesheet" href="~/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/slick.css" />
+<link rel="stylesheet" href="~/css/slick-theme.css" />
+<link rel="stylesheet" href="~/css/style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+<style>
+    .create-charger-container {
+        max-width: 700px;
+        margin: 40px auto;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 30px;
+    }
+
+    .btn-next {
+        background-color: #0b7fab;
+        color: #fff;
+        border-radius: 30px;
+        width: 100%;
+        height: 50px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        border: none;
+        margin-top: 20px;
+    }
+
+        .btn-next:hover {
+            background-color: #095f79;
+        }
+
+    .btn-return {
+        background-color: #6c757d;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+        .btn-return:hover {
+            background-color: #5a6268;
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+</style>
+
+<div class="create-charger-container">
+    <!-- Return button -->
+    <a asp-page="/NetworkPanel" asp-route-networkId="@Model.NetworkId" class="btn-return">
+        &larr; Return
+    </a>
+
+    <h3>Create Charging Station</h3>
+
+    <!-- Display validation errors -->
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <form method="post">
+        <!-- Charger Name -->
+        <div class="form-group mb-3">
+            <label asp-for="ChargerName">Charging station name</label>
+            <input asp-for="ChargerName" class="form-control" placeholder="Enter charging station name" required />
+            <span asp-validation-for="ChargerName" class="text-danger"></span>
+        </div>
+
+        <!-- Serial Number -->
+        <div class="form-group mb-3">
+            <label asp-for="SerialNumber">Serial number</label>
+            <input asp-for="SerialNumber" class="form-control" placeholder="Enter serial number" required />
+            <span asp-validation-for="SerialNumber" class="text-danger"></span>
+        </div>
+
+        <!-- PUK -->
+        <div class="form-group mb-3">
+            <label asp-for="Puk">PUK</label>
+            <input asp-for="Puk" class="form-control" placeholder="Enter PUK" required />
+            <span asp-validation-for="Puk" class="text-danger"></span>
+        </div>
+
+        <!-- Power (kW) -->
+        <div class="form-group mb-3">
+            <label asp-for="PowerValue">Power (kW)</label>
+            <input asp-for="PowerValue" class="form-control" placeholder="e.g. 22" />
+            <small class="text-muted">
+                Enter only the number (e.g. "22"). We'll append " kW". If left blank, "0 kW" will be stored.
+            </small>
+            <span asp-validation-for="PowerValue" class="text-danger"></span>
+        </div>
+
+        <!-- Hidden fields for default properties -->
+        <input type="hidden" asp-for="ChargerStatus" value="@Model.ChargerStatus" />
+        <input type="hidden" asp-for="ConnectionStatus" value="@Model.ConnectionStatus" />
+        <input type="hidden" asp-for="Model" value="@Model.Model" />
+        <!-- Hidden field for NetworkId -->
+        <input type="hidden" asp-for="NetworkId" />
+
+        <button type="submit" class="btn-next">Next</button>
+    </form>
+</div>
+
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/landingpage/js/slick.min.js"></script>

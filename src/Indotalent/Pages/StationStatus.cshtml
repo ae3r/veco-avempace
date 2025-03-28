@@ -1,0 +1,41 @@
+﻿@page
+@model Indotalemplace.Pages.StationStatusModel
+@{
+    ViewData["Title"] = "Charging Station Status";
+}
+
+<h2>@ViewData["Title"]</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Station ID</th>
+            <th>Vendor</th>
+            <th>Model</th>
+            <th>Boot Time</th>
+            <th>Last Heartbeat</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Stations.Any())
+        {
+            foreach (var station in Model.Stations)
+            {
+                <tr>
+                    <td>@station.Id</td>
+                    @* <td>@station.Vendor</td> *@
+                    <td>@station.Model</td>
+                    <td>@station.BootTime</td>
+                    <td>@station.LastHeartbeat</td>
+                    <td>@station.ChargerStatus</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6">No charging station data available.</td>
+            </tr>
+        }
+    </tbody>
+</table>

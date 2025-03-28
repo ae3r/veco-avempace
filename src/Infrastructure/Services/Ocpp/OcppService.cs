@@ -1,23 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Domain.Entities;
 using System.Net.WebSockets;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json.Nodes;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using Application.Common.Interfaces;
 using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
 
-namespace Infrastructure.Services.Ocpp
+namespace Infrastructure.Ocpp
 {
     public interface IOcppService
     {
-        Task ProcessWebSocketAsync(HttpContext context);
+        Task ProcessWebSocketAsync(HttpContext context, string stationId);
+        Task SendTriggerMessageAsync(HttpContext context, string stationId, string requestedMessage);
     }
 
     public class OcppService : IOcppService
     {
-        public async Task ProcessWebSocketAsync(HttpContext context)
+        private readonly IChargingStationService _chargingStationService;
+        private readonly ILogger<OcppService> _logger;
+
+        public OcppService(IChargingStationService chargingStationService, ILogger<OcppService> logger)
+        {
+            _chargingStationService = chargingStationService;
+            _logger = logger;
+        }
+
+        public async Task ProcessWebSocketAsync(HttpContext context, string stationId)
         {
             if (!context.WebSockets.IsWebSocketRequest)
             {
@@ -26,101 +35,99 @@ namespace Infrastructure.Services.Ocpp
             }
 
             using var ws = await context.WebSockets.AcceptWebSocketAsync();
-            Console.WriteLine("New OCPP station connected.");
+            _logger.LogInformation("New OCPP station connected with stationId from URL: {StationId}", stationId);
 
             var buffer = new byte[8192];
 
-            while (ws.State == WebSocketState.Open)
+            try
             {
-                var receivedData = new List<byte>();
-                WebSocketReceiveResult result;
-                try
+                while (ws.State == WebSocketState.Open)
                 {
-                    // Accumulate the full message
-                    do
+                    var receivedData = new List<byte>();
+                    WebSocketReceiveResult result = null;
+                    try
                     {
-                        result = await ws.ReceiveAsync(new ArraySegment<byte>(buffer), context.RequestAborted);
-                        if (result.MessageType == WebSocketMessageType.Close)
+                        // Accumulate full message from multiple fragments if needed.
+                        do
                         {
-                            Console.WriteLine("Station closed connection.");
-                            return;
-                        }
-                        receivedData.AddRange(buffer.Take(result.Count));
-                    } while (!result.EndOfMessage);
-                }
-                catch (ObjectDisposedException ode)
-                {
-                    Console.WriteLine($"WebSocket disposed: {ode.Message}");
-                    break;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error receiving message: {ex.Message}");
-                    continue;
-                }
-
-                string jsonText = Encoding.UTF8.GetString(receivedData.ToArray()).Trim();
-                if (string.IsNullOrEmpty(jsonText))
-                    continue;
-
-                JsonNode? root;
-                try
-                {
-                    root = JsonNode.Parse(jsonText);
-                }
-                catch (JsonReaderException jrex)
-                {
-                    Console.WriteLine($"JSON parsing error: {jrex.Message}. Received text: {jsonText}");
-                    continue;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Unexpected error during JSON parsing: {ex.Message}");
-                    continue;
-                }
-
-                if (root is not JsonArray arr || arr.Count < 2)
-                {
-                    Console.WriteLine("Malformed OCPP message (not a valid array).");
-                    continue;
-                }
-
-                int messageTypeId = arr[0]?.GetValue<int>() ?? -1;
-                string uniqueId = arr[1]?.GetValue<string>() ?? "";
-
-                try
-                {
-                    switch (messageTypeId)
+                            _logger.LogDebug("Awaiting data... Buffer length: {BufferLength}", buffer.Length);
+                            result = await ws.ReceiveAsync(new ArraySegment<byte>(buffer), context.RequestAborted);
+                            _logger.LogDebug("Received {Count} bytes, MessageType: {MessageType}, EndOfMessage: {EndOfMessage}, State: {State}",
+                                result.Count, result.MessageType, result.EndOfMessage, ws.State);
+                            if (result.MessageType == WebSocketMessageType.Close)
+                            {
+                                _logger.LogInformation("Station closed connection gracefully.");
+                                await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
+                                return;
+                            }
+                            receivedData.AddRange(buffer.Take(result.Count));
+                        } while (!result.EndOfMessage);
+                    }
+                    catch (OperationCanceledException oce)
                     {
-                        case 2: // Call from station
-                            string action = arr.Count > 2 ? arr[2]?.GetValue<string>() ?? "" : "";
-                            JsonObject payload = arr.Count > 3 ? arr[3] as JsonObject ?? new JsonObject() : new JsonObject();
-                            Console.WriteLine($"[OCPP] Call received: Action={action}, UniqueId={uniqueId}");
-                            await ProcessCallAsync(ws, uniqueId, action, payload);
-                            break;
-                        case 3: // CallResult from station
-                            Console.WriteLine($"[OCPP] CallResult received for UniqueId={uniqueId}");
-                            break;
-                        case 4: // CallError from station
-                            Console.WriteLine($"[OCPP] CallError received for UniqueId={uniqueId}");
-                            break;
-                        default:
-                            Console.WriteLine($"[OCPP] Unknown MessageTypeId={messageTypeId}");
-                            break;
+                        _logger.LogWarning(oce, "Operation canceled during WebSocket receive. Aborted.");
+                        break;
+                    }
+                    catch (WebSocketException wse)
+                    {
+                        _logger.LogWarning(wse, "WebSocket exception encountered. WebSocket State: {State}. Remote party may have closed the connection abruptly.", ws.State);
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "Unexpected error during WebSocket receive.");
+                        break;
+                    }
+
+                    string jsonText = Encoding.UTF8.GetString(receivedData.ToArray()).Trim();
+                    _logger.LogDebug("Complete message received: {JsonText}", jsonText);
+                    if (string.IsNullOrEmpty(jsonText))
+                    {
+                        _logger.LogWarning("Received an empty message after trimming.");
+                        continue;
+                    }
+
+                    JsonNode? root;
+                    try
+                    {
+                        root = JsonNode.Parse(jsonText);
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "Failed to parse station message. Received text: {JsonText}", jsonText);
+                        continue;
+                    }
+
+                    if (root is not JsonArray arr || arr.Count < 2)
+                    {
+                        _logger.LogWarning("Malformed OCPP message (not a valid array). Data: {JsonText}", jsonText);
+                        continue;
+                    }
+
+                    int messageTypeId = arr[0]?.GetValue<int>() ?? -1;
+                    _logger.LogDebug("Parsed messageTypeId: {MessageTypeId}", messageTypeId);
+
+                    // Use the stationId from the URL as the unique identifier.
+                    string uniqueId = stationId;
+
+                    if (messageTypeId == 2)
+                    {
+                        string action = arr.Count > 2 ? arr[2]?.GetValue<string>() ?? "" : "";
+                        JsonObject payload = arr.Count > 3 ? arr[3] as JsonObject ?? new JsonObject() : new JsonObject();
+                        _logger.LogInformation("[OCPP] Call received: Action={Action}, StationId={StationId}", action, uniqueId);
+                        await ProcessCallAsync(ws, uniqueId, action, payload);
+                    }
+                    else
+                    {
+                        _logger.LogInformation("[OCPP] Received message type {MessageTypeId} for StationId={StationId}", messageTypeId, uniqueId);
                     }
                 }
-                catch (ObjectDisposedException ode)
-                {
-                    Console.WriteLine($"Operation failed due to disposed object: {ode.Message}");
-                    break;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error processing message: {ex.Message}");
-                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred in ProcessWebSocketAsync.");
             }
         }
-
 
         private async Task ProcessCallAsync(WebSocket ws, string uniqueId, string action, JsonObject payload)
         {
@@ -132,28 +139,9 @@ namespace Infrastructure.Services.Ocpp
                 case "Heartbeat":
                     await HandleHeartbeat(ws, uniqueId, payload);
                     break;
-                case "Authorize":
-                    await HandleAuthorize(ws, uniqueId, payload);
+                case "TriggerMessage":
+                    await HandleTriggerMessage(ws, uniqueId, payload);
                     break;
-                case "MeterValues":
-                    await HandleMeterValues(ws, uniqueId, payload);
-                    break;
-                case "StatusNotification":
-                    await HandleStatusNotification(ws, uniqueId, payload);
-                    break;
-                case "StartTransaction":
-                    await HandleStartTransaction(ws, uniqueId, payload);
-                    break;
-                case "StopTransaction":
-                    await HandleStopTransaction(ws, uniqueId, payload);
-                    break;
-                case "RemoteStartTransaction":
-                    await HandleRemoteStartTransaction(ws, uniqueId, payload);
-                    break;
-                case "RemoteStopTransaction":
-                    await HandleRemoteStopTransaction(ws, uniqueId, payload);
-                    break;
-                // Add further cases for additional features/configuration keys
                 default:
                     var callError = new JsonArray
                     {
@@ -168,19 +156,41 @@ namespace Infrastructure.Services.Ocpp
             }
         }
 
-        // Handlers for various OCPP actions:
         private async Task HandleBootNotification(WebSocket ws, string uniqueId, JsonObject payload)
         {
-            // Extract charger details (vendor, model, etc.)
+            // uniqueId here is the OCPP station identifier (e.g., "AE0007H1GN5C00832V")
             string vendor = payload["chargePointVendor"]?.GetValue<string>() ?? "UnknownVendor";
             string model = payload["chargePointModel"]?.GetValue<string>() ?? "UnknownModel";
-            Console.WriteLine($"BootNotification from {vendor}/{model}");
+            _logger.LogInformation("BootNotification from {Vendor}/{Model}", vendor, model);
 
-            // Respond with a basic BootNotificationResponse
+            // Retrieve station by its OCPP station identifier.
+            var station = await _chargingStationService.GetStationByOcppIdAsync(uniqueId);
+            if (station == null)
+            {
+                // Create new station with the OCPP station identifier.
+                station = new ChargingStation
+                {
+                    OcppStationId = uniqueId,
+                    Model = model,
+                    BootTime = DateTime.UtcNow,
+                    LastHeartbeat = DateTime.UtcNow,
+                    ChargerStatus = "Booted"
+                    // Optionally: Set a default NetworkId if necessary.
+                };
+            }
+            else
+            {
+                station.Model = model;
+                station.BootTime = DateTime.UtcNow;
+                station.LastHeartbeat = DateTime.UtcNow;
+                station.ChargerStatus = "Booted";
+            }
+            await _chargingStationService.UpdateStationStatusAsync(station);
+
             var responsePayload = new JsonObject
             {
                 ["currentTime"] = DateTime.UtcNow.ToString("o"),
-                ["interval"] = 300, // heartbeat interval in seconds
+                ["interval"] = 300,
                 ["status"] = "Accepted"
             };
 
@@ -190,85 +200,61 @@ namespace Infrastructure.Services.Ocpp
 
         private async Task HandleHeartbeat(WebSocket ws, string uniqueId, JsonObject payload)
         {
-            Console.WriteLine("Heartbeat received.");
+            _logger.LogInformation("Heartbeat received for StationId={StationId}", uniqueId);
+            var station = await _chargingStationService.GetStationByOcppIdAsync(uniqueId);
+            if (station != null)
+            {
+                station.LastHeartbeat = DateTime.UtcNow;
+                station.ChargerStatus = "Active";
+                await _chargingStationService.UpdateStationStatusAsync(station);
+            }
+
             var responsePayload = new JsonObject { ["currentTime"] = DateTime.UtcNow.ToString("o") };
             var callResult = new JsonArray { 3, uniqueId, responsePayload };
             await SendResponse(ws, callResult);
         }
 
-        private async Task HandleAuthorize(WebSocket ws, string uniqueId, JsonObject payload)
+        // New method to handle TriggerMessage requests.
+        private async Task HandleTriggerMessage(WebSocket ws, string uniqueId, JsonObject payload)
         {
-            string idTag = payload["idTag"]?.GetValue<string>() ?? "Unknown";
-            Console.WriteLine($"Authorize received for idTag: {idTag}");
-            var responsePayload = new JsonObject { ["idTagInfo"] = new JsonObject { ["status"] = "Accepted" } };
-            var callResult = new JsonArray { 3, uniqueId, responsePayload };
-            await SendResponse(ws, callResult);
-        }
+            string requestedMessage = payload["requestedMessage"]?.GetValue<string>() ?? "";
+            _logger.LogInformation("TriggerMessage received for StationId={StationId}. Requested message: {RequestedMessage}", uniqueId, requestedMessage);
 
-        private async Task HandleMeterValues(WebSocket ws, string uniqueId, JsonObject payload)
-        {
-            Console.WriteLine("MeterValues received.");
-            // Here you would extract meter readings and other data.
-            // For example, you might check for "MeterValuesSampleInterval" and "MeterValuesSampledData".
-            var responsePayload = new JsonObject(); // Typically an empty payload for MeterValues response.
-            var callResult = new JsonArray { 3, uniqueId, responsePayload };
-            await SendResponse(ws, callResult);
-        }
-
-        private async Task HandleStatusNotification(WebSocket ws, string uniqueId, JsonObject payload)
-        {
-            Console.WriteLine("StatusNotification received.");
-            // Process status details (e.g., connectorId, errorCode, status, etc.)
-            var responsePayload = new JsonObject(); // Typically empty in OCPP 1.6
-            var callResult = new JsonArray { 3, uniqueId, responsePayload };
-            await SendResponse(ws, callResult);
-        }
-
-        private async Task HandleStartTransaction(WebSocket ws, string uniqueId, JsonObject payload)
-        {
-            Console.WriteLine("StartTransaction received.");
-            // Extract details (connectorId, idTag, meterStart, timestamp, etc.)
-            int transactionId = new Random().Next(10000, 99999); // Generate a dummy transaction ID
+            // Here, we respond with a simple TriggerMessageResponse.
+            // You can expand this logic to actually trigger sending a message to the charging station if needed.
             var responsePayload = new JsonObject
             {
-                ["idTagInfo"] = new JsonObject { ["status"] = "Accepted" },
-                ["transactionId"] = transactionId
+                ["status"] = "Accepted"
             };
+
             var callResult = new JsonArray { 3, uniqueId, responsePayload };
             await SendResponse(ws, callResult);
         }
 
-        private async Task HandleStopTransaction(WebSocket ws, string uniqueId, JsonObject payload)
+        public async Task SendTriggerMessageAsync(HttpContext context, string stationId, string requestedMessage)
         {
-            Console.WriteLine("StopTransaction received.");
-            // Process stopping transaction details (meterStop, timestamp, transactionId, etc.)
-            var responsePayload = new JsonObject { ["idTagInfo"] = new JsonObject { ["status"] = "Accepted" } };
-            var callResult = new JsonArray { 3, uniqueId, responsePayload };
-            await SendResponse(ws, callResult);
-        }
+            if (!context.WebSockets.IsWebSocketRequest)
+            {
+                _logger.LogWarning("No WebSocket request found when attempting to send TriggerMessage.");
+                context.Response.StatusCode = 400;
+                return;
+            }
 
-        private async Task HandleRemoteStartTransaction(WebSocket ws, string uniqueId, JsonObject payload)
-        {
-            Console.WriteLine("RemoteStartTransaction received.");
-            // Process remote start details (e.g., idTag, connectorId, etc.)
-            var responsePayload = new JsonObject { ["status"] = "Accepted" };
-            var callResult = new JsonArray { 3, uniqueId, responsePayload };
-            await SendResponse(ws, callResult);
-        }
+            using var ws = await context.WebSockets.AcceptWebSocketAsync();
+            _logger.LogInformation("Sending TriggerMessage request for StationId: {StationId}", stationId);
 
-        private async Task HandleRemoteStopTransaction(WebSocket ws, string uniqueId, JsonObject payload)
-        {
-            Console.WriteLine("RemoteStopTransaction received.");
-            // Process remote stop details (e.g., transactionId)
-            var responsePayload = new JsonObject { ["status"] = "Accepted" };
-            var callResult = new JsonArray { 3, uniqueId, responsePayload };
-            await SendResponse(ws, callResult);
+            var triggerPayload = new JsonObject
+            {
+                ["requestedMessage"] = requestedMessage
+            };
+            var triggerMessage = new JsonArray { 2, stationId, "TriggerMessage", triggerPayload };
+            await SendResponse(ws, triggerMessage);
         }
 
         private async Task SendResponse(WebSocket ws, JsonArray response)
         {
             string json = response.ToJsonString();
-            Console.WriteLine($"Sending OCPP response: {json}");
+            _logger.LogInformation("Sending OCPP response: {ResponseJson}", json);
             var bytes = Encoding.UTF8.GetBytes(json);
             await ws.SendAsync(new ArraySegment<byte>(bytes), WebSocketMessageType.Text, true, CancellationToken.None);
         }

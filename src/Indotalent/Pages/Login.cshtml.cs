@@ -1,20 +1,18 @@
+using Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration; // For IConfiguration
-using System;
-using System.Data;
-using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace Indotalent.Pages
 {
     public class LoginModel : PageModel
     {
-        private readonly IConfiguration _config;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public LoginModel(IConfiguration config)
+        public LoginModel(SignInManager<ApplicationUser> signInManager)
         {
-            _config = config;
+            _signInManager = signInManager;
         }
 
         [BindProperty]
@@ -25,61 +23,36 @@ namespace Indotalent.Pages
 
         public void OnGet()
         {
+            // No special logic on GET
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
-            // 1) Check if the user is Admin
-            if (IsAdminUser(Email, Password))
+            // If no input or invalid, show same page with error
+            if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
             {
-                // 2) If valid, redirect to the "Networks" page
+                ModelState.AddModelError(string.Empty, "Email and Password are required.");
+                return Page();
+            }
+
+            // Attempt sign-in
+            var result = await _signInManager.PasswordSignInAsync(Email, Password,
+                    isPersistent: false, lockoutOnFailure: false);
+
+            if (result.Succeeded)
+            {
+                // If success, redirect to Networks
                 return RedirectToPage("Networks");
             }
             else
             {
-                // 3) Otherwise, remain on the same page or show error
-                ModelState.AddModelError(string.Empty, "Invalid email or password.");
+                // Show error
+                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 return Page();
             }
         }
 
-        private bool IsAdminUser(string email, string password)
-        {
-            bool isAdmin = false;
-
-            // Grab the connection string from appsettings.json
-            string connString = _config.GetConnectionString("DefaultConnection");
-
-            // Basic ADO.NET approach:
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open();
-
-                // We’ll do a simple query. In production, param names should match the columns.
-                string sql = @"
-                    SELECT [IsAdmin]
-                    FROM [dbo].[Users]
-                    WHERE [Email] = @Email AND [Password] = @Password
-                ";
-
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = email;
-                    cmd.Parameters.Add("@Password", SqlDbType.NVarChar).Value = password;
-
-                    var result = cmd.ExecuteScalar();
-                    if (result != null)
-                    {
-                        // result should be True/False for the IsAdmin column
-                        isAdmin = Convert.ToBoolean(result);
-                    }
-                }
-            }
-
-            return isAdmin;
-        }
-
-        // ---------- Existing partial handlers (if you still need them) ----------
+        // If you still need the partial handlers for sign-up
         public IActionResult OnGetSignUpChoicePartial() => Partial("_SignUpChoicePartial");
         public IActionResult OnGetPrivatePurchaseSignupPartial() => Partial("_PrivatePurchaseSignupPartial");
         public IActionResult OnGetPrivatePurchaseSignupStep2Partial() => Partial("_PrivatePurchaseSignupStep2Partial");

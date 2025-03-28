@@ -11,113 +11,111 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Infrastructure;
-
-/// <summary>
-/// DependencyInjection class
-/// </summary>
-public static class DependencyInjection
+namespace Infrastructure
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+    /// <summary>
+    /// DependencyInjection class
+    /// </summary>
+    public static class DependencyInjection
     {
-        if (configuration.GetValue<bool>("UseInMemoryDatabase"))
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseInMemoryDatabase("VecoAvempaceDb")
+            if (configuration.GetValue<bool>("UseInMemoryDatabase"))
+            {
+                services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseInMemoryDatabase("VecoAvempaceDb")
                 );
-
-            // enable workflow core
-            //services.AddWorkflow();
-        }
-        else
-        {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName))
-
+                // If needed: enable workflow core, etc.
+            }
+            else
+            {
+                services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlServer(
+                        configuration.GetConnectionString("DefaultConnection"),
+                        b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName))
                 );
-            services.AddDatabaseDeveloperPageExceptionFilter();
-            // enable workflow core
-            //services.AddWorkflow(x => x.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), true, true));
-        }
+                services.AddDatabaseDeveloperPageExceptionFilter();
+                // If needed: enable workflow core, etc.
+            }
 
+            // Configure cookie policy
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
 
-        services.Configure<CookiePolicyOptions>(options =>
-        {
-            // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-            options.CheckConsentNeeded = context => true;
-            options.MinimumSameSitePolicy = SameSiteMode.None;
-        });
-        //services.Configure<SmartSettings>(configuration.GetSection(SmartSettings.SectionName));
-        //services.AddSingleton(s => s.GetRequiredService<IOptions<SmartSettings>>().Value);
-        services.AddSingleton<ICurrentUserService, CurrentUserService>();
-        services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
-        services.AddScoped<IDomainEventService, DomainEventService>();
+            // Current user + domain event services
+            services.AddSingleton<ICurrentUserService, CurrentUserService>();
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
+            services.AddScoped<IDomainEventService, DomainEventService>();
 
-        services.AddIdentity<ApplicationUser, ApplicationRole>()
-                    .AddEntityFrameworkStores<ApplicationDbContext>()
-                    .AddDefaultTokenProviders();
-        services.Configure<CookiePolicyOptions>(options =>
-        {
-            // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-            options.CheckConsentNeeded = context => true;
-            options.MinimumSameSitePolicy = SameSiteMode.None;
-        });
+            // ---------------------------------------------------------
+            // REMOVE or COMMENT OUT the extra AddIdentity calls here!
+            // services.AddIdentity<ApplicationUser, ApplicationRole>()
+            //     .AddEntityFrameworkStores<ApplicationDbContext>()
+            //     .AddDefaultTokenProviders();
+            // ---------------------------------------------------------
 
-        services.AddTransient<IDateTime, DateTimeService>();
-        //services.AddTransient<IExcelService, ExcelService>();
-        //services.AddTransient<IUploadService, UploadService>();
-        //services.AddTransient<IIdentityService, IdentityService>();
-        //services.Configure<AppConfigurationSettings>(configuration.GetSection("AppConfigurationSettings"));
-        services.Configure<MailSettings>(configuration.GetSection("MailSettings"));
-        services.AddTransient<IMailService, MailService>();
+            // You can keep or remove duplicated cookie config
+            // if it doesn't conflict with Program.cs
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
 
-        services.AddAuthentication();
-        services.Configure<IdentityOptions>(options =>
-        {
-            // Default SignIn settings.
-            options.SignIn.RequireConfirmedEmail = true;
-            options.SignIn.RequireConfirmedPhoneNumber = false;
-            // Default Lockout settings.
-            options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-            options.Lockout.MaxFailedAccessAttempts = 5;
-            options.Lockout.AllowedForNewUsers = true;
-        });
+            // DateTime / mail services, etc.
+            services.AddTransient<IDateTime, DateTimeService>();
+            services.Configure<MailSettings>(configuration.GetSection("MailSettings"));
+            services.AddTransient<IMailService, MailService>();
 
-        services.Configure<DataProtectionTokenProviderOptions>(opt =>
+            // If you want custom claims or user factories
+            services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, ApplicationClaimsIdentityFactory>();
+
+            // Configure Identity options if you want (or move to Program.cs)
+            services.AddAuthentication();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.SignIn.RequireConfirmedEmail = true;
+                options.SignIn.RequireConfirmedPhoneNumber = false;
+
+                // Lockout
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.AllowedForNewUsers = true;
+            });
+
+            services.Configure<DataProtectionTokenProviderOptions>(opt =>
                 opt.TokenLifespan = TimeSpan.FromHours(2));
-        services.AddAuthorization(options =>
-        {
-            options.AddPolicy("CanPurge", policy => policy.RequireRole("Administrator"));
-            // Here I stored necessary permissions/roles in a constant
-            //foreach (var prop in typeof(Permissions).GetNestedTypes().SelectMany(c => c.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)))
-            //{
-            //    var propertyValue = prop.GetValue(null);
-            //    if (propertyValue is not null)
-            //    {
-            //        options.AddPolicy(propertyValue.ToString(), policy => policy.RequireClaim(ApplicationClaimTypes.Permission, propertyValue.ToString()));
-            //    }
-            //}
-        });
-        services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, ApplicationClaimsIdentityFactory>();
-        services.AddLocalization(options => options.ResourcesPath = LocalizationConstants.ResourcesPath);
-        services.AddScoped<ExceptionMiddleware>();
 
-        services.AddControllers();
-        services.AddSignalR();
-       
-        services.ConfigureApplicationCookie(options => {
-            options.ExpireTimeSpan = TimeSpan.FromHours(1);
-            options.SlidingExpiration = true;
-            options.LoginPath = "/Index";
-            options.LogoutPath = "/Index";
-            options.AccessDeniedPath = "/Index";
-        });
+            // Additional authorization policies
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("CanPurge", policy => policy.RequireRole("Administrator"));
+                // etc...
+            });
 
-        return services;
+            // Localization
+            services.AddLocalization(options => options.ResourcesPath = LocalizationConstants.ResourcesPath);
+
+            // Add your custom ExceptionMiddleware, SignalR, etc.
+            services.AddScoped<ExceptionMiddleware>();
+            services.AddControllers();
+            services.AddSignalR();
+
+            // Configure application cookie (if not done in Program.cs)
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromHours(1);
+                options.SlidingExpiration = true;
+                options.LoginPath = "/Index";
+                options.LogoutPath = "/Index";
+                options.AccessDeniedPath = "/Index";
+            });
+
+            return services;
+        }
     }
-
-
-
 }

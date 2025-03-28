@@ -8,5 +8,8 @@ public interface IApplicationDbContext
 {
     DbSet<Client> Clients { get; set; }
     DbSet<Produit> Produits { get; set; }
+    DbSet<ChargingStation> ChargingStations { get; set; }
+
+    DbSet<Network> Networks { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

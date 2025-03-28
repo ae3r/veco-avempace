@@ -6,7 +6,7 @@
     <nav class="navbar navbar-expand-lg navbar-white px-5 py-3 py-lg-0">
         <a asp-area="" asp-page="/Index" class="navbar-brand p-0" style="display: flex; align-items: center; height: 100px;">
             <h1 class="m-0" style="height: 100%; display: flex; align-items: center;">
-                <img src="~/landingpage/img/veco.png" alt="VECO-AVEMPACE Logo" style="height: auto%; width: 230px;" />
+                <img src="~/landingpage/img/veco.png" alt="VECO-AVEMPACE Logo" style="height: auto; width: 230px;" />
             </h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -14,11 +14,26 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                
-                <a asp-area="" asp-page="/Produits" class="nav-item nav-link @(currentCshtmlName.Equals("Produits") ? "active" : "")">Nos Produits</a>
+                <a asp-area="" asp-page="/Produits" class="nav-item nav-link @(currentCshtmlName.Equals("Produits") ? "active" : "")">
+                    Nos Produits
+                </a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-area="" asp-page="/Networks" class="nav-item nav-link @(currentCshtmlName.Equals("Networks") ? "active" : "")">
+                        Networks List
+                    </a>
+                    <a asp-area="" asp-page="/AllChargers" class="nav-item nav-link @(currentCshtmlName.Equals("Chargers") ? "active" : "")">
+                        All Chargers
+                    </a>
+                    <a asp-area="" asp-page="/Recharges" class="nav-item nav-link @(currentCshtmlName.Equals("Recharges") ? "active" : "")">
+                        My Recharges
+                    </a>
+
+                }
             </div>
-            <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
-            
+            <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal">
+                <i class="fa fa-search"></i>
+            </button>
         </div>
     </nav>
 
@@ -26,13 +41,12 @@
     {
         <!-- Hero Start -->
         //@await Html.PartialAsync("__Hero")
-        <!-- Hero Start -->
-    } else
+        <!-- Hero End -->
+    }
+    else
     {
         <!-- Header Start -->
         @await Html.PartialAsync("__Header")
-        <!-- Header Start -->
-        
+        <!-- Header End -->
     }
-
 </div>
