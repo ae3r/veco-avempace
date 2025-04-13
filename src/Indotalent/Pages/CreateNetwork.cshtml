@@ -1,6 +1,9 @@
 ﻿@page
 @model Indotalent.Pages.CreateNetworkModel
 
+<!-- 1) Add the viewport meta for mobile responsiveness -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
 <!-- Slick -->
 <link rel="stylesheet" href="~/css/slick.css" />
 <link rel="stylesheet" href="~/css/slick-theme.css" />
@@ -21,11 +24,11 @@
         padding: 30px;
     }
 
-    .btn-next {
+    .btn-next, .btn-prev {
         background-color: #0052cc;
         color: #fff;
         border-radius: 30px;
-        width: 100%;
+        min-width: 120px;
         height: 50px;
         font-size: 1.1rem;
         font-weight: 500;
@@ -33,61 +36,15 @@
         margin-top: 20px;
     }
 
-        .btn-next:hover {
+        .btn-next:hover, .btn-prev:hover {
             background-color: #0041a3;
         }
-</style>
 
-<!-- Header -->
-@* <div id="header">
-    <div class="container">
-        <div class="row">
-            <!-- SEARCH BAR -->
-            <div class="col-lg-6 offset-lg-3">
-                <div class="header-search">
-                    <form>
-                        <select class="input-select" id="categorieid">
-                            <option value="0">Catégories</option>
-                            <option value="1">AC</option>
-                            <option value="1">DC</option>
-                        </select>
-                        <input class="input" placeholder="Search here">
-                        <button class="search-btn">Search</button>
-                    </form>
-                </div>
-            </div>
-            <!-- /SEARCH BAR -->
-            <!-- ACCOUNT / CART -->
-            <div class="col-md-3 clearfix">
-                <div class="header-ctn">
-                    <!-- Cart -->
-                    <div class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>Your Cart</span>
-                            <div class="qty">
-                                <label class="form-label" id="idcounter">0 <span class="text-danger"></span></label>
-                            </div>
-                        </a>
-                        <div class="cart-dropdown">
-                            <div class="cart-list" id="cardlistid"></div>
-                            <div class="cart-summary">
-                                <small id="idcountersmall"></small>
-                            </div>
-                            <div class="cart-btns">
-                                <a href="#">View Cart</a>
-                                <a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Cart -->
-                </div>
-            </div>
-            <!-- /ACCOUNT / CART -->
-        </div>
-    </div>
-</div> *@
-<!-- /HEADER -->
+    /* Extra spacing for the "Back" button if you want */
+    .btn-prev {
+        margin-right: 10px;
+    }
+</style>
 
 <div class="section">
     <div class="container">
@@ -96,54 +53,259 @@
                 <div class="create-network-container">
                     <h3>Create Network</h3>
 
-                    <!-- Step 1 form -->
+                    <!-- Single form across all steps -->
                     <form method="post">
-                        <!-- Network name -->
-                        <div class="form-group mb-3">
-                            <label asp-for="NetworkName">Network name</label>
-                            <input asp-for="NetworkName" class="form-control" placeholder="Enter network name" required />
-                        </div>
+                        <!-- Validation summary (so we can see any errors) -->
+                        <div asp-validation-summary="All" class="text-danger"></div>
 
-                        <!-- Street -->
-                        <div class="form-group mb-3">
-                            <label asp-for="Street">Street/Avenue/Square</label>
-                            <input asp-for="Street" class="form-control" placeholder="Enter street" required />
-                        </div>
-
-                        <!-- City & Zip -->
-                        <div class="row">
-                            <div class="col-md-6 form-group mb-3">
-                                <label asp-for="City">City/Location</label>
-                                <input asp-for="City" class="form-control" placeholder="City" required />
+                        <!-- STEP 1 -->
+                        <div id="step1">
+                            <!-- Network name -->
+                            <div class="form-group mb-3">
+                                <label asp-for="NetworkName">Network name</label>
+                                <input asp-for="NetworkName"
+                                       class="form-control"
+                                       placeholder="Enter network name"
+                                       required />
                             </div>
-                            <div class="col-md-6 form-group mb-3">
-                                <label asp-for="ZipCode">Zip code</label>
-                                <input asp-for="ZipCode" class="form-control" placeholder="Zip code" />
+
+                            <!-- Street -->
+                            <div class="form-group mb-3">
+                                <label asp-for="Street">Street/Avenue/Square</label>
+                                <input asp-for="Street"
+                                       class="form-control"
+                                       placeholder="Enter street"
+                                       required />
                             </div>
+
+                            <!-- City & Zip -->
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="City">City/Location</label>
+                                    <input asp-for="City"
+                                           class="form-control"
+                                           placeholder="City"
+                                           required />
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="ZipCode">Zip code</label>
+                                    <input asp-for="ZipCode"
+                                           class="form-control"
+                                           placeholder="Zip code" />
+                                </div>
+                            </div>
+
+                            <!-- Country -->
+                            <div class="form-group mb-4">
+                                <label asp-for="Country">Country</label>
+                                <select asp-for="Country" class="form-control" required>
+                                    <option value="">Select country</option>
+                                    <option value="Morocco">Morocco</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="Tunisia">Tunisia</option>
+                                    <option value="United States">United States</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Italy">Italy</option>
+                                    <!-- Add more as needed -->
+                                </select>
+                            </div>
+
+                            <!-- Next button (no Back on step 1) -->
+                            <button type="button" id="btnStep1Next" class="btn-next">Next</button>
                         </div>
 
-                        <!-- Country (only Morocco) -->
-                        <div class="form-group mb-4">
-                            <label asp-for="Country">Country</label>
-                            <select asp-for="Country" class="form-control" required>
-                                <option value="">Select country</option>
-                                <option value="Morocco">Morocco</option>
-                            </select>
+                        <!-- STEP 2 (hidden by default) -->
+                        <div id="step2" style="display:none; margin-top:40px;">
+                            <h4>System parameters</h4>
+
+                            <!-- Type of meter (radio buttons) -->
+                            <div class="form-group mb-3">
+                                <label>Type of meter</label><br />
+                                <label>
+                                    <input type="radio"
+                                           asp-for="MeterType"
+                                           value="Single phase" />
+                                    Single phase
+                                </label>
+                                &nbsp;&nbsp;
+                                <label>
+                                    <input type="radio"
+                                           asp-for="MeterType"
+                                           value="Three phase"
+                                           checked />
+                                    Three phase
+                                </label>
+                            </div>
+
+                            <!-- Meter power (numeric only) -->
+                            <div class="form-group mb-3">
+                                <label asp-for="MeterValue">Meter power</label>
+                                <input asp-for="MeterValue"
+                                       type="number"
+                                       min="0"
+                                       step="1"
+                                       class="form-control"
+                                       placeholder="e.g. 10"
+                                       required />
+                                <span asp-validation-for="MeterValue" class="text-danger"></span>
+                            </div>
+
+                            <!-- BACK and NEXT -->
+                            <button type="button" id="btnStep2Back" class="btn-prev">Back</button>
+                            <button type="button" id="btnStep2Next" class="btn-next">Next</button>
                         </div>
 
-                        <!-- Next button -->
-                        <button type="submit" class="btn-next">Next</button>
+                        <!-- STEP 3 (hidden by default) -->
+                        <div id="step3" style="display:none; margin-top:40px;">
+                            <h4>Photovoltaic system parameters</h4>
+                            <p>Do you have a photovoltaic system? Activate the “photovoltaic” option to take advantage of all the benefits of your system.</p>
+
+                            <!-- Toggle for Photovoltaic (checkbox or switch) -->
+                            <div class="form-group mb-3">
+                                <label>
+                                    <i class="fa fa-solar-panel" style="margin-right:8px;"></i>
+                                    Photovoltaic
+                                </label>
+                                <br />
+                                <label class="switch">
+                                    <input asp-for="HasPhotovoltaic"
+                                           type="checkbox"
+                                           id="togglePhotovoltaic" />
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <!-- Show facility type only if toggled ON -->
+                            <div id="pvFacilityTypeContainer" style="display:none; margin-top:20px;">
+                                <label>Type of facility</label><br />
+                                <label>
+                                    <input type="radio"
+                                           asp-for="PhotovoltaicFacilityType"
+                                           value="Single phase" />
+                                    Single phase
+                                </label>
+                                <br />
+                                <label>
+                                    <input type="radio"
+                                           asp-for="PhotovoltaicFacilityType"
+                                           value="Three phase" />
+                                    Three phase
+                                </label>
+                                <!-- Display conditional error (if user checks Photovoltaic, but doesn't pick a facility) -->
+                                <span asp-validation-for="PhotovoltaicFacilityType" class="text-danger"></span>
+                            </div>
+
+                            <!-- BACK and CREATE -->
+                            <button type="button" id="btnStep3Back" class="btn-prev">Back</button>
+                            <button type="submit" class="btn-next">Create</button>
+                        </div>
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- If you have a partial for vendors -->
-@await Html.PartialAsync("__Vendor")
-
 <!-- JS references -->
 <script src="~/js/jquery.min.js"></script>
 <script src="~/js/bootstrap.min.js"></script>
 <script src="~/landingpage/js/slick.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Step 1 -> Step 2
+        $("#btnStep1Next").click(function() {
+            $("#step1").hide();
+            $("#step2").show();
+            $("html, body").animate({ scrollTop: $("#step2").offset().top }, 600);
+        });
+
+        // Step 2 -> Step 1 (Back)
+        $("#btnStep2Back").click(function() {
+            $("#step2").hide();
+            $("#step1").show();
+            $("html, body").animate({ scrollTop: $("#step1").offset().top }, 600);
+        });
+
+        // Step 2 -> Step 3 (Next)
+        $("#btnStep2Next").click(function() {
+            $("#step2").hide();
+            $("#step3").show();
+            $("html, body").animate({ scrollTop: $("#step3").offset().top }, 600);
+        });
+
+        // Step 3 -> Step 2 (Back)
+        $("#btnStep3Back").click(function() {
+            $("#step3").hide();
+            $("#step2").show();
+            $("html, body").animate({ scrollTop: $("#step2").offset().top }, 600);
+        });
+
+        // Photovoltaic toggle: show/hide facility type
+        $("#togglePhotovoltaic").change(function() {
+            if ($(this).is(":checked")) {
+                // If toggle ON, show facility type
+                $("#pvFacilityTypeContainer").show();
+            } else {
+                // If toggle OFF, hide facility type
+                $("#pvFacilityTypeContainer").hide();
+                // Optional: clear any radio selection
+                $("input[name='PhotovoltaicFacilityType']").prop("checked", false);
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Example toggle switch styling */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 28px;
+    }
+
+        .switch input {
+            display: none;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+    input:checked + .slider {
+        background-color: #0052cc;
+    }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

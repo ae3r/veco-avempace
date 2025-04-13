@@ -4,16 +4,14 @@
     ViewData["Title"] = "Charger Details";
 }
 
-<!-- CSS references (reusing your common styles) -->
+<!-- CSS references -->
 <link rel="stylesheet" href="~/css/bootstrap.min.css" />
-<link rel="stylesheet" href="~/css/slick.css" />
-<link rel="stylesheet" href="~/css/slick-theme.css" />
 <link rel="stylesheet" href="~/css/style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
 <style>
     .main-content {
-        margin-top: 160px; /* same offset as your other pages */
+        margin-top: 160px;
         padding: 20px;
     }
 
@@ -26,62 +24,130 @@
         box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .heading-bar {
+    .detail-header {
         margin-bottom: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
+        .detail-header h2 {
+            margin: 0;
+        }
+
     .charger-image {
         max-width: 100%;
         border-radius: 4px;
     }
-
-    .detail-item {
-        margin-bottom: 10px;
-        font-size: 1rem;
-        color: #333;
+    /* Card style for each custom detail section */
+    .detail-card {
+        background: #f9f9f9;
+        border: 1px solid #eee;
+        border-radius: 6px;
+        padding: 10px;
+        margin-bottom: 15px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        transition: box-shadow 0.2s;
     }
 
-        .detail-item strong {
+        .detail-card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .detail-card i {
+            font-size: 1.5rem;
+            color: #0b7fab;
+            margin-bottom: 5px;
+        }
+
+        .detail-card h5 {
+            font-size: 1rem;
+            margin-bottom: 3px;
             font-weight: 600;
+        }
+
+        .detail-card p {
+            font-size: 0.9rem;
+            color: #333;
+            margin: 0;
         }
 </style>
 
 <body>
     <div class="main-content">
-        <!-- Heading and Back Link -->
-        <div class="heading-bar">
+        <!-- Header with Back Link -->
+        <div class="detail-header">
             <h2>@Model.Charger?.ChargerName</h2>
-            <a asp-page="/NetworkPanel" asp-route-networkId="@Model.Charger?.NetworkId" class="btn btn-primary">Back to Network Panel</a>
+            <a asp-page="/NetworkPanel" asp-route-networkId="@Model.Charger?.NetworkId" class="btn btn-primary">
+                Back to Network Panel
+            </a>
         </div>
 
-        <!-- Panel Container -->
+        <!-- Main Panel Container -->
         <div class="panel-container">
             <div class="row">
+                <!-- Left Column: Charger Image -->
                 <div class="col-md-4">
-                    <!-- Charger Image -->
                     <img src="@(string.IsNullOrEmpty(Model.Charger?.PhotoUrl)
-                        ? Url.Content("~/img/autel.jpg")
-                        : Model.Charger.PhotoUrl)"
+                                ? Url.Content("~/img/autel.jpg")
+                                : Model.Charger.PhotoUrl)"
                          alt="Charger Image" class="charger-image" />
                 </div>
+                <!-- Right Column: Custom Details -->
                 <div class="col-md-8">
-                    <p class="detail-item"><strong>Status:</strong> @Model.Charger?.ChargerStatus ?? "N/A"</p>
-                    <p class="detail-item"><strong>Connection:</strong> @Model.Charger?.ConnectionStatus ?? "N/A"</p>
-                    <p class="detail-item"><strong>Model:</strong> @Model.Charger?.Model ?? "N/A"</p>
-                    <p class="detail-item"><strong>Power:</strong> @Model.Charger?.PowerValue kW</p>
-                    <p class="detail-item"><strong>Serial Number:</strong> @Model.Charger?.SerialNumber ?? "N/A"</p>
-                    <p class="detail-item"><strong>PUK:</strong> @Model.Charger?.Puk ?? "N/A"</p>
-
-                    <!-- Custom fields (if available) -->
-                    <p class="detail-item"><strong>Vehicle:</strong> @Model.Charger?.Vehicle ?? "N/A"</p>
-                    <p class="detail-item"><strong>Access:</strong> @Model.Charger?.Access ?? "N/A"</p>
-                    <p class="detail-item"><strong>Self Consumption:</strong> @Model.Charger?.SelfConsumption ?? "N/A"</p>
-                    <p class="detail-item"><strong>Internet:</strong> @Model.Charger?.Internet ?? "N/A"</p>
-                    <p class="detail-item"><strong>Scheduling:</strong> @Model.Charger?.Scheduling ?? "N/A"</p>
-                    <p class="detail-item"><strong>Meter Nominal Power:</strong> @Model.Charger?.MeterNominalPower ?? "N/A"</p>
+                    <div class="row">
+                        <!-- Vehicle Card -->
+                        <div class="col-md-4">
+                            <div class="detail-card">
+                                <i class="fa fa-car"></i>
+                                <h5>Vehicle</h5>
+                                <p>@(string.IsNullOrEmpty(Model.Charger?.Vehicle) ? "N/A" : Model.Charger.Vehicle)</p>
+                            </div>
+                        </div>
+                        <!-- Access Card -->
+                        <div class="col-md-4">
+                            <div class="detail-card">
+                                <i class="fa fa-key"></i>
+                                <h5>Access</h5>
+                                <p>@(string.IsNullOrEmpty(Model.Charger?.Access) ? "N/A" : Model.Charger.Access)</p>
+                            </div>
+                        </div>
+                        <!-- Self Consumption Card -->
+                        <div class="col-md-4">
+                            <div class="detail-card">
+                                <i class="fa fa-bolt"></i>
+                                <h5>Self Consumption</h5>
+                                <p>@(string.IsNullOrEmpty(Model.Charger?.SelfConsumption) ? "N/A" : Model.Charger.SelfConsumption)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <!-- Internet Card -->
+                        <div class="col-md-4">
+                            <div class="detail-card">
+                                <i class="fa fa-wifi"></i>
+                                <h5>Internet</h5>
+                                <p>@(string.IsNullOrEmpty(Model.Charger?.Internet) ? "N/A" : Model.Charger.Internet)</p>
+                            </div>
+                        </div>
+                        <!-- Scheduling Card -->
+                        <div class="col-md-4">
+                            <div class="detail-card">
+                                <i class="fa fa-calendar"></i>
+                                <h5>Scheduling</h5>
+                                <p>@(string.IsNullOrEmpty(Model.Charger?.Scheduling) ? "N/A" : Model.Charger.Scheduling)</p>
+                            </div>
+                        </div>
+                        <!-- Meter Nominal Power Card -->
+                        <div class="col-md-4">
+                            <div class="detail-card">
+                                <i class="fa fa-tachometer-alt"></i>
+                                <h5>Meter Nominal Power</h5>
+                                <p>@(string.IsNullOrEmpty(Model.Charger?.MeterNominalPower) ? "N/A" : Model.Charger.MeterNominalPower)</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -16,7 +16,6 @@ namespace Indotalent.Pages
             _dbContext = dbContext;
         }
 
-        // The charger id is provided in the URL (e.g., /ChargerDetails/123)
         [BindProperty(SupportsGet = true)]
         public int ChargerId { get; set; }
 
@@ -25,7 +24,7 @@ namespace Indotalent.Pages
         public async Task<IActionResult> OnGetAsync()
         {
             Charger = await _dbContext.ChargingStations
-                        .Include(cs => cs.Network) // include related network if needed
+                        .Include(cs => cs.Network)
                         .FirstOrDefaultAsync(cs => cs.Id == ChargerId);
 
             if (Charger == null)

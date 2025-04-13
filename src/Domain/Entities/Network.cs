@@ -23,6 +23,14 @@ namespace Domain.Entities
         public string ZipCode { get; set; }
         public string Country { get; set; }
 
+        // NEW fields for the meter
+        public string MeterType { get; set; }
+        public string MeterValue { get; set; }
+
+        // NEW fields for PV system
+        public bool HasPhotovoltaic { get; set; } // True or false
+        public string? PhotovoltaicFacilityType { get; set; }
+
         // Relationship: One Network can have many ChargingStations
         public ICollection<ChargingStation> ChargingStations { get; set; }
             = new List<ChargingStation>();

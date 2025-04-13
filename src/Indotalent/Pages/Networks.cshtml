@@ -1,6 +1,9 @@
 ﻿@page
 @model Indotalent.Pages.NetworksModel
 
+<!-- Add the viewport meta for mobile responsiveness -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
 <!-- CSS references -->
 <link rel="stylesheet" href="~/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/slick.css" />
@@ -128,42 +131,43 @@
         </div>
 
         <div class="my-networks-container">
-            <table class="my-networks-table">
-                <thead>
-                    <tr>
-                        <th>Network Name</th>
-                        <th>Address</th>
-                        <th>Plant</th>
-                        <th>Network Layout</th>
-                        <th>N. Chargers</th>
-                        <th>N. Users</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if (Model.Networks != null && Model.Networks.Count > 0)
-                    {
-                        @foreach (var net in Model.Networks)
+            <!-- 1) Wrap your table in .table-responsive for mobile-friendly scroll -->
+            <div class="table-responsive">
+                <table class="my-networks-table">
+                    <thead>
+                        <tr>
+                            <th>Network Name</th>
+                            <th>Address</th>
+                            <th>Plant</th>
+                            <th>Network Layout</th>
+                            <th>N. Chargers</th>
+                            <th>N. Users</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Networks != null && Model.Networks.Count > 0)
                         {
-                            <tr onclick="location.href='@Url.Page("NetworkPanel", new { networkId = net.Id })';" style="cursor:pointer;">
-                                <td>@net.NetworkName</td>
-                                <td>@net.Address</td>
-                                <td>@net.Plant</td>
-                                <td>@net.NetworkLayout</td>
-                                <td>@net.NumberOfChargers</td>
-                                <td>@net.NumberOfUsers</td>
+                            @foreach (var net in Model.Networks)
+                            {
+                                <tr onclick="location.href='@Url.Page("NetworkPanel", new { networkId = net.Id })';" style="cursor:pointer;">
+                                    <td>@net.NetworkName</td>
+                                    <td>@net.Address</td>
+                                    <td>@net.Plant</td>
+                                    <td>@net.NetworkLayout</td>
+                                    <td>@net.NumberOfChargers</td>
+                                    <td>@net.NumberOfUsers</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="6">No networks found.</td>
                             </tr>
                         }
-
-
-                    }
-                    else
-                    {
-                        <tr>
-                            <td colspan="6">No networks found.</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
 
             <div class="pagination-container">
                 <button class="page-btn">Prev</button>

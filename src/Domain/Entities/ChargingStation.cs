@@ -31,6 +31,12 @@ namespace Domain.Entities
         public string? Scheduling { get; set; }
         public string? MeterNominalPower { get; set; }
 
+        // NEW: Meter detail properties (nullable so they can be empty)
+        public double? MeterLine1Power { get; set; }
+        public double? MeterLine1Current { get; set; }
+        public double? MeterLine2Power { get; set; }
+        public double? MeterLine2Current { get; set; }
+
         // Foreign key to Network
         public int NetworkId { get; set; }
         public Network Network { get; set; }
