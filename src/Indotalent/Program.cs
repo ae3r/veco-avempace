@@ -34,7 +34,7 @@ builder.Services.AddDataProtection()
 // ------------------ Certificate Loading & Kestrel Configuration ------------------
 
 // Define the certificate file path and the PFX password.
-/*var certFilePath = "/etc/letsencrypt/live/avemplace.com/avemplace.pfx";
+var certFilePath = "/etc/letsencrypt/live/avemplace.com/avemplace.pfx";
 var certPassword = "Avempace0000!";
 
 // Log whether the certificate file exists.
@@ -60,7 +60,7 @@ catch (Exception ex)
 {
     Log.Error(ex, "Error loading certificate from {CertificateFilePath}", certFilePath);
     throw;
-}*/
+}
 
 // Configure Kestrel to use HTTPS on port 5002 using the loaded certificate.
 builder.WebHost.ConfigureKestrel((context, options) =>
