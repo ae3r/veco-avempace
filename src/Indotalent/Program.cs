@@ -34,43 +34,39 @@ builder.Services.AddDataProtection()
 // ------------------ Certificate Loading & Kestrel Configuration ------------------
 
 // Define the certificate file path and the PFX password.
-//var certFilePath = "/etc/letsencrypt/live/avemplace.com/avemplace.pfx";
-//var certPassword = "Avempace0000!";
+/*var certFilePath = "/etc/letsencrypt/live/avemplace.com/avemplace.pfx";
+var certPassword = "Avempace0000!";
 
-//// Log whether the certificate file exists.
-//if (!File.Exists(certFilePath))
-//{
-//    Log.Error("Certificate file not found at {CertificateFilePath}", certFilePath);
-//    throw new FileNotFoundException("Certificate file not found", certFilePath);
-//}
-//else
-//{
-//    Log.Information("Certificate file found at {CertificateFilePath}", certFilePath);
-//}
+// Log whether the certificate file exists.
+if (!File.Exists(certFilePath))
+{
+    Log.Error("Certificate file not found at {CertificateFilePath}", certFilePath);
+    throw new FileNotFoundException("Certificate file not found", certFilePath);
+}
+else
+{
+    Log.Information("Certificate file found at {CertificateFilePath}", certFilePath);
+}
 
-//X509Certificate2 certificate;
-//try
-//{
-//    Log.Information("Attempting to load certificate from {CertificateFilePath}", certFilePath);
-//    certificate = new X509Certificate2(certFilePath, certPassword,
-//        X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.EphemeralKeySet);
-//    Log.Information("Certificate loaded successfully. Subject: {Subject}", certificate.Subject);
-//}
-//catch (Exception ex)
-//{
-//    Log.Error(ex, "Error loading certificate from {CertificateFilePath}", certFilePath);
-//    throw;
-//}
+X509Certificate2 certificate;
+try
+{
+    Log.Information("Attempting to load certificate from {CertificateFilePath}", certFilePath);
+    certificate = new X509Certificate2(certFilePath, certPassword,
+        X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.EphemeralKeySet);
+    Log.Information("Certificate loaded successfully. Subject: {Subject}", certificate.Subject);
+}
+catch (Exception ex)
+{
+    Log.Error(ex, "Error loading certificate from {CertificateFilePath}", certFilePath);
+    throw;
+}*/
 
-//// Configure Kestrel to use HTTPS on port 5002 using the loaded certificate.
-//builder.WebHost.ConfigureKestrel((context, options) =>
-//{
-//    options.ListenAnyIP(5002, listenOptions =>
-//    {
-//        listenOptions.UseHttps(certificate);
-//        Log.Information("Kestrel configured to use HTTPS on port 5002.");
-//    });
-//});
+// Configure Kestrel to use HTTPS on port 5002 using the loaded certificate.
+builder.WebHost.ConfigureKestrel((context, options) =>
+{
+    options.ListenAnyIP(5002);
+});
 
 // -------------------------------------------------------------------------------
 // 1) Configure EF Core with SQL Server.
