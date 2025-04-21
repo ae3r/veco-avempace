@@ -106,6 +106,49 @@
         .page-btn:hover {
             background-color: #095f79;
         }
+
+    /* New styles for the card list below */
+    .my-networks-list-container {
+        margin-top: 40px; /* space above the new list */
+    }
+
+    .network-card {
+        background-color: #fff;
+        border: 2px solid #0b7fab;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        padding: 20px;
+        cursor: pointer; /* so user sees it's clickable */
+        transition: background-color 0.2s ease;
+    }
+
+        .network-card:hover {
+            background-color: #f0f8fa;
+        }
+
+    .network-card-title {
+        font-size: 1.2rem;
+        margin-bottom: 16px;
+        font-weight: 600;
+    }
+
+    .network-icons {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    .network-icon-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.9rem;
+    }
+
+        .network-icon-item i {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
 </style>
 
 <body>
@@ -131,7 +174,7 @@
         </div>
 
         <div class="my-networks-container">
-            <!-- 1) Wrap your table in .table-responsive for mobile-friendly scroll -->
+            <!-- 1) Keep existing table -->
             <div class="table-responsive">
                 <table class="my-networks-table">
                     <thead>
@@ -149,7 +192,7 @@
                         {
                             @foreach (var net in Model.Networks)
                             {
-                                <tr onclick="location.href='@Url.Page("NetworkPanel", new { networkId = net.Id })';" style="cursor:pointer;">
+                                <tr onclick="location.href='@Url.Page("NetworkPanel", new { networkId = net.Id })';">
                                     <td>@net.NetworkName</td>
                                     <td>@net.Address</td>
                                     <td>@net.Plant</td>
@@ -173,6 +216,67 @@
                 <button class="page-btn">Prev</button>
                 <button class="page-btn">1</button>
                 <button class="page-btn">Next</button>
+            </div>
+        </div>
+
+        <!-- 2) NEW card-based list below the existing grid -->
+        <div class="my-networks-list-container">
+            <h4>Network list <i class="fa fa-info-circle"></i></h4>
+            <p>Manage your networks and add new ones</p>
+
+            <div class="row">
+                @if (Model.Networks != null && Model.Networks.Count > 0)
+                {
+                    foreach (var net in Model.Networks)
+                    {
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                            <div class="network-card"
+                                 onclick="location.href='@Url.Page("NetworkPanel", new { networkId = net.Id })';">
+                                <div class="network-card-title">
+                                    @net.NetworkName
+                                </div>
+                                <div class="network-icons">
+                                    <div class="network-icon-item">
+                                        <i class="fa fa-charging-station"></i>
+                                        <span>Chargers</span>
+                                        <b>@net.NumberOfChargers</b>
+                                    </div>
+                                    <div class="network-icon-item">
+                                        <i class="fa fa-users"></i>
+                                        <span>Users</span>
+                                        <b>@net.NumberOfUsers</b>
+                                    </div>
+                                    <div class="network-icon-item">
+                                        <i class="fa fa-bolt"></i>
+                                        <span>Meter</span>
+                                        <!-- If you have a separate meter field like net.MeterValue, show it -->
+                                        <b>
+                                            @if (!string.IsNullOrWhiteSpace(net.MeterValue))
+                                            {
+                                                @($"{net.MeterValue} kW")
+                                            }
+                                            else
+                                            {
+                                                @:N/A
+                                            }
+                                        </b>
+                                    </div>
+                                    <div class="network-icon-item">
+                                        <i class="fa fa-solar-panel"></i>
+                                        <span>PV</span>
+                                        <b>@(net.HasPhotovoltaic ? "Yes" : "No")</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="col-12">
+                        <p>No networks found.</p>
+                    </div>
+                }
             </div>
         </div>
     </div>

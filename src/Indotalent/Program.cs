@@ -1,4 +1,4 @@
-using Application;
+﻿using Application;
 using Application.Common.Interfaces;
 using Infrastructure;
 using Infrastructure.Ocpp;
@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.DataProtection;
 using System.IO;
+using IdentityModel;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()  // Capture all messages
@@ -34,38 +35,34 @@ builder.Services.AddDataProtection()
 // ------------------ Certificate Loading & Kestrel Configuration ------------------
 
 // Define the certificate file path and the PFX password.
-var certFilePath = "/etc/letsencrypt/live/avemplace.com/avemplace.pfx";
-var certPassword = "Avempace0000!";
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5002, listenOptions =>
+    {
+        // 1) load the cert yourself so you can inspect it
+        var certPath = "/etc/letsencrypt/live/avemplace.com/avemplace.pfx";
+        var certPassword = "Avempace2025!";
+        X509Certificate2 serverCert;
+        try
+        {
+            serverCert = new X509Certificate2(certPath, certPassword);
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Failed to load server cert at {CertPath}", certPath);
+            throw;
+        }
 
-// Log whether the certificate file exists.
-if (!File.Exists(certFilePath))
-{
-    Log.Error("Certificate file not found at {CertificateFilePath}", certFilePath);
-    throw new FileNotFoundException("Certificate file not found", certFilePath);
-}
-else
-{
-    Log.Information("Certificate file found at {CertificateFilePath}", certFilePath);
-}
+        // 2) log everything you want to verify
+        Log.Information("Kestrel: binding port 5002 with server certificate Subject={Subject}, Thumbprint={Thumbprint}",
+                        serverCert.Subject, serverCert.Thumbprint);
 
-X509Certificate2 certificate;
-try
-{
-    Log.Information("Attempting to load certificate from {CertificateFilePath}", certFilePath);
-    certificate = new X509Certificate2(certFilePath, certPassword,
-        X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.EphemeralKeySet);
-    Log.Information("Certificate loaded successfully. Subject: {Subject}", certificate.Subject);
-}
-catch (Exception ex)
-{
-    Log.Error(ex, "Error loading certificate from {CertificateFilePath}", certFilePath);
-    throw;
-}
+        // 3) hand the cert to Kestrel
+        listenOptions.UseHttps(serverCert);
 
-// Configure Kestrel to use HTTPS on port 5002 using the loaded certificate.
-builder.WebHost.ConfigureKestrel((context, options) =>
-{
-    options.ListenAnyIP(5002);
+        // 4) optionally log right after
+        Log.Information("Kestrel: UseHttps() call completed on port 5002");
+    });
 });
 
 // -------------------------------------------------------------------------------
@@ -200,31 +197,22 @@ app.Use(async (context, next) =>
 
 app.UseWebSockets();
 
-// 11) OCPP endpoint.
+// 2) Enable WebSockets and map the OCPP endpoint:
+app.UseWebSockets();
 app.Map("/ocpp/{stationId}", async context =>
 {
-    try
-    {
-        var stationId = context.Request.RouteValues["stationId"]?.ToString() ?? "";
-        var ocppService = context.RequestServices.GetRequiredService<IOcppService>();
-        await ocppService.ProcessWebSocketAsync(context, stationId);
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Error in OCPP endpoint: {ex}");
-        if (!context.Response.HasStarted)
-        {
-            context.Response.StatusCode = 500;
-        }
-    }
+    var stationId = (string)context.Request.RouteValues["stationId"]!;
+    var ocppService = context.RequestServices.GetRequiredService<IOcppService>();
+    await ocppService.ProcessWebSocketAsync(context, stationId);
 });
 
-// 12) Optional test endpoint.
-app.MapGet("/trigger/{stationId}", async (HttpContext context, string stationId, IOcppService ocppService) =>
+// 3) (Optional) Trigger endpoint to ask a charger to send a message:
+app.MapGet("/trigger/{stationId}", async (string stationId, IOcppService ocppService) =>
 {
-    await ocppService.SendTriggerMessageAsync(context, stationId, "BootNotification");
-    return Results.Ok($"Trigger message for {stationId} sent.");
+    await ocppService.SendTriggerMessageAsync(stationId, "MeterValues");
+    return Results.Ok($"Triggered MeterValues on {stationId}");
 });
+
 
 // 13) Map Razor Pages.
 app.MapRazorPages();

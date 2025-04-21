@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Application.Common.Interfaces;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,36 +20,25 @@ namespace Infrastructure.Ocpp
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            // Wait 30 seconds for the chargers to connect
+            // give chargers time to connect
             await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
 
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                try
-                {
-                    _logger.LogInformation("Attempting to send ChangeConfiguration for station AE0007H1GN5C00832V");
-                    using (var scope = _serviceProvider.CreateScope())
-                    {
-                        var ocppService = scope.ServiceProvider.GetRequiredService<IOcppService>();
+            var stationIds = new[] { "K0031041", "AE0007H1GN5C00832V" };
 
-                        await ocppService.SendChangeConfigurationAsync(
-                            stationId: "AE0007H1GN5C00832V",
-                            key: "MeterValuesSampledData",
-                            value: "Power.Active.Import,Current.Import"
-                        );
-                        await ocppService.SendChangeConfigurationAsync(
-                            stationId: "AE0007H1GN5C00832V",
-                            key: "MeterValueSampleInterval",
-                            value: "10"
-                        );
-                    }
-                    break; // Exit the loop once the configuration is sent successfully.
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, "Error sending ChangeConfiguration request");
-                }
-                await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
+            using var scope = _serviceProvider.CreateScope();
+            var ocpp = scope.ServiceProvider.GetRequiredService<IOcppService>();
+
+            foreach (var id in stationIds)
+            {
+                _logger.LogInformation("Configuring MeterValuesSampledData for {StationId}", id);
+                await ocpp.SendChangeConfigurationAsync(id,
+                    "MeterValuesSampledData",
+                    "Power.Active.Import,Current.Import"
+                );
+                await ocpp.SendChangeConfigurationAsync(id,
+                    "MeterValueSampleInterval",
+                    "10"
+                );
             }
         }
     }
