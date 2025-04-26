@@ -15,62 +15,44 @@ using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.DataProtection;
 using System.IO;
 using IdentityModel;
+using Microsoft.Extensions.Options;
 
 Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Debug()  // Capture all messages
+    .MinimumLevel.Debug()
     .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
     .Enrich.FromLogContext()
     .WriteTo.File("/var/www/avemplace/logs/log-.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseSerilog();
 
-builder.Configuration["AllowedHosts"] = builder.Configuration["AllowedHosts"] ?? "*";
+builder.Configuration["AllowedHosts"] ??= "*";
 
-// Configure data protection to persist keys to the file system.
+// Data Protection
 builder.Services.AddDataProtection()
-    .PersistKeysToFileSystem(new DirectoryInfo(@"/var/www/avemplace/keys"))
+    .PersistKeysToFileSystem(new DirectoryInfo("/var/www/avemplace/keys"))
     .SetApplicationName("Avemplace");
 
-// ------------------ Certificate Loading & Kestrel Configuration ------------------
-
-// Define the certificate file path and the PFX password.
+// Kestrel HTTPS
 builder.WebHost.ConfigureKestrel(options =>
 {
     options.ListenAnyIP(5002, listenOptions =>
     {
-        // 1) load the cert yourself so you can inspect it
         var certPath = "/etc/letsencrypt/live/avemplace.com/avemplace.pfx";
         var certPassword = "Avempace2025!";
-        X509Certificate2 serverCert;
-        try
-        {
-            serverCert = new X509Certificate2(certPath, certPassword);
-        }
-        catch (Exception ex)
-        {
-            Log.Error(ex, "Failed to load server cert at {CertPath}", certPath);
-            throw;
-        }
-
-        // 2) log everything you want to verify
-        Log.Information("Kestrel: binding port 5002 with server certificate Subject={Subject}, Thumbprint={Thumbprint}",
-                        serverCert.Subject, serverCert.Thumbprint);
-
-        // 3) hand the cert to Kestrel
+        var serverCert = new X509Certificate2(certPath, certPassword);
+        Log.Information("Kestrel binding port 5002 with Subject={Subject}", serverCert.Subject);
         listenOptions.UseHttps(serverCert);
-
-        // 4) optionally log right after
-        Log.Information("Kestrel: UseHttps() call completed on port 5002");
+        Log.Information("Kestrel HTTPS configured on port 5002");
     });
 });
 
-// -------------------------------------------------------------------------------
-// 1) Configure EF Core with SQL Server.
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// EF Core
+builder.Services.AddDbContext<ApplicationDbContext>(opts =>
+    opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// 2) Add Identity (only once).
+// Identity
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
 {
     options.Password.RequireNonAlphanumeric = false;
@@ -80,93 +62,78 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
 
-// 3) Add your Infrastructure/Application layers.
+// Layers
 builder.Services.AddInfrastructure(builder.Configuration)
                 .AddApplication();
 
-// 4) Add Razor Pages with custom routing.
-builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
+// Razor Pages
+builder.Services.AddRazorPages().AddRazorPagesOptions(opts =>
 {
-    options.Conventions.AddPageRoute("/Login", "");
+    opts.Conventions.AddPageRoute("/Login", "");
 });
 
-// 5) Configure session services.
+// Session
 builder.Services.AddDistributedMemoryCache();
-builder.Services.AddSession(options =>
+builder.Services.AddSession(opts =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
+    opts.IdleTimeout = TimeSpan.FromMinutes(30);
+    opts.Cookie.HttpOnly = true;
+    opts.Cookie.IsEssential = true;
 });
 
-// 6) Register OCPP & ChargingStation services.
+// OCPP services
 builder.Services.AddScoped<IOcppService, OcppService>();
 builder.Services.AddScoped<IChargingStationService, ChargingStationService>();
-// IMPORTANT: The background service now injects IServiceProvider in order to create its own scope.
 builder.Services.AddHostedService<OcppConfigurationService>();
 
-// 7) Configure Localization.
+// Localization
 var supportedCultures = new[] { new CultureInfo("fr"), new CultureInfo("en") };
-builder.Services.Configure<RequestLocalizationOptions>(options =>
+builder.Services.Configure<RequestLocalizationOptions>(opts =>
 {
-    options.DefaultRequestCulture = new RequestCulture("fr");
-    options.SupportedCultures = supportedCultures;
-    options.SupportedUICultures = supportedCultures;
+    opts.DefaultRequestCulture = new RequestCulture("fr");
+    opts.SupportedCultures = supportedCultures;
+    opts.SupportedUICultures = supportedCultures;
 });
-
-// (Re-)add Razor Pages if needed.
-builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
-// 8) Migrate & seed the database.
+// Migrate & Seed
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    try
+    var context = services.GetRequiredService<ApplicationDbContext>();
+    context.Database.Migrate();
+
+    var roleMgr = services.GetRequiredService<RoleManager<ApplicationRole>>();
+    if (!await roleMgr.RoleExistsAsync("Admin"))
     {
-        var context = services.GetRequiredService<ApplicationDbContext>();
-        context.Database.Migrate();
-
-        var roleManager = services.GetRequiredService<RoleManager<ApplicationRole>>();
-        if (!await roleManager.RoleExistsAsync("Admin"))
-        {
-            var adminRole = new ApplicationRole { Name = "Admin", Description = "Administrator role" };
-            await roleManager.CreateAsync(adminRole);
-        }
-
-        var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-        var adminEmail = "admin@myapp.com";
-        var adminUser = await userManager.FindByEmailAsync(adminEmail);
-        if (adminUser == null)
-        {
-            adminUser = new ApplicationUser
-            {
-                UserName = adminEmail,
-                Email = adminEmail,
-                EmailConfirmed = true,
-                DisplayName = "Administrator",
-                Site = "DefaultSite",
-                ProfilePictureDataUrl = "https://example.com/default-profile-pic.png",
-                IsActive = true,
-                IsLive = true,
-                RefreshToken = Guid.NewGuid().ToString("N"),
-                RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(30),
-            };
-
-            await userManager.CreateAsync(adminUser, "AdminPassword123!");
-            await userManager.AddToRoleAsync(adminUser, "Admin");
-        }
+        await roleMgr.CreateAsync(new ApplicationRole { Name = "Admin", Description = "Administrator role" });
     }
-    catch (Exception ex)
+
+    var userMgr = services.GetRequiredService<UserManager<ApplicationUser>>();
+    var adminEmail = "admin@myapp.com";
+    if (await userMgr.FindByEmailAsync(adminEmail) == null)
     {
-        Console.WriteLine("Database seeding error: " + ex);
+        var admin = new ApplicationUser
+        {
+            UserName = adminEmail,
+            Email = adminEmail,
+            EmailConfirmed = true,
+            DisplayName = "Administrator",
+            Site = "DefaultSite",
+            ProfilePictureDataUrl = "https://example.com/default-profile-pic.png",
+            IsActive = true,
+            IsLive = true,
+            RefreshToken = Guid.NewGuid().ToString("N"),
+            RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(30)
+        };
+        await userMgr.CreateAsync(admin, "AdminPassword123!");
+        await userMgr.AddToRoleAsync(admin, "Admin");
     }
 }
 
-// 9) Request Localization.
-app.UseRequestLocalization(app.Services
-    .GetRequiredService<Microsoft.Extensions.Options.IOptions<RequestLocalizationOptions>>().Value);
+// Localization
+app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
 
 if (!app.Environment.IsDevelopment())
 {
@@ -174,47 +141,38 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-// 10) Configure middleware pipeline.
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();
 app.UseRouting();
 app.UseAuthorization();
 
-// Middleware to bypass antiforgery on OCPP paths.
+// Bypass antiforgery for /ocpp
 app.Use(async (context, next) =>
 {
     if (context.Request.Path.StartsWithSegments("/ocpp"))
-    {
-        Console.WriteLine("Bypassing antiforgery for WebSocket request: " + context.Request.Path);
         await next();
-    }
     else
-    {
         await next();
-    }
 });
 
 app.UseWebSockets();
 
-// 2) Enable WebSockets and map the OCPP endpoint:
-app.UseWebSockets();
-app.Map("/ocpp/{stationId}", async context =>
+// OCPP endpoint
+app.Map("/ocpp/{stationId}", async (HttpContext context) =>
 {
-    var stationId = (string)context.Request.RouteValues["stationId"]!;
-    var ocppService = context.RequestServices.GetRequiredService<IOcppService>();
-    await ocppService.ProcessWebSocketAsync(context, stationId);
+    var stationId = context.Request.RouteValues["stationId"]?.ToString() ?? string.Empty;
+    var ocpp = context.RequestServices.GetRequiredService<IOcppService>();
+    await ocpp.ProcessWebSocketAsync(context, stationId);
 });
 
-// 3) (Optional) Trigger endpoint to ask a charger to send a message:
+// Trigger endpoint - uses correct overload
 app.MapGet("/trigger/{stationId}", async (string stationId, IOcppService ocppService) =>
 {
+    // request the station to send its current MeterValues
     await ocppService.SendTriggerMessageAsync(stationId, "MeterValues");
-    return Results.Ok($"Triggered MeterValues on {stationId}");
+    return Results.Ok($"TriggerMessage(MeterValues) sent to {stationId}");
 });
 
-
-// 13) Map Razor Pages.
 app.MapRazorPages();
-
 app.Run();
