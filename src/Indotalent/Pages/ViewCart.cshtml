@@ -1,0 +1,126 @@
+﻿@page
+@model Indotalent.Pages.ViewCartModel
+@{
+}
+
+
+<!-- Slick -->
+<link type="text/css" rel="stylesheet" href="~/css/slick.css" />
+<link type="text/css" rel="stylesheet" href="~/css/slick-theme.css" />
+
+<!-- Custom stlylesheet -->
+<link type="text/css" rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- nouislider -->
+<link type="text/css" rel="stylesheet" href="~/css/nouislider.min.css" />
+
+<style>
+    .products-slick {
+        display: block; /* Force un retour à la ligne */
+        margin-bottom: 30px; /* Ajoute de l'espace entre les groupes */
+    }
+</style>
+
+<!-- MAIN HEADER -->
+<div id="header-container">
+    @await Html.PartialAsync("_HeaderPartial", Model.CartItems)
+</div>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Panier</h2>
+
+    @if (!Model.CartItems.Any())
+    {
+        <p>Votre panier est vide.</p>
+    }
+    else
+    {
+        <form method="post">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Produit</th>
+                        <th>Quantité</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.CartItems.Count; i++)
+                    {
+                        var item = Model.CartItems[i];
+                        <tr>
+                            <td>
+                                <button type="submit" name="removeIndex" value="@i" class="btn btn-sm btn-dark">✕</button>
+                            </td>
+                            <td class="text-start">
+                                <img src="@item.SrcImage" width="70" class="me-2" />
+                                <a href="/Details/@item.ProductId" class="product-name">
+                                    @item.Name
+                                </a>
+                            </td>
+                            <td>
+                                <input type="number" name="Quantities[@i]" value="@item.Quantity" min="1" class="form-control d-inline w-auto" />
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <button type="submit" name="action" value="update" class="btn btn-primary">MAJ le panier</button>
+                </div>
+                <div>
+                    <strong>Total: </strong> @Model.CartItems.Sum(i => i.Quantity).ToString()
+                    <a href="/Checkout" class="btn btn-primary ms-3">Accéder au paiemnt</a>
+                </div>
+            </div>
+        </form>
+    }
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="landingpage/js/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/cart.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const removeButtons = document.querySelectorAll('button[name="removeIndex"]');
+
+        removeButtons.forEach(function (button) {
+            button.addEventListener("click", function (e) {
+                e.preventDefault(); // Toujours empêcher immédiatement
+
+                Swal.fire({
+                    title: 'Êtes-vous sûr ?',
+                    text: "Cet article sera retiré du panier.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Oui, retirer',
+                    cancelButtonText: 'Annuler'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Si confirmé, on soumet normalement
+                        const form = button.closest('form');
+
+                        // Créer un input temporaire pour envoyer le removeIndex
+                        const tempInput = document.createElement('input');
+                        tempInput.type = 'hidden';
+                        tempInput.name = 'removeIndex';
+                        tempInput.value = button.value;
+                        form.appendChild(tempInput);
+
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>

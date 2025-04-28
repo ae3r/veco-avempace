@@ -26,7 +26,7 @@
                     <div class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <i class="fa fa-shopping-cart"></i>
-                            <span>Your Cart</span>
+                            <span>Votre panier</span>
                             <div class="qty">@Model?.Sum(p => p.Quantity)</div>
                         </a>
                         <div class="cart-dropdown">
@@ -40,7 +40,7 @@
                                                 <img src="@item.SrcImage[1..]" alt="">
                                             </div>
                                             <div class="product-body">
-                                                <h3 class="product-name"><a href="#">@item.Name</a></h3>
+                                                <h3 class="product-name"><a href="/Details/@item.ProductId">@item.Name</a></h3>
                                                 <h4 class="product-price"><span class="qty">@item.Quantity</span> @item.Type</h4>
                                             </div>
                                             <button class="delete" data-product-id="@item.ProductId">
@@ -50,12 +50,12 @@
                                     }
                                 </div>
                                 <div class="cart-summary">
-                                    <small>@Model.Count() Produits(s) selected</small>
+                                    <small>@Model.Count() Produit(s) selectionné(s)</small>
                                 </div>
                             }
                             <div class="cart-btns">
-                                <a href="#">View Cart</a>
-                                <a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="/ViewCart">Voir le panier</a>
+                                <a href="#">Paiment <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
