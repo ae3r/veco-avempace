@@ -9,8 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Infrastructure.Ocpp
 {
     /// <summary>
-    /// Background service that sends initial ChangeConfiguration requests
-    /// to all known charging stations once they have connected.
+    /// Sends initial ChangeConfiguration to known stations after they connect.
     /// </summary>
     public class OcppConfigurationService : BackgroundService
     {
@@ -28,8 +27,8 @@ namespace Infrastructure.Ocpp
             // Give chargers time to establish their WebSocket connections
             await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
 
-            // List of station IDs to configure
-            var stationIds = new[] { "K0031041", "AE0007H1GN5C00832V" };
+            // Use your real station IDs here
+            var stationIds = new[] { "24DS0100788" /*, "K0031041", "AE0007H1GN5C00832V"*/ };
 
             while (!stoppingToken.IsCancellationRequested)
             {
@@ -55,8 +54,8 @@ namespace Infrastructure.Ocpp
                         );
                     }
 
-                    _logger.LogInformation("All ChangeConfiguration requests sent successfully. Exiting configuration loop.");
-                    break; // no need to resend once succeeded
+                    _logger.LogInformation("All ChangeConfiguration requests sent successfully.");
+                    break; // send once
                 }
                 catch (Exception ex)
                 {

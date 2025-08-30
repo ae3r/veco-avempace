@@ -14,7 +14,6 @@ using Microsoft.AspNetCore.Identity;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.DataProtection;
 using System.IO;
-using IdentityModel;
 using Microsoft.Extensions.Options;
 
 Log.Logger = new LoggerConfiguration()
@@ -34,7 +33,7 @@ builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo("/var/www/avemplace/keys"))
     .SetApplicationName("Avemplace");
 
-// Kestrel HTTPS
+// Kestrel HTTPS (app listens on 5002; proxy 443->5002 must be configured)
 builder.WebHost.ConfigureKestrel(options =>
 {
     options.ListenAnyIP(5002, listenOptions =>
@@ -147,16 +146,19 @@ app.UseSession();
 app.UseRouting();
 app.UseAuthorization();
 
-// Bypass antiforgery for /ocpp
+// Keep /ocpp free of anti-forgery/redirect side-effects if you add any later
 app.Use(async (context, next) =>
 {
-    if (context.Request.Path.StartsWithSegments("/ocpp"))
-        await next();
-    else
-        await next();
+    // If you add middleware that could interfere with WS, keep this pattern.
+    await next();
 });
 
-app.UseWebSockets();
+app.UseWebSockets(new WebSocketOptions
+{
+    KeepAliveInterval = TimeSpan.FromSeconds(20), // send ping every 20s
+    ReceiveBufferSize = 8192
+});
+
 
 // OCPP endpoint
 app.Map("/ocpp/{stationId}", async (HttpContext context) =>
@@ -166,10 +168,9 @@ app.Map("/ocpp/{stationId}", async (HttpContext context) =>
     await ocpp.ProcessWebSocketAsync(context, stationId);
 });
 
-// Trigger endpoint - uses correct overload
+// Trigger endpoint
 app.MapGet("/trigger/{stationId}", async (string stationId, IOcppService ocppService) =>
 {
-    // request the station to send its current MeterValues
     await ocppService.SendTriggerMessageAsync(stationId, "MeterValues");
     return Results.Ok($"TriggerMessage(MeterValues) sent to {stationId}");
 });
