@@ -75,6 +75,22 @@
     .controls-card .form-label {
         font-weight: 600;
     }
+
+    /* Sessions table */
+    .sessions-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .table thead th {
+        white-space: nowrap;
+    }
+
+    .badge-ongoing {
+        background: #0b7fab;
+    }
 </style>
 
 <div class="main-content">
@@ -97,6 +113,7 @@
         </div>
     }
 
+    <!-- ====== Station cards & controls (kept) ====== -->
     <div class="panel-container">
         <div class="row">
             <!-- Left Column: Charger Image -->
@@ -158,7 +175,7 @@
                     </div>
                 </div>
 
-                <!-- Your original custom fields -->
+                <!-- Custom fields -->
                 <div class="row mt-3">
                     <div class="col-md-4">
                         <div class="detail-card">
@@ -241,7 +258,7 @@
                                             <label class="form-label">Transaction ID</label>
                                             <input asp-for="TransactionId" type="number" class="form-control" />
                                             <small class="text-muted">
-                                                After a Remote Start, check logs for the assigned <strong>transactionId</strong>.
+                                                After a Remote Start, check the table/logs for the assigned <strong>transactionId</strong>.
                                             </small>
                                         </div>
                                         <button type="submit" class="btn btn-danger">
@@ -273,7 +290,76 @@
                     </div>
                 </div>
 
-            </div> <!-- /.col-md-8 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== Sessions / Recharges ====== -->
+    <div class="panel-container mt-4">
+        <div class="sessions-header">
+            <h4 class="m-0"><i class="fa fa-history me-2"></i>Recharges</h4>
+
+            <div class="d-flex align-items-center gap-2">
+                <form method="post" asp-page-handler="ExportCsv" asp-route-chargerId="@Model.ChargerId">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-outline-primary">
+                        <i class="fa fa-download me-1"></i> Exporter (CSV)
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="table-responsive mt-3">
+            <table class="table table-striped align-middle">
+                <thead>
+                    <tr>
+                        <th>Nom de la borne</th>
+                        <th>Utilisateur</th>
+                        <th>Rfid</th>
+                        <th>Date</th>
+                        <th>Début</th>
+                        <th>Fin</th>
+                        <th>Temps de recharge</th>
+                        <th>Énergie</th>
+                        <th>Coût</th>
+                        <th>TxId</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Sessions?.Any() == true)
+                    {
+                        foreach (var s in Model.Sessions)
+                        {
+                            var startLocal = s.StartTimeUtc.ToLocalTime();
+                            DateTime? endLocal = s.EndTimeUtc?.ToLocalTime();
+                            var dur = s.DurationSec.HasValue
+                            ? TimeSpan.FromSeconds(s.DurationSec.Value)
+                            : (endLocal.HasValue ? endLocal.Value - startLocal : (TimeSpan?)null);
+
+                            <tr>
+                                <td>@(Model.Charger?.ChargerName ?? Model.Charger?.OcppStationId)</td>
+                                <td>--</td>
+                                <td>@(string.IsNullOrWhiteSpace(s.IdTag) ? "--" : s.IdTag)</td>
+                                <td>@startLocal.ToString("dd/MM/yyyy")</td>
+                                <td>@startLocal.ToString("HH:mm")</td>
+                                <td>@(endLocal.HasValue? endLocal.Value.ToString("HH:mm") : Html.Raw("<span class='badge badge-ongoing text-light'>en cours</span>"))</td>
+                                <td>@(dur.HasValue? dur.Value.ToString(@"hh\:mm\:ss") : "--")</td>
+                                <td>@(s.EnergyKWh.HasValue ? $"{s.EnergyKWh.Value:0.##} kWh" : "--")</td>
+                                <td>
+                                    @(s.Cost.HasValue
+                                                                ? (string.IsNullOrWhiteSpace(s.Currency) ? $"{s.Cost.Value:0.##}" : $"{s.Cost.Value:0.##} {s.Currency}")
+                                                                : "--")
+                        </td>
+                        <td>@(s.TransactionId?.ToString() ?? "--")</td>
+                    </tr>
+                                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="10" class="text-center text-muted">No sessions yet.</td></tr>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

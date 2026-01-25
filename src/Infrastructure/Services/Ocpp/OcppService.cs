@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Infrastructure;                       // <-- ApplicationDbContext
 using System;
 using System.Linq;                           // FirstOrDefault, Take
 using System.Net.WebSockets;
@@ -12,6 +13,8 @@ using System.Globalization;
 using System.Collections.Concurrent;
 using System.Collections.Generic;            // List<T>
 using System.Threading;                      // Interlocked
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Ocpp
 {
@@ -21,7 +24,7 @@ namespace Infrastructure.Ocpp
         Task SendTriggerMessageAsync(string stationId, string requestedMessage);
         Task SendChangeConfigurationAsync(string stationId, string key, string value);
 
-        // NEW: remote start/stop
+        // Remote start/stop from your web UI
         Task SendRemoteStartTransactionAsync(string stationId, int connectorId, string idTag);
         Task SendRemoteStopTransactionAsync(string stationId, int transactionId);
     }
@@ -30,15 +33,20 @@ namespace Infrastructure.Ocpp
     {
         private readonly IChargingStationService _chargingStationService;
         private readonly ILogger<OcppService> _logger;
+        private readonly ApplicationDbContext _db;              // <-- NEW: for persisting sessions
 
-        // NEW: track active transactions per station
+        // Track active transaction ids per station (so we can update quickly)
         private static readonly ConcurrentDictionary<string, int> _activeTransactions = new();
         private static int _txCounter = 1000;
 
-        public OcppService(IChargingStationService chargingStationService, ILogger<OcppService> logger)
+        public OcppService(
+            IChargingStationService chargingStationService,
+            ILogger<OcppService> logger,
+            ApplicationDbContext db)                            // <-- NEW: injected
         {
             _chargingStationService = chargingStationService;
             _logger = logger;
+            _db = db;
         }
 
         public async Task ProcessWebSocketAsync(HttpContext context, string stationId)
@@ -73,17 +81,15 @@ namespace Infrastructure.Ocpp
             connected.LastHeartbeat = DateTime.UtcNow;
             await _chargingStationService.UpdateStationStatusAsync(connected);
 
-            // Warm-up the link so proxies don't idle-close and the CP starts sending soon
+            // Warm-up (optional but useful)
             _ = Task.Run(async () =>
             {
                 try
                 {
                     await Task.Delay(TimeSpan.FromSeconds(2));
-                    // Ask for frequent heartbeats
                     await SendChangeConfigurationAsync(stationId, "HeartbeatInterval", "30");
-                    // Nudge the charger to talk
                     await SendTriggerMessageAsync(stationId, "Heartbeat");
-                    await SendTriggerMessageAsync(stationId, "BootNotification"); // optional; many CPs support it
+                    await SendTriggerMessageAsync(stationId, "BootNotification");
                 }
                 catch (Exception ex)
                 {
@@ -211,7 +217,7 @@ namespace Infrastructure.Ocpp
             await SendArray(ws, message);
         }
 
-        // ========= NEW: remote start/stop =========
+        // ========= Remote start/stop from UI =========
 
         public async Task SendRemoteStartTransactionAsync(string stationId, int connectorId, string idTag)
         {
@@ -284,11 +290,10 @@ namespace Infrastructure.Ocpp
             station.Model = model;
             await _chargingStationService.UpdateStationStatusAsync(station);
 
-            // IMPORTANT: send desired heartbeat interval here so CP schedules heartbeats accordingly
             var resp = new JsonObject
             {
                 ["currentTime"] = DateTime.UtcNow.ToString("o"),
-                ["interval"] = 30, // was 300; set to 30 so heartbeats become ~30s
+                ["interval"] = 30,
                 ["status"] = "Accepted"
             };
             await SendArray(ws, new JsonArray { 3, messageId, resp });
@@ -312,6 +317,9 @@ namespace Infrastructure.Ocpp
         {
             _logger.LogDebug("MeterValues payload: {Payload}", payload.ToJsonString());
 
+            // Optional: live energy update if the CP sends Energy.Active.Import.Register (Wh)
+            int? meterWh = null;
+
             var meterArray = payload["meterValue"] as JsonArray;
             double? power = null, current = null;
             if (meterArray != null)
@@ -325,6 +333,14 @@ namespace Infrastructure.Ocpp
                         {
                             var meas = val["measurand"]?.GetValue<string>();
                             var vstr = val["value"]?.GetValue<string>();
+
+                            // Energy total register (Wh)
+                            if ((string.IsNullOrEmpty(meas) || meas == "Energy.Active.Import.Register") &&
+                                int.TryParse(vstr, NumberStyles.Any, CultureInfo.InvariantCulture, out var m))
+                            {
+                                meterWh = m;
+                            }
+
                             if (meas == "Power.Active.Import" &&
                                 double.TryParse(vstr, NumberStyles.Any, CultureInfo.InvariantCulture, out var p)) power = p;
 
@@ -335,7 +351,8 @@ namespace Infrastructure.Ocpp
                 }
             }
 
-            _logger.LogInformation("Extracted MeterValues for {Station}: Power={Power}, Current={Current}", stationId, power, current);
+            _logger.LogInformation("Extracted MeterValues for {Station}: Power={Power}, Current={Current}, MeterWh={MeterWh}",
+                stationId, power, current, meterWh);
 
             var station = await _chargingStationService.GetStationByOcppIdAsync(stationId);
             if (station != null)
@@ -343,6 +360,32 @@ namespace Infrastructure.Ocpp
                 station.MeterLine1Power = power;
                 station.MeterLine1Current = current;
                 await _chargingStationService.UpdateStationStatusAsync(station);
+            }
+
+            // Live session update (optional) if we have a running session and meter register
+            if (meterWh.HasValue && station != null)
+            {
+                var session = await _db.ChargingSession
+                    .Where(s => s.StationId == station.Id && s.EndTimeUtc == null)
+                    .OrderByDescending(s => s.StartTimeUtc)
+                    .FirstOrDefaultAsync();
+
+                if (session != null)
+                {
+                    // If StartMeter wasn't known at start, set it on first sample
+                    if (!session.StartMeterWh.HasValue)
+                        session.StartMeterWh = meterWh;
+
+                    // Update a rolling energy figure
+                    if (session.StartMeterWh.HasValue)
+                    {
+                        var diff = Math.Max(0, meterWh.Value - session.StartMeterWh.Value);
+                        session.EnergyKWh = Math.Round(diff / 1000m, 3);
+                    }
+
+                    session.LastUpdateUtc = DateTime.UtcNow;
+                    await _db.SaveChangesAsync();
+                }
             }
 
             // OCPP 1.6 expects an empty payload object for MeterValues CallResult
@@ -377,15 +420,38 @@ namespace Infrastructure.Ocpp
         private async Task HandleStartTransaction(WebSocket ws, string stationId, string messageId, JsonObject payload)
         {
             var idTag = payload["idTag"]?.GetValue<string>() ?? "";
-            var connectorId = payload["connectorId"]?.GetValue<int>() ?? 0;
+            var connectorId = payload["connectorId"]?.GetValue<int>() ?? 1;
             var meterStart = payload["meterStart"]?.GetValue<int?>();
+            var timestamp = payload["timestamp"]?.GetValue<string>();
 
-            // Assign a unique transaction id per StartTransaction
+            // Create a unique transaction id to return to the CP
             var newTxId = Interlocked.Increment(ref _txCounter);
             _activeTransactions[stationId] = newTxId;
 
-            _logger.LogInformation("StartTransaction @ {Station}: txId={TxId}, connector={Connector}, idTag={IdTag}, meterStart={Meter}",
-                stationId, newTxId, connectorId, idTag, meterStart);
+            // Persist a new session row
+            var station = await _chargingStationService.GetStationByOcppIdAsync(stationId);
+            if (station != null)
+            {
+                var startUtc = DateTime.UtcNow;
+                if (DateTime.TryParse(timestamp, null, DateTimeStyles.AdjustToUniversal, out var ts))
+                    startUtc = ts.ToUniversalTime();
+
+                var ses = new ChargingSession
+                {
+                    StationId = station.Id,
+                    ConnectorId = connectorId,
+                    IdTag = idTag,
+                    TransactionId = newTxId,
+                    StartTimeUtc = startUtc,
+                    StartMeterWh = meterStart,
+                    LastUpdateUtc = DateTime.UtcNow
+                };
+                _db.ChargingSession.Add(ses);
+                await _db.SaveChangesAsync();
+
+                _logger.LogInformation("Session created: station={StationId} txId={TxId} connector={Connector} idTag={IdTag} meterStart={Meter}",
+                    stationId, newTxId, connectorId, idTag, meterStart);
+            }
 
             var resp = new JsonObject
             {
@@ -398,10 +464,46 @@ namespace Infrastructure.Ocpp
         private async Task HandleStopTransaction(WebSocket ws, string stationId, string messageId, JsonObject payload)
         {
             var meterStop = payload["meterStop"]?.GetValue<int?>();
+            var transactionId = payload["transactionId"]?.GetValue<int?>();
+            var timestamp = payload["timestamp"]?.GetValue<string>();
+
+            var stopUtc = DateTime.UtcNow;
+            if (DateTime.TryParse(timestamp, null, DateTimeStyles.AdjustToUniversal, out var ts))
+                stopUtc = ts.ToUniversalTime();
+
+            _logger.LogInformation("StopTransaction @ {Station}, txId={TxId}, meterStop={MeterStop}", stationId, transactionId, meterStop);
+
+            var station = await _chargingStationService.GetStationByOcppIdAsync(stationId);
+            if (station != null && transactionId.HasValue)
+            {
+                var session = await _db.ChargingSession
+                    .Where(s => s.StationId == station.Id && s.TransactionId == transactionId.Value)
+                    .OrderByDescending(s => s.Id)
+                    .FirstOrDefaultAsync();
+
+                if (session != null)
+                {
+                    session.EndTimeUtc = stopUtc;
+                    session.StopMeterWh = meterStop;
+                    session.LastUpdateUtc = DateTime.UtcNow;
+
+                    // Compute energy/duration
+                    if (session.StartMeterWh.HasValue && session.StopMeterWh.HasValue)
+                    {
+                        var diff = Math.Max(0, session.StopMeterWh.Value - session.StartMeterWh.Value);
+                        session.EnergyKWh = Math.Round(diff / 1000m, 3);
+                    }
+                    if (session.EndTimeUtc.HasValue)
+                    {
+                        session.DurationSec = (int)Math.Max(0, (session.EndTimeUtc.Value - session.StartTimeUtc).TotalSeconds);
+                    }
+
+                    await _db.SaveChangesAsync();
+                }
+            }
 
             _activeTransactions.TryRemove(stationId, out _);
 
-            _logger.LogInformation("StopTransaction @ {Station}, meterStop={MeterStop}", stationId, meterStop);
             var resp = new JsonObject { ["idTagInfo"] = new JsonObject { ["status"] = "Accepted" } };
             await SendArray(ws, new JsonArray { 3, messageId, resp });
         }

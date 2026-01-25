@@ -40,5 +40,8 @@ namespace Domain.Entities
         // Foreign key to Network
         public int NetworkId { get; set; }
         public Network Network { get; set; }
+
+        // ==== NEW: navigation to persisted sessions (no DB column added; just relationship) ====
+        public ICollection<ChargingSession> Sessions { get; set; } = new List<ChargingSession>();
     }
 }

@@ -10,6 +10,8 @@ public interface IApplicationDbContext
     DbSet<Produit> Produits { get; set; }
     DbSet<ChargingStation> ChargingStations { get; set; }
 
+    DbSet<ChargingSession> ChargingSession { get; set; }
+
     DbSet<Network> Networks { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }
