@@ -184,7 +184,7 @@ namespace Infrastructure
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(
-                    "Server=172.17.0.2,1433;Database=VecoAvempace_PROD;User Id=sa;Password=Avempace0000!;MultipleActiveResultSets=true;"
+                    "Server=72.62.234.191,1433;Database=VecoAvempace_PROD;User Id=sa;Password=StrongPassword123!;MultipleActiveResultSets=true;Encrypt=False;TrustServerCertificate=True;"
                 );
             }
         }
